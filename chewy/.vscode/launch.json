@@ -8,19 +8,22 @@
         {
             "name": "chewy",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": ["-d", "iphone"]
         },
         {
             "name": "chewy (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "args": ["-d", "iphone"]
         },
         {
             "name": "chewy (release mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "args": ["-d", "iphone"]
         }
     ]
 }
