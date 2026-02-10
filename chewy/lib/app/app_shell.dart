@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../features/add_plate/presentation/add_plate_screen.dart';
-import '../features/book/presentation/book_screen.dart';
 import '../features/home/presentation/home_screen.dart';
 import '../features/settings/presentation/settings_screen.dart';
 import '../features/weight/presentation/weight_screen.dart';
@@ -21,12 +20,6 @@ class AppShell extends ConsumerWidget {
         icon: Icons.home_outlined,
         selectedIcon: Icons.home,
         body: HomeScreen(),
-      ),
-      const _ShellDestination(
-        title: 'Book',
-        icon: Icons.menu_book_outlined,
-        selectedIcon: Icons.menu_book,
-        body: BookScreen(),
       ),
       const _ShellDestination(
         title: 'Weight',

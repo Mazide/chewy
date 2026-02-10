@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:chewy/features/home/presentation/home_screen.dart';
-import 'package:chewy/features/book/presentation/book_screen.dart';
 import 'package:chewy/features/add_plate/presentation/add_plate_screen.dart';
 import 'package:chewy/features/settings/presentation/settings_screen.dart';
 
@@ -36,7 +35,6 @@ class _MainNavigationState extends State<MainNavigation> {
 
   final List<Widget> _screens = [
     const HomeScreen(),
-    const BookScreen(),
     const AddPlateScreen(),
     const SettingsScreen(),
   ];
