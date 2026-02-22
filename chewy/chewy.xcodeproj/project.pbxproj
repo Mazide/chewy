@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D677C9032F4B6BE000A60533 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D677C9022F4B6BDF00A60533 /* SpriteKit.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D677C8BD2F49FDA700A60533 /* chewy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chewy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D677C9022F4B6BDF00A60533 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -23,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D677C9032F4B6BE000A60533 /* SpriteKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +39,7 @@
 			isa = PBXGroup;
 			children = (
 				D677C8BF2F49FDA700A60533 /* chewy */,
+				D677C9012F4B6BD800A60533 /* Frameworks */,
 				D677C8BE2F49FDA700A60533 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +50,14 @@
 				D677C8BD2F49FDA700A60533 /* chewy.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D677C9012F4B6BD800A60533 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D677C9022F4B6BDF00A60533 /* SpriteKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +284,10 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SpriteKit,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = looseconfetti.chewy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -313,6 +332,10 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 26.2;
 				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SpriteKit,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = looseconfetti.chewy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
