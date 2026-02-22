@@ -2,9 +2,6 @@
 //  SpriteKitHeroView.swift
 //  chewy
 //
-//  SpriteKit animation backed by hero.spriteatlas in Assets.xcassets.
-//  Drop-in replacement for the placeholder HeroSpriteView.
-//
 
 import SwiftUI
 import SpriteKit
@@ -14,21 +11,21 @@ import SpriteKit
 struct SpriteKitHeroView: View {
     let status: HeroStatus
 
-    var body: some View {
-        GeometryReader { geo in
-            SpriteView(scene: makeScene(size: geo.size), options: [.allowsTransparency])
-                .frame(width: geo.size.width, height: geo.size.height)
-        }
-        .aspectRatio(1, contentMode: .fit)
-        .frame(width: 180, height: 180)
-    }
+    // Scene stored in @State so it's never recreated on re-render
+    // Size = native @2x asset size (466×995px) → displayed at 233×497pt
+    @State private var scene: HeroScene = {
+        let s = HeroScene(size: CGSize(width: 466, height: 995))
+        s.backgroundColor = .clear
+        s.scaleMode = .resizeFill
+        return s
+    }()
 
-    private func makeScene(size: CGSize) -> HeroScene {
-        let scene = HeroScene(size: size)
-        scene.backgroundColor = .clear
-        scene.scaleMode = .aspectFit
-        scene.heroStatus = status
-        return scene
+    var body: some View {
+        SpriteView(scene: scene, options: [.allowsTransparency])
+            .frame(width: 233, height: 497)   // pt = px / 2 (@2x)
+            .onChange(of: status) { _, newStatus in
+                scene.heroStatus = newStatus
+            }
     }
 }
 
@@ -36,17 +33,15 @@ struct SpriteKitHeroView: View {
 
 final class HeroScene: SKScene {
 
-    // Atlas frame name prefix — matches the PNG filenames inside hero.spriteatlas
-    // (without .png extension, as SpriteKit strips it)
     private static let framePrefix = "idle_"
     private static let frameCount  = 121
     private static let fps: Double = 24
 
-    var heroStatus: HeroStatus = .hungry {
+    var heroStatus: HeroStatus = .idle {
         didSet { guard oldValue != heroStatus else { return }; updateAnimation() }
     }
 
-    private var spriteNode: SKSpriteNode!
+    private var spriteNode: SKSpriteNode?
     private var allTextures: [SKTexture] = []
 
     // MARK: - Lifecycle
@@ -72,13 +67,12 @@ final class HeroScene: SKScene {
 
     private func setupSprite() {
         guard let first = allTextures.first else { return }
-        spriteNode = SKSpriteNode(texture: first)
-        // Fill the scene, keeping aspect ratio
-        let scale = min(size.width / spriteNode.size.width,
-                        size.height / spriteNode.size.height)
-        spriteNode.setScale(scale)
-        spriteNode.position = CGPoint(x: size.width / 2, y: size.height / 2)
-        addChild(spriteNode)
+        let node = SKSpriteNode(texture: first)
+        // Natural texture size — no scaling
+        node.size = first.size()
+        node.position = CGPoint(x: size.width / 2, y: size.height / 2)
+        addChild(node)
+        spriteNode = node
     }
 
     // MARK: - Animation
@@ -87,29 +81,26 @@ final class HeroScene: SKScene {
         spriteNode?.removeAllActions()
 
         switch heroStatus {
-        case .hungry:
-            // Idle: play full loop at normal speed
+        case .idle:
             playLoop(textures: allTextures, fps: Self.fps)
 
         case .eating:
-            // Eating: slow loop + gentle pulse
             playLoop(textures: allTextures, fps: Self.fps * 0.6)
             let pulse = SKAction.sequence([
                 SKAction.scale(by: 1.06, duration: 0.5),
                 SKAction.scale(by: 1 / 1.06, duration: 0.5)
             ])
-            spriteNode.run(SKAction.repeatForever(pulse), withKey: "pulse")
+            spriteNode?.run(SKAction.repeatForever(pulse), withKey: "pulse")
 
         case .happy:
-            // Happy: fast playthrough then hold last frame
             let fast = SKAction.animate(with: allTextures, timePerFrame: 1.0 / (Self.fps * 1.5))
             let hold = SKAction.setTexture(allTextures.last!)
-            spriteNode.run(SKAction.sequence([fast, hold]))
+            spriteNode?.run(SKAction.sequence([fast, hold]))
         }
     }
 
     private func playLoop(textures: [SKTexture], fps: Double) {
         let anim = SKAction.animate(with: textures, timePerFrame: 1.0 / fps)
-        spriteNode.run(SKAction.repeatForever(anim), withKey: "anim")
+        spriteNode?.run(SKAction.repeatForever(anim), withKey: "anim")
     }
 }

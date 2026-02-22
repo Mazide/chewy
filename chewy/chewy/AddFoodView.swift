@@ -4,218 +4,193 @@
 //
 
 import SwiftUI
+import AVFoundation
+
+// MARK: - Main View
 
 struct AddFoodView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
 
-    @State private var portionSize: Double = 50.0
-
     var body: some View {
         ZStack {
-            Color(red: 0.12, green: 0.12, blue: 0.18)
+            // Background — dark purple like reference
+            Color(red: 0.22, green: 0.18, blue: 0.28)
                 .ignoresSafeArea()
 
             VStack(spacing: 0) {
 
-                // MARK: - Nav bar
-                HStack {
-                    Button {
-                        dismiss()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundColor(.white)
-                            .frame(width: 36, height: 36)
-                            .background(Color.white.opacity(0.15))
-                            .clipShape(Circle())
-                    }
+                // Drag pill — swipe down to dismiss (native sheet behaviour)
+                Capsule()
+                    .fill(Color.white.opacity(0.25))
+                    .frame(width: 36, height: 5)
+                    .padding(.top, 12)
+                    .padding(.bottom, 20)
 
-                    Spacer()
+                // ── Scroll banner ─────────────────────────────────────
+                // GREYBOX — replace with Image("scroll_banner")
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color(red: 0.85, green: 0.72, blue: 0.45))
+                        .frame(width: 270, height: 54)
+                        .shadow(color: .black.opacity(0.35), radius: 6, y: 4)
 
-                    Text("Scan Food")
-                        .font(.system(size: 18, weight: .bold, design: .rounded))
-                        .foregroundColor(.white)
-
-                    Spacer()
-
-                    // balance xmark
-                    Color.clear.frame(width: 36, height: 36)
+                    Text("ANALYZE ESSENCE")
+                        .font(.system(size: 17, weight: .black, design: .serif))
+                        .foregroundColor(Color(red: 0.22, green: 0.10, blue: 0.02))
+                        .tracking(1.5)
                 }
-                .padding(.horizontal, 20)
-                .padding(.top, 16)
-                .padding(.bottom, 12)
-
-                // MARK: - Mock Camera View
-                // Изолированный контейнер — сюда позже вставить реальную камеру или SpriteKit сцену
-                MockCameraView()
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
-
-                // MARK: - Portion Slider
-                VStack(alignment: .leading, spacing: 12) {
-                    HStack {
-                        Text("Portion Size")
-                            .font(.system(size: 16, weight: .bold, design: .rounded))
-                            .foregroundColor(.white)
-                        Spacer()
-                        Text("\(Int(portionSize))%")
-                            .font(.system(size: 16, weight: .heavy, design: .rounded))
-                            .foregroundColor(sliderColor)
-                            .animation(.easeInOut, value: portionSize)
-                    }
-
-                    Slider(value: $portionSize, in: 0...100, step: 1)
-                        .tint(sliderColor)
-                        .animation(.easeInOut, value: portionSize)
-
-                    // Labels под слайдером
-                    HStack {
-                        Text("Small")
-                        Spacer()
-                        Text("Medium")
-                        Spacer()
-                        Text("Large")
-                    }
-                    .font(.system(size: 11, design: .rounded))
-                    .foregroundColor(.white.opacity(0.4))
-                }
-                .padding(.horizontal, 24)
-                .padding(.top, 8)
+                // Uncomment when asset is ready:
+                // Image("scroll_banner")
+                //     .resizable().scaledToFit().frame(width: 300)
 
                 Spacer()
 
-                // MARK: - Feed Button
+                // ── Lens + hero ───────────────────────────────────────
+                ZStack(alignment: .bottomTrailing) {
+
+                    // Camera inside circle
+                    ZStack {
+                        CameraView()
+                            .frame(width: 260, height: 260)
+
+                        // Glare
+                        Ellipse()
+                            .fill(.white.opacity(0.12))
+                            .frame(width: 80, height: 44)
+                            .offset(x: -42, y: -62)
+                            .blur(radius: 6)
+                    }
+                    .clipShape(Circle())
+                    .frame(width: 260, height: 260)
+
+                    // Lens rim — GREYBOX, replace with Image("magnifier_lens")
+                    Circle()
+                        .strokeBorder(
+                            LinearGradient(
+                                colors: [
+                                    .white.opacity(0.9),
+                                    Color(red: 0.5, green: 0.9, blue: 1.0).opacity(0.7),
+                                    Color(red: 0.7, green: 0.4, blue: 1.0).opacity(0.6),
+                                    .white.opacity(0.5),
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 16
+                        )
+                        .frame(width: 260, height: 260)
+                    // Uncomment when asset is ready:
+                    // Image("magnifier_lens")
+                    //     .resizable().scaledToFit()
+                    //     .frame(width: 292, height: 292)
+
+                    // Hero peeking from bottom-right corner
+                    SpriteKitHeroView(status: .idle)
+                        .frame(width: 80, height: 171)   // ~1/3 width, native aspect
+                        .clipped()
+                        .offset(x: 28, y: 20)
+                }
+                // Centre the lens+hero group, give enough room for hero peek
+                .frame(width: 292, height: 300)
+
+                Spacer()
+
+                // ── Feed button ───────────────────────────────────────
                 Button {
                     dismiss()
-                    // Запускаем async логику после возврата на Home
-                    Task {
-                        await appState.feedHero(portionSize: portionSize)
-                    }
+                    Task { await appState.didAddFood() }
                 } label: {
-                    HStack(spacing: 10) {
-                        Image(systemName: "bolt.fill")
-                            .font(.system(size: 18, weight: .bold))
-                        Text("Feed!")
-                            .font(.system(size: 20, weight: .black, design: .rounded))
-                    }
-                    .foregroundColor(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 18)
-                    .background(
-                        LinearGradient(
-                            colors: [Color(red: 1.0, green: 0.55, blue: 0.1), Color(red: 0.9, green: 0.3, blue: 0.1)],
-                            startPoint: .leading,
-                            endPoint: .trailing
+                    Text("FEED!")
+                        .font(.system(size: 24, weight: .black, design: .rounded))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 20)
+                        .background(
+                            LinearGradient(
+                                colors: [
+                                    Color(red: 1.0, green: 0.60, blue: 0.10),
+                                    Color(red: 0.85, green: 0.32, blue: 0.05),
+                                ],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
                         )
-                    )
-                    .clipShape(RoundedRectangle(cornerRadius: 18))
-                    .shadow(color: Color(red: 0.9, green: 0.3, blue: 0.1).opacity(0.5), radius: 12, x: 0, y: 6)
+                        .clipShape(RoundedRectangle(cornerRadius: 18))
+                        .shadow(color: Color(red: 0.9, green: 0.35, blue: 0.05).opacity(0.55),
+                                radius: 12, x: 0, y: 6)
                 }
-                .padding(.horizontal, 24)
-                .padding(.bottom, 40)
+                .buttonStyle(.plain)
+                .padding(.horizontal, 28)
+                .padding(.bottom, 48)
             }
-        }
-    }
-
-    private var sliderColor: Color {
-        switch portionSize {
-        case 0..<34:  return Color(red: 0.3, green: 0.85, blue: 0.5)
-        case 34..<67: return Color(red: 1.0, green: 0.8, blue: 0.1)
-        default:      return Color(red: 1.0, green: 0.35, blue: 0.2)
         }
     }
 }
 
-// MARK: - Mock Camera View
-//
-// Этот компонент — заглушка для камеры.
-// Когда будешь добавлять реальную камеру или AR сцену —
-// просто замени содержимое этого View, интерфейс не изменится.
+// MARK: - Camera
 
-struct MockCameraView: View {
-    @State private var scanPhase: Bool = false
+struct CameraView: UIViewRepresentable {
+    func makeUIView(context: Context) -> UIView {
+#if targetEnvironment(simulator)
+        let view = UIView()
+        view.backgroundColor = UIColor(white: 0.08, alpha: 1)
+        let label = UILabel()
+        label.text = "📷"
+        label.font = .systemFont(ofSize: 52)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(label)
+        NSLayoutConstraint.activate([
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+        ])
+        return view
+#else
+        let view = PreviewView()
+        view.startSession()
+        return view
+#endif
+    }
+    func updateUIView(_ uiView: UIView, context: Context) {}
+}
 
-    var body: some View {
-        ZStack {
-            // Фон — имитация viewfinder
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Color(red: 0.08, green: 0.08, blue: 0.12))
+// MARK: - Real camera preview (device only)
 
-            // Уголки сканера
-            ScannerCorners()
-                .stroke(Color(red: 0.3, green: 0.9, blue: 0.6), lineWidth: 3)
-                .padding(20)
+#if !targetEnvironment(simulator)
+final class PreviewView: UIView {
+    private let session = AVCaptureSession()
+    override class var layerClass: AnyClass { AVCaptureVideoPreviewLayer.self }
+    private var previewLayer: AVCaptureVideoPreviewLayer { layer as! AVCaptureVideoPreviewLayer }
 
-            // Сканирующая линия
-            VStack {
-                Rectangle()
-                    .fill(
-                        LinearGradient(
-                            colors: [.clear, Color(red: 0.3, green: 0.9, blue: 0.6).opacity(0.8), .clear],
-                            startPoint: .leading,
-                            endPoint: .trailing
-                        )
-                    )
-                    .frame(height: 2)
-                    .padding(.horizontal, 40)
-                    .offset(y: scanPhase ? 120 : -120)
-                    .animation(.easeInOut(duration: 2.0).repeatForever(autoreverses: true), value: scanPhase)
-            }
-
-            // Плейсхолдер текст
-            VStack(spacing: 8) {
-                Spacer()
-                Image(systemName: "camera.viewfinder")
-                    .font(.system(size: 36))
-                    .foregroundColor(.white.opacity(0.2))
-                Text("Point camera at your food")
-                    .font(.system(size: 13, design: .rounded))
-                    .foregroundColor(.white.opacity(0.3))
-                Spacer()
-            }
+    func startSession() {
+        previewLayer.videoGravity = .resizeAspectFill
+        previewLayer.session = session
+        Task.detached(priority: .userInitiated) { [weak self] in
+            guard let self else { return }
+            await self.configureSession()
+            self.session.startRunning()
         }
-        .frame(height: 260)
-        .onAppear { scanPhase = true }
+    }
+
+    private func configureSession() async {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        if status == .notDetermined { await AVCaptureDevice.requestAccess(for: .video) }
+        guard AVCaptureDevice.authorizationStatus(for: .video) == .authorized else { return }
+        session.beginConfiguration()
+        session.sessionPreset = .photo
+        if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
+           let input = try? AVCaptureDeviceInput(device: device),
+           session.canAddInput(input) { session.addInput(input) }
+        session.commitConfiguration()
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        previewLayer.frame = bounds
     }
 }
-
-// MARK: - Scanner Corner Shape
-// Рисует 4 угловых уголка как у сканера
-
-struct ScannerCorners: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        let len: CGFloat = 24
-        let r: CGFloat = 8
-
-        // Top-left
-        path.move(to: CGPoint(x: rect.minX, y: rect.minY + len))
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY + r))
-        path.addQuadCurve(to: CGPoint(x: rect.minX + r, y: rect.minY), control: CGPoint(x: rect.minX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.minX + len, y: rect.minY))
-
-        // Top-right
-        path.move(to: CGPoint(x: rect.maxX - len, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.maxX - r, y: rect.minY))
-        path.addQuadCurve(to: CGPoint(x: rect.maxX, y: rect.minY + r), control: CGPoint(x: rect.maxX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY + len))
-
-        // Bottom-right
-        path.move(to: CGPoint(x: rect.maxX, y: rect.maxY - len))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - r))
-        path.addQuadCurve(to: CGPoint(x: rect.maxX - r, y: rect.maxY), control: CGPoint(x: rect.maxX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: rect.maxX - len, y: rect.maxY))
-
-        // Bottom-left
-        path.move(to: CGPoint(x: rect.minX + len, y: rect.maxY))
-        path.addLine(to: CGPoint(x: rect.minX + r, y: rect.maxY))
-        path.addQuadCurve(to: CGPoint(x: rect.minX, y: rect.maxY - r), control: CGPoint(x: rect.minX, y: rect.maxY))
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY - len))
-
-        return path
-    }
-}
+#endif
 
 #Preview {
     AddFoodView()

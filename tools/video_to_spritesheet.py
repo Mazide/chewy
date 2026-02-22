@@ -38,35 +38,66 @@ from PIL import Image
 
 def remove_white_background(frame_bgr: np.ndarray, threshold: int = 20) -> Image.Image:
     """
-    Replace near-white pixels with full transparency.
+    Remove white background using a two-pass approach:
+      1. Flood-fill from edges on a white-threshold mask → rough BG estimate
+      2. GrabCut initialized with that rough mask → clean segmentation that
+         handles open gaps between limbs and light-colored clothing.
 
     Args:
         frame_bgr: OpenCV frame in BGR uint8 format.
-        threshold: Euclidean distance from pure white (255,255,255) below which
-                   a pixel is considered background. Higher = more aggressive removal.
+        threshold: Color distance from white used for the flood-fill seed.
 
     Returns:
         RGBA PIL Image.
     """
-    # Convert BGR → RGB
-    rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
-    rgba = np.dstack([rgb, np.full(rgb.shape[:2], 255, dtype=np.uint8)])
+    from collections import deque
 
-    # Distance from white
+    rgb = cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
+    h, w = rgb.shape[:2]
+
+    # --- Pass 1: flood-fill rough BG mask ---
     white = np.array([255, 255, 255], dtype=np.float32)
     dist = np.linalg.norm(rgb.astype(np.float32) - white, axis=2)
+    near_white = dist <= threshold
 
-    # Hard mask: pixels within threshold → transparent
-    mask = dist <= threshold
-    rgba[mask, 3] = 0
+    bg_rough = np.zeros((h, w), dtype=bool)
+    queue: deque = deque()
+    for x in range(w):
+        for ye in [0, h - 1]:
+            if near_white[ye, x] and not bg_rough[ye, x]:
+                bg_rough[ye, x] = True
+                queue.append((ye, x))
+    for y in range(h):
+        for xe in [0, w - 1]:
+            if near_white[y, xe] and not bg_rough[y, xe]:
+                bg_rough[y, xe] = True
+                queue.append((y, xe))
+    while queue:
+        y, x = queue.popleft()
+        for dy, dx in ((-1, 0), (1, 0), (0, -1), (0, 1)):
+            ny, nx = y + dy, x + dx
+            if 0 <= ny < h and 0 <= nx < w and not bg_rough[ny, nx] and near_white[ny, nx]:
+                bg_rough[ny, nx] = True
+                queue.append((ny, nx))
 
-    # Soft anti-alias fringe: pixels just outside threshold get partial alpha
-    fringe = threshold * 0.5
-    fringe_mask = (dist > threshold) & (dist <= threshold + fringe)
-    if fringe_mask.any():
-        alpha_values = ((dist[fringe_mask] - threshold) / fringe * 255).astype(np.uint8)
-        rgba[fringe_mask, 3] = alpha_values
+    # --- Pass 2: GrabCut initialized with the rough mask ---
+    gc_mask = np.full((h, w), cv2.GC_PR_FGD, dtype=np.uint8)
+    gc_mask[bg_rough] = cv2.GC_PR_BGD
+    # Border pixels = definite background
+    gc_mask[:5, :]  = cv2.GC_BGD
+    gc_mask[-5:, :] = cv2.GC_BGD
+    gc_mask[:, :5]  = cv2.GC_BGD
+    gc_mask[:, -5:] = cv2.GC_BGD
 
+    bgd_model = np.zeros((1, 65), np.float64)
+    fgd_model = np.zeros((1, 65), np.float64)
+    cv2.grabCut(frame_bgr, gc_mask, None, bgd_model, fgd_model, 10, cv2.GC_INIT_WITH_MASK)
+
+    fg_mask = np.where(
+        (gc_mask == cv2.GC_BGD) | (gc_mask == cv2.GC_PR_BGD), 0, 1
+    ).astype(np.uint8)
+
+    rgba = np.dstack([rgb, fg_mask * 255])
     return Image.fromarray(rgba, "RGBA")
 
 
@@ -151,6 +182,7 @@ def extract_frames(
     threshold: int,
     step: int,
     crop: bool,
+    remove_bg: bool = True,
 ) -> tuple[list[Image.Image], float]:
     """Extract and process frames from video. Returns (frames, fps)."""
     cap = cv2.VideoCapture(str(video_path))
@@ -173,19 +205,28 @@ def extract_frames(
             break
 
         if frame_idx % step == 0:
-            rgba = remove_white_background(bgr, threshold=threshold)
-            if crop:
-                rgba = auto_crop(rgba)
-            if rgba.getbbox() is not None:
-                frames.append(rgba)
-                extracted += 1
-                print(f"\r[INFO] Processed frame {frame_idx}/{total_frames} ({extracted} kept)", end="")
+            if remove_bg:
+                rgba = remove_white_background(bgr, threshold=threshold)
+                if crop:
+                    rgba = auto_crop(rgba)
+                if rgba.getbbox() is None:
+                    frame_idx += 1
+                    continue
+            else:
+                rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+                rgba = Image.fromarray(rgb, "RGB").convert("RGBA")
+            frames.append(rgba)
+            extracted += 1
+            print(f"\r[INFO] Processed frame {frame_idx}/{total_frames} ({extracted} kept)", end="")
 
         frame_idx += 1
 
     cap.release()
     print()
     return frames, fps
+
+
+
 
 
 def resize_frame(image: Image.Image, max_pt: int, scale: int) -> Image.Image:
@@ -214,10 +255,11 @@ def process_video(
     frames_only: bool = False,
     max_pt: int | None = None,
     scale: int = 2,
+    remove_bg: bool = True,
 ):
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    frames, fps = extract_frames(video_path, threshold=threshold, step=step, crop=crop)
+    frames, fps = extract_frames(video_path, threshold=threshold, step=step, crop=crop, remove_bg=remove_bg)
 
     if max_pt is not None:
         frames = [resize_frame(f, max_pt, scale) for f in frames]
@@ -233,6 +275,24 @@ def process_video(
     if frames_only:
         # ── Export as .spriteatlas (each frame in its own .imageset) ────────
         # Xcode requires: frame.imageset/Contents.json + frame.imageset/frame.png
+
+        # Normalise all frames to a single canvas (max w × max h),
+        # content centred — prevents per-frame size jitter in SpriteKit.
+        canvas_w = max(f.width for f in frames)
+        canvas_h = max(f.height for f in frames)
+        normalised = []
+        for f in frames:
+            if f.size == (canvas_w, canvas_h):
+                normalised.append(f)
+            else:
+                canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
+                ox = (canvas_w - f.width) // 2
+                oy = (canvas_h - f.height) // 2
+                canvas.paste(f, (ox, oy), f)
+                normalised.append(canvas)
+        frames = normalised
+        print(f"[INFO] Canvas size: {canvas_w}x{canvas_h}px (all frames normalised)")
+
         digits = len(str(len(frames) - 1))
         scale_tag = f"@{scale}x" if scale > 1 else ""
         scale_str = f"{scale}x"
@@ -342,6 +402,10 @@ def main():
         "--scale", type=int, default=2, choices=[1, 2, 3],
         help="Asset scale: 1, 2 (@2x), or 3 (@3x). Used with --size (default: 2)"
     )
+    parser.add_argument(
+        "--no-bg", action="store_true",
+        help="Skip background removal — keep original colors (use for backgrounds without white BG)"
+    )
 
     args = parser.parse_args()
 
@@ -362,6 +426,7 @@ def main():
         frames_only=args.frames,
         max_pt=args.size,
         scale=args.scale,
+        remove_bg=not args.no_bg,
     )
 
 
