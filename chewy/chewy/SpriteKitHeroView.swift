@@ -12,9 +12,9 @@ struct SpriteKitHeroView: View {
     let status: HeroStatus
 
     // Scene stored in @State so it's never recreated on re-render
-    // Size = native @2x asset size (466×995px) → displayed at 233×497pt
+    // Size = native @2x asset size (506×1060px) → displayed at 253×530pt
     @State private var scene: HeroScene = {
-        let s = HeroScene(size: CGSize(width: 466, height: 995))
+        let s = HeroScene(size: CGSize(width: 506, height: 1060))
         s.backgroundColor = .clear
         s.scaleMode = .resizeFill
         return s
@@ -22,7 +22,7 @@ struct SpriteKitHeroView: View {
 
     var body: some View {
         SpriteView(scene: scene, options: [.allowsTransparency])
-            .frame(width: 233, height: 497)   // pt = px / 2 (@2x)
+            .frame(width: 253, height: 530)   // pt = px / 2 (@2x)
             .onChange(of: status) { _, newStatus in
                 scene.heroStatus = newStatus
             }
@@ -68,8 +68,9 @@ final class HeroScene: SKScene {
     private func setupSprite() {
         guard let first = allTextures.first else { return }
         let node = SKSpriteNode(texture: first)
-        // Natural texture size — no scaling
-        node.size = first.size()
+        // Fix the node size to the scene canvas so SKAction.animate
+        // never resizes it when switching textures (prevents jitter).
+        node.size = size
         node.position = CGPoint(x: size.width / 2, y: size.height / 2)
         addChild(node)
         spriteNode = node
@@ -93,14 +94,15 @@ final class HeroScene: SKScene {
             spriteNode?.run(SKAction.repeatForever(pulse), withKey: "pulse")
 
         case .happy:
-            let fast = SKAction.animate(with: allTextures, timePerFrame: 1.0 / (Self.fps * 1.5))
-            let hold = SKAction.setTexture(allTextures.last!)
+            let fast = SKAction.animate(with: allTextures, timePerFrame: 1.0 / (Self.fps * 1.5), resize: false, restore: false)
+            let hold = SKAction.setTexture(allTextures.last!, resize: false)
             spriteNode?.run(SKAction.sequence([fast, hold]))
         }
     }
 
     private func playLoop(textures: [SKTexture], fps: Double) {
-        let anim = SKAction.animate(with: textures, timePerFrame: 1.0 / fps)
+        // resize: false — node size stays fixed, only texture swaps → no jitter
+        let anim = SKAction.animate(with: textures, timePerFrame: 1.0 / fps, resize: false, restore: false)
         spriteNode?.run(SKAction.repeatForever(anim), withKey: "anim")
     }
 }

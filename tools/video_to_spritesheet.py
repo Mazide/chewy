@@ -97,28 +97,15 @@ def remove_white_background(frame_bgr: np.ndarray, threshold: int = 20) -> Image
         (gc_mask == cv2.GC_BGD) | (gc_mask == cv2.GC_PR_BGD), 0, 1
     ).astype(np.uint8)
 
-    rgba = np.dstack([rgb, fg_mask * 255])
+    # Feather the mask edges: erode slightly then gaussian-blur the alpha
+    # so ±1-2px GrabCut jitter between frames becomes invisible.
+    kernel = np.ones((3, 3), np.uint8)
+    fg_mask = cv2.erode(fg_mask, kernel, iterations=1)
+    alpha = (fg_mask * 255).astype(np.uint8)
+    alpha = cv2.GaussianBlur(alpha, (5, 5), sigmaX=1.5)
+
+    rgba = np.dstack([rgb, alpha])
     return Image.fromarray(rgba, "RGBA")
-
-
-# ---------------------------------------------------------------------------
-# Frame cropping
-# ---------------------------------------------------------------------------
-
-def auto_crop(image: Image.Image) -> Image.Image:
-    """
-    Crop transparent borders from an RGBA image.
-    Returns the original image if fully transparent.
-    """
-    bbox = image.getbbox()
-    if bbox is None:
-        return image
-    return image.crop(bbox)
-
-
-def get_content_bbox(image: Image.Image):
-    """Return bounding box of non-transparent content, or None."""
-    return image.getbbox()
 
 
 # ---------------------------------------------------------------------------
@@ -181,7 +168,6 @@ def extract_frames(
     video_path: Path,
     threshold: int,
     step: int,
-    crop: bool,
     remove_bg: bool = True,
 ) -> tuple[list[Image.Image], float]:
     """Extract and process frames from video. Returns (frames, fps)."""
@@ -207,11 +193,6 @@ def extract_frames(
         if frame_idx % step == 0:
             if remove_bg:
                 rgba = remove_white_background(bgr, threshold=threshold)
-                if crop:
-                    rgba = auto_crop(rgba)
-                if rgba.getbbox() is None:
-                    frame_idx += 1
-                    continue
             else:
                 rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
                 rgba = Image.fromarray(rgb, "RGB").convert("RGBA")
@@ -227,6 +208,60 @@ def extract_frames(
 
 
 
+
+
+def stabilize_frames(frames: list[Image.Image]) -> list[Image.Image]:
+    """
+    Shift each frame so that:
+      - horizontally: alpha center-of-mass aligns to the median cx
+      - vertically:   the BOTTOM edge of content aligns to the median bottom edge
+
+    Aligning by bottom edge keeps feet/legs perfectly still, which is what
+    the eye notices most. Canvas grows to fit all shifts without clipping.
+    """
+    import numpy as np
+    import statistics
+
+    def anchor_points(img: Image.Image):
+        arr = np.array(img)
+        alpha = arr[:, :, 3].astype(float)
+        total = alpha.sum()
+        # horizontal: center of mass
+        cx = (alpha * np.arange(img.width)).sum() / total if total else img.width / 2
+        # vertical: lowest non-transparent row (bottom edge of feet)
+        rows_with_content = np.where(np.any(alpha > 10, axis=1))[0]
+        bottom_y = int(rows_with_content[-1]) if len(rows_with_content) else img.height - 1
+        return cx, bottom_y
+
+    anchors = [anchor_points(f) for f in frames]
+    target_cx     = statistics.median(a[0] for a in anchors)
+    target_bottom = statistics.median(a[1] for a in anchors)
+
+    # Integer shift per frame: move cx → target_cx, bottom → target_bottom
+    shifts = [
+        (round(target_cx - cx), round(target_bottom - bottom_y))
+        for cx, bottom_y in anchors
+    ]
+
+    # Canvas large enough to hold all shifted frames without clipping
+    max_left  = max(-min(sx for sx, _ in shifts), 0)
+    max_right = max( max(sx for sx, _ in shifts), 0)
+    max_top   = max(-min(sy for _, sy in shifts), 0)
+    max_bot   = max( max(sy for _, sy in shifts), 0)
+
+    base_w, base_h = frames[0].width, frames[0].height
+    canvas_w = base_w + max_left + max_right
+    canvas_h = base_h + max_top  + max_bot
+
+    result = []
+    for frame, (sx, sy) in zip(frames, shifts):
+        canvas = Image.new("RGBA", (canvas_w, canvas_h), (0, 0, 0, 0))
+        canvas.paste(frame, (max_left + sx, max_top + sy), frame)
+        result.append(canvas)
+
+    print(f"[INFO] Stabilized {len(frames)} frames: canvas {base_w}x{base_h} → {canvas_w}x{canvas_h}, "
+          f"target cx={target_cx:.1f}, target bottom={target_bottom:.0f}")
+    return result
 
 
 def resize_frame(image: Image.Image, max_pt: int, scale: int) -> Image.Image:
@@ -251,15 +286,19 @@ def process_video(
     threshold: int = 20,
     cols: int = 8,
     step: int = 1,
-    crop: bool = True,
     frames_only: bool = False,
     max_pt: int | None = None,
     scale: int = 2,
     remove_bg: bool = True,
+    stabilize: bool = False,
+    name: str | None = None,
 ):
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    frames, fps = extract_frames(video_path, threshold=threshold, step=step, crop=crop, remove_bg=remove_bg)
+    frames, fps = extract_frames(video_path, threshold=threshold, step=step, remove_bg=remove_bg)
+
+    if stabilize:
+        frames = stabilize_frames(frames)
 
     if max_pt is not None:
         frames = [resize_frame(f, max_pt, scale) for f in frames]
@@ -270,7 +309,7 @@ def process_video(
         print("[ERROR] No usable frames extracted. Try increasing --threshold.", file=sys.stderr)
         sys.exit(1)
 
-    stem = video_path.stem
+    stem = name if name else video_path.stem
 
     if frames_only:
         # ── Export as .spriteatlas (each frame in its own .imageset) ────────
@@ -386,10 +425,6 @@ def main():
         help="Use every Nth frame (default: 1 = all frames). Use 2 to halve frame count."
     )
     parser.add_argument(
-        "--no-crop", action="store_true",
-        help="Disable per-frame auto-crop (keeps uniform frame size from source)"
-    )
-    parser.add_argument(
         "--frames", "-f", action="store_true",
         help="Export individual PNG frames instead of a sprite sheet (use for SpriteKit .spriteatlas)"
     )
@@ -405,6 +440,15 @@ def main():
     parser.add_argument(
         "--no-bg", action="store_true",
         help="Skip background removal — keep original colors (use for backgrounds without white BG)"
+    )
+    parser.add_argument(
+        "--stabilize", action="store_true",
+        help="Align each frame's alpha center-of-mass to the median position across all frames "
+             "(fixes camera drift / jitter from AI-generated video)"
+    )
+    parser.add_argument(
+        "--name", "-n", type=str, default=None,
+        help="Frame name prefix (default: video filename stem). E.g. --name idle → idle_000, idle_001…"
     )
 
     args = parser.parse_args()
@@ -422,11 +466,12 @@ def main():
         threshold=args.threshold,
         cols=args.cols,
         step=args.step,
-        crop=not args.no_crop,
         frames_only=args.frames,
         max_pt=args.size,
         scale=args.scale,
         remove_bg=not args.no_bg,
+        stabilize=args.stabilize,
+        name=args.name,
     )
 
 
