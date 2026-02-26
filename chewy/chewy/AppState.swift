@@ -5,22 +5,39 @@
 
 import Foundation
 import SwiftUI
-import Combine
+internal import Combine
 
 @MainActor
 final class AppState: ObservableObject {
     @Published var heroStatus: HeroStatus = .idle
+    @Published var analysisResult: FoodAnalysisResult?
+    @Published var isAnalyzing = false
 
-    func didAddFood() async {
+    let analyzer: any FoodAnalyzerService
+
+    init(analyzer: (any FoodAnalyzerService)? = nil) {
+        if let analyzer {
+            self.analyzer = analyzer
+        } else {
+            let key = Secrets.geminiAPIKey
+            self.analyzer = key.isEmpty ? MockFoodAnalyzer() : GeminiFoodAnalyzer(apiKey: key)
+        }
+    }
+
+    func didAddFood(image: UIImage) async {
+        isAnalyzing = true
         heroStatus = .eating
 
-        try? await Task.sleep(nanoseconds: 2_000_000_000)
+        do {
+            analysisResult = try await analyzer.analyze(image: image)
+        } catch {
+            print("Food analysis error:", error.localizedDescription)
+        }
 
+        isAnalyzing = false
         heroStatus = .happy
 
-        try? await Task.sleep(nanoseconds: 3_000_000_000)
-        if heroStatus == .happy {
-            heroStatus = .idle
-        }
+        try? await Task.sleep(for: .seconds(3))
+        if heroStatus == .happy { heroStatus = .idle }
     }
 }

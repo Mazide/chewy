@@ -5,6 +5,7 @@
 
 import SwiftUI
 import AVFoundation
+import PhotosUI
 
 // MARK: - Main View
 
@@ -12,117 +13,77 @@ struct AddFoodView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.dismiss) private var dismiss
 
+    @State private var captureRequested = false
+    @State private var photosPickerItem: PhotosPickerItem?
+
     var body: some View {
         ZStack {
-            // Background — dark purple like reference
-            Color(red: 0.22, green: 0.18, blue: 0.28)
-                .ignoresSafeArea()
+            Color.black.ignoresSafeArea()
 
             VStack(spacing: 0) {
 
-                // Drag pill — swipe down to dismiss (native sheet behaviour)
-                Capsule()
-                    .fill(Color.white.opacity(0.25))
-                    .frame(width: 36, height: 5)
-                    .padding(.top, 12)
-                    .padding(.bottom, 20)
-
-                // ── Scroll banner ─────────────────────────────────────
-                // GREYBOX — replace with Image("scroll_banner")
-                ZStack {
-                    RoundedRectangle(cornerRadius: 10)
-                        .fill(Color(red: 0.85, green: 0.72, blue: 0.45))
-                        .frame(width: 270, height: 54)
-                        .shadow(color: .black.opacity(0.35), radius: 6, y: 4)
-
-                    Text("ANALYZE ESSENCE")
-                        .font(.system(size: 17, weight: .black, design: .serif))
-                        .foregroundColor(Color(red: 0.22, green: 0.10, blue: 0.02))
-                        .tracking(1.5)
-                }
-                // Uncomment when asset is ready:
-                // Image("scroll_banner")
-                //     .resizable().scaledToFit().frame(width: 300)
-
-                Spacer()
-
-                // ── Lens + hero ───────────────────────────────────────
-                ZStack(alignment: .bottomTrailing) {
-
-                    // Camera inside circle
-                    ZStack {
-                        CameraView()
-                            .frame(width: 260, height: 260)
-
-                        // Glare
-                        Ellipse()
-                            .fill(.white.opacity(0.12))
-                            .frame(width: 80, height: 44)
-                            .offset(x: -42, y: -62)
-                            .blur(radius: 6)
+                // ── Camera + label ────────────────────────────────────────
+                ZStack(alignment: .top) {
+                    CameraView(captureRequested: $captureRequested) { image in
+                        Task { await appState.didAddFood(image: image) }
+                        dismiss()
                     }
-                    .clipShape(Circle())
-                    .frame(width: 260, height: 260)
+                    .ignoresSafeArea(edges: .top)
 
-                    // Lens rim — GREYBOX, replace with Image("magnifier_lens")
-                    Circle()
-                        .strokeBorder(
-                            LinearGradient(
-                                colors: [
-                                    .white.opacity(0.9),
-                                    Color(red: 0.5, green: 0.9, blue: 1.0).opacity(0.7),
-                                    Color(red: 0.7, green: 0.4, blue: 1.0).opacity(0.6),
-                                    .white.opacity(0.5),
-                                ],
-                                startPoint: .topLeading,
-                                endPoint: .bottomTrailing
-                            ),
-                            lineWidth: 16
-                        )
-                        .frame(width: 260, height: 260)
-                    // Uncomment when asset is ready:
-                    // Image("magnifier_lens")
-                    //     .resizable().scaledToFit()
-                    //     .frame(width: 292, height: 292)
-
-                    // Hero peeking from bottom-right corner
-                    SpriteKitHeroView(status: .idle)
-                        .frame(width: 80, height: 171)   // ~1/3 width, native aspect
-                        .clipped()
-                        .offset(x: 28, y: 20)
-                }
-                // Centre the lens+hero group, give enough room for hero peek
-                .frame(width: 292, height: 300)
-
-                Spacer()
-
-                // ── Feed button ───────────────────────────────────────
-                Button {
-                    dismiss()
-                    Task { await appState.didAddFood() }
-                } label: {
-                    Text("FEED!")
-                        .font(.system(size: 24, weight: .black, design: .rounded))
+                    // GREYBOX label — replace with scroll banner asset
+                    Text("ANALYZE ESSENCE")
+                        .font(.system(size: 15, weight: .bold))
                         .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 20)
-                        .background(
-                            LinearGradient(
-                                colors: [
-                                    Color(red: 1.0, green: 0.60, blue: 0.10),
-                                    Color(red: 0.85, green: 0.32, blue: 0.05),
-                                ],
-                                startPoint: .top,
-                                endPoint: .bottom
-                            )
-                        )
-                        .clipShape(RoundedRectangle(cornerRadius: 18))
-                        .shadow(color: Color(red: 0.9, green: 0.35, blue: 0.05).opacity(0.55),
-                                radius: 12, x: 0, y: 6)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(Color.gray.opacity(0.7))
+                        .cornerRadius(8)
+                        .padding(.top, 16)
                 }
-                .buttonStyle(.plain)
-                .padding(.horizontal, 28)
-                .padding(.bottom, 48)
+
+                // ── Toolbar ───────────────────────────────────────────────
+                HStack(spacing: 16) {
+                    Spacer()
+
+                    // GREYBOX button — gallery picker
+                    PhotosPicker(selection: $photosPickerItem, matching: .images) {
+                        Text("Gallery")
+                            .font(.system(size: 15, weight: .semibold))
+                            .foregroundColor(.white)
+                            .frame(width: 90, height: 50)
+                            .background(Color.gray.opacity(0.5))
+                            .cornerRadius(10)
+                    }
+                    .onChange(of: photosPickerItem) { _, item in
+                        guard let item else { return }
+                        Task {
+                            if let data = try? await item.loadTransferable(type: Data.self),
+                               let image = UIImage(data: data) {
+                                await appState.didAddFood(image: image)
+                                dismiss()
+                            }
+                        }
+                    }
+
+                    // GREYBOX button — replace with FEED! rune button
+                    Button {
+                        captureRequested = true
+                    } label: {
+                        Text(appState.isAnalyzing ? "..." : "FEED!")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundColor(.white)
+                            .frame(width: 120, height: 50)
+                            .background(Color.gray.opacity(appState.isAnalyzing ? 0.3 : 0.6))
+                            .cornerRadius(10)
+                    }
+                    .buttonStyle(.plain)
+                    .disabled(appState.isAnalyzing)
+
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 16)
+                .background(Color(white: 0.15))
             }
         }
     }
@@ -131,35 +92,125 @@ struct AddFoodView: View {
 // MARK: - Camera
 
 struct CameraView: UIViewRepresentable {
+    @Binding var captureRequested: Bool
+    var onCapture: (UIImage) -> Void
+
+    func makeCoordinator() -> Coordinator { Coordinator() }
+
     func makeUIView(context: Context) -> UIView {
 #if targetEnvironment(simulator)
-        let view = UIView()
-        view.backgroundColor = UIColor(white: 0.08, alpha: 1)
-        let label = UILabel()
-        label.text = "📷"
-        label.font = .systemFont(ofSize: 52)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        ])
+        let view = SimulatorCameraPlaceholder()
+        context.coordinator.simulatorView = view
         return view
 #else
         let view = PreviewView()
         view.startSession()
+        context.coordinator.previewView = view
         return view
 #endif
     }
-    func updateUIView(_ uiView: UIView, context: Context) {}
+
+    func updateUIView(_ uiView: UIView, context: Context) {
+        guard captureRequested else { return }
+        let binding = _captureRequested
+        context.coordinator.capture(completion: onCapture) {
+            DispatchQueue.main.async { binding.wrappedValue = false }
+        }
+    }
+
+    final class Coordinator: NSObject {
+        private var isCapturing = false
+
+#if targetEnvironment(simulator)
+        var simulatorView: SimulatorCameraPlaceholder?
+#else
+        var previewView: PreviewView?
+#endif
+
+        func capture(completion: @escaping (UIImage) -> Void, done: @escaping () -> Void) {
+            guard !isCapturing else { done(); return }
+            isCapturing = true
+#if targetEnvironment(simulator)
+            let image = simulatorView?.placeholderImage() ?? UIImage(systemName: "fork.knife")!
+            completion(image)
+            isCapturing = false
+            done()
+#else
+            previewView?.capturePhoto { [weak self] image in
+                self?.isCapturing = false
+                completion(image)
+                done()
+            }
+#endif
+        }
+    }
 }
+
+// MARK: - Simulator placeholder
+
+#if targetEnvironment(simulator)
+final class SimulatorCameraPlaceholder: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    required init?(coder: NSCoder) { fatalError() }
+
+    private func setup() {
+        backgroundColor = UIColor(red: 0.10, green: 0.09, blue: 0.08, alpha: 1)
+
+        let gradient = CAGradientLayer()
+        gradient.colors = [
+            UIColor(red: 0.20, green: 0.16, blue: 0.12, alpha: 1).cgColor,
+            UIColor(red: 0.08, green: 0.07, blue: 0.06, alpha: 1).cgColor,
+        ]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0)
+        gradient.endPoint   = CGPoint(x: 0.5, y: 1)
+        gradient.name = "bg"
+        layer.insertSublayer(gradient, at: 0)
+
+        let iv: UIImageView
+        if let asset = UIImage(named: "camera_placeholder") {
+            iv = UIImageView(image: asset)
+            iv.contentMode = .scaleAspectFill
+        } else {
+            let config = UIImage.SymbolConfiguration(pointSize: 72, weight: .ultraLight)
+            iv = UIImageView(image: UIImage(systemName: "fork.knife.circle", withConfiguration: config))
+            iv.tintColor = UIColor.white.withAlphaComponent(0.18)
+            iv.contentMode = .scaleAspectFit
+        }
+        iv.clipsToBounds = true
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(iv)
+
+        NSLayoutConstraint.activate([
+            iv.topAnchor.constraint(equalTo: topAnchor),
+            iv.bottomAnchor.constraint(equalTo: bottomAnchor),
+            iv.leadingAnchor.constraint(equalTo: leadingAnchor),
+            iv.trailingAnchor.constraint(equalTo: trailingAnchor),
+        ])
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.sublayers?.first(where: { $0.name == "bg" })?.frame = bounds
+    }
+
+    // Returns placeholder image for simulator capture simulation
+    func placeholderImage() -> UIImage? {
+        UIImage(named: "camera_placeholder")
+    }
+}
+#endif
 
 // MARK: - Real camera preview (device only)
 
 #if !targetEnvironment(simulator)
-final class PreviewView: UIView {
-    private let session = AVCaptureSession()
+final class PreviewView: UIView, AVCapturePhotoCaptureDelegate {
+    private let session     = AVCaptureSession()
+    private let photoOutput = AVCapturePhotoOutput()
+    private var captureCompletion: ((UIImage) -> Void)?
+
     override class var layerClass: AnyClass { AVCaptureVideoPreviewLayer.self }
     private var previewLayer: AVCaptureVideoPreviewLayer { layer as! AVCaptureVideoPreviewLayer }
 
@@ -182,7 +233,22 @@ final class PreviewView: UIView {
         if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back),
            let input = try? AVCaptureDeviceInput(device: device),
            session.canAddInput(input) { session.addInput(input) }
+        if session.canAddOutput(photoOutput) { session.addOutput(photoOutput) }
         session.commitConfiguration()
+    }
+
+    func capturePhoto(completion: @escaping (UIImage) -> Void) {
+        captureCompletion = completion
+        photoOutput.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+    }
+
+    func photoOutput(_ output: AVCapturePhotoOutput,
+                     didFinishProcessingPhoto photo: AVCapturePhoto,
+                     error: Error?) {
+        guard let data = photo.fileDataRepresentation(),
+              let image = UIImage(data: data) else { return }
+        captureCompletion?(image)
+        captureCompletion = nil
     }
 
     override func layoutSubviews() {

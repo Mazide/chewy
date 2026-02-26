@@ -1,2 +1,17 @@
+# Xcode
+build/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+xcuserdata/
+
+# OS
+.DS_Store
+*.swp
+*~
+
+# API keys — never commit
+chewy/chewy/Secrets.plist
+
 # Python virtual environment
 tools/.venv/
