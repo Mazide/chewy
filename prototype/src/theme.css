@@ -1,0 +1,25 @@
+/* Chewy design tokens — Adventure Time cartoon vibe */
+:root {
+  --chewy-green: #2e9e4f;
+  --chewy-green-dark: #1f7a3b;
+  --chewy-orange: #ff8a3d;
+  --chewy-orange-dark: #e5722a;
+  --chewy-dark: #141414;
+  --chewy-dark-2: #262626;
+  --chewy-cream: #fff7e8;
+  --chewy-ink: #1c1206;
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  --font-round: system-ui, "SF Pro Rounded", "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-round);
+}
