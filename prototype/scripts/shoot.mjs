@@ -52,7 +52,7 @@ for (const id of stories) {
   await page.goto(`http://localhost:${PORT}/iframe.html?id=${id}&viewMode=story`, {
     waitUntil: 'networkidle',
   });
-  await page.waitForTimeout(700); // let animations settle
+  await page.waitForTimeout(1600); // let video buffer + sprite sheet load
   const root = page.locator('#storybook-root > *').first();
   const out = join(OUT, `${id}.png`);
   await root.screenshot({ path: out });

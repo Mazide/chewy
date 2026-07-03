@@ -39,6 +39,37 @@ src/
 
 Каждый компонент/экран имеет свой `*.stories.jsx` с состояниями и контролами.
 
+## Ассеты из натива
+
+В `public/assets/` лежат реальные ассеты приложения, чтобы прототип выглядел
+как натив:
+
+| Файл | Источник | Как используется |
+|------|----------|------------------|
+| `hero_idle_sheet.png` (+`.json`) | `hero.spriteatlas` (121 кадр, alpha) | спрайтшит, `Hero` рисует его на canvas |
+| `background.webm` | `background.spriteatlas` (242 кадра) | анимированный фон домашнего экрана |
+| `add_meal_icon.png` | `add_meal_icon.imageset` | иконка FAB |
+| `camera_placeholder.jpg` | `camera_placeholder.imageset` | превью камеры |
+
+Перегенерировать из `chewy/chewy/Assets.xcassets` (нужен `sharp` + ffmpeg):
+
+```bash
+npm install --no-save sharp
+node scripts/encode-assets.mjs
+```
+
+Тайминги анимации героя (idle/eating/happy) в `Hero.jsx` повторяют
+`HeroScene.swift` (24 fps, 0.6× на eating + пульс, 1.5× на happy с фиксацией
+последнего кадра).
+
+## Скриншоты экранов
+
+```bash
+npm install --no-save playwright
+node scripts/build-storybook   # если ещё не собран
+node scripts/shoot.mjs [storyId ...]   # → shots/*.png
+```
+
 ## Как прототипировать
 
 1. Открой Storybook, выбери компонент слева.

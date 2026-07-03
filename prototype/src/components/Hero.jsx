@@ -1,68 +1,95 @@
+import { useEffect, useRef } from 'react';
 import { SpeechBubble } from './SpeechBubble.jsx';
 
 /**
- * Hero — the creature that reflects the user's nutrition quality.
- * Mirrors HeroView.swift. Sprite is a placeholder emoji for now
- * (same approach as the app's HeroSpriteView stub).
- *
- * status: 'idle' | 'eating' | 'happy'
+ * Hero — real sprite animation from the native atlas.
+ * Frames come from a PNG sheet (public/assets/hero_idle_sheet.png), drawn to a
+ * canvas. Timing mirrors HeroScene.swift:
+ *   idle   → loop @ 24 fps
+ *   eating → loop @ 24*0.6 fps + scale pulse
+ *   happy  → play once @ 24*1.5 fps, then hold the last frame
  */
-const FACES = {
-  idle: { emoji: '🤖', tint: '#9aa0a6', label: "I'm hungry..." },
-  eating: { emoji: '😋', tint: '#ffd23f', label: 'Analysing your meal...' },
-  happy: { emoji: '😄', tint: '#7ed957', label: 'That was delicious!' },
+const SHEET = '/assets/hero_idle_sheet.png';
+const FW = 152, FH = 318, COLS = 11, COUNT = 121, FPS = 24;
+const DISPLAY_W = 182, DISPLAY_H = 380;
+
+const LABEL = {
+  idle: "I'm hungry...",
+  eating: 'Analysing your meal...',
+  happy: 'That was delicious!',
 };
 
+// One shared decoded sheet across all Hero instances.
+let sheetImg = null;
+function loadSheet() {
+  if (sheetImg) return sheetImg;
+  sheetImg = new Image();
+  sheetImg.src = SHEET;
+  return sheetImg;
+}
+
 export function Hero({ status = 'idle', showBubble = true }) {
-  const face = FACES[status] ?? FACES.idle;
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const img = loadSheet();
+    const ctx = canvasRef.current.getContext('2d');
+    const w = canvasRef.current.width;
+    const h = canvasRef.current.height;
+    const fps = status === 'eating' ? FPS * 0.6 : status === 'happy' ? FPS * 1.5 : FPS;
+    const start = performance.now();
+    let raf;
+
+    const draw = (now) => {
+      if (img.complete && img.naturalWidth) {
+        let frame = Math.floor(((now - start) / 1000) * fps);
+        frame = status === 'happy' ? Math.min(frame, COUNT - 1) : frame % COUNT;
+        const sx = (frame % COLS) * FW;
+        const sy = Math.floor(frame / COLS) * FH;
+        ctx.clearRect(0, 0, w, h);
+        ctx.drawImage(img, sx, sy, FW, FH, 0, 0, w, h);
+      }
+      raf = requestAnimationFrame(draw);
+    };
+    raf = requestAnimationFrame(draw);
+    return () => cancelAnimationFrame(raf);
+  }, [status]);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        gap: 12,
-        userSelect: 'none',
-      }}
-    >
-      <div style={{ position: 'relative', display: 'grid', placeItems: 'center' }}>
-        <div
-          key={status}
-          className={`chewy-hero chewy-hero--${status}`}
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+      <div className={status === 'eating' ? 'chewy-pulse' : undefined} style={{ position: 'relative' }}>
+        <canvas
+          ref={canvasRef}
+          width={FW * 2}
+          height={FH * 2}
           style={{
-            fontSize: 120,
-            lineHeight: 1,
-            filter: `drop-shadow(0 8px 10px rgba(0,0,0,.35))`,
-            color: face.tint,
+            width: DISPLAY_W,
+            height: DISPLAY_H,
+            display: 'block',
+            filter: 'drop-shadow(0 10px 10px rgba(0,0,0,.35))',
           }}
-        >
-          {face.emoji}
-        </div>
-        {/* contact shadow */}
+        />
+        {/* contact shadow at the feet */}
         <div
           style={{
             position: 'absolute',
-            bottom: -6,
+            bottom: 4,
+            left: '50%',
+            transform: 'translateX(-50%)',
             width: 120,
             height: 22,
             borderRadius: '50%',
-            background:
-              'radial-gradient(ellipse at center, rgba(0,0,0,.35), rgba(0,0,0,0) 70%)',
+            background: 'radial-gradient(ellipse at center, rgba(0,0,0,.35), rgba(0,0,0,0) 70%)',
             filter: 'blur(2px)',
           }}
         />
       </div>
 
-      {showBubble && <SpeechBubble text={face.label} />}
+      {showBubble && <SpeechBubble text={LABEL[status] ?? LABEL.idle} />}
 
       <style>{`
-        @keyframes chewy-bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
-        @keyframes chewy-chew { 0%,100% { transform: scale(1) } 50% { transform: scale(1.08) } }
-        @keyframes chewy-pop  { 0% { transform: scale(.7) } 60% { transform: scale(1.12) } 100% { transform: scale(1) } }
-        .chewy-hero--idle   { animation: chewy-bob 3s ease-in-out infinite; }
-        .chewy-hero--eating { animation: chewy-chew .5s ease-in-out infinite; }
-        .chewy-hero--happy  { animation: chewy-pop .6s ease-out; }
+        @keyframes chewy-pulse-kf { 0%,100% { transform: scale(1) } 50% { transform: scale(1.06) } }
+        .chewy-pulse { animation: chewy-pulse-kf 1s ease-in-out infinite; }
       `}</style>
     </div>
   );

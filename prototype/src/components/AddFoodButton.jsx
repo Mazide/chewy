@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 /**
- * AddFoodButton — the round FAB on the home screen.
- * Mirrors the "add_meal_icon" button in HomeView.swift (press-scale).
+ * AddFoodButton — the home-screen FAB. Uses the real "add_meal_icon" asset
+ * from the app, with the same press-scale as HomeView.swift.
  */
 export function AddFoodButton({ onClick, size = 80 }) {
   const [pressed, setPressed] = useState(false);
@@ -17,22 +17,24 @@ export function AddFoodButton({ onClick, size = 80 }) {
       style={{
         width: size,
         height: size,
-        borderRadius: '50%',
+        padding: 0,
         border: 'none',
+        background: 'transparent',
         cursor: 'pointer',
-        display: 'grid',
-        placeItems: 'center',
-        fontSize: size * 0.45,
-        color: '#fff',
-        background: 'linear-gradient(180deg, var(--chewy-orange), var(--chewy-orange-dark))',
-        boxShadow: pressed
-          ? '0 2px 6px rgba(0,0,0,.3)'
-          : '0 10px 18px rgba(0,0,0,.35), 0 3px 6px rgba(0,0,0,.2)',
         transform: pressed ? 'scale(.88)' : 'scale(1)',
-        transition: 'transform .15s cubic-bezier(.34,1.56,.64,1), box-shadow .15s',
+        transition: 'transform .15s cubic-bezier(.34,1.56,.64,1)',
       }}
     >
-      +
+      <img
+        src="/assets/add_meal_icon.png"
+        alt=""
+        width={size}
+        height={size}
+        style={{
+          display: 'block',
+          filter: 'drop-shadow(0 6px 12px rgba(0,0,0,.35)) drop-shadow(0 2px 4px rgba(0,0,0,.15))',
+        }}
+      />
     </button>
   );
 }

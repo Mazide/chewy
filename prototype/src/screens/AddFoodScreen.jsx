@@ -19,10 +19,21 @@ export function AddFoodScreen({ analyzing = false, onFeed }) {
             position: 'relative',
             display: 'grid',
             placeItems: 'center',
-            background: 'linear-gradient(180deg, #33291e, #100d0a)',
+            overflow: 'hidden',
+            background: '#100d0a',
           }}
         >
-          <div style={{ fontSize: 64, opacity: 0.2 }}>🍽️</div>
+          <img
+            src="/assets/camera_placeholder.jpg"
+            alt=""
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
 
           <div
             style={{
