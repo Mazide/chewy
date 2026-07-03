@@ -24,7 +24,7 @@ export function HomeScreen({ status = 'idle', meals = [], onAddFood }) {
         </div>
 
         {/* Meal log */}
-        <div style={{ padding: '0 16px 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+        <div style={{ padding: '0 16px 116px', display: 'flex', flexDirection: 'column', gap: 8 }}>
           {meals.length === 0 ? (
             <div
               style={{

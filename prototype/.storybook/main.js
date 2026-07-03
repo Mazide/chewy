@@ -6,6 +6,12 @@ const config = {
     name: '@storybook/react-vite',
     options: {},
   },
+  async viteFinal(config) {
+    const { mergeConfig } = await import('vite');
+    return mergeConfig(config, {
+      esbuild: { jsxInject: "import React from 'react'" },
+    });
+  },
 };
 
 export default config;
