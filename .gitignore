@@ -15,3 +15,9 @@ chewy/chewy/Secrets.plist
 
 # Python virtual environment
 tools/.venv/
+
+# Storybook prototype
+prototype/node_modules/
+prototype/storybook-static/
+prototype/dist/
+*.tsbuildinfo
