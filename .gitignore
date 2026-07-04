@@ -12,6 +12,11 @@ xcuserdata/
 
 # API keys — never commit
 chewy/chewy/Secrets.plist
+.env
+
+# Gemini benchmark — personal photos + results stay local
+scripts/benchmark-photos/
+scripts/benchmark-results.csv
 
 # Python virtual environment
 tools/.venv/
