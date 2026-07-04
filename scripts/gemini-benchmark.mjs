@@ -9,7 +9,9 @@
 // Results: scripts/benchmark-results.csv + console summary. Then eyeball the CSV against
 // reality and count misreads (target: <20%, see docs/TODO.md).
 //
-// API key resolution order: $GEMINI_API_KEY → chewy/chewy/Secrets.plist → .env
+// API key resolution order: $GEMINI_API_KEY → macOS Keychain (service
+// "chewy-gemini") → chewy/chewy/Secrets.plist → .env
+// Store the key with: security add-generic-password -a "$USER" -s chewy-gemini -w
 // Images are downscaled to 768px JPEG via `sips` (macOS) to match the app pipeline.
 
 import { execFileSync } from "node:child_process";
@@ -64,6 +66,17 @@ const RESPONSE_SCHEMA = {
 
 function loadApiKey() {
   if (process.env.GEMINI_API_KEY) return process.env.GEMINI_API_KEY.trim();
+
+  try {
+    const key = execFileSync("security", ["find-generic-password", "-s", "chewy-gemini", "-w"], {
+      stdio: ["ignore", "pipe", "ignore"],
+    })
+      .toString()
+      .trim();
+    if (key) return key;
+  } catch {
+    // not in the keychain — fall through
+  }
 
   const plist = path.join(ROOT, "chewy/chewy/Secrets.plist");
   if (fs.existsSync(plist)) {
