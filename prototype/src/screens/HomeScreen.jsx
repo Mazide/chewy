@@ -29,9 +29,9 @@ export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday
         )}
         {onJournal && (
           <div style={{ position: 'absolute', top: 44, right: 12, zIndex: 3, display: 'flex', flexDirection: 'column', gap: 10 }}>
-            <IconOrb emoji="🗺️" onClick={onJournal} />
-            <IconOrb emoji="🧭" onClick={onPath} />
-            <IconOrb emoji="🎒" onClick={onBackpack} />
+            <IconOrb icon="/assets/gen/packA/orb_map.png" onClick={onJournal} />
+            <IconOrb icon="/assets/gen/packA/orb_compass.png" onClick={onPath} />
+            <IconOrb icon="/assets/gen/packA/orb_backpack.png" onClick={onBackpack} />
           </div>
         )}
 

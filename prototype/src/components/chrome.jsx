@@ -3,8 +3,33 @@
  * Wood signs, chunky material buttons, parchment panels over a blurred camp.
  */
 
-/** Hanging wooden sign used as a screen title. */
-export function WoodBanner({ children, bg = 'linear-gradient(180deg, #8a5a30, #6b4226)', color = '#ffe9c9' }) {
+/** Hanging wooden sign used as a screen title.
+ *  Default = generated plank art (pack A); passing `bg` keeps the CSS slab
+ *  so analysis themes can reskin it. */
+export function WoodBanner({ children, bg, color = '#ffe9c9' }) {
+  if (!bg) {
+    return (
+      <div style={{ display: 'grid', placeItems: 'center' }}>
+        <div
+          style={{
+            backgroundImage: 'url(/assets/gen/packA/plank.png)',
+            backgroundSize: '100% 100%',
+            padding: '26px 46px 22px',
+            minWidth: 190,
+            textAlign: 'center',
+            color,
+            font: '800 15px var(--font-round)',
+            letterSpacing: 1,
+            textShadow: '0 2px 3px rgba(0,0,0,.55)',
+            transform: 'rotate(-1deg)',
+            filter: 'drop-shadow(0 4px 4px rgba(0,0,0,.35))',
+          }}
+        >
+          {children}
+        </div>
+      </div>
+    );
+  }
   return (
     <div style={{ display: 'grid', placeItems: 'center' }}>
       <div
@@ -56,8 +81,18 @@ export function ChunkyButton({ children, onClick, color = 'var(--chewy-orange)',
   );
 }
 
-/** Round wooden icon button for hub navigation (map, backpack, path). */
-export function IconOrb({ emoji, onClick, size = 46 }) {
+/** World-object nav button: generated item art (pack A) or an emoji fallback. */
+export function IconOrb({ emoji, icon, onClick, size = 46 }) {
+  if (icon) {
+    return (
+      <button
+        onClick={onClick}
+        style={{ width: size + 10, height: size + 10, padding: 0, background: 'none', border: 'none', cursor: 'pointer' }}
+      >
+        <img src={icon} alt="" style={{ width: '100%', display: 'block', filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.45))' }} />
+      </button>
+    );
+  }
   return (
     <button
       onClick={onClick}
@@ -96,7 +131,8 @@ export function CoinBadge({ coins = 0 }) {
         boxShadow: '0 3px 0 var(--chewy-ink), inset 0 2px 0 rgba(255,255,255,.5)',
       }}
     >
-      🪙 {coins}
+      <img src="/assets/gen/packA/coin.png" alt="" style={{ width: 20, height: 20, display: 'block' }} />
+      {coins}
     </div>
   );
 }
@@ -129,8 +165,54 @@ export function CampBackdrop({ blur = 0, dim = 0 }) {
   );
 }
 
-/** Parchment scroll panel — lists live on paper, not in table views. */
-export function ScrollPanel({ children, width = '86%' }) {
+/** Parchment scroll panel — lists live on paper, not in table views.
+ *  art="scroll" (rollers) or art="map" (torn map sheet) uses pack-A art;
+ *  no art keeps the CSS parchment. */
+export function ScrollPanel({ children, width = '86%', art }) {
+  if (art === 'scroll') {
+    // stretch the whole scroll art: rollers top/bottom, generous padding
+    // because the paper sits inside the PNG's transparent margins
+    return (
+      <div
+        style={{
+          position: 'relative',
+          width,
+          margin: '0 auto',
+          backgroundImage: 'url(/assets/gen/packA/scroll.png)',
+          backgroundSize: '100% 100%',
+          padding: '62px 48px',
+          color: '#3a2c14',
+          font: '600 14px var(--font-round)',
+          filter: 'drop-shadow(0 10px 18px rgba(0,0,0,.45))',
+        }}
+      >
+        {children}
+      </div>
+    );
+  }
+  if (art === 'map') {
+    // long scrolling content: parchment as a cover texture, not a stretched sheet
+    return (
+      <div
+        style={{
+          position: 'relative',
+          width,
+          margin: '0 auto',
+          backgroundImage: 'url(/assets/gen/packA/parchment_map.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          borderRadius: 14,
+          border: '3px solid var(--chewy-ink)',
+          boxShadow: '0 10px 24px rgba(0,0,0,.45), inset 0 0 40px rgba(140,100,40,.3)',
+          padding: '24px 22px',
+          color: '#3a2c14',
+          font: '600 14px var(--font-round)',
+        }}
+      >
+        {children}
+      </div>
+    );
+  }
   return (
     <div
       style={{

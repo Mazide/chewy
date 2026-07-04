@@ -30,7 +30,7 @@ export function PathScreen({ streak = 5, record, days = [], onClose }) {
         </div>
 
         <div style={{ position: 'relative', zIndex: 1, flex: 1, overflowY: 'auto' }}>
-          <ScrollPanel>
+          <ScrollPanel art="map">
             {/* streak: ember pauses it, only 2+ silent days put it out; the record is forever */}
             <div style={{ textAlign: 'center', font: '800 18px var(--font-round)', marginBottom: 4 }}>
               🔥 {streak} days on the road

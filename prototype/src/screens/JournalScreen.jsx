@@ -30,7 +30,7 @@ export function JournalScreen({ heroName = 'Chewy', meals = [], plate, mood = 'i
         </div>
 
         <div style={{ position: 'relative', zIndex: 1, flex: 1, overflowY: 'auto', paddingBottom: 12 }}>
-          <ScrollPanel>
+          <ScrollPanel art="scroll">
             {/* mood + day plate */}
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 14 }}>
               <span style={{ fontSize: 42 }}>{MOOD_FACE[mood] ?? MOOD_FACE.idle}</span>
@@ -40,7 +40,7 @@ export function JournalScreen({ heroName = 'Chewy', meals = [], plate, mood = 'i
                 </div>
                 <div style={{ opacity: 0.7, fontSize: 12 }}>The plate fills as you feed him</div>
               </div>
-              <PlateRing plate={plate} size={72} />
+              <PlateRing plate={plate} size={56} />
             </div>
 
             {/* meal log — ink entries on parchment; deleting never rolls the day back */}
@@ -80,7 +80,7 @@ export function JournalScreen({ heroName = 'Chewy', meals = [], plate, mood = 'i
         </div>
 
         <div style={{ position: 'relative', zIndex: 1, display: 'flex', justifyContent: 'center', gap: 14, alignItems: 'center', padding: '12px 0 30px' }}>
-          <IconOrb emoji="🧭" onClick={onPath} />
+          <IconOrb icon="/assets/gen/packA/orb_compass.png" onClick={onPath} />
           <ChunkyButton onClick={onClose}>Back to camp</ChunkyButton>
         </div>
       </div>

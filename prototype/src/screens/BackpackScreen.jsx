@@ -40,14 +40,16 @@ export function BackpackScreen({ coins = 0, owned = [], equipped = {}, onBuy, on
         <div style={{ position: 'relative', zIndex: 1, flex: 1, overflowY: 'auto', padding: '0 16px' }}>
           <div
             style={{
-              background: 'linear-gradient(180deg, #6b4a2b, #4e351d)',
+              backgroundImage: 'url(/assets/gen/packA/leather_panel.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
               border: '3px solid var(--chewy-ink)',
               borderRadius: 16,
-              boxShadow: 'inset 0 4px 12px rgba(0,0,0,.4)',
-              padding: 12,
+              padding: 14,
               display: 'grid',
               gridTemplateColumns: '1fr 1fr',
               gap: 10,
+              filter: 'drop-shadow(0 8px 16px rgba(0,0,0,.4))',
             }}
           >
             {[...ITEMS].sort((a, b) => a.cost - b.cost).map((item) => {
