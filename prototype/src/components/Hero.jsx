@@ -13,9 +13,11 @@ const SHEET = '/assets/hero_idle_sheet.png';
 const FW = 152, FH = 318, COLS = 11, COUNT = 121, FPS = 24;
 const DISPLAY_W = 182, DISPLAY_H = 380;
 
+// The hero speaks for himself — never the app (Focus Friend tone).
 const LABEL = {
-  idle: "I'm hungry...",
-  eating: 'Analysing your meal...',
+  idle: 'Nice day by the fire.',
+  hungry: "Tummy's rumbling…",
+  eating: 'Om nom nom…',
   happy: 'That was delicious!',
 };
 

@@ -2,25 +2,61 @@ import { PhoneFrame } from '../components/PhoneFrame.jsx';
 import { Hero } from '../components/Hero.jsx';
 import { AddFoodButton } from '../components/AddFoodButton.jsx';
 import { MealLogRow } from '../components/MealLogRow.jsx';
+import { CoinBadge, IconOrb, CampBackdrop } from '../components/chrome.jsx';
+import { PlateRing } from '../components/PlateRing.jsx';
+import { ITEMS } from '../data/game.js';
 
 /**
- * HomeScreen — mirrors HomeView.swift.
- * Animated atlas background, hero on top, meal log, then the add-food FAB.
- * Laid out as a flex column so nothing overlaps regardless of content.
+ * HomeScreen — the camp hub. Animated camp, hero, meal log, mini day plate,
+ * add-food FAB, plus coins and world-object nav (journal / path / backpack).
+ * Equipped cosmetics render inside the scene (decor + pet; outfits are
+ * post-signal). The campfire chip reads the day: fed today or dozing.
  */
-export function HomeScreen({ status = 'idle', meals = [], onAddFood }) {
+export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday = false, equipped = {}, onAddFood, onJournal, onPath, onBackpack }) {
+  const pet = ITEMS.find((it) => it.id === equipped.pet);
+  const decor = ITEMS.find((it) => it.id === equipped.decor);
+
   return (
     <PhoneFrame background="#2e9e4f">
       <div style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column' }}>
-        {/* Animated background from the native atlas */}
-        <video
-          src="/assets/background.webm"
-          autoPlay
-          loop
-          muted
-          playsInline
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-        />
+        <CampBackdrop />
+
+        {/* top chrome: coins + world-object nav */}
+        {coins != null && (
+          <div style={{ position: 'absolute', top: 44, left: 14, zIndex: 3 }}>
+            <CoinBadge coins={coins} />
+          </div>
+        )}
+        {onJournal && (
+          <div style={{ position: 'absolute', top: 44, right: 12, zIndex: 3, display: 'flex', flexDirection: 'column', gap: 10 }}>
+            <IconOrb emoji="🗺️" onClick={onJournal} />
+            <IconOrb emoji="🧭" onClick={onPath} />
+            <IconOrb emoji="🎒" onClick={onBackpack} />
+          </div>
+        )}
+
+        {/* campfire chip: the day's state at a glance, zero numbers */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 44,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            zIndex: 3,
+            padding: '4px 12px',
+            borderRadius: 999,
+            background: 'rgba(0,0,0,.35)',
+            color: '#fff',
+            font: '700 12px var(--font-round)',
+            textShadow: '0 1px 2px rgba(0,0,0,.5)',
+          }}
+        >
+          {fedToday ? '🔥 fire is bright' : '🟠 fire is dozing'}
+        </div>
+
+        {/* equipped cosmetics live in the scene */}
+        {pet && <span style={{ position: 'absolute', bottom: 170, left: 24, zIndex: 2, fontSize: 36, filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.4))' }}>{pet.emoji}</span>}
+        {decor && <span style={{ position: 'absolute', top: 120, left: 20, zIndex: 2, fontSize: 30 }}>{decor.emoji}</span>}
 
         {/* Hero */}
         <div
@@ -37,8 +73,13 @@ export function HomeScreen({ status = 'idle', meals = [], onAddFood }) {
           <Hero status={status} />
         </div>
 
-        {/* Meal log */}
+        {/* Meal log + mini day plate */}
         <div style={{ position: 'relative', zIndex: 1, padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {plate && (
+            <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: 2 }}>
+              <PlateRing plate={plate} size={54} />
+            </div>
+          )}
           {meals.length === 0 ? (
             <div
               style={{
