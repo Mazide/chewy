@@ -18,14 +18,22 @@ export function AnalyzeScreen({ theme = 'tavern', presets = MEAL_PRESETS, onFeed
 
   return (
     <PhoneFrame background={t.bg}>
-      <div style={{ height: '100%', display: 'flex', flexDirection: 'column', background: t.bg }}>
+      <div style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', background: t.bg }}>
+        {/* theme backdrop art */}
+        {t.bgImage && (
+          <img
+            src={t.bgImage}
+            alt=""
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
+          />
+        )}
         {/* Banner */}
-        <div style={{ paddingTop: 48 }}>
+        <div style={{ position: 'relative', zIndex: 1, paddingTop: 48 }}>
           <WoodBanner bg={t.bannerBg} color={t.bannerColor}>{t.banner}</WoodBanner>
         </div>
 
         {/* Food window */}
-        <div style={{ flex: 1, display: 'grid', placeItems: 'center', padding: 16 }}>
+        <div style={{ position: 'relative', zIndex: 1, flex: 1, display: 'grid', placeItems: 'center', padding: 16 }}>
           <div style={{ position: 'relative' }}>
             <img
               src="/assets/camera_placeholder.jpg"
@@ -39,7 +47,15 @@ export function AnalyzeScreen({ theme = 'tavern', presets = MEAL_PRESETS, onFeed
                 boxShadow: '0 10px 24px rgba(0,0,0,.5), inset 0 0 30px rgba(0,0,0,.3)',
               }}
             />
-            {t.reticle && (
+            {/* themed ring frame around the camera window */}
+            {t.frameImage && (
+              <img
+                src={t.frameImage}
+                alt=""
+                style={{ position: 'absolute', inset: -44, width: 'calc(100% + 88px)', pointerEvents: 'none', zIndex: 2 }}
+              />
+            )}
+            {t.reticle && !t.frameImage && (
               <div
                 style={{
                   position: 'absolute',
@@ -55,11 +71,7 @@ export function AnalyzeScreen({ theme = 'tavern', presets = MEAL_PRESETS, onFeed
                 +
               </div>
             )}
-            {/* hero peeking at the food */}
-            <span style={{ position: 'absolute', bottom: -14, left: -34, fontSize: 44, filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.4))' }}>
-              🧒
-            </span>
-            <span style={{ position: 'absolute', top: -10, right: -20, fontSize: 30 }}>{t.prop}</span>
+            {/* hero peek + theme prop: return as sprite/art once pack E lands */}
             {/* what the camera "sees" */}
             <span style={{ position: 'absolute', inset: 0, display: 'grid', placeItems: 'center', fontSize: 84, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,.45))' }}>
               {selected?.emoji}
@@ -68,7 +80,7 @@ export function AnalyzeScreen({ theme = 'tavern', presets = MEAL_PRESETS, onFeed
         </div>
 
         {/* prototype-only: pick what the camera sees */}
-        <div style={{ display: 'flex', gap: 6, justifyContent: 'center', flexWrap: 'wrap', padding: '0 12px 10px' }}>
+        <div style={{ position: 'relative', zIndex: 1, display: 'flex', gap: 6, justifyContent: 'center', flexWrap: 'wrap', padding: '0 12px 10px' }}>
           {presets.map((p) => (
             <button
               key={p.id}
@@ -90,7 +102,7 @@ export function AnalyzeScreen({ theme = 'tavern', presets = MEAL_PRESETS, onFeed
         </div>
 
         {/* Portion — 3 stops, no numbers */}
-        <div style={{ background: t.panelBg, borderTop: '3px solid var(--chewy-ink)', padding: '16px 20px calc(20px + env(safe-area-inset-bottom))', display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ position: 'relative', zIndex: 1, background: t.panelBg, borderTop: '3px solid var(--chewy-ink)', padding: '16px 20px calc(20px + env(safe-area-inset-bottom))', display: 'flex', flexDirection: 'column', gap: 14 }}>
           <div style={{ color: '#fff', font: '700 14px var(--font-round)', textAlign: 'center', textShadow: '0 1px 2px rgba(0,0,0,.4)' }}>
             Portion
           </div>

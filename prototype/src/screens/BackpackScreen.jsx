@@ -25,14 +25,18 @@ export function BackpackScreen({ coins = 0, owned = [], equipped = {}, onBuy, on
             <Hero status="idle" showBubble={false} />
           </div>
           {equipped.pet && (
-            <span style={{ position: 'absolute', bottom: 8, right: 60, fontSize: 34 }}>
-              {ITEMS.find((it) => it.id === equipped.pet)?.emoji}
-            </span>
+            <img
+              src={ITEMS.find((it) => it.id === equipped.pet)?.img}
+              alt=""
+              style={{ position: 'absolute', bottom: 8, right: 52, width: 52, filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.4))' }}
+            />
           )}
           {equipped.decor && (
-            <span style={{ position: 'absolute', bottom: 8, left: 60, fontSize: 30 }}>
-              {ITEMS.find((it) => it.id === equipped.decor)?.emoji}
-            </span>
+            <img
+              src={ITEMS.find((it) => it.id === equipped.decor)?.img}
+              alt=""
+              style={{ position: 'absolute', bottom: 8, left: 52, width: 48, filter: 'drop-shadow(0 2px 3px rgba(0,0,0,.4))' }}
+            />
           )}
         </div>
 
@@ -71,7 +75,11 @@ export function BackpackScreen({ coins = 0, owned = [], equipped = {}, onBuy, on
                     font: '600 12px var(--font-round)',
                   }}
                 >
-                  <span style={{ fontSize: 28 }}>{item.emoji}</span>
+                  {item.img ? (
+                    <img src={item.img} alt="" style={{ width: 46, height: 46, objectFit: 'contain', filter: 'drop-shadow(0 2px 2px rgba(0,0,0,.35))' }} />
+                  ) : (
+                    <span style={{ fontSize: 28 }}>{item.emoji}</span>
+                  )}
                   <span>
                     {KIND_BADGE[item.kind]} {item.name}
                   </span>

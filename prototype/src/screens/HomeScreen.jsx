@@ -55,8 +55,20 @@ export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday
         </div>
 
         {/* equipped cosmetics live in the scene */}
-        {pet && <span style={{ position: 'absolute', bottom: 170, left: 24, zIndex: 2, fontSize: 36, filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.4))' }}>{pet.emoji}</span>}
-        {decor && <span style={{ position: 'absolute', top: 120, left: 20, zIndex: 2, fontSize: 30 }}>{decor.emoji}</span>}
+        {pet && (
+          <img
+            src={pet.img}
+            alt=""
+            style={{ position: 'absolute', bottom: 175, left: 20, zIndex: 2, width: 62, filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.4))' }}
+          />
+        )}
+        {decor && (
+          <img
+            src={decor.img}
+            alt=""
+            style={{ position: 'absolute', top: 108, left: 16, zIndex: 2, width: 60, filter: 'drop-shadow(0 3px 3px rgba(0,0,0,.35))' }}
+          />
+        )}
 
         {/* Hero */}
         <div

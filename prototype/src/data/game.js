@@ -247,17 +247,19 @@ export const BIOMES = [
 // --- Backpack catalog: decor / pets / themes only (hero outfits — after the D7 signal).
 // Price tiers 5–10 / 20–40 / 60–100 vs earnings ~4–8 coins/day: a month of wants.
 
+const B = '/assets/gen/packB';
+
 export const ITEMS = [
-  { id: 'flowers', emoji: '🌼', name: 'Camp flowers', kind: 'decor', cost: 5 },
-  { id: 'lantern', emoji: '🏮', name: 'Lantern', kind: 'decor', cost: 6 },
-  { id: 'flag', emoji: '🚩', name: 'Camp flag', kind: 'decor', cost: 8 },
-  { id: 'herbs', emoji: '🌿', name: 'Drying herbs', kind: 'decor', cost: 22 },
-  { id: 'hammock', emoji: '🛖', name: 'Log shelter', kind: 'decor', cost: 28 },
-  { id: 'tent', emoji: '⛺', name: 'Cozy tent', kind: 'decor', cost: 35 },
-  { id: 'theme_lab', emoji: '🔬', name: 'Lab theme', kind: 'theme', theme: 'lab', cost: 40 },
-  { id: 'theme_magic', emoji: '🔮', name: 'Magic theme', kind: 'theme', theme: 'magic', cost: 55 },
-  { id: 'owl', emoji: '🦉', name: 'Night owl', kind: 'pet', cost: 60 },
-  { id: 'squirrel', emoji: '🐿️', name: 'Camp squirrel', kind: 'pet', cost: 75 },
+  { id: 'flowers', emoji: '🌼', img: `${B}/flowers.png`, name: 'Camp flowers', kind: 'decor', cost: 5 },
+  { id: 'lantern', emoji: '🏮', img: `${B}/lantern.png`, name: 'Lantern', kind: 'decor', cost: 6 },
+  { id: 'flag', emoji: '🚩', img: `${B}/flag.png`, name: 'Camp flag', kind: 'decor', cost: 8 },
+  { id: 'herbs', emoji: '🌿', img: `${B}/herbs.png`, name: 'Drying herbs', kind: 'decor', cost: 22 },
+  { id: 'hammock', emoji: '🛖', img: `${B}/shelter.png`, name: 'Log shelter', kind: 'decor', cost: 28 },
+  { id: 'tent', emoji: '⛺', img: `${B}/tent.png`, name: 'Cozy tent', kind: 'decor', cost: 35 },
+  { id: 'theme_lab', emoji: '🔬', img: `${B}/theme_lab_icon.png`, name: 'Lab theme', kind: 'theme', theme: 'lab', cost: 40 },
+  { id: 'theme_magic', emoji: '🔮', img: `${B}/theme_magic_icon.png`, name: 'Magic theme', kind: 'theme', theme: 'magic', cost: 55 },
+  { id: 'owl', emoji: '🦉', img: `${B}/owl.png`, name: 'Night owl', kind: 'pet', cost: 60 },
+  { id: 'squirrel', emoji: '🐿️', img: `${B}/squirrel.png`, name: 'Camp squirrel', kind: 'pet', cost: 75 },
 ];
 
 export const KIND_BADGE = { decor: '🏕️', pet: '🐾', theme: '🎨' };

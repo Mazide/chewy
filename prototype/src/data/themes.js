@@ -6,6 +6,8 @@
 export const ANALYSIS_THEMES = {
   tavern: {
     name: 'Tavern',
+    bgImage: '/assets/gen/packC/bg_tavern.jpg',
+    frameImage: '/assets/gen/packC/frame_tavern.png',
     banner: 'SCAN PROVISION',
     bannerBg: 'linear-gradient(180deg, #8a5a30, #6b4226)',
     bannerColor: '#ffe9c9',
@@ -22,6 +24,8 @@ export const ANALYSIS_THEMES = {
   },
   lab: {
     name: 'Laboratory',
+    bgImage: '/assets/gen/packC/bg_lab.jpg',
+    frameImage: '/assets/gen/packC/frame_lab.png',
     banner: 'ANALYZING SPECIMEN',
     bannerBg: 'linear-gradient(180deg, #9aa7b1, #6e7b86)',
     bannerColor: '#1c2733',
@@ -38,6 +42,8 @@ export const ANALYSIS_THEMES = {
   },
   magic: {
     name: 'Magic',
+    bgImage: '/assets/gen/packC/bg_magic.jpg',
+    frameImage: '/assets/gen/packC/frame_magic.png',
     banner: 'ANALYZE ESSENCE',
     bannerBg: 'linear-gradient(180deg, #d9c9a8, #b8a67f)',
     bannerColor: '#3a2c14',
