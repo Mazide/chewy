@@ -52,20 +52,23 @@ function FlowMap() {
         {/* nodes */}
         <Box x={40} y={30} title="ONBOARDING" sub="name · 3 cards · push opt-in" />
         <Box x={305} y={195} w={160} h={64} title="CAMP" sub="hub: hero · fire · plate" accent />
-        <Box x={40} y={195} title="ANALYZE" sub="camera · portion · themes" />
+        <Box x={40} y={110} title="CAPTURE" sub="viewfinder · shutter" />
+        <Box x={40} y={225} title="ANALYZE" sub="camera result · portion" />
         <Box x={40} y={360} title="RESULT" sub="reaction · day plate Δ · +coins" />
         <Box x={575} y={80} title="JOURNAL" sub="scroll · delete (sticky day)" />
         <Box x={575} y={225} title="PATH" sub="biomes · fires · streak" />
         <Box x={575} y={370} title="BACKPACK" sub="decor · pets · themes" />
 
         {/* onboarding → camp (once) */}
-        <Edge d="M 190 62 C 330 70, 380 120, 385 192" label="first launch only" lx={330} ly={92} dashed />
+        <Edge d="M 190 55 C 330 60, 380 110, 385 192" label="first launch only" lx={340} ly={82} dashed />
 
         {/* core loop */}
-        <Edge d="M 305 232 L 193 226" label="FAB Add Food" lx={250} ly={215} />
-        <Edge d="M 115 252 L 115 357" label="FEED → meal | not-food | unsure" lx={118} ly={310} />
+        <Edge d="M 305 218 C 260 190, 240 170, 192 145" label="кнопка захвата" lx={253} ly={168} />
+        <Edge d="M 115 167 L 115 222" label="снимок" lx={148} ly={200} />
+        <Edge d="M 150 110 C 220 85, 300 130, 335 192" label="↻ back (no shot)" lx={272} ly={112} dashed />
+        <Edge d="M 115 282 L 115 357" label="FEED → meal | not-food | unsure" lx={118} ly={325} />
         <Edge d="M 193 385 C 330 380, 380 300, 386 262" label="Back to camp (+🪙 if logged)" lx={330} ly={352} />
-        <Edge d="M 150 195 C 190 140, 280 150, 330 192" label="↻ back (no log)" lx={248} ly={148} dashed />
+        <Edge d="M 193 240 C 240 225, 270 225, 305 228" label="↻ back (no log)" lx={250} ly={222} dashed />
 
         {/* side screens, both ways */}
         <Edge d="M 465 213 C 520 180, 540 150, 573 122" label="🗺️ ⇄ back" lx={520} ly={148} both />
@@ -80,7 +83,8 @@ function FlowMap() {
         <b>Все переходы:</b>
         <ul style={{ margin: '6px 0 0 18px', padding: 0 }}>
           <li><b>Onboarding → Camp</b> — один раз: имя героя, 2 карточки, пуш-вопрос от героя (Sure / maybe later).</li>
-          <li><b>Camp → Analyze</b> — FAB «Add Food». <b>Analyze → Camp</b> — «↻», без лога.</li>
+          <li><b>Camp → Capture</b> — кнопка захвата. <b>Capture → Analyze</b> — затвор (снимок). <b>Capture → Camp</b> — назад, без снимка.</li>
+          <li><b>Analyze → Camp</b> — «↻», без лога.</li>
           <li><b>Analyze → Result</b> — FEED. Три исхода: <i>meal</i> (лог + монеты + дельта тарелки дня), <i>not-food</i> (игровая реакция, без лога и монет), <i>unsure</i> (лог + минимум, «my best guess»).</li>
           <li><b>Result → Camp</b> — единственный выход; на 5-м+ приёме — кап-плашка, монеты = минимум.</li>
           <li><b>Camp ⇄ Journal / Path / Backpack</b> — предметы мира 🗺️ 🧭 🎒, назад — кнопка мира.</li>

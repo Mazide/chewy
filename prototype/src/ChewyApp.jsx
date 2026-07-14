@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { OnboardingScreen } from './screens/OnboardingScreen.jsx';
 import { HomeScreen } from './screens/HomeScreen.jsx';
+import { CaptureScreen } from './screens/CaptureScreen.jsx';
 import { AnalyzeScreen } from './screens/AnalyzeScreen.jsx';
 import { ResultScreen } from './screens/ResultScreen.jsx';
 import { JournalScreen } from './screens/JournalScreen.jsx';
@@ -10,8 +11,9 @@ import { MEAL_PRESETS, WEEK_LIVE, EMPTY_PLATE, scoreMeal, plateFractions } from 
 
 /**
  * ChewyApp — the whole prototype flow in one state machine.
- * (onboarding →) camp → analyze (pick what the camera "sees" + portion) →
- * result → camp, plus journal / path / backpack side screens.
+ * (onboarding →) camp → capture (viewfinder + shutter) → analyze (pick what
+ * the camera "saw" + portion) → result → camp, plus journal / path /
+ * backpack side screens.
  * Scoring, anti-farm and the day plate run on the Build-1 rules (data/game.js).
  * Sticky day: hasLog, the day plate and meal slots never roll back — deleting
  * a journal entry keeps coins, plate and streak (invariant #6, no retro-punish).
@@ -89,6 +91,8 @@ export function ChewyApp({ initialCoins = 24, initialStreak = 6, streakRecord = 
           }}
         />
       );
+    case 'capture':
+      return <CaptureScreen onShutter={() => setScreen('analyze')} onBack={toCamp} />;
     case 'analyze':
       return <AnalyzeScreen theme={theme} presets={MEAL_PRESETS} onFeed={feed} onBack={toCamp} />;
     case 'result':
@@ -120,7 +124,7 @@ export function ChewyApp({ initialCoins = 24, initialStreak = 6, streakRecord = 
           coins={coins}
           fedToday={fedToday}
           equipped={equipped}
-          onAddFood={() => setScreen('analyze')}
+          onAddFood={() => setScreen('capture')}
           onJournal={() => setScreen('journal')}
           onPath={() => setScreen('path')}
           onBackpack={() => setScreen('backpack')}
