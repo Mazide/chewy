@@ -72,7 +72,7 @@ export function HomeScreen({ status = 'idle', meals = null, plate, coins, fedTod
           />
         )}
 
-        {/* Hero — grid spec (nikdem 2026-07-14): height 5 cells, feet on
+        {/* Hero — grid spec (nikdem 2026-07-14): height 7 cells, feet on
             C11/D11, i.e. bottom of row 11, centered on the C/D boundary */}
         <div
           style={{
@@ -83,7 +83,7 @@ export function HomeScreen({ status = 'idle', meals = null, plate, coins, fedTod
             zIndex: 1,
           }}
         >
-          <Hero status={status} size={(5 * (680 / 13)) / 380} showBubble={showBubble} />
+          <Hero status={status} size={(7 * (680 / 13)) / 380} showBubble={showBubble} />
         </div>
         <div style={{ flex: 1 }} />
 
