@@ -9,6 +9,10 @@ export default {
   },
 };
 
+/** Layout workbench: bare scene (backdrop + hero + capture button) under a
+ *  labeled grid — positions get discussed by square ("центрируй по C5"). */
+export const LayoutGrid = { args: { status: 'idle', grid: true, showBubble: false } };
+
 /** Morning, nothing logged: hero is hungry, the fire is dozing. */
 export const MorningHungry = { args: { status: 'hungry', meals: [], fedToday: false, coins: 24 } };
 

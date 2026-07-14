@@ -2,7 +2,7 @@ import { PhoneFrame } from '../components/PhoneFrame.jsx';
 import { Hero } from '../components/Hero.jsx';
 import { AddFoodButton } from '../components/AddFoodButton.jsx';
 import { MealLogRow } from '../components/MealLogRow.jsx';
-import { CoinBadge, IconOrb, CampBackdrop } from '../components/chrome.jsx';
+import { CoinBadge, IconOrb, CampBackdrop, GridOverlay } from '../components/chrome.jsx';
 import { PlateRing } from '../components/PlateRing.jsx';
 import { ITEMS } from '../data/game.js';
 
@@ -12,7 +12,7 @@ import { ITEMS } from '../data/game.js';
  * Equipped cosmetics render inside the scene (decor + pet; outfits are
  * post-signal). The campfire chip reads the day: fed today or dozing.
  */
-export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday = false, equipped = {}, onAddFood, onJournal, onPath, onBackpack }) {
+export function HomeScreen({ status = 'idle', meals = null, plate, coins, fedToday, equipped = {}, grid = false, showBubble = true, onAddFood, onJournal, onPath, onBackpack }) {
   const pet = ITEMS.find((it) => it.id === equipped.pet);
   const decor = ITEMS.find((it) => it.id === equipped.decor);
 
@@ -36,6 +36,7 @@ export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday
         )}
 
         {/* campfire chip: the day's state at a glance, zero numbers */}
+        {fedToday != null && (
         <div
           style={{
             position: 'absolute',
@@ -53,6 +54,7 @@ export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday
         >
           {fedToday ? '🔥 fire is bright' : '🟠 fire is dozing'}
         </div>
+        )}
 
         {/* equipped cosmetics live in the scene */}
         {pet && (
@@ -81,11 +83,12 @@ export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday
             zIndex: 1,
           }}
         >
-          <Hero status={status} size={0.62} />
+          <Hero status={status} size={0.62} showBubble={showBubble} />
         </div>
         <div style={{ flex: 1 }} />
 
         {/* Meal log + mini day plate */}
+        {meals && (
         <div style={{ position: 'relative', zIndex: 1, padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 8 }}>
           {plate && (
             <div style={{ display: 'flex', justifyContent: 'center', paddingBottom: 2 }}>
@@ -107,11 +110,15 @@ export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday
             meals.map((m, i) => <MealLogRow key={i} {...m} />)
           )}
         </div>
+        )}
 
         {/* FAB */}
         <div style={{ position: 'relative', zIndex: 2, display: 'grid', placeItems: 'center', padding: '18px 0 30px' }}>
           <AddFoodButton onClick={onAddFood} />
         </div>
+
+        {/* layout-work ruler: labeled cells to call out positions by square */}
+        {grid && <GridOverlay />}
       </div>
     </PhoneFrame>
   );

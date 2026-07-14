@@ -167,6 +167,45 @@ export function CampBackdrop({ blur = 0, dim = 0 }) {
   );
 }
 
+/** GridOverlay — layout-work ruler. Labeled cells (A1 top-left … F13
+ *  bottom-right) so positions can be called out by square: "центрируй по C5". */
+export function GridOverlay({ cols = 6, rows = 13 }) {
+  const letters = 'ABCDEFGHIJ';
+  const cells = [];
+  for (let r = 1; r <= rows; r++) {
+    for (let c = 0; c < cols; c++) cells.push(`${letters[c]}${r}`);
+  }
+  return (
+    <div
+      style={{
+        position: 'absolute',
+        inset: 0,
+        zIndex: 10,
+        pointerEvents: 'none',
+        display: 'grid',
+        gridTemplateColumns: `repeat(${cols}, 1fr)`,
+        gridTemplateRows: `repeat(${rows}, 1fr)`,
+      }}
+    >
+      {cells.map((id) => (
+        <div
+          key={id}
+          style={{
+            border: '1px solid rgba(255,255,255,.45)',
+            boxShadow: 'inset 0 0 0 1px rgba(0,0,0,.18)',
+            font: '700 8px ui-monospace, monospace',
+            color: '#fff',
+            textShadow: '0 1px 2px rgba(0,0,0,.9)',
+            padding: '1px 0 0 3px',
+          }}
+        >
+          {id}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 /** Parchment scroll panel — lists live on paper, not in table views.
  *  art="scroll" (rollers) or art="map" (torn map sheet) uses pack-A art;
  *  no art keeps the CSS parchment. */
