@@ -59,6 +59,20 @@ const PACKS = {
     { id: "theme_lab_icon", prompt: "Small glass laboratory flask with bubbling green liquid, game shop icon" },
     { id: "theme_magic_icon", prompt: "Small glowing purple crystal ball on a tiny brass stand, game shop icon" },
   ],
+  // capture-button candidates (nikdem 2026-07-14): 10 takes on the home-screen
+  // FAB that opens the camera; round, chunky, readable at ~72pt
+  packBtn: [
+    { id: "btn_camera_wood", prompt: "Round chunky wooden game UI button with a simple camera pictogram carved and painted on its face, rope-wrapped rim" },
+    { id: "btn_camera_brass", prompt: "Cute cartoon brass-and-leather adventurer camera, front view, one big round glass lens in the center, chunky game button proportions" },
+    { id: "btn_lens", prompt: "Round camera lens game button: brass ring with tiny screws, wooden outer rim, glossy blue glass center with a star of light" },
+    { id: "btn_cauldron", prompt: "Small round copper cauldron with bubbling green stew and a cheerful steam swirl, game UI button" },
+    { id: "btn_bowl", prompt: "Round wooden soup bowl seen slightly from above, steaming, with a carved spoon sticking out, game UI button" },
+    { id: "btn_plate_enamel", prompt: "Round white enamel camping plate with a blue rim and small chips on the edge, crossed fork and knife on top, game UI button" },
+    { id: "btn_skillet", prompt: "Round cast-iron skillet seen from directly above with a sunny fried egg in the center, short handle, game UI button" },
+    { id: "btn_fire", prompt: "Round ring of river stones with one small cheerful campfire flame in the center, game UI button" },
+    { id: "btn_apple", prompt: "Glossy red apple with a green leaf, chunky round game button proportions, thick outline" },
+    { id: "btn_flash", prompt: "Round chunky wooden game UI button with a bold carved four-point camera-flash spark painted golden on its face" },
+  ],
   // analysis-theme dressing: full-frame backgrounds (nano banana + style ref)
   // and photo-window frames (transparent, openai)
   packC: [
