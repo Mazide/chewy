@@ -1,5 +1,5 @@
 /**
- * SpeechBubble — frosted capsule under the hero. Mirrors the
+ * SpeechBubble — frosted capsule above the hero. Mirrors the
  * SpeechBubble in HeroView.swift.
  */
 export function SpeechBubble({ text }) {

@@ -155,7 +155,9 @@ export function CampBackdrop({ blur = 0, dim = 0 }) {
           objectFit: 'cover',
           zIndex: 0,
           filter: blur ? `blur(${blur}px)` : undefined,
-          transform: blur ? 'scale(1.06)' : undefined, // hide blur edge bleed
+          // always overscan: crops the Kling watermark out of the corner
+          // (and hides blur edge bleed when blurred)
+          transform: blur ? 'scale(1.14)' : 'scale(1.12)',
         }}
       />
       {dim > 0 && (

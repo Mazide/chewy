@@ -12,11 +12,15 @@ const OUT = new URL('../shots', import.meta.url).pathname;
 const PORT = 6199;
 
 const DEFAULT_STORIES = [
-  'screens-homescreen--empty',
-  'screens-homescreen--with-meals',
-  'screens-homescreen--eating',
-  'screens-addfoodscreen--default',
-  'screens-addfoodscreen--analyzing',
+  'screens-homescreen--morning-hungry',
+  'screens-homescreen--fed-day',
+  'screens-homescreen--with-cosmetics',
+  'screens-analyzescreen--tavern',
+  'screens-resultscreen--first-meal-happy',
+  'screens-journalscreen--two-meals',
+  'screens-pathscreen--first-steps',
+  'screens-backpackscreen--equipped',
+  'screens-onboardingscreen--first-launch',
   'components-hero--all-states',
 ];
 
@@ -45,7 +49,10 @@ await new Promise((r) => server.listen(PORT, r));
 if (!existsSync(OUT)) mkdirSync(OUT, { recursive: true });
 
 const stories = process.argv.slice(2).length ? process.argv.slice(2) : DEFAULT_STORIES;
-const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const browser = await chromium.launch({
+  executablePath: process.env.CHROMIUM_PATH
+    || '/home/looseconfetti/.cache/ms-playwright/chromium-1228/chrome-linux64/chrome',
+});
 const page = await browser.newPage({ deviceScaleFactor: 2, viewport: { width: 900, height: 820 } });
 
 for (const id of stories) {

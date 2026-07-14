@@ -70,20 +70,20 @@ export function HomeScreen({ status = 'idle', meals = [], plate, coins, fedToday
           />
         )}
 
-        {/* Hero */}
+        {/* Hero — scene scale, feet pinned to a fixed ground line beside the
+            fire so his position doesn't shift as the meal log grows */}
         <div
           style={{
-            position: 'relative',
+            position: 'absolute',
+            bottom: '44%',
+            left: '50%',
+            transform: 'translateX(calc(-50% - 58px))',
             zIndex: 1,
-            flex: 1,
-            minHeight: 0,
-            display: 'grid',
-            placeItems: 'center',
-            overflow: 'hidden',
           }}
         >
-          <Hero status={status} />
+          <Hero status={status} size={0.62} />
         </div>
+        <div style={{ flex: 1 }} />
 
         {/* Meal log + mini day plate */}
         <div style={{ position: 'relative', zIndex: 1, padding: '0 16px', display: 'flex', flexDirection: 'column', gap: 8 }}>

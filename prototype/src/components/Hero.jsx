@@ -30,7 +30,7 @@ function loadSheet() {
   return sheetImg;
 }
 
-export function Hero({ status = 'idle', showBubble = true }) {
+export function Hero({ status = 'idle', showBubble = true, size = 1 }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -58,15 +58,16 @@ export function Hero({ status = 'idle', showBubble = true }) {
   }, [status]);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
+      {showBubble && <SpeechBubble text={LABEL[status] ?? LABEL.idle} />}
       <div className={status === 'eating' ? 'chewy-pulse' : undefined} style={{ position: 'relative' }}>
         <canvas
           ref={canvasRef}
           width={FW * 2}
           height={FH * 2}
           style={{
-            width: DISPLAY_W,
-            height: DISPLAY_H,
+            width: DISPLAY_W * size,
+            height: DISPLAY_H * size,
             display: 'block',
             filter: 'drop-shadow(0 10px 10px rgba(0,0,0,.35))',
           }}
@@ -78,16 +79,14 @@ export function Hero({ status = 'idle', showBubble = true }) {
             bottom: 4,
             left: '50%',
             transform: 'translateX(-50%)',
-            width: 120,
-            height: 22,
+            width: 120 * size,
+            height: 22 * size,
             borderRadius: '50%',
             background: 'radial-gradient(ellipse at center, rgba(0,0,0,.35), rgba(0,0,0,0) 70%)',
             filter: 'blur(2px)',
           }}
         />
       </div>
-
-      {showBubble && <SpeechBubble text={LABEL[status] ?? LABEL.idle} />}
 
       <style>{`
         @keyframes chewy-pulse-kf { 0%,100% { transform: scale(1) } 50% { transform: scale(1.06) } }
