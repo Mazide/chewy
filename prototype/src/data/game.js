@@ -1,5 +1,5 @@
 /**
- * Prototype sim of the Build-1 game rules (docs/spec/SPEC_v5.md).
+ * Prototype sim of the Build-1 game rules (historical reference: docs/archive/spec/SPEC_v5.md; current rules: docs/DESIGN.md).
  * Pure JS mirror of the future GameConfig.swift + scoring + streak semantics,
  * so the Storybook flow feels like the real loop. No numbers leak to UI
  * except coins and streak.

@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Gemini plate-proportions benchmark (TODO #0 / AGENT_BACKLOG A13).
+// Gemini plate-proportions benchmark (docs/TODO.md / archived AGENT_BACKLOG A13).
 //
 // Usage:
 //   node scripts/gemini-benchmark.mjs [photos-dir] [--dry-run]
@@ -249,7 +249,7 @@ async function main() {
   console.log(`flagged (non-food / low confidence / sectors≠100): ${flagged.length}`);
   for (const r of flagged) console.log(`  - ${r.file}: ${r.dish} (${r.confidence}${r.is_food === false ? ", not food" : ""})`);
   console.log(`\nCSV → ${path.relative(process.cwd(), csvPath)}`);
-  console.log(`Next: eyeball each row vs reality, count misreads. Misread >20% → rethink (docs/TODO.md #0).`);
+  console.log(`Next: eyeball each row vs reality, count misreads. Misread >20% → rethink (docs/TODO.md: benchmark before iOS implementation).`);
 }
 
 main().catch((e) => {

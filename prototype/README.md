@@ -1,78 +1,40 @@
-# chewy — Prototype Workbench
+# chewy — Storybook
 
-Storybook-песочница для быстрого прототипирования UI приложения **Chewy**
-(веб-версии на React), чтобы итерироваться по дизайну без пересборки iOS-таргета.
+React-песочница продукта. Порядок работы — [MVP_PLAN](../docs/MVP_PLAN.md),
+сценарии для ревью — [USER_FLOW](../docs/USER_FLOW.md).
+Новый скелет без медиа — `src/core/`, отдельный раздел `Core/Skeleton`.
+Прежние экраны и медиа сохранены как заготовки.
 
-Компоненты повторяют экраны нативного приложения (`chewy/chewy/*.swift`):
-Hero с состояниями `idle / eating / happy`, домашний экран, экран добавления еды.
-
-## Запуск
+## Запуск и сборка
 
 ```bash
 cd prototype
-npm install
-npm run storybook   # → http://localhost:6006
+npm ci
+npm run storybook       # http://localhost:6006
+npm run build-storybook # статика → storybook-static/
 ```
 
-## Сборка статики
+Начать с `Core/Skeleton`: «Все экраны» — обзор, «Начать с лагеря» — связанный цикл.
+Фото заменено примером, анализ мгновенный, состояние сбрасывается при перезагрузке.
+Для покупки есть отдельная история с готовым балансом; демо не утверждает экономику.
 
-```bash
-npm run build-storybook   # → storybook-static/
-```
+Прежний `Flow/ChewyApp`: `FullFlow` — демонстрационный цикл, `FreshInstall` — вход
+через онбординг. Пустые состояния ещё требуют проверки по USER_FLOW.
+`Wireframes` — устройство экранов; `Assets/PackA` — обзор оформления.
 
-## Структура
+## Где менять
 
-```
-src/
-  theme.css              — дизайн-токены (цвета, радиусы, шрифт)
-  components/
-    Hero.jsx             — персонаж + состояния
-    SpeechBubble.jsx     — реплика под героем
-    AddFoodButton.jsx    — оранжевый FAB
-    PortionSlider.jsx    — слайдер порции
-    MealLogRow.jsx       — строка лога приёма пищи
-    PhoneFrame.jsx       — рамка «телефона» для экранов
-  screens/
-    HomeScreen.jsx       — домашний экран
-    AddFoodScreen.jsx    — экран камеры / добавления еды
-```
+- `src/ChewyApp.jsx` — связанный сценарий и демостейт.
+- `src/screens/` — лагерь, анализ, результат, журнал, путь, рюкзак, онбординг.
+- `src/components/` и `src/theme.css` — общие компоненты и стили.
+- `src/data/` — правила демо, каталог и темы; не источник утверждённых правил.
+- `public/assets/` — спрайтшит героя, фон и паки A–C. План медиа — [ASSETS](../docs/ASSETS.md).
 
-Каждый компонент/экран имеет свой `*.stories.jsx` с состояниями и контролами.
+## Вспомогательные скрипты
 
-## Ассеты из натива
-
-В `public/assets/` лежат реальные ассеты приложения, чтобы прототип выглядел
-как натив:
-
-| Файл | Источник | Как используется |
-|------|----------|------------------|
-| `hero_idle_sheet.png` (+`.json`) | `hero.spriteatlas` (121 кадр, alpha) | спрайтшит, `Hero` рисует его на canvas |
-| `background.webm` | `background.spriteatlas` (242 кадра) | анимированный фон домашнего экрана |
-| `add_meal_icon.png` | `add_meal_icon.imageset` | иконка FAB |
-| `camera_placeholder.jpg` | `camera_placeholder.imageset` | превью камеры |
-
-Перегенерировать из `chewy/chewy/Assets.xcassets` (нужен `sharp` + ffmpeg):
-
-```bash
-npm install --no-save sharp
-node scripts/encode-assets.mjs
-```
-
-Тайминги анимации героя (idle/eating/happy) в `Hero.jsx` повторяют
-`HeroScene.swift` (24 fps, 0.6× на eating + пульс, 1.5× на happy с фиксацией
-последнего кадра).
-
-## Скриншоты экранов
-
-```bash
-npm install --no-save playwright
-node scripts/build-storybook   # если ещё не собран
-node scripts/shoot.mjs [storyId ...]   # → shots/*.png
-```
-
-## Как прототипировать
-
-1. Открой Storybook, выбери компонент слева.
-2. Крути контролы (например `status` у Hero) — состояние меняется вживую.
-3. Правишь `.jsx` → HMR обновляет превью мгновенно.
-4. Новый компонент = новый `Foo.jsx` + `Foo.stories.jsx`.
+- `scripts/shoot.mjs` снимает уже собранный Storybook; путь Chromium сейчас задан
+  для прежнего Linux-окружения. Перед запуском настроить путь и передать актуальные
+  story ID: список по умолчанию содержит старые экраны.
+- `scripts/encode-assets.mjs` экспортирует iOS-атласы в PNG/JSON и WebM; нужны `sharp`
+  и ffmpeg. Пути к ffmpeg и исходным атласам тоже заданы для прежнего Linux-окружения.
+  Для обычного запуска Storybook перегенерировать ассеты не требуется.
