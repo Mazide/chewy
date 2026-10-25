@@ -1,0 +1,47 @@
+.camp-board { font: 14px/1.45 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #393939; padding: 24px; max-width: 950px; }
+.camp-board * { box-sizing: border-box; }
+.camp-board-header { max-width: 640px; margin-bottom: 28px; }
+.camp-board-header > p:first-child { font-size: 10px; letter-spacing: 2px; color: #777; }
+.camp-board h1 { font-size: 27px; margin: 8px 0; letter-spacing: -.7px; }
+.camp-board-header > p { color: #737373; }
+.camp-board-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.camp-board-tools button { padding: 9px 12px; border: 1px solid #bbb; background: white; color: #555; border-radius: 6px; font: inherit; font-size: 12px; cursor: pointer; }
+.camp-board-tools button[aria-pressed=true] { background: #e2e2e2; border-color: #888; }
+.camp-board-tools button:focus-visible { outline: 2px solid #555; outline-offset: 3px; }
+.camp-board-layout { display: flex; gap: 42px; align-items: flex-start; }
+.camp-canvas { position: relative; width: 360px; height: 720px; flex-shrink: 0; overflow: hidden; border: 1px solid #aaa; border-radius: 30px; isolation: isolate; background: #f0f0f0; }
+.camp-canvas-background { position: absolute; inset: 0; z-index: -3; background: #eee; }
+.camp-canvas-background > span { position: absolute; top: 108px; left: 22px; color: #999; font-size: 11px; }
+.camp-canvas-guides .camp-canvas-background { background-image: linear-gradient(#00000005 1px, transparent 1px), linear-gradient(90deg, #00000005 1px, transparent 1px); background-size: 20px 20px; }
+.camp-canvas-top { position: absolute; top: 30px; left: 22px; right: 22px; display: flex; justify-content: space-between; align-items: center; font-weight: 650; }
+.camp-box { border: 1px solid #aaa; background: #fafafa; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; font-size: 12px; }
+.camp-box small { display: block; margin-top: 6px; color: #777; font-size: 10px; font-weight: 400; }
+.camp-wallet-box { padding: 7px 13px; border-radius: 6px; font-weight: 400; }
+.camp-canvas-ground { position: absolute; top: 328px; left: -40px; right: -40px; height: 360px; border-top: 1px solid #ccc; border-radius: 50% 50% 0 0; background: #e5e5e5; z-index: -2; }
+.camp-hero-box { position: absolute; top: 205px; left: 120px; width: 120px; height: 145px; background: #cecece; border: 2px solid #888; font-size: 20px; font-weight: 600; }
+.camp-decor-box { position: absolute; top: 287px; right: 21px; width: 78px; height: 82px; background: #e3e3e3; border-style: dashed; }
+.camp-decor-box small { max-width: 60px; }
+.camp-fire-box { position: absolute; top: 351px; left: 45px; width: 67px; height: 52px; background: #ddd; }
+.camp-layer-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+.camp-scene-guide { position: absolute; left: 22px; top: 151px; }
+.camp-food-zone { position: absolute; top: 431px; left: 22px; right: 22px; }
+.camp-food-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.camp-food-title strong { font-size: 13px; }
+.camp-food-title > span { font-size: 9px; color: #888; }
+.camp-food-objects { display: flex; gap: 14px; align-items: center; }
+.camp-plate-box { width: 96px; height: 96px; border-radius: 50%; flex-shrink: 0; background: #f4f4f4; }
+.camp-food-records { display: flex; gap: 8px; flex: 1; align-items: center; }
+.camp-record-box { width: 98px; height: 85px; transform: rotate(-4deg); }
+.camp-older-record { width: 78px; height: 73px; transform: rotate(6deg); background: #eaeaea; font-size: 10px; padding: 7px; }
+.camp-food-records p { font-size: 12px; color: #888; }
+.camp-canvas-actions { position: absolute; left: 22px; right: 22px; bottom: 10px; display: flex; flex-direction: column; gap: 10px; }
+.camp-add-box { height: 47px; background: #555; color: white; border-color: #555; font-size: 14px; font-weight: 600; }
+.camp-canvas-nav { display: flex; gap: 10px; }
+.camp-canvas-nav > div { flex: 1; height: 37px; background: #eeeeee; }
+.camp-canvas-indicator { height: 4px; width: 96px; background: #aaa; border-radius: 4px; margin: 6px auto 0; }
+.camp-board-notes { max-width: 270px; padding-top: 12px; }
+.camp-board-notes section { border-top: 1px solid #ccc; padding: 12px 0 20px; }
+.camp-board-notes h2 { font-size: 13px; margin: 0 0 8px; }
+.camp-board-notes p { margin: 0; font-size: 12px; color: #777; }
+.camp-board-notes .camp-board-footnote { font-size: 11px; margin-top: 12px; }
+@media (max-width: 720px) { .camp-board { padding: 12px 0; } .camp-board-layout { flex-direction: column; gap: 20px; } .camp-board-notes { max-width: 360px; } }

@@ -1,17 +1,14 @@
-import '../src/theme.css';
-
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
+    options: { storySort: { order: ['Core', ['Skeleton', 'Canvas', 'Sandbox']] } },
     layout: 'centered',
     controls: {
       matchers: { color: /(background|color)$/i, date: /Date$/i },
     },
     backgrounds: {
-      default: 'chewy-green',
+      default: 'light',
       values: [
-        { name: 'chewy-green', value: '#2e9e4f' },
-        { name: 'camera-dark', value: '#141414' },
         { name: 'light', value: '#f5f5f5' },
       ],
     },

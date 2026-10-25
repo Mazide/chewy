@@ -11,7 +11,6 @@
 .core-back { border: 0; background: transparent; padding: 4px 0; font-size: 12px !important; }
 .core-content { padding: 8px 22px 22px; overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 16px; }
 .core-heading h1 { margin: 3px 0 0; font-size: 27px; line-height: 1.2; letter-spacing: -.8px; }
-.core-eyebrow { color: #85877e; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; }
 .core-scene { min-height: 190px; background: #f0f0e9; border: 1px dashed #c5c8bc; border-radius: 14px; position: relative; }
 .core-scene-label { position: absolute; left: 14px; top: 12px; font-size: 10px; color: #8a8d82; }
 .core-hero { position: absolute; width: 94px; height: 100px; left: calc(50% - 47px); top: 50px; background: #dedfd5; border: 1px solid #aaafa0; border-radius: 38px 38px 22px 22px; display: flex; flex-direction: column; justify-content: center; text-align: center; font-weight: 650; }
@@ -44,7 +43,13 @@
 .core-speech { margin: -2px 0 0; text-align: center; font-size: 15px; }
 .core-reward { font-size: 24px; text-align: center; font-weight: 650; letter-spacing: -.5px; }
 .core-empty { padding: 30px 14px; border: 1px dashed #d7dacd; border-radius: 12px; color: #808774; text-align: center; }
-.core-list { flex: 1; }
+.core-today { flex-shrink: 0; }
+.core-today h2 { margin: 0; font-size: 14px; }
+.core-today-empty { margin: 0 14px; padding: 0 0 14px; color: #808774; font-size: 12px; }
+.core-meals { list-style: none; margin: 0 14px; padding: 0; border-top: 1px solid #e6e8df; }
+.core-meals .core-meal { padding: 10px 0; }
+.core-meals .core-meal:last-child { border-bottom: 0; }
+.core-meals-toggle { width: 100%; border: 0; border-top: 1px solid #e6e8df; background: transparent; padding: 12px; font-size: 12px !important; border-radius: 0 0 13px 13px; }
 .core-meal { display: flex; gap: 12px; align-items: center; padding: 14px 0; border-bottom: 1px solid #e6e8df; }
 .core-meal-icon { width: 35px; height: 35px; border: 1px solid #cdd1c2; border-radius: 8px; background: #eeefe8; }
 .core-lead { margin: 0; color: #7e8574; font-size: 13px; }

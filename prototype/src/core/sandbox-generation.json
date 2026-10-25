@@ -1,0 +1,68 @@
+{
+  "mode": "built-in image_gen",
+  "status": "draft",
+  "assets": [
+    {
+      "name": "background",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-cb2a33a6-23dd-4e65-aff3-79f93e923ac3.png",
+      "file": "background-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: one background illustration for a layered portrait mobile adventure camp, draft art test. Generate ONLY the empty background, not a complete scene. Portrait approximately 390:844 composition. A cheerful storybook cartoon woodland clearing: two chunky trees frame left and right edges, broad overlapping green canopy in upper third, a light sky opening at top center. The bottom 65% is mostly open warm grassy earth for separately composited large character and camp objects. Clear simple ground plane, horizon around 35% from top, gentle front view with a little ground visible from above. Match the bold dark ink outlines, flat saturated friendly green and warm ochre colors, sparse soft shading of the provided style reference; clean 2D cartoon, not realistic, no painterly texture, no 3D. Trees should offer anchors for a separately drawn hammock across upper right around 15–25% down. Important: NO person, NO animals, NO tent, NO hammock, NO campfire, NO kettle, NO lantern, NO furniture, NO rug, NO food, NO UI, NO lettering, NO numbers. Empty large central clearing to make separate cutout assets read clearly."
+    },
+    {
+      "name": "hero",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-7764fb27-ae18-43da-b0f0-cae9e0ca4b64.png",
+      "file": "hero-v2.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated cutout asset for a layered 2D mobile adventure camp. Match the supplied background reference: bold dark hand-ink contours, clean flat cheerful colors, simple soft cel shading, charming cartoon rather than realistic or 3D. Front view with a slight view of top surfaces, soft daylight from upper left. REAL TRANSPARENT BACKGROUND with alpha, no white matte, no checkerboard pixels. No scenery, no interface, no lettering, no numbers, no watermark. Single object fully within frame with about 5% transparent edge margin, big readable shapes. Do not draw any other asset. Subject: the exact friendly blond boy adventurer from reference image 1: shaggy honey-blond hair, dot eyes, simple curved smile, cream long-sleeved tunic, dark blue slim trousers, pale rolled ankle boots. Preserve the existing character's appearance, outfit, and slim ordinary body proportions. Full body standing, relaxed arms slightly away from sides, facing viewer, very slight three-quarter turn. Do not add hat, weapons, backpack, objects, rug, ground plane, or shadow plate. Character should fill a portrait canvas, head and boots uncut. Reference image 1 is CHARACTER IDENTITY; reference image 2 is RENDERING STYLE.",
+      "cleanup": "Built-in image_gen edit: preserve subject, remove diffuse halo outside silhouette, retain alpha."
+    },
+    {
+      "name": "tent",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-2d66988f-082d-4bc5-9332-eef707e7da6a.png",
+      "file": "tent-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated cutout asset for a layered 2D mobile adventure camp. Match the supplied background reference: bold dark hand-ink contours, clean flat cheerful colors, simple soft cel shading, charming cartoon rather than realistic or 3D. Front view with a slight view of top surfaces, soft daylight from upper left. REAL TRANSPARENT BACKGROUND with alpha, no white matte, no checkerboard pixels. No scenery, no interface, no lettering, no numbers, no watermark. Single object fully within frame with about 5% transparent edge margin, big readable shapes. Do not draw any other asset. Subject: a single small cozy ochre-orange A-frame camping tent, dark warm brown entrance opening with rolled canvas flap, simple rope and pegs close to tent edges. View from front slightly from right, broad low triangular silhouette. No person, sleeping bag, lantern, furniture, campfire, vegetation, or patch of ground. Transparent landscape cutout, intended display aspect roughly 180:116. The entire tent and pegs must fit."
+    },
+    {
+      "name": "hammock",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-a5835eee-d979-4d9e-885f-5d4a50444cdd.png",
+      "file": "hammock-v1.png",
+      "prompt": "Use case: stylized-concept. Asset type: ONE isolated cutout asset for a layered 2D mobile adventure camp. Match the supplied background reference: bold dark hand-ink contours, clean flat cheerful colors, simple soft cel shading, charming cartoon rather than realistic or 3D. Front view with a slight view of top surfaces, soft daylight from upper left. REAL TRANSPARENT BACKGROUND with alpha, no white matte, no checkerboard pixels. No scenery, no interface, no lettering, no numbers, no watermark. Single object fully within frame with about 5% transparent edge margin, big readable shapes. Do not draw any other asset. Subject: ONE unoccupied simple teal camping hammock sagging in a shallow U shape, cream rope at both ends stretched upward to attachment loops. Just hammock cloth plus ropes, NO trees, posts, frame, person, pillows, string lights, ground, or extra objects. Wide horizontal cutout with aspect about 3:1; cloth around middle lower half, ropes reach left and right outer upper corners. Strong readable silhouette for a 254 by 84 game asset."
+    },
+    {
+      "name": "fire",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-ebed7a74-0790-4b9c-996f-c40fc3cde7dc.png",
+      "file": "fire-v1.png",
+      "prompt": "Use case: stylized-concept. ONE isolated 2D game cutout, real transparent background with alpha. Use the supplied image ONLY as a visual-style reference: bold dark ink contours, cheerful flat colors, simple soft cel shading, storybook cartoon, clear shape at small size. Front view slightly looking down at the object, daylight from upper left. Object entirely visible with a small 5% clear margin. Transparent cutout only: NO backdrop, NO paper, NO white matte, NO checkerboard, NO glow around edges, NO diffuse colored halo, NO ground plane, NO text or numbers, NO UI, no additional items. Draw ONLY a campfire: a compact crossed stack of four chunky brown wooden logs with a lively orange and yellow flame rising from them, no stones, no ground shadow, no kettle or tripod. Flame and logs as a single broad cutout, intended displayed aspect ratio about 100:80. Keep black outline around flame shape, no oversized smoky cloud."
+    },
+    {
+      "name": "kettle",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-9c711ff6-a421-4a2b-ac0e-49029e2ef063.png",
+      "file": "kettle-v1.png",
+      "prompt": "Use case: stylized-concept. ONE isolated 2D game cutout, real transparent background with alpha. Use the supplied image ONLY as a visual-style reference: bold dark ink contours, cheerful flat colors, simple soft cel shading, storybook cartoon, clear shape at small size. Front view slightly looking down at the object, daylight from upper left. Object entirely visible with a small 5% clear margin. Transparent cutout only: NO backdrop, NO paper, NO white matte, NO checkerboard, NO glow around edges, NO diffuse colored halo, NO ground plane, NO text or numbers, NO UI, no additional items. Draw ONLY one small round blue enamel camping kettle with black arched handle, short spout and tiny lid. Three-quarter front view facing left, full silhouette contained, no steam, no fire, no tripod, no wood, no backdrop, no supporting surface. Compact kettle should read at only 56 pixels wide."
+    },
+    {
+      "name": "pet",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-eb972170-a573-46da-b2e6-662b3e7642d3.png",
+      "file": "pet-v1.png",
+      "prompt": "Use case: stylized-concept. ONE isolated 2D game cutout, real transparent background with alpha. Use the supplied image ONLY as a visual-style reference: bold dark ink contours, cheerful flat colors, simple soft cel shading, storybook cartoon, clear shape at small size. Front view slightly looking down at the object, daylight from upper left. Object entirely visible with a small 5% clear margin. Transparent cutout only: NO backdrop, NO paper, NO white matte, NO checkerboard, NO glow around edges, NO diffuse colored halo, NO ground plane, NO text or numbers, NO UI, no additional items. Draw ONLY one cheerful little woodland squirrel sitting upright with a large curled cinnamon-orange bushy tail, cream belly, tiny dark dot eyes, friendly face and little front paws. A simple compact cute side-three-quarter pose looking to the right toward the hero. No clothing, no acorn, no props, no ground shadow. Square cutout composition, recognizable at 64 by 64 pixels."
+    },
+    {
+      "name": "lantern",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-8d840133-d4a3-4fda-a545-fdfa1c1f90fc.png",
+      "file": "lantern-v2.png",
+      "prompt": "Use case: stylized-concept. Generate ONE isolated cutout asset, real transparent background with alpha, for a cheerful 2D cartoon adventure game. Style reference: bold dark ink contour, flat warm colors, simple limited cel shading, no realism, no 3D. Readable at 56 pixels wide. Front three-quarter view with soft daylight from upper left. Entire object within frame, small 5% transparent margin, no ground, no scene, no ground shadow, no checkerboard, no white matte, no diffuse glow. No lettering, no numbers, no logos, no interface. Subject: ONE compact old-fashioned camping lantern with an arched carry handle, warm brass metal frame and golden glass panels. Small gentle light inside the lantern only, no glowing halo outside silhouette. Tall narrow silhouette, no pole, no rope, no surrounding objects.",
+      "cleanup": "Built-in image_gen edit: preserve subject, remove diffuse halo outside silhouette, retain alpha."
+    },
+    {
+      "name": "map",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-59c0a1ef-7355-44d0-a05d-01977377ec2e.png",
+      "file": "map-v1.png",
+      "prompt": "Use case: stylized-concept. Generate ONE isolated cutout asset, real transparent background with alpha, for a cheerful 2D cartoon adventure game. Style reference: bold dark ink contour, flat warm colors, simple limited cel shading, no realism, no 3D. Readable at 56 pixels wide. Front three-quarter view with soft daylight from upper left. Entire object within frame, small 5% transparent margin, no ground, no scene, no ground shadow, no checkerboard, no white matte, no diffuse glow. No lettering, no numbers, no logos, no interface. Subject: ONE folded parchment adventure map icon, warm tan paper in three folds, with a simple green woodland shape and a curving dashed trail drawn on the paper. No letters, compass labels, numbers, pins, hand, scroll handles, or other objects. Compact nearly square silhouette."
+    },
+    {
+      "name": "backpack",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-ddf9033e-8308-43be-9dfb-58b2e583e42a.png",
+      "file": "backpack-v1.png",
+      "prompt": "Use case: stylized-concept. Generate ONE isolated cutout asset, real transparent background with alpha, for a cheerful 2D cartoon adventure game. Style reference: bold dark ink contour, flat warm colors, simple limited cel shading, no realism, no 3D. Readable at 56 pixels wide. Front three-quarter view with soft daylight from upper left. Entire object within frame, small 5% transparent margin, no ground, no scene, no ground shadow, no checkerboard, no white matte, no diffuse glow. No lettering, no numbers, no logos, no interface. Subject: ONE small rounded forest-green canvas hiking backpack with a brown leather top flap, two front straps with simple buckles, one front pocket, and a top carry loop. Backpack standing alone, entire silhouette including straps visible. No person, rolled blanket, attached utensils, ground, or other objects."
+    }
+  ]
+}

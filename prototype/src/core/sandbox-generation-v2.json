@@ -1,0 +1,55 @@
+{
+  "mode": "built-in image_gen",
+  "status": "draft",
+  "pack": "camp-v2",
+  "assets": [
+    {
+      "name": "background",
+      "file": "background.png",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-571c4277-bedb-4622-91a6-d52b15d03c92.png",
+      "prompt": "Use case: precise-object-edit / stylized-concept. Edit this portrait cartoon forest background into a SIMPLER, CALMER version for a layered mobile camp game, maintaining its cheerful green palette and bold dark cartoon outlines. Most important change: create an obvious broad grassy LAWN CLEARING, a gently flattened open oval of light warm green grass across the middle/lower scene, from approximately 40% to 78% of image height. It is real level ground connected to the surrounding ground, NOT a floating island, rug, platform, circle UI or isolated disc. A large separately added boy will stand with boots at x39%, y66%; put a clear flat landing area there with no foliage. Simplify dramatically: two edge-framing trees made of broad smooth foliage masses, at most 3 leaf color regions per tree, no individual tiny leaves or bark hatching; distant forest as just 2–3 broad soft silhouettes; remove mountains and most tiny trees, stones, speckles, dirt streaks and dozens of grass tufts. Lawn should be mostly one flat green fill with a subtle edge and no grass texture. Only 3 or 4 small grass clumps at extreme edges, never center. Sky is a modest quiet opening, lower two-thirds dominated by grassy ground. Keep clean 2D ink outline and at most one flat shadow tone per shape, absolutely no watercolor texture or 3D rendering. Background only: no characters, tent, fire, kettle, pet, hammock, lamp, rug, furniture, UI, text, numbers, paths, trails. Same portrait aspect ratio as reference, full-bleed."
+    },
+    {
+      "name": "hero",
+      "file": "hero.png",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-dd09058b-9c15-4e53-a2e0-5313bf079d2c.png",
+      "prompt": "Use case: precise-object-edit / style-transfer. Image 1 is the object to edit, Image 2 is the NEW simplified style reference. Preserve the subject, silhouette, overall color, pose, orientation and identity from Image 1. Simplify its rendering just a little to harmonize with Image 2: clean bold dark outlines, large flat color fills, at most one broad shadow shape per material. Remove tiny scratches, stipple, hatching, texture, little white glints, multiple gradient bands, overly busy internal linework. Keep its friendly adventure-cartoon character. No new objects, no scene, no ground. One isolated object fully visible, genuine transparent background with alpha. NO colored halo, glow, matte, paper, checkerboard, cast shadow or text. Preserve this SAME blond boy, dot eyes, simple smile, cream tunic, blue trousers and pale boots. Keep the same full-body slim build and exact outfit; do not change body shape. Remove most fold lines and small highlights from hair, shirt and boots, keep only essential large folds. Frame full head and both boots with minimal transparent padding."
+    },
+    {
+      "name": "tent",
+      "file": "tent.png",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-45cbabaa-8d44-4521-b30b-9a005ae3d702.png",
+      "prompt": "Use case: precise-object-edit / style-transfer. Image 1 is the object to edit, Image 2 is the NEW simplified style reference. Preserve the subject, silhouette, overall color, pose, orientation and identity from Image 1. Simplify its rendering just a little to harmonize with Image 2: clean bold dark outlines, large flat color fills, at most one broad shadow shape per material. Remove tiny scratches, stipple, hatching, texture, little white glints, multiple gradient bands, overly busy internal linework. Keep its friendly adventure-cartoon character. No new objects, no scene, no ground. One isolated object fully visible, genuine transparent background with alpha. NO colored halo, glow, matte, paper, checkerboard, cast shadow or text. Preserve the single orange A-frame tent, open entrance and overall perspective. Simplify panels to flat ochre and one darker orange shadow, dark flat doorway. Remove fine fabric texture, seam doodles, wood grain on pegs and lots of folds; keep only the essential tent outline, opening, broad flap and simple guy lines. Entire tent and pegs contained."
+    },
+    {
+      "name": "fire",
+      "file": "fire.png",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-9095d78e-a200-4c8e-a88a-31dae4c7f583.png",
+      "prompt": "Use case: precise-object-edit / style-transfer. Image 1 is the object to edit, Image 2 is the simplified new background style. Keep the exact object's identity, color, broad silhouette and viewing angle. Reduce detail slightly: bold clean dark outlines, big flat colors, at most one flat shadow per material, no texture, no tiny scratch marks, no repeated hatching or multiple shiny highlight bands. Clean friendly 2D adventure cartoon. One isolated fully visible cutout on a genuine transparent alpha background, no surrounding objects, backdrop, shadows, glow, checkerboard or text. A compact fire with just 3 or 4 chunky smooth logs and 3 broad flame color shapes. Remove all fine wood-grain lines and detailed nested licks of flame. Keep the fire cheerful and easily readable small, not bigger than the original."
+    },
+    {
+      "name": "kettle",
+      "file": "kettle.png",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-cd43b9c8-4f7a-47a9-964b-4fb64e4b3727.png",
+      "prompt": "Use case: precise-object-edit / style-transfer. Image 1 is the object to edit, Image 2 is the simplified new background style. Keep the exact object's identity, color, broad silhouette and viewing angle. Reduce detail slightly: bold clean dark outlines, big flat colors, at most one flat shadow per material, no texture, no tiny scratch marks, no repeated hatching or multiple shiny highlight bands. Clean friendly 2D adventure cartoon. One isolated fully visible cutout on a genuine transparent alpha background, no surrounding objects, backdrop, shadows, glow, checkerboard or text. The same blue enamel kettle with black arched handle. Remove ALL chipped paint, speckles and scratches and most white gleaming highlights. Clean smooth blue pot, a single broad darker blue shadow, tiny flat highlight if needed. No steam or fire."
+    },
+    {
+      "name": "pet",
+      "file": "pet.png",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-f8603bb5-206d-4dc5-9181-0a97aa885919.png",
+      "prompt": "Use case: precise-object-edit / style-transfer. Image 1 is the object to edit, Image 2 is the NEW simplified style reference. Preserve the subject, silhouette, overall color, pose, orientation and identity from Image 1. Simplify its rendering just a little to harmonize with Image 2: clean bold dark outlines, large flat color fills, at most one broad shadow shape per material. Remove tiny scratches, stipple, hatching, texture, little white glints, multiple gradient bands, overly busy internal linework. Keep its friendly adventure-cartoon character. No new objects, no scene, no ground. One isolated object fully visible, genuine transparent background with alpha. NO colored halo, glow, matte, paper, checkerboard, cast shadow or text. Preserve the same friendly orange squirrel, cream belly, big curled tail, upright pose facing right. Much fewer little fur marks and tail segments, no glossy white highlights in fur. Use large simple color shapes for the tail. Keep simple expressive friendly face and compact cute silhouette. No props."
+    },
+    {
+      "name": "map",
+      "file": "map.png",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-578b31b8-7cad-47ca-aa5d-8d4727447ded.png",
+      "prompt": "Use case: precise-object-edit / style-transfer. Image 1 is the object to edit, Image 2 is the simplified new background style. Keep the exact object's identity, color, broad silhouette and viewing angle. Reduce detail slightly: bold clean dark outlines, big flat colors, at most one flat shadow per material, no texture, no tiny scratch marks, no repeated hatching or multiple shiny highlight bands. Clean friendly 2D adventure cartoon. One isolated fully visible cutout on a genuine transparent alpha background, no surrounding objects, backdrop, shadows, glow, checkerboard or text. The same folded parchment adventure map. Much less detail: 3 large forest blobs, one simple curved dashed trail, three broad paper panels and a simple irregular paper edge. No tiny trees, grass tufts, speckles, writing, symbols, labels or numbers. Readable as map at 56 pixels."
+    },
+    {
+      "name": "backpack",
+      "file": "backpack.png",
+      "source": "/Users/looseconfetti/.codex/generated_images/01a16e85-46c9-75c1-816d-5b1f949cf429/exec-c42dc9c4-537a-47b6-907b-33274337e51c.png",
+      "prompt": "Use case: precise-object-edit / style-transfer. Image 1 is the object to edit, Image 2 is the simplified new background style. Keep the exact object's identity, color, broad silhouette and viewing angle. Reduce detail slightly: bold clean dark outlines, big flat colors, at most one flat shadow per material, no texture, no tiny scratch marks, no repeated hatching or multiple shiny highlight bands. Clean friendly 2D adventure cartoon. One isolated fully visible cutout on a genuine transparent alpha background, no surrounding objects, backdrop, shadows, glow, checkerboard or text. The same green hiking backpack with brown flap and front straps. Remove all leather scratches, little stitches, fabric texture, glints and detailed creases. Keep top loop, flap, two simple straps and one pocket. Large flat green and brown regions, small simple buckles."
+    }
+  ]
+}

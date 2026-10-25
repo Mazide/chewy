@@ -1,32 +1,40 @@
 import { useState } from 'react';
 import { EMPTY_PLATE, ITEMS, MEAL_PRESETS, plateFractions, scoreMeal } from '../data/game.js';
 import './core-skeleton.css';
+import { CoreCanvasView } from './CoreCanvasView.jsx';
 
 const SAMPLE = MEAL_PRESETS.find((meal) => meal.id === 'salad');
 const LANTERN = ITEMS.find((item) => item.id === 'lantern');
+const VISIBLE_MEALS = 2;
 const TITLES = {
   camp: 'Лагерь', add: 'Добавить еду', result: 'Результат',
-  journal: 'Журнал дня', path: 'Путь', backpack: 'Рюкзак',
+  path: 'Путь', backpack: 'Рюкзак',
 };
 const PURPOSES = {
-  camp: 'Главный экран: герой, состояние дня и вход в действие.',
+  camp: 'Главный экран: герой, тарелка и сегодняшние записи вместе.',
   add: 'Фото и порция. Камеру пока заменяет пример еды.',
   result: 'Реакция героя, изменение тарелки дня и награда.',
-  journal: 'Что уже добавлено сегодня.',
   path: 'Возвращения и прогресс по дням. Пока только сегодняшний день.',
   backpack: 'Купить вещь, применить и увидеть её в лагере.',
 };
 
-function makeState(seeded, initialCoins) {
-  const result = seeded ? scoreMeal({ ...EMPTY_PLATE }, SAMPLE, 1, 0) : null;
-  return {
-    meals: result ? [{ id: 1, name: 'Овощи с гарниром' }] : [],
-    plate: result?.plateAfter ?? { ...EMPTY_PLATE },
-    coins: initialCoins + (result?.coins ?? 0),
-    result,
+function makeState(mealCount, initialCoins) {
+  const state = {
+    meals: [],
+    plate: { ...EMPTY_PLATE },
+    coins: initialCoins,
+    result: null,
     owned: false,
     equipped: false,
   };
+  for (let index = 0; index < mealCount; index++) {
+    const result = scoreMeal(state.plate, SAMPLE, 1, state.meals.length);
+    state.meals.push({ id: index + 1, name: 'Овощи с гарниром' });
+    state.plate = result.plateAfter;
+    state.coins += result.coins;
+    state.result = result;
+  }
+  return state;
 }
 
 function Plate({ plate }) {
@@ -52,19 +60,23 @@ function Scene({ fed, equipped, reaction = false }) {
   );
 }
 
-export function CoreSkeleton({ initialScreen = 'camp', seeded = false, initialCoins = 0, compact = false }) {
+export function CoreSkeleton({ initialScreen = 'camp', seeded = false, initialMealCount = seeded ? 1 : 0, initialCoins = 0, compact = false, presentation = 'skeleton' }) {
   const [screen, setScreen] = useState(initialScreen);
-  const [state, setState] = useState(() => makeState(seeded, initialCoins));
+  const [state, setState] = useState(() => makeState(initialMealCount, initialCoins));
   const [photo, setPhoto] = useState(false);
   const [portion, setPortion] = useState(1);
+  const [showAllMeals, setShowAllMeals] = useState(false);
   const fed = state.meals.length > 0;
+  const latestMeals = [...state.meals].reverse();
+  const visibleMeals = showAllMeals ? latestMeals : latestMeals.slice(0, VISIBLE_MEALS);
   const camp = () => setScreen('camp');
   const add = () => { setPhoto(false); setPortion(1); setScreen('add'); };
   const reset = () => {
-    setState(makeState(seeded, initialCoins));
+    setState(makeState(initialMealCount, initialCoins));
     setScreen(initialScreen);
     setPhoto(false);
     setPortion(1);
+    setShowAllMeals(false);
   };
   const feed = () => {
     if (!photo) return;
@@ -74,10 +86,19 @@ export function CoreSkeleton({ initialScreen = 'camp', seeded = false, initialCo
       meals: [...state.meals, { id: state.meals.length + 1, name: 'Овощи с гарниром' }],
     });
     setPhoto(false);
+    setShowAllMeals(false);
     setScreen('result');
   };
   const buy = () => setState((current) => current.owned || current.coins < LANTERN.cost
     ? current : { ...current, owned: true, coins: current.coins - LANTERN.cost });
+
+  if (presentation === 'canvas') return <CoreCanvasView
+    screen={screen} title={TITLES[screen]} state={state} photo={photo} portion={portion}
+    onReset={reset} onCamp={camp} onAdd={add} onScreen={setScreen}
+    onPhoto={() => setPhoto(true)} onPortion={setPortion} onFeed={feed} onBuy={buy}
+    onEquip={() => setState((current) => ({ ...current, equipped: !current.equipped }))}
+    lanternCost={LANTERN.cost} compact={compact}
+  />;
 
   return (
     <section className={`core-workbench${compact ? ' core-compact' : ''}`}>
@@ -87,17 +108,22 @@ export function CoreSkeleton({ initialScreen = 'camp', seeded = false, initialCo
           {screen !== 'camp' ? <button className="core-back" onClick={camp}>← В лагерь</button> : <span className="core-brand">chewy</span>}
           <span className="core-wallet">{state.coins} монет</span>
         </header>
-        <main className="core-content">
-          <div className="core-heading"><span className="core-eyebrow">Твой маленький мир</span><h1>{TITLES[screen]}</h1></div>
+        <main className={`core-content core-screen-${screen}`}>
+          <div className="core-heading"><h1>{TITLES[screen]}</h1></div>
 
           {screen === 'camp' && <>
             <Scene fed={fed} equipped={state.equipped} />
-            <button className="core-day core-card" onClick={() => setScreen('journal')}>
-              <Plate plate={state.plate} /><span><strong>Тарелка дня</strong><small>{fed ? 'Еда записана в журнал' : 'Сегодня пока нет записей'}</small></span><span aria-hidden="true">→</span>
-            </button>
+            <section className="core-today core-card" aria-label="Сегодня">
+              <div className="core-day">
+                <Plate plate={state.plate} /><span><h2>Сегодня</h2><small>Тарелка дня</small></span>
+              </div>
+              {fed ? <ul className="core-meals" aria-label="Еда сегодня">{visibleMeals.map((meal, index) => <li className="core-meal" key={meal.id}>
+                <span className="core-meal-icon" aria-hidden="true" /><span><strong>{meal.name}</strong><small>{index === 0 ? 'Последняя запись' : 'Добавлено сегодня'}</small></span>
+              </li>)}</ul> : <p className="core-today-empty">Сегодня пока нет записей.</p>}
+              {state.meals.length > VISIBLE_MEALS && <button className="core-meals-toggle" aria-expanded={showAllMeals} onClick={() => setShowAllMeals((current) => !current)}>{showAllMeals ? 'Свернуть список' : 'Показать остальные'}</button>}
+            </section>
             <button className="core-button core-primary" onClick={add}>Добавить еду</button>
             <nav className="core-nav" aria-label="Экраны лагеря">
-              <button onClick={() => setScreen('journal')}>Журнал</button>
               <button onClick={() => setScreen('path')}>Путь</button>
               <button onClick={() => setScreen('backpack')}>Рюкзак</button>
             </nav>
@@ -121,13 +147,6 @@ export function CoreSkeleton({ initialScreen = 'camp', seeded = false, initialCo
             <button className="core-button core-primary" onClick={camp}>В лагерь</button>
           </> : <><p className="core-empty">Сначала добавь еду — здесь появится результат.</p><button className="core-button core-primary" onClick={add}>Добавить еду</button></>)}
 
-          {screen === 'journal' && <>
-            <div className="core-day core-card"><Plate plate={state.plate} /><span><strong>Сегодня</strong><small>Тарелка складывается из твоих записей</small></span></div>
-            <div className="core-list">{fed ? state.meals.map((meal) => <div className="core-meal" key={meal.id}><span className="core-meal-icon" aria-hidden="true" /><span><strong>{meal.name}</strong><small>Сегодня · добавлено</small></span></div>) : <p className="core-empty">Сегодня пока нет записей.</p>}</div>
-            <button className="core-button core-primary" onClick={add}>Добавить еду</button>
-            <button className="core-button" onClick={() => setScreen('path')}>Посмотреть путь</button>
-          </>}
-
           {screen === 'path' && <>
             <p className="core-lead">Каждый день с тобой — часть пути.</p>
             <div className="core-trail"><div className={`core-stop${fed ? ' core-stop-lit' : ''}`} /><strong>Сегодня</strong><span>{fed ? 'Костёр горит — еда записана' : 'Здесь начинается твой путь'}</span><div className="core-trail-line" /><small>Продолжение впереди</small></div>
@@ -149,6 +168,6 @@ export function CoreSkeleton({ initialScreen = 'camp', seeded = false, initialCo
   );
 }
 
-export function CoreOverview() {
-  return <div className="core-overview"><header><p>CHEWY / CORE SKELETON</p><h1>Кор по экранам</h1><p>Лагерь → еда → результат → лагерь → вещь. Каждый экран можно потыкать отдельно.</p><p>Демосостояния независимы. Фото, анализ и сохранение — заглушки; экономика и тексты черновые.</p></header><div className="core-overview-grid">{Object.keys(TITLES).map((screen) => <div key={screen}><h2>{TITLES[screen]}</h2><CoreSkeleton initialScreen={screen} seeded={screen !== 'camp' && screen !== 'add'} initialCoins={screen === 'backpack' ? LANTERN.cost : 0} compact /></div>)}</div></div>;
+export function CoreOverview({ presentation = 'skeleton' }) {
+  return <div className="core-overview"><header><p>{presentation === 'canvas' ? 'CHEWY / CORE CANVAS' : 'CHEWY / CORE SKELETON'}</p><h1>Кор по экранам</h1><p>Лагерь → еда → результат → лагерь → вещь. Каждый экран можно потыкать отдельно.</p><p>Демосостояния независимы. Фото, анализ и сохранение — заглушки; экономика и тексты черновые.</p></header><div className="core-overview-grid">{Object.keys(TITLES).map((screen) => <div key={screen}><h2>{TITLES[screen]}</h2><CoreSkeleton presentation={presentation} initialScreen={screen} seeded={screen !== 'camp' && screen !== 'add'} initialCoins={screen === 'backpack' ? LANTERN.cost : 0} compact /></div>)}</div></div>;
 }
