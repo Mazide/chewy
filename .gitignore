@@ -10,6 +10,9 @@ xcuserdata/
 *.swp
 *~
 
+# Editor-generated ctags index
+/chewy/tags
+
 # API keys — never commit
 chewy/chewy/Secrets.plist
 .env
