@@ -11,11 +11,11 @@ python3 -m venv tools/.venv
 tools/.venv/bin/pip install -r tools/requirements.txt
 
 # Отдельные кадры для SpriteKit
-tools/.venv/bin/python3 tools/video_to_spritesheet.py assets/idle.mp4 \
+tools/.venv/bin/python3 tools/video_to_spritesheet.py assets/idle_from_mov.mp4 \
   --frames --out chewy/chewy/Assets.xcassets/hero.spriteatlas
 
 # Спрайтшит и метаданные
-tools/.venv/bin/python3 tools/video_to_spritesheet.py assets/idle.mp4 --out assets/output
+tools/.venv/bin/python3 tools/video_to_spritesheet.py assets/idle_from_mov.mp4 --out assets/output
 ```
 
 ## Параметры
