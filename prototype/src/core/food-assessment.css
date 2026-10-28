@@ -1,0 +1,83 @@
+.nutrition-day, .nutrition-meal { --nutrition-ink:#493c2c; --nutrition-green:#527442; --nutrition-amber:#825722; color:var(--nutrition-ink); }
+.nutrition-day-heading { display:flex; align-items:center; gap:15px; }
+.nutrition-day-heading figure { flex-shrink:0; margin:0; }
+.nutrition-day-heading figcaption { text-align:center; font-size:10px; margin-top:7px; color:#70634c; }
+.nutrition-kicker { display:block; font-size:11px; color:#70634c; margin-bottom:5px; }
+.nutrition-day h3, .nutrition-meal h3 { margin:0; font-size:19px; line-height:1.2; font-weight:750; }
+.nutrition-day p, .nutrition-meal p { margin:7px 0 0; font-size:12px; line-height:1.5; }
+.nutrition-plate { position:relative; display:block; flex:0 0 88px; width:88px; height:88px; border:6px solid #fffaf0; border-radius:48% 50% 49% 47%; outline:1.5px solid #b49a69; box-shadow:2px 3px 0 #b49a6940; background:conic-gradient(from 180deg,#89aa64 0deg 178deg,#fbf8e9 178deg 182deg,#ba876c 182deg 268deg,#fbf8e9 268deg 272deg,#d7b461 272deg 358deg,#fbf8e9 358deg); }
+.nutrition-plate > span { position:absolute; font-size:24px; line-height:1; color:#fff9e5; text-shadow:0 1px 1px #493c2c66; }
+.nutrition-plate-veg { left:12%; top:33%; }
+.nutrition-plate-protein { right:13%; top:13%; }
+.nutrition-plate-grain { right:14%; bottom:13%; }
+.nutrition-plate-small { flex-basis:32px; width:32px; height:32px; border-width:3px; }
+.nutrition-plate-small > span { display:none; }
+.nutrition-groups { list-style:none; padding:13px 0; margin:12px 0 0; border-block:1px solid #d8c9a4; }
+.nutrition-groups li { display:flex; align-items:center; gap:7px; padding:4px 0; font-size:12px; }
+.nutrition-groups small { margin-left:auto; color:#70634c; font-size:10px; text-align:right; }
+.nutrition-group-dot { flex:0 0 8px; width:8px; height:8px; border-radius:50%; }
+.nutrition-group-veg { background:#63864c; }
+.nutrition-group-protein { background:#b47855; }
+.nutrition-group-wholegrain { background:#c99e3f; }
+.nutrition-quality { padding:12px 0 6px; }
+.nutrition-quality strong, .nutrition-next strong { font-size:12px; }
+.nutrition-quality p { color:#527442; margin-top:3px; }
+.nutrition-quality small { display:block; color:#70634c; font-size:11px; margin-top:6px; line-height:1.4; }
+.nutrition-method { margin-top:9px; font-size:11px; line-height:1.5; color:#70634c; }
+.nutrition-method summary, .nutrition-quality-details summary { cursor:pointer; min-height:36px; display:list-item; align-content:center; }
+.nutrition-method a { color:#38594b; text-underline-offset:2px; }
+.nutrition-method p { font-size:11px; margin:5px 0 9px; }
+.nutrition-meal { padding:0 0 15px; border-bottom:1px dashed #b49a69; }
+.nutrition-tone-consider h3 { color:var(--nutrition-amber); }
+.nutrition-tone-good h3 { color:var(--nutrition-green); }
+.nutrition-next { margin-top:12px; padding-left:10px; border-left:3px solid #b49a69; }
+.nutrition-next p { margin-top:3px; }
+.nutrition-quality-details { margin-top:10px; font-size:11px; color:#70634c; }
+.nutrition-quality-details p { font-size:11px; }
+.nutrition-edit-note { padding:8px; background:#ede1c1; border-radius:4px; }
+.food-journal-scroll { overflow-y:auto; overscroll-behavior:contain; min-height:0; padding-right:3px; }
+.food-journal-scroll .food-journal-entries { overflow:visible; margin-top:18px; }
+.food-journal-scroll .food-journal-entries h3 { margin:0 0 15px; font-size:13px; color:#70634c; }
+.food-journal-entry-assessment { font-size:11px; line-height:1.35; color:#527442; }
+.food-journal-entry-assessment[data-tone=consider] { color:#825722; }
+.food-journal-entry-assessment[data-tone=unknown] { color:#70634c; }
+.food-journal-summary-copy .food-journal-summary-verdict { font-size:10px; white-space:normal; line-height:1.15; color:#685b41; }
+.food-journal-page { container-type:inline-size; font-family:ui-rounded,'Avenir Next',system-ui,sans-serif; }
+.food-journal-summary .nutrition-plate { margin-right:2px; }
+.capture-result-content .nutrition-meal { flex-shrink:0; }
+.nutrition-supplies-heading { display:flex; align-items:center; gap:15px; padding:0 0 10px; }
+.nutrition-supplies-heading > .study-media { position:relative; flex:0 0 65px; width:65px; height:70px; }
+.nutrition-supplies-heading h3 { font-size:21px; }
+.nutrition-supplies-heading p { max-width:190px; color:#70634c; }
+.nutrition-supplies { list-style:none; margin:6px 0 10px; padding:0; }
+.nutrition-supplies > li { display:flex; align-items:center; gap:10px; padding:9px 0; }
+.nutrition-supply-icon { display:grid; place-items:center; flex:0 0 32px; width:32px; height:36px; color:var(--supply-color); background:#eee5c9; border-radius:45% 50% 42% 46%; }
+.nutrition-supply-icon svg { width:25px; height:25px; }
+.nutrition-supply-body { flex:1; min-width:0; }
+.nutrition-supply-body > strong { display:block; font-size:12px; font-weight:650; line-height:1.3; }
+.nutrition-supply-body > small { display:block; font-size:10px; line-height:1.3; color:#70634c; margin-top:4px; }
+.nutrition-supply-track { display:block; position:relative; height:13px; margin-top:5px; border:1px solid #baa783; border-radius:5px 7px 6px 5px; background:#e9dfc4; overflow:hidden; box-shadow:inset 0 1px 2px #88704420; }
+.nutrition-supply-track > span { display:block; position:absolute; top:1px; bottom:1px; border-radius:3px; }
+.nutrition-supply-existing { background:var(--supply-color); }
+.nutrition-supply-added { background:var(--supply-pale); border-left:1px solid #fff8df; transform-origin:left; animation:supply-arrives 600ms ease-out both; }
+.nutrition-supply-unconfirmed { background:repeating-linear-gradient(120deg,#eee6d2 0 5px,#e1d6b9 5px 6px); }
+.nutrition-mini-supplies { display:flex; align-items:flex-end; gap:3px; flex:0 0 34px; height:30px; }
+.nutrition-mini-supplies > span { display:block; position:relative; width:6px; height:28px; overflow:hidden; border:1px solid #aa9876; border-radius:3px; background:#e9dfc4; }
+.nutrition-mini-supplies i { position:absolute; bottom:0; left:0; right:0; background:var(--supply-color); }
+.nutrition-method-plate { display:flex; align-items:center; gap:12px; margin:12px 0; }
+.nutrition-supply-legend { color:#70634c; font-size:11px !important; }
+.nutrition-supply-legend i { display:inline-block; width:9px; height:9px; margin-right:5px; background:#d4dfa9; border:1px solid #9baf68; border-radius:2px; }
+.nutrition-meal .nutrition-supplies { margin-bottom:16px; }
+.nutrition-meal-verdict { display:block; font-size:13px; }
+@keyframes supply-arrives { from { transform:scaleX(0); } to { transform:scaleX(1); } }
+@media (prefers-reduced-motion:reduce) { .nutrition-supply-added { animation:none; } }
+@container (max-width:320px) {
+  .nutrition-supplies-heading { gap:10px; }
+  .nutrition-supplies-heading > .study-media { flex-basis:50px; width:50px; height:60px; }
+  .nutrition-supplies > li { padding:7px 0; }
+  .nutrition-day-heading { gap:12px; }
+  .nutrition-day-heading .nutrition-plate { flex-basis:62px; width:62px; height:62px; border-width:4px; }
+  .nutrition-day-heading .nutrition-plate > span { font-size:20px; }
+  .nutrition-day h3 { font-size:17px; }
+  .nutrition-groups { padding:9px 0; }
+}

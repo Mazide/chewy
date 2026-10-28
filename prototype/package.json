@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Storybook prototyping workbench for the Chewy app UI",
   "scripts": {
+    "test": "node --test src/core/*.test.mjs",
     "dev": "storybook dev -p 6006 --no-open",
     "build": "storybook build",
     "storybook": "storybook dev -p 6006 --no-open",

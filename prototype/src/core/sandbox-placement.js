@@ -1,5 +1,5 @@
 export const PLACEMENT_STORAGE_KEY = 'chewy.sandbox.placement.v1';
-const MOVABLE_IDS = ['tent', 'hero', 'fire', 'pet', 'kettle', 'map', 'backpack', 'food', 'action'];
+const MOVABLE_IDS = ['tent', 'hero', 'fire', 'pet', 'kettle', 'workshop', 'fuel', 'light', 'garden', 'map', 'backpack', 'food', 'action'];
 const DEVICE_IDS = ['compact', 'standard', 'large'];
 
 export function readPlacements(raw) {
@@ -25,7 +25,8 @@ export function getResizeLimits(base, id) {
   if (!frame) return null;
   const [, , width, height] = frame;
   const isObject = base.objects.some((object) => object.id === id);
-  const min = isObject ? .25 : Math.max((id === 'food' || id === 'action' ? 160 : 56) / width, 44 / height);
+  const minWidth = id === 'action' && ['inline', 'separate'].includes(base.foodLayout) ? 64 : id === 'food' || id === 'action' ? 160 : 56;
+  const min = isObject ? .25 : Math.max(minWidth / width, 44 / height);
   return { min, max: Math.min(3, base.width / width, base.height / height) };
 }
 

@@ -1,11 +1,11 @@
-import background from '../../public/assets/sandbox/camp-v3-flat/background.png';
-import hero from '../../public/assets/sandbox/archive-reference/hero_idle_sheet.png';
-import tent from '../../public/assets/sandbox/camp-v3-flat/tent.png';
-import fire from '../../public/assets/sandbox/camp-v3-flat/fire.png';
-import kettle from '../../public/assets/sandbox/camp-v3-flat/kettle.png';
-import pet from '../../public/assets/sandbox/camp-v3-flat/dog.png';
-import map from '../../public/assets/sandbox/camp-v3-flat/map.png';
-import backpack from '../../public/assets/sandbox/camp-v3-flat/backpack.png';
+const background = '/assets/sandbox/camp-v3-flat/background.png';
+const hero = '/assets/sandbox/archive-reference/hero_idle_sheet.png';
+const tent = '/assets/sandbox/camp-v3-flat/tent.png';
+const fire = '/assets/sandbox/camp-v3-flat/fire.png';
+const kettle = '/assets/sandbox/camp-v3-flat/kettle.png';
+const pet = '/assets/sandbox/camp-v3-flat/dog.png';
+const map = '/assets/sandbox/camp-v3-flat/map.png';
+const backpack = '/assets/sandbox/camp-v3-flat/backpack.png';
 import { CANVAS_ASSETS } from './canvas-layout.js';
 
 const camp = CANVAS_ASSETS.camp;

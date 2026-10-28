@@ -18,8 +18,6 @@ export const CONFIG = {
   bonusT2: 2.0, // contribution units → +2
   // first N meals of the day earn full reward, later ones earn the base only
   fullRewardMeals: 4,
-  // wholeness at or below this reads as processed → sluggish reaction
-  processedMax: 0.45,
 };
 
 // --- Meal presets: what "the camera saw" ---
@@ -103,11 +101,6 @@ export const PHRASES = {
     "I'm cozy and full for today — but I wrote it all down!",
     'Phew, what a day of feasts! Into the journal it goes.',
   ],
-  sluggish: [
-    'So warm and heavy… zzz…',
-    'Ugh… sits like a rock…',
-    'Cozy… nap time…',
-  ],
   unsure: [
     "Steam in my eyes… I'll trust you!",
     "Can't quite see… smells good though!",
@@ -122,7 +115,6 @@ export const VERDICT = {
   happy: 'A hero-worthy meal!',
   content: 'Logged in the journal!',
   full: 'Full for today!',
-  sluggish: 'Heavy stuff…',
   unsure: 'Hard to see…',
   notFood: 'Hmm?',
 };
@@ -131,7 +123,6 @@ export const REACTION_LABEL = {
   happy: 'Happy',
   content: 'Content',
   full: 'Full',
-  sluggish: 'Sluggish',
   unsure: 'Unsure',
   notFood: 'Not food',
 };
@@ -167,11 +158,8 @@ export function scoreMeal(plate, preset, portionIdx, slotsUsed) {
   const coins = CONFIG.baseCoin + bonus;
 
   const lowConfidence = preset.confidence === 'low';
-  const processed = preset.wholeness <= CONFIG.processedMax;
-  const stuffed = processed && portionIdx === 2;
-
+  // Food and portion size never trigger fatigue or overeating feedback.
   const reaction = lowConfidence ? 'unsure'
-    : processed ? 'sluggish'
     : slotCapped ? 'full'
     : contribution >= CONFIG.bonusT1 ? 'happy'
     : 'content';
@@ -185,11 +173,10 @@ export function scoreMeal(plate, preset, portionIdx, slotsUsed) {
     plateBefore: plate,
     plateAfter,
     reaction,
-    stuffed,
     slotCapped,
     lowConfidence,
-    verdict: stuffed ? 'Ooof… a lot at once' : VERDICT[reaction],
-    speech: stuffed ? 'Ugh… heavy. Something fresh tomorrow?' : pick(PHRASES[reaction]),
+    verdict: VERDICT[reaction],
+    speech: pick(PHRASES[reaction]),
   };
 }
 

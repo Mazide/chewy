@@ -1,0 +1,45 @@
+/* A food entry in the same field journal as the camp. */
+.capture-flow .capture-result-journal {
+  bottom:calc(var(--capture-safe-bottom) + 78px);
+  scrollbar-width:thin;
+  scrollbar-color:#b49a6970 transparent;
+}
+.capture-flow.capture-camp-style .capture-result-screen { --capture-surface:#f8efd7; }
+.capture-flow:not(.capture-camp-style) .capture-result-screen { --capture-surface:#f1f2eb; --capture-ink:#29382e; --capture-line:#9ca995; --capture-accent:#afc6a0; background:var(--capture-surface); color:var(--capture-ink); }
+.capture-flow:not(.capture-camp-style) .capture-result-screen .capture-top button { background:transparent; }
+.capture-flow:not(.capture-camp-style):has(.capture-result-screen) .capture-home-indicator { background:#61765b; }
+.capture-result-journal .nutrition-meal { border:0; padding-bottom:6px; }
+.nutrition-meal-opening { display:flex; align-items:center; gap:16px; padding:5px 2px 8px; }
+.nutrition-meal-opening > div:last-child { min-width:0; flex:1; }
+.capture-flow .nutrition-meal-opening .capture-result-photo { flex:0 0 92px; height:92px; }
+.nutrition-meal .nutrition-meal-title { color:var(--nutrition-ink); font-size:18px; line-height:1.25; overflow-wrap:anywhere; }
+.nutrition-meal .nutrition-meal-verdict { display:flex; align-items:center; gap:6px; min-height:44px; margin-top:4px; padding:4px 0; border:0; background:transparent; text-align:left; font-size:12px; line-height:1.35; font-weight:650; color:var(--nutrition-green); cursor:pointer; }
+.nutrition-disclosure-chevron { font-size:17px; line-height:1; }
+.nutrition-meal-verdict[aria-expanded=true] .nutrition-disclosure-chevron { transform:rotate(180deg); }
+.nutrition-tone-consider .nutrition-meal-verdict { color:var(--nutrition-amber); }
+.nutrition-tone-unknown .nutrition-meal-verdict { color:#70634c; }
+.nutrition-meal-stores { margin-top:18px; }
+.nutrition-meal .nutrition-meal-stores h3 { color:var(--nutrition-ink); font-size:16px; }
+.nutrition-meal .nutrition-supply-legend { margin-top:5px; }
+.nutrition-meal .nutrition-next { margin:14px 0 6px; padding:0 0 0 12px; border-left:2px solid #b49a69; }
+.nutrition-meal .nutrition-quality-details { margin-top:8px; }
+.nutrition-meal .nutrition-quality-details summary,.nutrition-meal .nutrition-method summary,.capture-result-photos summary { min-height:44px; cursor:pointer; display:list-item; align-content:center; }
+.capture-result-photos { color:#70634c; font-size:12px; }
+.capture-result-photos summary { width:fit-content; }
+.capture-result-journal .capture-photo-strip { margin-bottom:8px; }
+.capture-flow .capture-result-journal-actions { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.capture-flow .capture-result-journal-actions > button { min-height:50px; padding:9px; }
+.capture-flow .capture-result-edit { display:flex; align-items:center; justify-content:center; gap:7px; background:transparent; color:var(--capture-ink); border:1px solid var(--capture-line); border-radius:8px; font-size:13px; font-weight:650; }
+.capture-result-edit svg { width:25px; height:27px; }
+.capture-flow .capture-result-journal-actions > .capture-primary { background:var(--capture-accent); color:#17231c; border:1px solid var(--capture-accent); }
+.capture-flow.capture-camp-style .capture-result-journal-actions > .capture-primary { background:#38594b; color:#fff5d8; border:2px solid #263d2e; }
+.capture-flow.capture-camp-style .capture-result-edit { color:#493c2c; background:#fff7df; border-color:#b49a69; }
+.capture-flow .capture-result-journal :is(button,summary,a):focus-visible,.capture-flow .capture-result-journal-actions button:focus-visible { outline:2px solid #527442; outline-offset:2px; }
+.capture-flow.capture-small .nutrition-meal-opening { gap:12px; padding-top:3px; padding-bottom:4px; }
+.capture-flow.capture-small .nutrition-meal-opening .capture-result-photo { flex-basis:74px; height:74px; }
+.capture-small .nutrition-meal .nutrition-meal-title { font-size:16px; }
+.capture-small .nutrition-meal .nutrition-meal-verdict { margin-top:2px; }
+.capture-small .nutrition-meal-stores { margin-top:12px; }
+.capture-small .nutrition-meal .nutrition-supplies { column-gap:14px; }
+.capture-small .nutrition-meal .nutrition-supply-button { min-height:84px; padding:8px 6px; gap:6px; }
+.capture-small .nutrition-meal .nutrition-supply-body > strong { font-size:11px; min-height:28px; }

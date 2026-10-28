@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-25",
+  "tool": "image_gen.imagegen",
+  "purpose": "Screen studies: new example content, not final art approval",
+  "entries": [
+    {
+      "id": "meal",
+      "source": "/home/ndemidov/.codex/generated_images/01a173b6-be08-7f21-9113-495810f6e459/exec-5927c480-59cc-4091-8c6a-95f03d082a8a.png",
+      "description": "Candid photo: roast vegetables, bulgur and chickpeas."
+    },
+    {
+      "id": "breakfast",
+      "source": "/home/ndemidov/.codex/generated_images/01a173b6-be08-7f21-9113-495810f6e459/exec-e507b1a9-6a96-4e83-b084-b2f63b9e0f3a.png",
+      "description": "Candid photo: oatmeal with strawberries and blueberries."
+    },
+    {
+      "id": "flowers",
+      "source": "/home/ndemidov/.codex/generated_images/01a173b6-be08-7f21-9113-495810f6e459/exec-245fd0ce-97cf-4220-8b71-dc4f1e91f7c6.png",
+      "description": "Transparent sprite, simple cartoon outline, earthy palette; reference camp-v3-flat/background.png."
+    },
+    {
+      "id": "lantern",
+      "source": "/home/ndemidov/.codex/generated_images/01a173b6-be08-7f21-9113-495810f6e459/exec-353c0410-ddac-4fea-8147-9ccafcbe12dd.png",
+      "description": "Transparent sprite, simple cartoon outline, earthy palette; reference camp-v3-flat/background.png."
+    },
+    {
+      "id": "owl",
+      "source": "/home/ndemidov/.codex/generated_images/01a173b6-be08-7f21-9113-495810f6e459/exec-138036cf-a5dd-4a9a-bd38-9b17e0620c5f.png",
+      "description": "Transparent sprite, simple cartoon outline, earthy palette; reference camp-v3-flat/background.png."
+    },
+    {
+      "id": "theme_lab",
+      "source": "/home/ndemidov/.codex/generated_images/01a173b6-be08-7f21-9113-495810f6e459/exec-5907b923-e6c3-4d8e-a72f-ff9913e871e3.png",
+      "description": "Transparent sprite, simple cartoon outline, earthy palette; reference camp-v3-flat/background.png."
+    },
+    {
+      "id": "theme_magic",
+      "source": "/home/ndemidov/.codex/generated_images/01a173b6-be08-7f21-9113-495810f6e459/exec-1ec38376-c78b-419e-af82-c1b5ef2e4f65.png",
+      "description": "Transparent sprite, simple cartoon outline, earthy palette; reference camp-v3-flat/background.png."
+    }
+  ]
+}

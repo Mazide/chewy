@@ -32,12 +32,6 @@
 .canvas-actions { position: absolute; left: 6.154%; right: 6.154%; top: 88.152%; display: flex; flex-direction: column; }
 .canvas-workbench .canvas-action-main { border: 2px solid #555; min-height: 14.36cqw; font-weight: 600; }
 .canvas-page-heading { position: absolute; top: 13.033%; left: 6.154%; }
-.canvas-phone .canvas-photo-select { position: absolute; top: 61.374%; left: 6.154%; right: 6.154%; }
-.canvas-portions { position: absolute; left: 6.154%; right: 6.154%; top: 70.142%; border: 0; padding: 0; margin: 0; }
-.canvas-portions legend { margin-bottom: 2.05cqw; font-size: 3.077cqw; }
-.canvas-portions > div { display: flex; gap: 1.282cqw; }
-.canvas-portions button { flex: 1; font-size: 2.82cqw; padding: 1.54cqw; }
-.canvas-portions button[aria-pressed=true] { background: #ddd; }
 .canvas-phone .canvas-single-action { position: absolute; top: 87.678%; left: 6.154%; right: 6.154%; height: 6.635%; }
 .canvas-speech { position: absolute; left: 10.256%; right: 10.256%; top: 53.08%; height: 6.398%; display: grid; place-items: center; border: 1px dashed #999; background: white; font-size: 3.59cqw; }
 .canvas-result-surface { position: absolute; top: 61.374%; left: 6.154%; right: 6.154%; height: 19.194%; background: white; border: 1px dashed #aaa; }

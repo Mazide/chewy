@@ -48,6 +48,12 @@
 .sandbox-food-area > span { font-size: 11px; color: #6a734d; }
 .sandbox-add-food { position: absolute; display: grid; place-items: center; border: 2px solid #6e3c17; border-radius: 14px; background: #ed963c; box-shadow: 0 3px 0 #754c26; color: #3e2719; font: inherit; font-size: 16px; font-weight: 750; cursor: pointer; }
 .sandbox-home-indicator { position: absolute; bottom: 1.1%; left: 37.18%; width: 25.64%; height: 4px; background: #35432d; border-radius: 4px; }
+.sandbox-zone-label { position:absolute; left:50%; top:100%; transform:translateX(-50%); padding:3px 7px; border-radius:4px 6px 5px 3px; background:#fff4dceF; color:#493c2c; font:600 11px/1.25 ui-rounded,'Avenir Next',system-ui,sans-serif; white-space:nowrap; box-shadow:0 1px 0 #8d744e55; pointer-events:none; }
+.camp-growth-layout .sandbox-block-workshop { background:#ded8cc; }
+.camp-growth-layout .sandbox-block-light { background:#ece7cb; }
+.camp-growth-layout .sandbox-block-fuel { background:#d3c6b6; }
+.camp-growth-layout .sandbox-block-garden { background:#d0d9c5; }
+.camp-growth-layout .sandbox-block { text-align:center; }
 .sandbox-device-label { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; color: #6e7864; font-size: 12px; }
 .sandbox-device-label select { width: 100%; padding: 10px; background: white; color: #3e4835; border: 1px solid #b9c4ab; border-radius: 8px; font: inherit; }
 .sandbox-screen-preview { max-width: calc(100vw - 24px); max-height: calc(100dvh - 24px); border: 1px solid #82906e; border-radius: 16px; padding: 18px; background: #f5f5ed; color: #3e4835; overflow: auto; }
@@ -79,3 +85,40 @@
 .sandbox-asset-gallery img { width: 100%; height: 100%; object-fit: contain; }
 .sandbox-asset-gallery figcaption { margin-top: 7px; font-size: 11px; color: #747d68; }
 @media (max-width: 760px) { .camp-sandbox { padding: 12px; } .sandbox-layout { flex-direction: column; gap: 24px; } .sandbox-inspector { width: min(390px, 100%); } .sandbox-asset-gallery > div { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.composition-choices { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 24px 0; }
+.composition-choices button { padding: 11px 16px; min-height: 44px; border: 1px solid #bdbdbd; border-radius: 5px; background: #fff; color: #333; font: 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; cursor: pointer; }
+.composition-choices button[aria-pressed=true] { background: #3e3e3e; border-color: #3e3e3e; color: #fff; }
+.composition-choices button:focus-visible { outline: 2px solid #333; outline-offset: 3px; }
+.composition-food-layout { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin: 16px 24px 0; color: #555; font: 13px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.composition-food-layout select { min-height: 44px; padding: 8px; border: 1px solid #bbb; border-radius: 4px; background: #fff; color: #333; font: inherit; }
+.camp-sandbox-blocks { color: #333; }
+.camp-sandbox-blocks .sandbox-heading { margin-bottom: 20px; }
+.camp-sandbox-blocks .sandbox-heading h1 { font-size: 25px; font-weight: 650; }
+.camp-sandbox-blocks .sandbox-heading p { color: #606060; }
+.camp-sandbox-blocks .sandbox-phone { background: #f2f2f2; border-color: #adadad; border-radius: 16px; }
+.sandbox-block-background { position: absolute; inset: 0; background: linear-gradient(to bottom, #f3f3f3 0 42%, #e6e6e6 42% 100%); }
+.sandbox-block-background > span { position: absolute; left: 7%; top: 16%; color: #737373; font-size: 12px; }
+.sandbox-block { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 1px solid #8c8c8c; border-radius: 3px; background: #c4c4c4; color: #272727; font-size: 12px; }
+.sandbox-block > span { white-space: nowrap; }
+.sandbox-block small { max-width: 90%; text-align: center; font-size: 11px; }
+.sandbox-block-hero { background: #5d5d5d; border-color: #444; color: #fff; font-size: 18px; }
+.sandbox-block-tent { background: #d6d6d6; border-color: #b1b1b1; align-items: flex-start; justify-content: flex-start; padding: 4px; font-size: 11px; }
+.camp-composition-diagonal .sandbox-block-tent { align-items: flex-end; justify-content: flex-end; }
+.sandbox-block-fire { background: #a9a9a9; }
+.sandbox-block-kettle { background: #d0d0d0; font-size: 11px; }
+.sandbox-block-pet { background: #b7b7b7; }
+.camp-sandbox-blocks .sandbox-status, .camp-sandbox-blocks .sandbox-home-indicator { background: #666; }
+.camp-sandbox-blocks .sandbox-camp-header > span:first-child { color: #444; text-shadow: none; font-weight: 600; }
+.camp-sandbox-blocks .sandbox-camp-header > span:last-child { background: transparent; border-color: #bbb; border-radius: 4px; color: #555; }
+.camp-sandbox-blocks .sandbox-nav-control { justify-content: center; border: 1px solid #b9b9b9; border-radius: 3px; background: #ededed; box-shadow: none; color: #4b4b4b; font-weight: 400; }
+.camp-sandbox-blocks .sandbox-food-area { background: #dedede; border: 1px dashed #8d8d8d; border-radius: 3px; color: #333; }
+.camp-sandbox-blocks .sandbox-food-area > span { color: #606060; }
+.camp-sandbox-blocks .sandbox-add-food { border: 1px solid #515151; border-radius: 4px; background: #6c6c6c; color: #fff; box-shadow: none; font-weight: 600; }
+.camp-sandbox-blocks.sandbox-food-inline .sandbox-food-area { align-items: flex-start; padding: 0 12px; border: 0; background: #dedede; }
+.camp-sandbox-blocks.sandbox-food-separate .sandbox-food-area { align-items: flex-start; padding: 0; border: 0; background: transparent; }
+.camp-sandbox-blocks.sandbox-food-inline .sandbox-add-food, .camp-sandbox-blocks.sandbox-food-separate .sandbox-add-food { border-radius: 8px; font-size: 15px; }
+.camp-sandbox-blocks .sandbox-inspector p, .camp-sandbox-blocks .sandbox-device-label { color: #666; }
+.camp-sandbox-blocks .composition-principles ul { list-style: disc; padding-left: 18px; margin-bottom: 20px; }
+.camp-sandbox-blocks .composition-principles li { display: list-item; border: 0; margin: 5px 0; color: #555; font-size: 12px; }
+@media (max-width: 760px) { .composition-choices { padding-left: 12px; padding-right: 12px; } .composition-food-layout { margin-left: 12px; margin-right: 12px; } }

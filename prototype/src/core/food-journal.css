@@ -1,0 +1,64 @@
+.food-journal-summary { position: absolute; display: flex; align-items: center; gap: 8px; padding: 4px 9px; color: #343434; background: #f7f7f4; border: 1px solid #aaa; border-left: 4px solid #999; border-radius: 2px 7px 7px 2px; box-shadow: 2px 3px 0 #c9c9c5; text-align: left; font: inherit; cursor: pointer; }
+.food-journal-summary .core-plate { flex: 0 0 28px; width: 28px; height: 28px; min-width: 28px; margin: 0; border-width: 2px; filter: grayscale(1); }
+.food-journal-summary-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.food-journal-summary-copy strong { font-size: 12px; line-height: 1.2; font-weight: 600; }
+.food-journal-summary-copy small { font-size: 10px; white-space: nowrap; color: #666; }
+.food-journal-thumbnails { display: flex; gap: 3px; height: 16px; align-items: center; }
+.food-journal-thumbnails > span { display: grid; place-items: center; width: 19px; height: 16px; border: 1px solid #c9c9c5; background: #e5e5e1; font-size: 13px; line-height: 1; filter: grayscale(1); }
+.food-journal-fold { position: absolute; right: 0; top: 0; width: 9px; height: 9px; background: #d6d6d2; clip-path: polygon(0 0, 100% 100%, 0 100%); }
+.food-journal-summary:focus-visible, .food-journal-page button:focus-visible { outline: 2px solid #444; outline-offset: 3px; }
+.food-journal-shade { position: absolute; inset: 0; z-index: 20; background: #26262655; pointer-events: none; }
+.food-journal-page { position: fixed; box-sizing: border-box; margin: 0; max-width: none; max-height: none; padding: 18px 16px 16px 22px; border: 1px solid #999; border-left: 7px solid #999; border-radius: 3px 12px 12px 3px; background: #f7f7f4; color: #343434; box-shadow: 3px 5px 0 #c9c9c5, 0 10px 32px #0003; font: 14px/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; transform-origin: 0 0; overflow: hidden; }
+.food-journal-page[open] { display: flex; flex-direction: column; gap: 18px; }
+.food-journal-page::backdrop { background: transparent; }
+.food-journal-page * { box-sizing: border-box; }
+.food-journal-page-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; flex-shrink: 0; }
+.food-journal-page-heading span { font-size: 11px; color: #666; }
+.food-journal-page-heading h2 { margin: 2px 0 0; font-size: 24px; line-height: 1.2; }
+.food-journal-page-heading button { flex-shrink: 0; width: 44px; height: 44px; border: 1px solid #bbb; border-radius: 50%; background: transparent; color: #444; font: inherit; font-size: 24px; cursor: pointer; }
+.food-journal-day-plate { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid #d1d1cb; flex-shrink: 0; }
+.food-journal-day-plate .core-plate { width: 54px; height: 54px; min-width: 54px; margin: 0; filter: grayscale(1); }
+.food-journal-day-plate strong { font-size: 13px; }
+.food-journal-day-plate p { margin: 3px 0 0; font-size: 11px; color: #666; }
+.food-journal-entries { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.food-journal-entries ol { list-style: none; padding: 0; margin: 0; }
+.food-journal-entries li { display: flex; align-items: center; gap: 12px; padding: 0 0 16px; }
+.food-journal-entries li + li { padding-top: 16px; border-top: 1px solid #deded9; }
+.food-journal-photo { width: 64px; height: 60px; flex-shrink: 0; display: grid; place-items: center; background: #e6e6e1; border: 4px solid #fff; outline: 1px solid #cecec8; transform: rotate(-3deg); font-size: 30px; filter: grayscale(1); }
+.food-journal-entries li:nth-child(even) .food-journal-photo { transform: rotate(3deg); }
+.food-journal-entries li > div { display: flex; flex-direction: column; gap: 4px; }
+.food-journal-entry { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 60px; padding: 0; border: 0; background: transparent; text-align: left; color: inherit; font: inherit; cursor: pointer; }
+.food-journal-entry > div { display: flex; flex-direction: column; gap: 4px; }
+.food-journal-entries time { font-size: 11px; color: #6b6b65; }
+.food-journal-entries strong { font-size: 13px; font-weight: 600; }
+.food-journal-empty { display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; padding: 20px 8px; }
+.food-journal-empty-photo { width: 72px; height: 64px; border: 1px dashed #aaa; transform: rotate(-5deg); }
+.food-journal-empty p { margin: 5px 0 0; font-size: 13px; }
+.food-journal-empty > span:last-child { font-size: 12px; color: #666; }
+.sandbox-journal-tools { margin-bottom: 20px; }
+.sandbox-journal-tools > button { min-height: 44px; padding: 9px 14px; border: 1px solid #999; background: #fff; color: #444; border-radius: 5px; font: inherit; font-size: 12px; cursor: pointer; }
+
+/* A quiet, illustrated page of the same field journal as the meal result. */
+.food-journal-page.food-journal-quiet { padding:14px 13px 16px 16px; background:#f1f2eb; color:#493c2c; border-color:#b49a69; box-shadow:3px 5px 0 #b49a6940,0 10px 32px #34270f26; font-family:ui-rounded,'Avenir Next',system-ui,sans-serif; }
+.food-journal-page.food-journal-quiet.food-journal-paper { background:#f8efd7; color:#493c2c; border-color:#b49a69; }
+.food-journal-page.food-journal-quiet[open] { gap:10px; }
+.food-journal-quiet .food-journal-page-heading { align-items:center; }
+.food-journal-quiet .food-journal-page-heading h2 { margin:0; font-size:24px; }
+.food-journal-quiet .food-journal-page-heading button { border-color:#b49a69; color:#493c2c; }
+.food-journal-quiet .food-journal-scroll { scrollbar-width:thin; scrollbar-color:#b49a6970 transparent; padding-right:3px; }
+.food-journal-quiet .food-journal-entries { margin-top:12px; }
+.food-journal-quiet .food-journal-entries h3 { margin:0 0 8px; color:#493c2c; font-size:16px; }
+.food-journal-quiet .food-journal-entries ol { display:flex; align-items:flex-start; gap:12px; padding:4px 3px 10px; overflow-x:auto; scroll-snap-type:x proximity; overscroll-behavior-x:contain; scrollbar-width:thin; scrollbar-color:#b49a6980 transparent; }
+.food-journal-quiet .food-journal-entries li { flex:0 0 98px; display:block; min-width:0; padding:0; border:0; scroll-snap-align:start; }
+.food-journal-quiet .food-journal-entry { display:flex; flex-direction:column; align-items:flex-start; gap:5px; border-radius:3px; }
+.food-journal-quiet div.food-journal-entry { cursor:default; }
+.food-journal-quiet .food-journal-photo { width:94px; height:88px; border:4px solid #fff7df; border-bottom-width:9px; outline-color:#b49a6980; background:#e5dfc9; transform:rotate(-2deg); }
+.food-journal-quiet li:nth-child(even) .food-journal-photo { transform:rotate(2deg); }
+.food-journal-quiet .food-journal-entry time { margin-top:3px; color:#70634c; font-size:11px; line-height:1.2; }
+.food-journal-quiet .food-journal-entry strong { color:#493c2c; font-size:12px; line-height:1.3; font-weight:650; overflow-wrap:anywhere; }
+.food-journal-quiet .food-journal-entry:hover .food-journal-photo { outline-color:#527442; }
+.food-journal-quiet :is(button,summary,a):focus-visible { outline:2px solid #527442; outline-offset:2px; }
+.food-journal-quiet .food-journal-empty { padding:12px 0 6px; gap:8px; }
+.food-journal-empty > svg { width:48px; height:48px; }
+.food-journal-quiet .food-journal-empty p { margin:0; font-size:13px; }
+.food-journal-empty > button { min-height:44px; margin-top:6px; padding:9px 16px; border:1px solid #263d2e; border-radius:7px; background:#38594b; color:#fff5d8; font:inherit; font-size:13px; font-weight:650; cursor:pointer; }

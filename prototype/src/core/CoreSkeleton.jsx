@@ -37,7 +37,7 @@ function makeState(mealCount, initialCoins) {
   return state;
 }
 
-function Plate({ plate }) {
+export function Plate({ plate }) {
   const fills = plateFractions(plate);
   const spans = [['veg', 180, '#879a85'], ['protein', 90, '#aa9384'], ['grain', 90, '#b7ab83']];
   let angle = 0;

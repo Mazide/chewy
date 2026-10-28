@@ -1,4 +1,5 @@
 import { CANVAS_ASSETS, CANVAS_SIZE, frameStyle } from './canvas-layout.js';
+import { AddFoodCanvas } from './AddFoodCanvas.jsx';
 import './core-canvas.css';
 
 function ImageBox({ asset, className = '', label, frame }) {
@@ -27,6 +28,7 @@ function CampImages({ assets, equipped, camp }) {
 export function CoreCanvasView({ screen, title, state, photo, portion, onReset, onCamp, onAdd, onScreen, onPhoto, onPortion, onFeed, onBuy, onEquip, lanternCost, compact }) {
   const fed = state.meals.length > 0;
   const assets = CANVAS_ASSETS[screen];
+  if (screen === 'add') return <AddFoodCanvas compact={compact} />;
   return <section className={`canvas-workbench${compact ? ' canvas-compact' : ''}`}>
     <header className="canvas-review"><span>Канвас · {title}</span><button onClick={onReset}>Сбросить</button></header>
     <div className={`canvas-phone canvas-screen-${screen}`}>
@@ -38,14 +40,6 @@ export function CoreCanvasView({ screen, title, state, photo, portion, onReset, 
         <nav aria-label="Экраны лагеря">{[['pathLink', 'path', 'Путь'], ['backpackLink', 'backpack', 'Рюкзак']].map(([key, target, label]) => <button key={key} className="canvas-side-link" style={frameStyle(assets[key].frame)} onClick={() => onScreen(target)} aria-label={label}><span>{label}</span></button>)}</nav>
         <section className="canvas-food-unresolved"><strong>Сегодня · еда и тарелка</strong><span>Область пока без раскладки</span><small>Способ показа ещё обсуждаем</small></section>
         <footer className="canvas-actions"><button className="canvas-action-main" onClick={onAdd}>Добавить еду</button></footer>
-      </>}
-
-      {screen === 'add' && <>
-        <h2 className="canvas-page-heading">Добавить еду</h2>
-        <ImageBox asset={assets.photo} label={photo ? 'Выбранное фото блюда' : assets.photo.label} />
-        <button className="canvas-photo-select" onClick={onPhoto}>{photo ? 'Выбрать другое фото' : 'Выбрать фото'}</button>
-        <fieldset className="canvas-portions"><legend>Порция</legend><div>{['Небольшая', 'Обычная', 'Большая'].map((label, index) => <button key={label} aria-pressed={portion === index} onClick={() => onPortion(index)}>{label}</button>)}</div></fieldset>
-        <button disabled={!photo} className="canvas-action-main canvas-single-action" onClick={onFeed}>Добавить еду</button>
       </>}
 
       {screen === 'result' && (state.result ? <>

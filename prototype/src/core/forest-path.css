@@ -1,0 +1,64 @@
+.screen-study-content .study-phone.study-screen-path { padding:0; background:#9eb474; }
+.screen-study-content .study-phone.study-screen-path::before { display:none; }
+.forest-path { position:absolute; inset:0; container-type:inline-size; color:#493c2c; }
+.forest-path-scroll { position:absolute; inset:0; overflow-y:auto; overflow-x:hidden; overscroll-behavior:contain; scrollbar-width:none; touch-action:pan-y; }
+.forest-path-scroll::-webkit-scrollbar { display:none; }
+.forest-path-scroll:focus-visible { outline:3px solid #f6dd8f; outline-offset:-4px; }
+.forest-path-world { position:relative; width:160%; margin-left:-30%; }
+.forest-path-background { position:absolute; inset:0; z-index:0; width:100%; height:100%; overflow:hidden; pointer-events:none; }
+.forest-path-terrain { position:absolute; left:0; width:100%; object-fit:fill; pointer-events:none; }
+.forest-terrain-blend { mask-image:linear-gradient(#000 96.15%,transparent); }
+.forest-path-road { position:absolute; inset:0; z-index:1; width:100%; height:100%; overflow:visible; pointer-events:none; }
+.forest-path-road path { fill:none; stroke-linecap:round; }
+.forest-road-edge { stroke:#a68e5e; stroke-width:59; }
+.forest-road-sand { stroke:#dcc28d; stroke-width:54; }
+.forest-road-footprints { stroke:#bd9f69; stroke-width:4; stroke-dasharray:2 42; opacity:.6; }
+.forest-path-header { position:absolute; top:calc(var(--study-safe-top) + 8px); left:16px; right:16px; z-index:3; display:flex; align-items:flex-start; gap:8px; pointer-events:none; }
+.screen-study-content .forest-path-header button { pointer-events:auto; flex:0 0 44px; width:44px; height:44px; padding:0; border:2px solid #665039; border-radius:48% 50% 47% 49%; background:#f5e8be; box-shadow:0 3px 0 #947346; font-size:23px; }
+.forest-path-header > div { padding:7px 10px 8px; border:1.5px solid #665039; border-radius:5px 12px 8px 4px; background:#f5e8be; box-shadow:2px 3px 0 #66503940; transform:rotate(-1deg); }
+.forest-path-header .forest-path-locate { margin-left:auto; }
+.forest-path-header h1 { margin:0 0 2px; font-size:22px; font-weight:750; line-height:1.15; }
+.forest-path-header p { margin:0; font-size:10px; line-height:1.3; }
+.forest-path-stops { position:absolute; inset:0; z-index:2; }
+.screen-study-content .study-phone .forest-path-stop {
+  position:absolute; display:flex; flex-direction:column; align-items:center; width:27cqw; min-height:62px;
+  padding:0; border:0; border-radius:14px; background:transparent; box-shadow:none; color:#493c2c;
+  transform:translate(-50%,-74%); z-index:1; cursor:pointer;
+}
+.screen-study-content .study-phone .forest-path-stop:active { transform:translate(-50%,-74%); box-shadow:none; }
+.forest-stop-scene { display:block; position:relative; width:100%; height:14cqw; pointer-events:none; }
+.forest-stop-ground { position:absolute; left:18%; right:18%; bottom:-2%; height:22%; border-radius:50%; background:#4e613635; }
+.forest-stop-scene > .study-media { position:absolute; overflow:visible; }
+.forest-stop-scene .forest-stop-fire { width:42%; height:90%; left:29%; bottom:0; }
+.forest-stop-scene .forest-stop-tent { width:67%; height:52%; bottom:13%; left:-7%; }
+.forest-stop-scene .forest-stop-hero { width:33%; height:100%; right:5%; bottom:0; z-index:3; }
+.forest-stop-label { position:relative; display:flex; flex-direction:column; align-items:center; padding:4px 7px; border:1px solid #947346; border-radius:4px 7px 6px 3px; background:#f5e8be; box-shadow:1px 2px 0 #66503940; margin-top:2px; white-space:nowrap; }
+.forest-stop-label strong { font-size:10px; line-height:1.2; font-weight:650; }
+.forest-stop-label small { font-size:9px; line-height:1.3; font-weight:500; }
+.forest-path-stop[aria-pressed=true] .forest-stop-label { color:#fff5d8; background:#38594b; border-color:#263d2e; box-shadow:0 3px 0 #263d2e; }
+.forest-path-stop[aria-pressed=true] .forest-stop-ground { background:#f6dd8f66; }
+.screen-study-content .study-phone .forest-stop-today { width:40cqw; z-index:2; }
+.forest-stop-today .forest-stop-scene { height:26cqw; }
+.forest-stop-today .forest-stop-fire { width:24%; height:44%; left:38%; }
+.forest-stop-today .forest-stop-label { padding:5px 10px; }
+.forest-waystone { position:absolute; width:26%; height:48%; left:37%; bottom:0; background:#b8ba98; border:1.5px solid #665b43; border-radius:47% 44% 17% 21%; box-shadow:inset -4px -3px #949b7a; }
+.forest-stop-future .forest-stop-label { background:#e7e1c3; color:#695f48; }
+.forest-path-note { position:absolute; z-index:4; bottom:calc(var(--study-safe-bottom) + 10px); left:16px; right:16px; padding:11px 12px 12px; border:2px solid #665039; border-radius:8px 15px 7px 11px; background:#f5e8be; box-shadow:0 4px 0 #66503955; }
+.forest-path-note h2 { margin:0 0 3px; font-size:17px; line-height:1.2; }
+.forest-path-note p { margin:0 0 9px; min-height:30px; font-size:12px; line-height:1.35; }
+.forest-path-note > button { width:100%; }
+.forest-time-morning .forest-path-background { filter:sepia(.12) saturate(.9) brightness(1.06); }
+.forest-time-evening .forest-path-background { filter:sepia(.38) saturate(.95) brightness(.87); }
+.forest-time-night .forest-path-background { filter:brightness(.48) saturate(.7) hue-rotate(22deg); }
+.forest-time-night .forest-path-road { filter:brightness(.65) saturate(.65); }
+.forest-time-night .forest-stop-scene > .study-media:not(.forest-stop-fire) { filter:brightness(.7); }
+.forest-time-night .forest-stop-fire { filter:drop-shadow(0 0 8px #ffcb4b88); }
+.study-device-compact .forest-path-header { left:12px; right:12px; gap:7px; }
+.study-device-compact .forest-path-header h1 { font-size:18px; }
+.study-device-compact .forest-path-header p { font-size:9px; }
+.study-device-compact .forest-path-header > div { padding:6px 9px; }
+.study-device-compact .forest-path-note { bottom:calc(var(--study-safe-bottom) + 7px); left:12px; right:12px; padding:9px 10px 10px; }
+.study-device-compact .forest-path-note h2 { font-size:15px; }
+.study-device-compact .forest-path-note p { font-size:11px; margin-bottom:7px; }
+.study-device-compact .forest-path-note > button { min-height:44px; padding:7px 10px; }
+@media (prefers-reduced-motion:reduce) { .forest-path-scroll { scroll-behavior:auto; } }

@@ -1,0 +1,15 @@
+.sandbox-capture-activity .capture-notice { min-height:64px; height:100%; display:flex; flex-direction:row; align-items:center; justify-content:flex-start; gap:8px; padding:7px; border:1px solid #b49a69; border-radius:7px 10px 8px 6px; background:#f8efd7; color:#493c2c; box-shadow:0 2px 0 #66503922; font-family:ui-rounded,'Avenir Next',system-ui,sans-serif; }
+.capture-notice .capture-notice-photo { position:relative; flex:0 0 44px; height:48px; padding:3px 3px 6px; border:1px solid #b49a69; background:#fff7df; transform:rotate(-3deg); }
+.capture-notice-photo img { display:block; width:100%; height:100%; object-fit:cover; }
+.capture-notice-photo small { position:absolute; right:0; bottom:0; min-width:13px; padding:0 2px; background:#fff7df; font-size:10px; text-align:center; }
+.capture-notice .capture-notice-copy { display:flex; flex:1; min-width:0; flex-direction:column; gap:5px; }
+.capture-notice .capture-notice-copy strong { font-size:12px; line-height:1.25; font-weight:750; }
+.capture-notice .capture-notice-copy > span { font-size:10px; line-height:1.25; color:#70634c; }
+.capture-notice .capture-notice-state { display:grid; place-items:center; flex:0 0 14px; color:#38594b; font-size:25px; }
+.capture-notice-state i { width:12px; height:12px; border:1.5px solid #b49a6970; border-top-color:#527442; border-radius:50%; animation:capture-notice-spin 1.8s linear infinite; }
+.sandbox-capture-activity .capture-notice-ready { border-color:#718453; background:#f3f0d2; }
+.capture-notice-ready .capture-notice-copy strong { color:#38594b; animation:capture-notice-ready 360ms ease-out; }
+.sandbox-capture-activity .capture-notice:focus-visible { outline:3px solid #38594b; outline-offset:3px; }
+@keyframes capture-notice-spin { to { transform:rotate(360deg); } }
+@keyframes capture-notice-ready { from { opacity:.3; transform:translateY(3px); } to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce) { .capture-notice-state i,.capture-notice-ready .capture-notice-copy strong { animation:none; } }
