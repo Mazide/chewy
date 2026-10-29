@@ -22,6 +22,13 @@ function MealPicture({ meal }) {
   return content && meal.imageKey ? <img src={samplePhoto(meal.imageKey).src} alt="" /> : meal.emoji;
 }
 
+export function FoodJournalEntries({ meals, onMealSelect, label = 'Еда сегодня' }) {
+  return <ol aria-label={label}>{meals.map(meal => {
+    const entry = <><span className="food-journal-photo" aria-hidden="true"><MealPicture meal={meal} /></span><time>{meal.time}</time><strong>{meal.name}</strong></>;
+    return <li key={meal.id} data-meal-id={meal.id}>{onMealSelect ? <button type="button" className="food-journal-entry" onClick={() => onMealSelect(meal.id)}>{entry}</button> : <div className="food-journal-entry">{entry}</div>}</li>;
+  })}</ol>;
+}
+
 export const JOURNAL_DAYS = {
   empty: { label: 'Утро · пока пусто', indices: [] },
   first: { label: 'Первая еда', indices: [0] },
@@ -40,7 +47,7 @@ function makeDay(key) {
   return { plate, meals };
 }
 
-function JournalPage({ source, device, day, onClose, onMealSelect, onAddFood }) {
+function JournalPage({ source, device, day, onClose, onMealSelect, onAddFood, binaryContributions }) {
   const content = useContext(StudyContentContext);
   const dialog = useRef(null);
   const closeButton = useRef(null);
@@ -92,17 +99,14 @@ function JournalPage({ source, device, day, onClose, onMealSelect, onAddFood }) 
     if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) close();
   }}>
     <header className="food-journal-page-heading"><h2 id="food-journal-title">Сегодня</h2><button ref={closeButton} type="button" onClick={close} aria-label="Свернуть дневник">×</button></header>
-    <div className="food-journal-scroll"><DayFoodAssessment meals={day.meals} />
+    <div className="food-journal-scroll"><DayFoodAssessment meals={day.meals} binaryContributions={binaryContributions} />
     <div className="food-journal-entries">
-      {day.meals.length ? <ol aria-label="Еда сегодня">{day.meals.map((meal) => {
-        const entry = <><span className="food-journal-photo" aria-hidden="true"><MealPicture meal={meal} /></span><time>{meal.time}</time><strong>{meal.name}</strong></>;
-        return <li key={meal.id}>{onMealSelect ? <button type="button" className="food-journal-entry" onClick={() => close(() => onMealSelect(meal.id))}>{entry}</button> : <div className="food-journal-entry">{entry}</div>}</li>;
-      })}</ol> : <div className="food-journal-empty"><CaptureIcon kind="camera" /><p>Начнём с первого снимка</p>{onAddFood && <button type="button" onClick={() => close(onAddFood)}>Добавить еду</button>}</div>}
+      {day.meals.length ? <FoodJournalEntries meals={day.meals} onMealSelect={onMealSelect ? id => close(() => onMealSelect(id)) : undefined} /> : <div className="food-journal-empty"><CaptureIcon kind="camera" /><p>Начнём с первого снимка</p>{onAddFood && <button type="button" onClick={() => close(onAddFood)}>Добавить еду</button>}</div>}
     </div></div>
   </dialog>;
 }
 
-export function FoodJournal({ frame, device, dayKey, dayData, editing, selected, movableProps, onSelect, open, onOpen, onClose, onAddFood }) {
+export function FoodJournal({ frame, device, dayKey, dayData, binaryContributions = false, editing, selected, movableProps, onSelect, open, onOpen, onClose, onAddFood }) {
   const source = useRef(null);
   const wasOpen = useRef(open);
   useEffect(() => {
@@ -113,10 +117,10 @@ export function FoodJournal({ frame, device, dayKey, dayData, editing, selected,
   const assessment = dayAssessment(day.meals);
   return <>
     <button ref={source} type="button" className={`food-journal-summary${selected ? ' sandbox-layer-selected' : ''}`} style={{ ...viewportFrame(frame, device), visibility: open ? 'hidden' : undefined }} {...movableProps} onClick={() => editing ? onSelect() : onOpen()} aria-label={editing ? 'Переместить дневник еды' : 'Открыть дневник еды за сегодня'} aria-haspopup={editing ? undefined : 'dialog'}>
-      <MiniSupplies meals={day.meals} />
+      <MiniSupplies meals={day.meals} binaryContributions={binaryContributions} />
       <span className="food-journal-summary-copy"><strong>Сегодня</strong><small className="food-journal-summary-verdict">{assessment.short}</small></span>
       <span className="food-journal-fold" aria-hidden="true" />
     </button>
-    {open && <><div className="food-journal-shade" aria-hidden="true" /><JournalPage source={source} device={device} day={day} onClose={onClose} onMealSelect={dayData?.onMealSelect} onAddFood={onAddFood} /></>}
+    {open && <><div className="food-journal-shade" aria-hidden="true" /><JournalPage source={source} device={device} day={day} binaryContributions={binaryContributions} onClose={onClose} onMealSelect={dayData?.onMealSelect} onAddFood={onAddFood} /></>}
   </>;
 }

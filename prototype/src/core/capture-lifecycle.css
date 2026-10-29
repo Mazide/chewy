@@ -1,0 +1,20 @@
+.capture-flow .capture-confirmation { position:fixed; inset:auto; margin:0; transform:translate(-50%,-50%); box-sizing:border-box; overflow-y:auto; padding:22px; border:1px solid #b49a69; border-radius:18px; background:#fff7df; color:#493c2c; box-shadow:0 16px 60px #14251e55; font-family:ui-rounded,'Avenir Next',system-ui,sans-serif; }
+.capture-confirmation::backdrop { background:#14251e88; }
+.capture-confirmation h2 { margin:0 0 12px; font-size:21px; line-height:1.25; }
+.capture-confirmation p { margin:0 0 18px; font-size:14px; line-height:1.5; }
+.capture-confirmation-actions { display:flex; flex-direction:column; gap:8px; }
+.capture-flow .capture-confirmation button { min-height:46px; padding:10px 14px; border:1px solid #b49a69; border-radius:8px; background:transparent; color:#493c2c; font:inherit; font-size:14px; }
+.capture-flow .capture-confirmation .capture-primary { background:#38594b; color:#fff7df; border-color:#38594b; }
+.capture-confirmation .capture-confirmation-error { color:#8d382e; }
+.capture-confirmation button:focus-visible { outline:3px solid #b28849; outline-offset:2px; }
+.capture-flow .capture-record-action { flex-shrink:0; align-self:center; min-height:44px; padding:10px 14px; border:0; border-radius:8px; background:transparent; color:#70634c; font-size:13px; text-decoration:underline; text-underline-offset:3px; }
+.capture-flow .capture-record-action:focus-visible { outline:2px solid #527442; outline-offset:2px; }
+.capture-flow.capture-camera-denied .capture-camera-world { background:#20372c; }
+.capture-flow.capture-camera-denied .capture-shutter:disabled { opacity:.3; cursor:default; }
+.capture-camera-permission { position:absolute; top:calc(var(--capture-safe-top) + 82px); bottom:calc(var(--capture-safe-bottom) + 206px); left:24px; right:24px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; overflow-y:auto; text-align:center; color:#fff7df; }
+.capture-camera-permission h3 { margin:0; font-size:22px; }
+.capture-camera-permission p { margin:0; font-size:14px; line-height:1.5; }
+.capture-flow .capture-camera-permission button { min-height:46px; padding:10px 16px; border:1px solid #fff7df; border-radius:8px; background:#fff7df; color:#29382e; font-size:14px; }
+.capture-small .capture-camera-permission { gap:9px; top:calc(var(--capture-safe-top) + 70px); bottom:calc(var(--capture-safe-bottom) + 196px); }
+.capture-small .capture-camera-permission h3 { font-size:19px; }
+.capture-small .capture-camera-permission p { font-size:12px; }

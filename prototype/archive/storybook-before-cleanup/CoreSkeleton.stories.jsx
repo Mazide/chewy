@@ -1,5 +1,5 @@
-import { CoreOverview, CoreSkeleton } from './CoreSkeleton.jsx';
-import { ITEMS } from '../data/game.js';
+import { CoreOverview, CoreSkeleton } from '../../src/core/CoreSkeleton.jsx';
+import { ITEMS } from '../../src/data/game.js';
 
 export default {
   title: 'Core/Skeleton',

@@ -1,0 +1,99 @@
+{
+  "flowers": {
+    "fps": 24,
+    "count": 121,
+    "columns": 8,
+    "width": 458,
+    "height": 424,
+    "crop": [
+      0,
+      0,
+      458,
+      424
+    ],
+    "file": "atlas.webp"
+  },
+  "tent": {
+    "fps": 24,
+    "count": 121,
+    "columns": 8,
+    "width": 418,
+    "height": 209,
+    "crop": [
+      0,
+      0,
+      418,
+      209
+    ],
+    "file": "atlas.webp"
+  },
+  "lantern": {
+    "fps": 24,
+    "count": 121,
+    "columns": 8,
+    "width": 191,
+    "height": 419,
+    "crop": [
+      0,
+      0,
+      191,
+      419
+    ],
+    "file": "atlas.webp"
+  },
+  "bird": {
+    "fps": 24,
+    "count": 121,
+    "columns": 8,
+    "width": 369,
+    "height": 426,
+    "crop": [
+      0,
+      0,
+      369,
+      426
+    ],
+    "file": "atlas.webp"
+  },
+  "butterfly": {
+    "fps": 24,
+    "count": 121,
+    "columns": 8,
+    "width": 470,
+    "height": 427,
+    "crop": [
+      0,
+      0,
+      470,
+      427
+    ],
+    "file": "atlas.webp"
+  },
+  "clouds": {
+    "fps": 12,
+    "count": 144,
+    "columns": 12,
+    "width": 256,
+    "height": 128,
+    "crop": [
+      0,
+      0,
+      256,
+      128
+    ]
+  },
+  "fire": {
+    "fps": 24,
+    "count": 121,
+    "columns": 8,
+    "width": 333,
+    "height": 456,
+    "crop": [
+      0,
+      0,
+      333,
+      456
+    ],
+    "file": "atlas.webp"
+  }
+}

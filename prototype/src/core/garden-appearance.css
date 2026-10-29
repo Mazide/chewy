@@ -1,0 +1,11 @@
+.garden-appearance { width:100%; height:100%; box-sizing:border-box; }
+.garden-appearance.study-media-content { background:transparent; border:0; }
+.garden-appearance > svg { display:block; width:100%; height:100%; }
+.garden-appearance-flowers { position:relative; width:100%; height:100%; }
+.garden-appearance[data-garden-appearance] .garden-appearance-flowers > .garden-appearance-flower { position:absolute; inset:0; width:100%; height:100%; padding:0; }
+.garden-appearance-flower > svg { display:block; width:100%; height:100%; }
+.garden-appearance[data-garden-appearance="garden-bloom"] .garden-appearance-flower:first-child { inset:auto auto 0 8%; width:62%; height:100%; }
+.garden-appearance[data-garden-appearance="garden-bloom"] .garden-appearance-flower:last-child { inset:auto 5% 0 auto; width:53%; height:79%; transform:scaleX(-1); }
+/* Fill the fixed garden footprint without a canvas expanding its implicit grid row. */
+.garden-appearance > .garden-appearance-flowers { position:absolute; inset:0; width:auto; height:auto; }
+.garden-appearance-flowers .camp-life-sprite { object-position:center bottom; }

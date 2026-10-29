@@ -16,7 +16,7 @@
   border:1.5px solid var(--camp-outline); border-radius:11px 8px 12px 9px;
   background:#fbf1ce; box-shadow:0 3px 0 #b69c6c; color:#493c2c; font-weight:650;
 }
-.screen-study-content .study-phone button:active:not(:disabled):not(.study-trail-stop),
+.screen-study-content .study-phone button:active:not(:disabled):not(.study-trail-stop):not(.forest-path-stop),
 .screen-study-content .study-dialog button:active:not(:disabled) { box-shadow:none; transform:translateY(2px); }
 .screen-study-content .study-phone .study-primary,
 .screen-study-content .study-dialog .study-primary {

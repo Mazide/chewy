@@ -6,7 +6,7 @@ import { readBrowserReviewArchive, useReviewArchive } from '../src/core/use-revi
 
 const ADDON_ID = 'chewy/review-archive';
 const initiallyRemoved = new Set(readBrowserReviewArchive().stories.map(entry => entry.id));
-addons.setConfig({ sidebar: { filters: { [ADDON_ID]: entry => !initiallyRemoved.has(entry.id) } } });
+addons.setConfig({ bottomPanelHeight: 0, rightPanelWidth: 0, sidebar: { filters: { [ADDON_ID]: entry => !initiallyRemoved.has(entry.id) } } });
 
 const Menu = styled.div(({ theme }) => ({
   width: 320, maxWidth: 'calc(100vw - 32px)', padding: 16,
@@ -32,8 +32,13 @@ function ReviewArchiveTool() {
   const [notice, setNotice] = useState('');
   const [open, setOpen] = useState(false);
   const current = index[storyId];
-  const removed = new Set(archive.stories.map(entry => entry.id));
+  const archivedStories = archive.stories.filter(entry => index[entry.id]?.type === 'story');
+  const removed = new Set(archivedStories.map(entry => entry.id));
   const canRemove = current?.type === 'story' && !removed.has(storyId);
+
+  useEffect(() => {
+    if (storyId === 'core-sandbox--all-screens') api.togglePanel(false);
+  }, [api, storyId]);
 
   useEffect(() => {
     const ids = new Set(archive.stories.map(entry => entry.id));
@@ -58,9 +63,9 @@ function ReviewArchiveTool() {
       <button type="button" disabled={!canRemove} onClick={remove}>Удалить эту страницу</button>
       {notice && <p role="status">{notice}</p>}
       <details>
-        <summary>Удалённые страницы · {archive.stories.length}</summary>
-        {!archive.stories.length ? <p>Удалённых страниц пока нет.</p> : <ul>{archive.stories.map(entry => <li key={entry.id}>
-          <span>{entry.label}</span>
+        <summary>Удалённые страницы · {archivedStories.length}</summary>
+        {!archivedStories.length ? <p>Удалённых страниц пока нет.</p> : <ul>{archivedStories.map(entry => <li key={entry.id}>
+          <span>{index[entry.id].title + " / " + index[entry.id].name}</span>
           <button type="button" aria-label={`Восстановить страницу «${entry.label}»`} onClick={() => {
             if (!change('stories', entry, false)) return;
             setNotice(`«${entry.label}» восстановлена.`);

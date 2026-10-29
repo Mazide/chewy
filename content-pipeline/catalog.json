@@ -1,0 +1,1754 @@
+{
+  "schemaVersion": 1,
+  "title": "Chewy — мастерская контента",
+  "references": [
+    {
+      "id": "hero-original",
+      "title": "Исходный Чуви",
+      "role": "Личность героя: лицо, волосы, пропорции и одежда. Существующий кадр, а не новый утверждённый мастер.",
+      "path": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_000.imageset/idle_000@2x.png"
+    },
+    {
+      "id": "camp-flat",
+      "title": "Рабочий лагерь",
+      "role": "Контекст масштаба и цветовой среды. Не переносить фон в отдельный спрайт.",
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/background.png"
+    },
+    {
+      "id": "lantern-current",
+      "title": "Фонарь из текущей примерки",
+      "role": "Форма предмета для черновика оформления; каталог магазина ещё не утверждён.",
+      "path": "prototype/public/assets/screen-studies/lantern.png"
+    },
+    {
+      "id": "campfire-current",
+      "title": "Костёр из текущего лагеря",
+      "role": "Исходный рисунок: поленья и опора неподвижны, движение только у пламени.",
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/fire.png"
+    },
+    {
+      "id": "tent-slot-master",
+      "title": "Посадка палатки в лагере",
+      "role": "Ракурс, широкие пропорции и опора текущей палатки.",
+      "path": "prototype/public/assets/camp-life/tent/poster.png"
+    },
+    {
+      "id": "tent-original-angle",
+      "title": "Исходная палатка: ракурс",
+      "role": "Точно сохранить разворот, боковой скат, вход справа и опору.",
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/tent.png"
+    },
+    {
+      "id": "approved-patchwork-style",
+      "title": "Одобренная палатка: стиль и ракурс",
+      "role": "Референс простоты рисунка, ракурса и посадки в сцене. Не переносить чужой предмет в новый вариант.",
+      "path": "content-pipeline/workspace/attempts/a-e9680b7d17f94c2284bbe45fa2bb1cc7/source.png"
+    },
+    {
+      "id": "garden-slot",
+      "title": "Растения текущего лагеря",
+      "role": "Референс простоты рисунка, ракурса и посадки в сцене. Не переносить чужой предмет в новый вариант.",
+      "path": "prototype/public/assets/screen-studies/flowers.png"
+    },
+    {
+      "id": "pet-slot",
+      "title": "Питомец текущего лагеря",
+      "role": "Референс простоты рисунка, ракурса и посадки в сцене. Не переносить чужой предмет в новый вариант.",
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/dog.png"
+    },
+    {
+      "id": "lamp-slot",
+      "title": "Светильник текущего лагеря",
+      "role": "Референс простоты рисунка, ракурса и посадки в сцене. Не переносить чужой предмет в новый вариант.",
+      "path": "prototype/public/assets/camp-life/lantern/poster.png"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "campfire-motion",
+      "title": "Новый огонь костра",
+      "kind": "animation",
+      "screen": "Лагерь · новое движение",
+      "purpose": "Первая новая анимация через Runway API: проверить движение по нашему рисунку и сравнить модели.",
+      "brief": "Огонь спокойно горит на месте. Поленья, основание, масштаб и камера неподвижны. Видеорезультат — черновик: прозрачность, стык цикла и выпуск PNG проверяются отдельно.",
+      "prompt": "Locked-off camera. Animate this small hand-drawn campfire burning calmly in place. Only the flame tongues move: their tips curl upward, narrow, shorten and reform with a gentle irregular rhythm. The outer orange flame, inner yellow flame and pale core move at slightly different phases. Keep the crossed logs and ground contact perfectly still. Preserve the original dark outline, warm palette, flat illustrated style, scale and composition throughout. Keep the complete campfire inside the frame with clear margins. No camera movement, zoom, new objects, smoke, sparks, scenery, text or lighting effects. The final pose should return close to the starting flame shape for a loop candidate.",
+      "referenceIds": [
+        "campfire-current"
+      ],
+      "motion": {
+        "fps": 24,
+        "playback": "loop"
+      },
+      "criteria": [
+        "Движутся языки пламени, а не весь значок костра.",
+        "Поленья, основание и камера неподвижны; масштаб сохраняется.",
+        "Контур и палитра соответствуют исходнику, нет нового реквизита.",
+        "Начало и конец проверены в повторе; плавность цикла не предполагается автоматически.",
+        "Прозрачность готовых кадров проверена отдельно на дневном и ночном фоне."
+      ],
+      "target": {
+        "format": "png-sequence",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 120,
+          "height": 110
+        }
+      }
+    },
+    {
+      "id": "hero-idle-motion",
+      "title": "Чуви в движении",
+      "kind": "animation",
+      "screen": "Лагерь · покадровая анимация",
+      "purpose": "Настоящая последовательность кадров. Для проверки пайплайна импортирован существующий клип Чуви: 121 кадр, 24 FPS. Это архивная анимация, не новая генерация.",
+      "brief": "Проверяем движение героя, устойчивость опоры и переход между кадрами. Исходный клип проигрывается один раз; повтор и движение туда-обратно доступны для проверки. Бесшовность петли ещё не принята.",
+      "prompt": "Animation production brief for Chewy, an existing hand-drawn 2D game character. Use the supplied character image as the exact identity reference. Produce one short calm idle motion with a fixed front-facing camera, stable full-body canvas, stable ground contact and consistent linework, clothing, hair and body proportions throughout. Preserve every facial feature as shown; add no new accessories or background. Motion must not imply fatigue, food judgment or a new gameplay mechanic. Deliver a naturally ordered sequence of at least two distinct transparent PNG frames on an identical canvas, plus the intended FPS and playback mode. Put only these PNG files at the top level of a ZIP. Start and end pose and loop seam require owner review; do not assert seamlessness without checking playback. This is an animation brief, not a request for one still image or a contact sheet. Generate or animate motion in a suitable external animation tool; this workshop does not call a video generator. Pilot source for this job: existing native idle_000 through idle_120 frames at 24 FPS, playback once, imported unchanged to verify the workflow; not newly generated animation.",
+      "referenceIds": [
+        "hero-original"
+      ],
+      "motion": {
+        "fps": 24,
+        "playback": "once"
+      },
+      "criteria": [
+        "На протяжении клипа сохраняются лицо, волосы, одежда и пропорции исходного Чуви.",
+        "Опора и камера устойчивы; силуэт не прыгает между кадрами и не обрезается.",
+        "Темп выглядит естественно при исходных 24 FPS; движение читается в размере показа.",
+        "На дневном и ночном фоне нет ореолов и непрозрачной подложки.",
+        "Повтор проверить отдельно: последний и первый кадры не объявлены бесшовными.",
+        "Статичный первый кадр сохраняет смысл, если движение выключено."
+      ],
+      "target": {
+        "format": "png-sequence",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 215
+        }
+      }
+    },
+    {
+      "id": "hero-joy",
+      "title": "Чуви радуется снимку",
+      "kind": "image",
+      "screen": "Лагерь · фото добавлено",
+      "purpose": "Ключевая поза короткой дружеской реакции после фото, независимо от состава и результата анализа.",
+      "brief": "Один прозрачный спрайт для примерки жеста. Сохранить исходного героя. Это ключевой кадр, а не готовая анимация; движение и переход в обычное состояние проверяются отдельно.",
+      "prompt": "Use case: identity-preserve. Asset type: a single key pose for Chewy, an existing hand-drawn 2D game character. Input image 1 is the exact character identity reference and edit target. Preserve the same boy, face shape, dot eyes, tousled ochre hair, cream long-sleeved shirt, muted blue trousers, beige boots, body proportions and dark hand-drawn contour. Preserve the exact facial features shown; do not add a nose or other facial details absent from the reference. Change only the pose and expression: a gentle joyful greeting after the user adds a photo; a small open friendly smile and hands raised slightly beside the chest, relaxed shoulders, both boots staying on the same ground line. This is friendly acknowledgment, not a judgment about food. Front view, full body, one character only, comfortable transparent margins around hair, hands and boots. Keep sparse lines and flat matte fills; no new accessories, no food, no text, no UI, no symbols, no scenery, no baked shadow, no 3D shading, no glossy highlights. Real transparent alpha background. Output one portrait PNG illustration, not a sprite sheet, not several views. Draft key pose for owner review.",
+      "referenceIds": [
+        "hero-original"
+      ],
+      "criteria": [
+        "Лицо, волосы, одежда и пропорции узнаваемы рядом с исходником.",
+        "Реакция дружеская и не оценивает состав или размер порции.",
+        "Весь силуэт помещается; кисти и стопы не обрезаны.",
+        "Поза читается при высоте героя около 215 pt.",
+        "Края чистые на светлом и тёмном фоне; нет впечённой тени."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 215
+        }
+      }
+    },
+    {
+      "id": "hero-sleep",
+      "title": "Чуви спит",
+      "kind": "image",
+      "screen": "Лагерь · ночь",
+      "purpose": "Спокойная ночная поза. Сон имеет приоритет; фотографирование остаётся доступным.",
+      "brief": "Отдельный ключевой кадр сна с тем же героем. Не связывать сон с едой, тяжестью или ухудшением состояния. Не добавлять кровать, одежду или новую механику.",
+      "prompt": "Use case: identity-preserve. Asset type: one sleeping key pose of the existing Chewy 2D game character. Input image 1 is the exact identity reference and edit target. Keep the same boy, face, tousled ochre hair, cream long-sleeved shirt, muted blue trousers and beige boots; preserve the original body proportions and simple dark hand-drawn contour. Change only the pose: the boy peacefully sits with knees loosely bent and hands resting in his lap, eyes softly closed, calm small smile, head gently tilted. His complete silhouette and boots remain visible. This is ordinary nighttime sleep, not fatigue or sadness after food. Front or near-front view matching the reference. One isolated character with generous transparent margins. Simple flat matte color regions and sparse lines. No pillow, bed, blanket, nightcap, food, ground, shadow, text, Z symbols, UI or scenery; no extra characters, no glossy modeling. Genuine transparent alpha background. Output one portrait PNG key pose, not a sprite sheet. Draft for owner review.",
+      "referenceIds": [
+        "hero-original"
+      ],
+      "criteria": [
+        "Это тот же Чуви, а не новый дизайн персонажа.",
+        "Сон выглядит спокойным; нет вялости после еды или грусти.",
+        "Поза целиком, включая руки и обувь; не добавлены новые предметы.",
+        "Силуэт читается в ночной сцене при уменьшении.",
+        "Есть настоящий прозрачный фон; не требуется воспроизводить анимацию для понимания сна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 215
+        }
+      }
+    },
+    {
+      "id": "lantern-ochre",
+      "title": "Оформление фонаря",
+      "kind": "image",
+      "screen": "Рюкзак · карточка и лагерь",
+      "purpose": "Черновая проба одного оформления: проверить, можно ли получать сценический предмет и миниатюру из общего мастера.",
+      "brief": "Фонарь выбран только для проверки производства. Не утверждает товар, слот, цену или новую стадию дневного вклада. Сохранить форму существующего предмета, сменить основной цвет корпуса на охру.",
+      "prompt": "Use case: precise-object-edit. Asset type: one isolated lantern appearance variant for Chewy's hand-drawn 2D camp. Input image 1 is the existing lantern edit target: preserve its silhouette, front-facing camera, arched handle, base, glass frame and ground contact. Input image 2 is the existing boy, used only for the thin dark contour and simple flat matte color style; do not include the boy. Change the lantern's green metal body to muted warm ochre. Simplify modeled shading into calm flat fills matching the boy. The glass is a subdued pale warm fill without an emitted glow; this is an appearance draft, not a new powered state. Entire object in frame with clear transparent margins. No scene, ground, baked shadow, text, numbers, UI, extra props, glossy highlights or photoreal texture. Genuine transparent alpha background. Output one portrait PNG object, not a sprite sheet. Owner-review draft, not an approved shop item.",
+      "referenceIds": [
+        "lantern-current",
+        "hero-original"
+      ],
+      "criteria": [
+        "Сохранились силуэт, ракурс и опора существующего фонаря.",
+        "Охра и контур сочетаются с исходным героем.",
+        "Один мастер читается как предмет сцены и как миниатюра карточки.",
+        "Картинка не утверждает новый товар или отдельный уровень наполнения.",
+        "Тени и свечение не запечены в предмет; фон прозрачный."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 100,
+          "height": 145
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-patchwork-tent",
+      "title": "Жильё · Палатка из лоскутов",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Упрощённая версия по замечанию владельца: крупные плоские формы и минимум деталей. Черновик для отбора.",
+      "brief": "Палатка из лоскутов",
+      "prompt": "Use case: precise-object-edit. Edit this ORIGINAL Chewy tent. Preserve EXACTLY its camera angle, slight three-quarter turn, silhouette, low wide proportions, ridge endpoints, tent pegs and contact with the ground. The large side plane occupies the LEFT of the image; the triangular front entrance is on the RIGHT and looks diagonally toward the viewer's right / the center of the camp. Copy the source geometry, do not redesign the construction or rotate it to a frontal view. It must sit in exactly the source tent's location when swapped into the camp. Change only the fabric appearance into a simple PATCHWORK tent: 4 large panels of muted ochre, cream, dusty blue and sage, with two plain square patches. Preserve the original thin dark contour and sparse essential crease lines. Simple flat matte fills with only a small flat tone difference between front and side to read their planes. No grain, fabric texture, hatching, detailed stitching, decorative foliage, chunky icon outline, glossy shading, gradients, glow or halo. Keep the rolled doorway canvas and dark opening exactly as original. Keep one small unobtrusive flag if it fits, no tall pole. All extremities visible with transparent margins. ONE isolated static PNG on genuine transparent background. No scene, person, text, UI or contact shadow. The primary requirement is EXACTLY the original tent's gently turned perspective, not a flat front-facing icon.\n",
+      "referenceIds": [
+        "tent-original-angle"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-stump-house",
+      "title": "Домик из полого бревна",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Домик из полого бревна",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: A portable shelter made from ONE horizontal hollow log, a visibly separate cut timber cylinder resting on two short wooden cradle supports. Long broad side on LEFT receding backward, circular cut end with open entrance on RIGHT facing toward viewer/right. One tiny side window. Low wide silhouette about 2:1. Only two or three bark lines, smooth simple outline, a single broad wood ring on cut end. No roots, stump, soil, turf, moss, tree branches or foundation. Clearly an object that can be placed in camp, not terrain.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-mushroom-house",
+      "title": "Жильё · Грибной домик",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Грибной домик",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the approved tent, a STYLE and CAMERA reference, not the requested subject. Replace its design with the described dwelling while retaining its wide squat footprint (roughly twice as wide as tall), same camera and ground contact. It stands behind and LEFT of the hero. Show a broad LEFT side plane receding left/back and a front entrance on the RIGHT facing diagonally toward the viewer and center of camp. Do not make a symmetric front-facing facade. Keep roof low, entrance readable. Only one door and at most one window; no decorative vines or elaborate trim. REQUESTED SUBJECT: Small mushroom dwelling with a broad cap roof and one warm window. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-branch-hut",
+      "title": "Жильё · Шалаш из веток",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Шалаш из веток",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the approved tent, a STYLE and CAMERA reference, not the requested subject. Replace its design with the described dwelling while retaining its wide squat footprint (roughly twice as wide as tall), same camera and ground contact. It stands behind and LEFT of the hero. Show a broad LEFT side plane receding left/back and a front entrance on the RIGHT facing diagonally toward the viewer and center of camp. Do not make a symmetric front-facing facade. Keep roof low, entrance readable. Only one door and at most one window; no decorative vines or elaborate trim. REQUESTED SUBJECT: Slightly crooked branch shelter with large leaves and a cloth doorway curtain. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-covered-wagon",
+      "title": "Крытый фургон",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Крытый фургон",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: One simple low wide covered wagon shelter, broad LEFT side and entrance on RIGHT facing diagonally viewer/right. Cream canvas roof drawn as one broad shape with only two seam lines. Two visible solid wooden disk wheels, no spokes. One dark side window and one plain step at entrance. Wooden body a single ochre panel, no plank texture, fine hinges, curtain folds, rails or decorations. Low wide about 2:1, same camp camera and thin line as reference tent.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-teapot-house",
+      "title": "Домик-чайник",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Домик-чайник",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the approved tent, a STYLE and CAMERA reference, not the requested subject. Replace its design with the described dwelling while retaining its wide squat footprint (roughly twice as wide as tall), same camera and ground contact. It stands behind and LEFT of the hero. Show a broad LEFT side plane receding left/back and a front entrance on the RIGHT facing diagonally toward the viewer and center of camp. Do not make a symmetric front-facing facade. Keep roof low, entrance readable. Only one door and at most one window; no decorative vines or elaborate trim. REQUESTED SUBJECT: Squat teapot dwelling with a side door and spout chimney. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-hill-burrow",
+      "title": "Переносной домик под зелёным тентом",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Переносной домик под зелёным тентом",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: One small portable low wooden pod cabin under a smooth sage-green canvas cover, with rounded roof and two short visible wooden runners underneath. Broad side on LEFT recedes backward, round dark entrance on RIGHT faces diagonally viewer/right. One small side window. Wide low 2:1 silhouette. Canvas hem is clearly manufactured cloth, no grass or soil on roof, no hill, roots, bushes or attached landscape. Four broad color areas and sparse construction lines.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-pumpkin-house",
+      "title": "Жильё · Домик в тыкве",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Домик в тыкве",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the approved tent, a STYLE and CAMERA reference, not the requested subject. Replace its design with the described dwelling while retaining its wide squat footprint (roughly twice as wide as tall), same camera and ground contact. It stands behind and LEFT of the hero. Show a broad LEFT side plane receding left/back and a front entrance on the RIGHT facing diagonally toward the viewer and center of camp. Do not make a symmetric front-facing facade. Keep roof low, entrance readable. Only one door and at most one window; no decorative vines or elaborate trim. REQUESTED SUBJECT: Wide squat pumpkin dwelling with a small doorway and carved wooden shutters. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-leaf-hammock",
+      "title": "Жильё · Гамак под навесом",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Гамак под навесом",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the approved tent, a STYLE and CAMERA reference, not the requested subject. Replace its design with the described dwelling while retaining its wide squat footprint (roughly twice as wide as tall), same camera and ground contact. It stands behind and LEFT of the hero. Show a broad LEFT side plane receding left/back and a front entrance on the RIGHT facing diagonally toward the viewer and center of camp. Do not make a symmetric front-facing facade. Keep roof low, entrance readable. Only one door and at most one window; no decorative vines or elaborate trim. REQUESTED SUBJECT: Striped hammock with a pillow under a big-leaf canopy, on two freestanding wooden posts. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-shelter-cardboard-house",
+      "title": "Жильё · Домик из коробки",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Домик из коробки",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the approved tent, a STYLE and CAMERA reference, not the requested subject. Replace its design with the described dwelling while retaining its wide squat footprint (roughly twice as wide as tall), same camera and ground contact. It stands behind and LEFT of the hero. Show a broad LEFT side plane receding left/back and a front entrance on the RIGHT facing diagonally toward the viewer and center of camp. Do not make a symmetric front-facing facade. Keep roof low, entrance readable. Only one door and at most one window; no decorative vines or elaborate trim. REQUESTED SUBJECT: Charming cardboard box dwelling with a drawn window and neatly taped cardboard roof. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-daisies",
+      "title": "Растения · Луговые ромашки",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Луговые ромашки",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Loose compact clump of meadow daisies of varied heights with a few closed buds. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-sunflowers",
+      "title": "Растения · Подсолнухи",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Подсолнухи",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Three large sunflowers leaning at slightly different angles in one compact plant clump. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-carrots",
+      "title": "Растения · Морковная грядка",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Морковная грядка",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Compact carrot garden bed with fluffy green tops and orange carrot shoulders visible above a small bounded soil patch. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-tomatoes",
+      "title": "Растения · Помидоры на подпорках",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Помидоры на подпорках",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Compact tomato plants on small wooden support sticks with bright red tomatoes in a small garden bed. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-pumpkins",
+      "title": "Растения · Тыквенная плеть",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Тыквенная плеть",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Compact pumpkin vine with broad leaves and two round pumpkins at its edges. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-herbs",
+      "title": "Растения · Ящик с травами",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Ящик с травами",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Small wooden planter box with distinct clumps of mint, basil and rosemary. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-strawberries",
+      "title": "Растения · Клубничная клумба",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Клубничная клумба",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Low compact strawberry bed with green leaves, small white flowers and a few red berries. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-peas",
+      "title": "Горох на низкой опоре",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Горох на низкой опоре",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: One compact low wooden planter with THREE broad pea leaves and THREE clear pea pods supported by a small low inverted-U hoop. Hoop only slightly taller than leaves, not a tall garden arch or entrance gate. Wide squat silhouette, one cluster, open soil top and two simple box sides visible in gentle three-quarter view. No busy climbing vines, tiny leaves, flowers or wood grain. Readable at 100 px wide.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-boot-flowers",
+      "title": "Растения · Цветы в старых сапогах",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Цветы в старых сапогах",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Pair of old rubber boots used as flowerpots, with small flowers growing out of each boot. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-garden-wheelbarrow-garden",
+      "title": "Растения · Садик в тачке",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Садик в тачке",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current plant clump: match simplicity and its small lower-right camp slot. Image 2 is the approved style and camp camera reference only; do NOT include a tent. Compact cluster, slightly elevated three-quarter view, ground footprint gently recedes into depth. Planters must show their top and two sides. Only a handful of broad leaves and blooms or fruits, no leaf veins or tiny botanical details. REQUESTED SUBJECT: Small garden wheelbarrow filled with flowers and trailing leaves. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "garden-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-puppy",
+      "title": "Питомец · Вислоухий щенок",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Вислоухий щенок",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current dog: match its simple dot eyes, sparse contours, modest proportions and gentle three-quarter turn facing right. Image 2 is the approved overall style reference only; no tent. Draw ONLY the requested species, full body, neutral friendly standing or sitting pose, small camp companion. Dot eyes without highlights, tiny mouth, simple smooth body contour and no fur strokes. Keep recognizable anatomy and visible ground contact. REQUESTED SUBJECT: One small floppy-eared puppy with short legs, large ears and a patch over one eye. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "pet-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-tabby-cat",
+      "title": "Питомец · Круглый полосатый кот",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Круглый полосатый кот",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current dog: match its simple dot eyes, sparse contours, modest proportions and gentle three-quarter turn facing right. Image 2 is the approved overall style reference only; no tent. Draw ONLY the requested species, full body, neutral friendly standing or sitting pose, small camp companion. Dot eyes without highlights, tiny mouth, simple smooth body contour and no fur strokes. Keep recognizable anatomy and visible ground contact. REQUESTED SUBJECT: One round tabby cat with small ears and a thick hook-shaped tail. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "pet-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-rabbit",
+      "title": "Кролик",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Кролик",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: A small unmistakable RABBIT sitting low on its haunches, gently turned right. Rounded compact oval torso, large folded rear haunches, long flat hind feet, two SHORT front paws tucked close to belly, very short round muzzle, tiny split rabbit nose, two LONG rabbit ears (one upright, one softly bent at its tip), small round tail. Soft cream and light tan. Dot eyes, tiny calm mouth. Smooth contour. Species anatomy is essential: no long straight dog forelegs, pointed canine muzzle, dog chest, canine floppy ear or fur tufts. Full body, readable at 72 px high.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-hedgehog",
+      "title": "Питомец · Ёжик",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Ёжик",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current dog: match its simple dot eyes, sparse contours, modest proportions and gentle three-quarter turn facing right. Image 2 is the approved overall style reference only; no tent. Draw ONLY the requested species, full body, neutral friendly standing or sitting pose, small camp companion. Dot eyes without highlights, tiny mouth, simple smooth body contour and no fur strokes. Keep recognizable anatomy and visible ground contact. REQUESTED SUBJECT: One small hedgehog with soft broad simplified spines and a tiny nose. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "pet-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-duckling",
+      "title": "Питомец · Утёнок",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Утёнок",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current dog: match its simple dot eyes, sparse contours, modest proportions and gentle three-quarter turn facing right. Image 2 is the approved overall style reference only; no tent. Draw ONLY the requested species, full body, neutral friendly standing or sitting pose, small camp companion. Dot eyes without highlights, tiny mouth, simple smooth body contour and no fur strokes. Keep recognizable anatomy and visible ground contact. REQUESTED SUBJECT: One small yellow duckling with wide webbed feet. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "pet-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-turtle",
+      "title": "Питомец · Черепашка",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Черепашка",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current dog: match its simple dot eyes, sparse contours, modest proportions and gentle three-quarter turn facing right. Image 2 is the approved overall style reference only; no tent. Draw ONLY the requested species, full body, neutral friendly standing or sitting pose, small camp companion. Dot eyes without highlights, tiny mouth, simple smooth body contour and no fur strokes. Keep recognizable anatomy and visible ground contact. REQUESTED SUBJECT: One small turtle with a rounded shell patterned with large simple patches. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "pet-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-frog",
+      "title": "Питомец · Лягушонок",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Лягушонок",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current dog: match its simple dot eyes, sparse contours, modest proportions and gentle three-quarter turn facing right. Image 2 is the approved overall style reference only; no tent. Draw ONLY the requested species, full body, neutral friendly standing or sitting pose, small camp companion. Dot eyes without highlights, tiny mouth, simple smooth body contour and no fur strokes. Keep recognizable anatomy and visible ground contact. REQUESTED SUBJECT: One little frog with a broad body, big eyes and tiny front feet. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "pet-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-snail",
+      "title": "Питомец · Улитка",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Улитка",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current dog: match its simple dot eyes, sparse contours, modest proportions and gentle three-quarter turn facing right. Image 2 is the approved overall style reference only; no tent. Draw ONLY the requested species, full body, neutral friendly standing or sitting pose, small camp companion. Dot eyes without highlights, tiny mouth, simple smooth body contour and no fur strokes. Keep recognizable anatomy and visible ground contact. REQUESTED SUBJECT: One small snail with a large spiral shell and expressive eyestalks. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "pet-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-capybara",
+      "title": "Капибара",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Капибара",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: One unmistakable CAPYBARA, low stocky barrel-shaped brown body, very short sturdy legs, large broad blunt rectangular head directly joining body with almost no visible neck, tiny rounded ears high on head, small dark eyes, broad flat muzzle. Standing gently three-quarter facing right. Uniform warm brown with one flat darker side plane, no white bib or markings. Smooth outline. No long dog legs, fluffy chest, dog nose, canine silhouette, tail or fur tufts. Full body readable at 72 px high.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-pet-piglet",
+      "title": "Поросёнок",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Поросёнок",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: One unmistakable small PIGLET, round smooth pale pink barrel body, short chunky legs with tiny split hooves, short neck, round head, broad pink disk snout with two nostrils, two small triangular pig ears, a tiny curl tail. Gentle three-quarter pose facing right, dot eyes and tiny mouth. Pink monochrome with at most one broad darker pink patch. Smooth hairless contour, no fluffy dog chest, canine muzzle, long dog ears, dog paws or long legs. Full body readable at 72 px high.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-camping-lantern",
+      "title": "Светильник · Походный фонарь",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Походный фонарь",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current lamp: match its thin outline, simple construction and slightly visible top/side surfaces. Image 2 is approved rendering style only; do NOT include a tent. Fit a compact camp-light slot on the RIGHT of the hero, stable bottom anchor, gentle three-quarter view. Light conveyed by a pale warm flat interior, no exterior bloom. Keep poles slender and short enough to remain one compact scene object. REQUESTED SUBJECT: Rounded camping lantern with a top handle and warm pale glass. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "lamp-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-jar-candle",
+      "title": "Светильник · Свеча в банке",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Свеча в банке",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current lamp: match its thin outline, simple construction and slightly visible top/side surfaces. Image 2 is approved rendering style only; do NOT include a tent. Fit a compact camp-light slot on the RIGHT of the hero, stable bottom anchor, gentle three-quarter view. Light conveyed by a pale warm flat interior, no exterior bloom. Keep poles slender and short enough to remain one compact scene object. REQUESTED SUBJECT: Thick lit candle inside a clear glass jar with string tied around the jar neck. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "lamp-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-paper-lantern",
+      "title": "Светильник · Бумажный фонарик",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Бумажный фонарик",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current lamp: match its thin outline, simple construction and slightly visible top/side surfaces. Image 2 is approved rendering style only; do NOT include a tent. Fit a compact camp-light slot on the RIGHT of the hero, stable bottom anchor, gentle three-quarter view. Light conveyed by a pale warm flat interior, no exterior bloom. Keep poles slender and short enough to remain one compact scene object. REQUESTED SUBJECT: Slightly flattened round paper lantern hanging from a bent wooden pole with a stable little base. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "lamp-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-string-lights",
+      "title": "Гирлянда на стойке",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Гирлянда на стойке",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: One compact portable VERTICAL wooden lamp stand: a single upright post on a stable small three-legged foot, short curved crosspiece at top. A short string of exactly THREE large warm cream bulbs drapes from this crosspiece. Complete assembled unit, narrow silhouette no wider than half its height. Clearly supported bulbs and attached cord, gentle three-quarter view showing base depth. Simple knots only, no two distant stakes or wide fence. No external glow.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-glowing-mushroom",
+      "title": "Светящийся гриб",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Светящийся гриб",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: A whimsical camp lamp that unmistakably resembles ONE organic mushroom: squat ivory stalk, broad softly domed ochre mushroom cap, pale warm cream underside as the luminous surface. A tiny simple flat wood foot makes it a freestanding portable lamp. Mushroom cap has one small irregular spot; no segmented lampshade, cap knob, metal housing, dial, vents or mechanical lantern parts. Light expressed only by pale solid colors inside the outline. Gentle three-quarter camera, compact simple shape.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-house-lantern",
+      "title": "Светильник · Фонарь-домик",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Фонарь-домик",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current lamp: match its thin outline, simple construction and slightly visible top/side surfaces. Image 2 is approved rendering style only; do NOT include a tent. Fit a compact camp-light slot on the RIGHT of the hero, stable bottom anchor, gentle three-quarter view. Light conveyed by a pale warm flat interior, no exterior bloom. Keep poles slender and short enough to remain one compact scene object. REQUESTED SUBJECT: Small metal house-shaped lantern with warm windows and a carrying handle. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "lamp-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-flower-lamp",
+      "title": "Светильник · Лампа-цветок",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Лампа-цветок",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current lamp: match its thin outline, simple construction and slightly visible top/side surfaces. Image 2 is approved rendering style only; do NOT include a tent. Fit a compact camp-light slot on the RIGHT of the hero, stable bottom anchor, gentle three-quarter view. Light conveyed by a pale warm flat interior, no exterior bloom. Keep poles slender and short enough to remain one compact scene object. REQUESTED SUBJECT: Flower-shaped lamp with bent stalk, petal lampshade and a warm light at its center. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "lamp-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-crystal-lamp",
+      "title": "Светильник · Кристалл на подставке",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Кристалл на подставке",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current lamp: match its thin outline, simple construction and slightly visible top/side surfaces. Image 2 is approved rendering style only; do NOT include a tent. Fit a compact camp-light slot on the RIGHT of the hero, stable bottom anchor, gentle three-quarter view. Light conveyed by a pale warm flat interior, no exterior bloom. Keep poles slender and short enough to remain one compact scene object. REQUESTED SUBJECT: Luminous crystal with a few large matte facets on a little simple stand. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "lamp-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-teapot-lamp",
+      "title": "Чайник-светильник",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Чайник-светильник",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: A whimsical small portable lantern shaped like a squat TEAPOT, dusty-blue body, small spout left, handle right, simple lid. Its broad front has a LARGE clearly visible warm cream translucent window occupying half the body, one small candle silhouette inside. It must read as a source of light even at thumbnail size; strong large pale window against blue silhouette. Gentle three-quarter turn, top of lid visible. No tiny punched patterns, glow, complex wire or extra decorations.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-lamp-moon-rod",
+      "title": "Светильник · Луна на удочке",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Луна на удочке",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current lamp: match its thin outline, simple construction and slightly visible top/side surfaces. Image 2 is approved rendering style only; do NOT include a tent. Fit a compact camp-light slot on the RIGHT of the hero, stable bottom anchor, gentle three-quarter view. Light conveyed by a pale warm flat interior, no exterior bloom. Keep poles slender and short enough to remain one compact scene object. REQUESTED SUBJECT: Small luminous crescent moon hanging from a long bent branch like a fishing rod, branch held by a compact stable base. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "lamp-slot",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-stone-campfire",
+      "title": "Костёр · Классический костёр",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Классический костёр",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current fire: match its simple outline and flame shapes. Image 2 is approved rendering style and perspective only, no tent. This object sits on the ground in the lower LEFT of the camp. Low compact broad footprint, gentle three-quarter view from slightly above, clearly visible side/top surfaces of containers and depth between crossed logs. Flame in two or three flat shapes, no smoke or sparks. REQUESTED SUBJECT: Small burning campfire of crossed logs in an irregular ring of stones. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "campfire-current",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-fire-bowl",
+      "title": "Костёр · Костёр в чаше",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Костёр в чаше",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current fire: match its simple outline and flame shapes. Image 2 is approved rendering style and perspective only, no tent. This object sits on the ground in the lower LEFT of the camp. Low compact broad footprint, gentle three-quarter view from slightly above, clearly visible side/top surfaces of containers and depth between crossed logs. Flame in two or three flat shapes, no smoke or sparks. REQUESTED SUBJECT: Burning logs in a wide metal fire bowl supported by three short legs. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "campfire-current",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-brick-hearth",
+      "title": "Костёр · Кирпичный очаг",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Кирпичный очаг",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current fire: match its simple outline and flame shapes. Image 2 is approved rendering style and perspective only, no tent. This object sits on the ground in the lower LEFT of the camp. Low compact broad footprint, gentle three-quarter view from slightly above, clearly visible side/top surfaces of containers and depth between crossed logs. Flame in two or three flat shapes, no smoke or sparks. REQUESTED SUBJECT: Low horseshoe-shaped brick hearth with a small warm fire visible through the front. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "campfire-current",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-potbelly-stove",
+      "title": "Костёр · Печка-буржуйка",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Печка-буржуйка",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current fire: match its simple outline and flame shapes. Image 2 is approved rendering style and perspective only, no tent. This object sits on the ground in the lower LEFT of the camp. Low compact broad footprint, gentle three-quarter view from slightly above, clearly visible side/top surfaces of containers and depth between crossed logs. Flame in two or three flat shapes, no smoke or sparks. REQUESTED SUBJECT: Squat potbelly iron stove with a short chimney and warm fire visible in its little open door. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "campfire-current",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-clay-oven",
+      "title": "Костёр · Глиняная печь",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Глиняная печь",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current fire: match its simple outline and flame shapes. Image 2 is approved rendering style and perspective only, no tent. This object sits on the ground in the lower LEFT of the camp. Low compact broad footprint, gentle three-quarter view from slightly above, clearly visible side/top surfaces of containers and depth between crossed logs. Flame in two or three flat shapes, no smoke or sparks. REQUESTED SUBJECT: Small rounded clay oven dome with a broad opening, small chimney and a little fire inside. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "campfire-current",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-tripod-pot",
+      "title": "Низкая тренога с котелком",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Низкая тренога с котелком",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: One compact LOW camp tripod of three short sturdy sticks supporting a small cooking pot over a tiny low campfire. Whole assembly broader than tall, triangular footprint, pot near ground. Hook visibly attaches pot handle to joined tripod apex; pot does not intersect supports. Two simple crossed logs and two flat flame shapes underneath. Gentle three-quarter view, visible pot rim. No tall poles, chains, smoke, sparks or bark grain. Preserve a low foreground hearth footprint.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-kettle-hearth",
+      "title": "Костёр · Очаг с чайником",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Очаг с чайником",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current fire: match its simple outline and flame shapes. Image 2 is approved rendering style and perspective only, no tent. This object sits on the ground in the lower LEFT of the camp. Low compact broad footprint, gentle three-quarter view from slightly above, clearly visible side/top surfaces of containers and depth between crossed logs. Flame in two or three flat shapes, no smoke or sparks. REQUESTED SUBJECT: Compact hearth of flat stones supporting a grate and a soot-darkened kettle over a little fire. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "campfire-current",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-barrel-fire",
+      "title": "Костёр · Огонь в бочке",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Огонь в бочке",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current fire: match its simple outline and flame shapes. Image 2 is approved rendering style and perspective only, no tent. This object sits on the ground in the lower LEFT of the camp. Low compact broad footprint, gentle three-quarter view from slightly above, clearly visible side/top surfaces of containers and depth between crossed logs. Flame in two or three flat shapes, no smoke or sparks. REQUESTED SUBJECT: Small low metal barrel fire pit with star-shaped cutouts and fire visible at the top. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "campfire-current",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-stone-fireplace",
+      "title": "Низкий переносной камин",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Низкий переносной камин",
+      "prompt": "Use case: stylized-concept. One isolated static transparent PNG asset for Chewy. The reference tent supplies ONLY the simple drawing style and gentle three-quarter camera angle; do not draw a tent or copy its parts. Thin slightly irregular dark brown contour, large calm matte flat color shapes, very few internal lines. Restrained cream, ochre, sage, dusty blue and brown palette with appropriate natural accents. Slight view from above and subtle three-quarter turn: clear ground contact and visible depth, never a flat frontal icon. No detailed texture, hatching, grain, glossy gradients, glow outside silhouette, text, scenery or cast shadow. Entire silhouette visible with at least 10 percent transparent margins on all four sides.  SUBJECT: One small portable squat stone firebox, a broad low arched opening containing two logs and two simple flame shapes. Constructed from only SIX large rounded stone blocks on one shallow stone base, tiny short rear flue barely above arch. Wide silhouette roughly 1.6:1. Gentle three-quarter turn, visible shallow side and top. Not a tall household fireplace; no mantel shelf, long chimney, elaborate masonry, surrounding terrain or smoke.",
+      "referenceIds": [
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-hearth-saucepan-fire",
+      "title": "Костёр · Очаг в старой кастрюле",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Очаг в старой кастрюле",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current fire: match its simple outline and flame shapes. Image 2 is approved rendering style and perspective only, no tent. This object sits on the ground in the lower LEFT of the camp. Low compact broad footprint, gentle three-quarter view from slightly above, clearly visible side/top surfaces of containers and depth between crossed logs. Flame in two or three flat shapes, no smoke or sparks. REQUESTED SUBJECT: Large old chipped enamel saucepan used as a tiny fire pit with burning logs inside. Entire silhouette fits with at least 8 percent clear margins on every side. Genuine transparent alpha background, no ground plane or cast shadow. One isolated subject/group only, no extra props. Landscape canvas for wide objects, portrait for tall ones; preserve natural proportions.",
+      "referenceIds": [
+        "campfire-current",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Прозрачные края и полный силуэт без обрезки."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": true,
+        "maxDisplay": {
+          "width": 180,
+          "height": 180
+        }
+      }
+    },
+    {
+      "id": "variants-background-birch-clearing",
+      "title": "Фон · Берёзовая поляна",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Берёзовая поляна",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Birch forest clearing, pale trunks at the sides, soft grass and simple flat patches of sunlight.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-pine-forest",
+      "title": "Фон · Хвойный лес",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Хвойный лес",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Conifer forest clearing, tall fir trees framing the sides, moss and distant bluish tree trunks.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-rolling-meadow",
+      "title": "Фон · Луг среди холмов",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Луг среди холмов",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Meadow among rounded rolling hills, broad open sky and sparse wildflowers at the edges.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-quiet-lake",
+      "title": "Фон · Берег тихого озера",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Берег тихого озера",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Camp clearing beside a quiet lake behind the camp, reeds at the sides, distant hazy opposite shore.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-apple-orchard",
+      "title": "Фон · Яблоневый сад",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Яблоневый сад",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Apple orchard clearing with short round-canopy trees framing the sides and a path in the distant orchard.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-sea-cove",
+      "title": "Фон · Морская бухта",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Морская бухта",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Sandy flat camp clearing beside a calm sea cove, sea behind it and rocky cliffs framing the edges.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-mountain-valley",
+      "title": "Фон · Горная долина",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Горная долина",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Level grassy terrace in a mountain valley with distant peaks and a narrow distant waterfall.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-autumn-grove",
+      "title": "Фон · Осенняя роща",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Осенняя роща",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Autumn grove clearing with honey-yellow and brick-red tree crowns, a few fallen leaves at the edges.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-snowy-edge",
+      "title": "Фон · Заснеженная опушка",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Заснеженная опушка",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Snowy forest edge, soft snowdrifts, snow-covered fir trees, broad cleared level snow camp area.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    },
+    {
+      "id": "variants-background-giant-garden",
+      "title": "Фон · Сад среди гигантских растений",
+      "kind": "image",
+      "screen": "Мастерская · 60 статичных вариаций",
+      "purpose": "Партия после одобрения палатки v4 владельцем: простой рисунок, лёгкий разворот и посадка в лагере.",
+      "brief": "Сад среди гигантских растений",
+      "prompt": "Create ONE static PNG game asset for Chewy. Match the approved reference art: simple slightly irregular THIN dark contour, large calm matte color areas, sparse essential lines, restrained ochre/cream/dusty blue/sage/brown palette with suitable accents. Preserve a convincing gentle THREE-QUARTER turn and slight view from above so the object occupies real ground depth in the camp. Show side and front planes with perspective and at most a small flat tone difference. Simple rendering does NOT mean front-facing flat icon. NO grain, texture, hatching, tiny decoration, intricate stitching, wood grain, individual fur hairs, heavy rounded icon outline, glossy modeling, gradients, glow/halo outside the silhouette, UI, letters or numerals. Image 1 is the current portrait camp background: preserve composition and camera. Image 2 is the approved style reference only: NO tent or any camp object in this background. Opaque portrait 9:19.5 mobile background. Horizon around the upper third, broad quiet level ground occupying the central and lower two-thirds for separately placed camp objects. Scenery frames edges and upper portion, keep left middle dwelling slot and central hero slot clear. Simple large silhouettes and broad flat colors, a few depth layers, not detailed landscape painting. No people, pets, houses, tents, lamps, furniture, fires or UI. REQUESTED SUBJECT: Camp clearing inside a garden of giant plants, huge leaves and flowers frame the edges so the viewer feels tiny.",
+      "referenceIds": [
+        "camp-flat",
+        "approved-patchwork-style"
+      ],
+      "criteria": [
+        "Силуэт и стиль читаются в маленьком размере.",
+        "Соответствует текстовому варианту; финальный арт требует решения владельца.",
+        "Фон непрозрачный и площадка свободна."
+      ],
+      "target": {
+        "format": "png",
+        "transparent": false,
+        "maxDisplay": {
+          "width": 390,
+          "height": 844
+        }
+      }
+    }
+  ]
+}

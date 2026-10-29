@@ -1,7 +1,7 @@
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {
-    options: { storySort: { order: ['Core', ['Skeleton', 'Canvas', 'Sandbox']] } },
+    options: { storySort: { order: ['Прототип', 'Онбординг', 'Состояния', 'Мастерская', 'Отложено'] } },
     layout: 'centered',
     controls: {
       matchers: { color: /(background|color)$/i, date: /Date$/i },

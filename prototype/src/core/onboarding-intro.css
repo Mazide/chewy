@@ -1,0 +1,17 @@
+.study-phone:has(.onboarding-intro) { height:calc(min(var(--study-width), 100vw - 56px) * var(--onboarding-ratio)); max-height:none; }
+.onboarding-intro { display:flex; flex-direction:column; min-height:0; height:100%; }
+.onboarding-nav { justify-content:space-between; margin:0; }
+.onboarding-nav > span { font-size:20px; font-weight:700; }
+.onboarding-nav .study-text-button { background:transparent; border:0; font-size:12px; }
+.onboarding-scroll { flex:1; min-height:0; overflow-y:auto; overflow-x:hidden; padding:4px 4px 12px; scrollbar-width:thin; }
+.onboarding-scene.study-mini-camp { height:clamp(145px, 32vh, 295px); margin:8px 0 24px; border-radius:18px 18px 40% 10%; }
+.onboarding-scene > .study-media-hero { left:38%; width:34%; height:88%; }
+.onboarding-scene.study-mini-hero > .study-media-hero { left:30%; width:40%; height:94%; }
+.onboarding-copy h1 { max-width:290px; text-wrap:balance; }
+.onboarding-copy h1:focus { outline:none; }
+.onboarding-copy .onboarding-aside { color:#526248; font-size:13px; }
+.onboarding-actions { flex-shrink:0; margin-top:8px; padding-top:4px; }
+.study-device-compact .onboarding-scene.study-mini-camp { height:145px; margin-bottom:16px; }
+.study-device-compact .onboarding-copy h1 { font-size:24px; }
+.study-device-compact .onboarding-copy p { font-size:13px; margin-bottom:12px; }
+.onboarding-review-summary { overflow-wrap:anywhere; }

@@ -1,0 +1,6 @@
+/* Binary daily contribution uses the existing art, including an applied appearance. */
+.sandbox-world-object[data-daily-contribution="none"] > :is(.sandbox-sprite-crop, .study-media, .sandbox-block) { filter:grayscale(1); }
+.sandbox-world-object[data-daily-contribution="none"] > .sandbox-zone-label { background:#e8e5dc; color:#555b55; }
+.sandbox-hero-bubble { position:absolute; left:50%; bottom:100%; transform:translateX(-50%); width:max-content; max-width:160px; z-index:4; pointer-events:none; }
+.sandbox-hero-bubble .hero-state { max-width:100%; box-sizing:border-box; }
+.capture-hero-reaction { position:absolute; top:calc(var(--capture-safe-top) + 121px); left:16px; z-index:3; pointer-events:none; }

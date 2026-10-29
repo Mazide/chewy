@@ -29,3 +29,8 @@ prototype/node_modules/
 prototype/storybook-static/
 prototype/dist/
 *.tsbuildinfo
+
+# Local analysis server — private photos, requests, results and Python caches
+/server/.data/
+__pycache__/
+*.pyc

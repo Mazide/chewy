@@ -47,6 +47,9 @@
 .forest-path-note h2 { margin:0 0 3px; font-size:17px; line-height:1.2; }
 .forest-path-note p { margin:0 0 9px; min-height:30px; font-size:12px; line-height:1.35; }
 .forest-path-note > button { width:100%; }
+.forest-history-date { display:grid; gap:4px; margin:0 0 9px; font-size:11px; }
+.forest-history-date select { width:100%; min-width:0; min-height:44px; padding:7px 9px; border:1px solid #947346; border-radius:7px; color:inherit; background:#fff8e4; font:inherit; font-size:13px; }
+.forest-history-date select:focus-visible { outline:3px solid #5b867a; outline-offset:2px; }
 .forest-time-morning .forest-path-background { filter:sepia(.12) saturate(.9) brightness(1.06); }
 .forest-time-evening .forest-path-background { filter:sepia(.38) saturate(.95) brightness(.87); }
 .forest-time-night .forest-path-background { filter:brightness(.48) saturate(.7) hue-rotate(22deg); }
@@ -62,3 +65,5 @@
 .study-device-compact .forest-path-note p { font-size:11px; margin-bottom:7px; }
 .study-device-compact .forest-path-note > button { min-height:44px; padding:7px 10px; }
 @media (prefers-reduced-motion:reduce) { .forest-path-scroll { scroll-behavior:auto; } }
+
+.forest-path-note .forest-explore { margin-top:8px; }

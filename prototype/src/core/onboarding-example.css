@@ -1,0 +1,32 @@
+.onboarding-example .onboarding-nav > span { font-size:16px; }
+.onboarding-example .onboarding-nav { gap:8px; }
+.onboarding-example .onboarding-nav > button { flex-shrink:0; }
+.onboarding-example-photo { display:block; width:100%; padding:10px; border:1px solid #38594b; border-radius:18px; background:#f3eedc; color:#29382e; cursor:pointer; text-align:left; font:inherit; }
+.onboarding-example-photo .study-media { width:100%; height:230px; overflow:hidden; border-radius:10px; }
+.onboarding-example-photo .study-photo { width:100%; height:100%; object-fit:cover; }
+.onboarding-example-photo > span { display:block; padding:14px 4px 4px; font-weight:700; }
+.onboarding-example-photo:focus-visible { outline:3px solid #38594b; outline-offset:3px; }
+.onboarding-example-photo + .onboarding-aside { margin-top:16px; }
+.onboarding-example-analysis { margin:24px 0; }
+.onboarding-example-plate { position:relative; width:210px; aspect-ratio:1; border:9px solid #f3eedc; border-radius:50%; margin:0 auto 20px; background:conic-gradient(#b9c98b 0deg 180deg, #d8bd83 180deg 270deg, #d6aa88 270deg); box-shadow:0 0 0 2px #665039; color:#29382e; }
+.onboarding-example-plate > span { position:absolute; font-size:14px; font-weight:650; }
+.onboarding-example-plate > span:nth-child(1) { left:58%; top:45%; }
+.onboarding-example-plate > span:nth-child(2) { left:17%; top:26%; }
+.onboarding-example-plate > span:nth-child(3) { left:10%; top:65%; }
+.onboarding-example-supplies { position:absolute; bottom:8px; left:8px; right:8px; display:flex; justify-content:center; gap:12px; padding:8px; border-radius:14px; background:#f3eedc; animation:onboarding-supplies-arrive 350ms ease-out both; }
+.onboarding-example-supplies > span { display:flex; align-items:center; flex-direction:column; color:#29382e; font-size:12px; }
+.onboarding-example-supplies svg { width:42px; height:42px; }
+.onboarding-example-step-camp .onboarding-scene > .study-media-hero { bottom:82px; height:58%; }
+.study-device-compact .onboarding-example-photo .study-media { height:170px; }
+.study-device-compact .onboarding-example-plate { width:160px; }
+.study-device-compact .onboarding-example-analysis { margin:16px 0; }
+.study-device-compact .onboarding-example-step-camp .onboarding-scene.study-mini-camp { height:210px; }
+@keyframes onboarding-supplies-arrive { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+@media (prefers-reduced-motion:reduce) { .onboarding-example-supplies { animation:none; } }
+
+.study-device-compact .onboarding-example .onboarding-nav { gap:4px; }
+.study-device-compact .onboarding-example .onboarding-nav > span { font-size:12px; }
+
+.onboarding-example-supplies { z-index:4; }
+.onboarding-example-step-camp .onboarding-scene > .study-media-fire { bottom:82px; height:20%; }
+.study-device-compact .onboarding-example .onboarding-nav .study-text-button { width:84px; padding:4px; font-size:11px; }

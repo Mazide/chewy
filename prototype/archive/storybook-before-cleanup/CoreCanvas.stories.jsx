@@ -1,8 +1,8 @@
-import { CoreOverview, CoreSkeleton } from './CoreSkeleton.jsx';
+import { CoreOverview, CoreSkeleton } from '../../src/core/CoreSkeleton.jsx';
 import * as skeleton from './CoreSkeleton.stories.jsx';
-import { CampCompositionCanvas } from './CampCompositionCanvas.jsx';
-import { CampSandbox } from './CampSandbox.jsx';
-import { ScreenStudy } from './ScreenStudy.jsx';
+import { CampCompositionCanvas } from '../../src/core/CampCompositionCanvas.jsx';
+import { CampSandbox } from '../../src/core/CampSandbox.jsx';
+import { ScreenStudy } from '../../src/core/ScreenStudy.jsx';
 
 export default {
   ...skeleton.default,

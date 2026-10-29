@@ -26,23 +26,39 @@ function InspectionTool({ theme }) {
   </svg>;
 }
 
-export function CaptureProcessing({ job, theme, onCamp }) {
+export const CAPTURE_FAILURE_COPY = {
+  offline: { title: 'Нет связи', text: 'Не удалось связаться с разбором. Попробуй снова, когда появится связь.' },
+  error: { title: 'Не получилось разобрать', text: 'Во время разбора произошёл сбой. Можно повторить с теми же снимками.' },
+  timeout: { title: 'Ответ пока не пришёл', text: 'Разбор не ответил вовремя. Можно попробовать ещё раз.' },
+};
+
+export function CaptureProcessing({ job, theme, onCamp, onRetry, onEdit, onPrevious, onCancel, exitLabel = 'В лагерь' }) {
   const content = useContext(StudyContentContext);
   const photos = capturePhotos(job);
   const [selected, setSelected] = useState(null);
   const photo = photos.find(item => item.id === selected) ?? photos[0];
   const index = photos.indexOf(photo);
   const updating = Boolean(job.result);
+  const failure = job.status === 'failed' ? CAPTURE_FAILURE_COPY[job.failure] : null;
+  const notFood = job.status === 'notFood';
+  const issue = notFood ? { title:'Не удалось узнать еду', text:'На этих снимках пока не получилось распознать еду. Добавь детали или замени фото.' } : failure;
   return <>
-    <section className="capture-processing" aria-label={updating ? 'Повторный анализ еды' : 'Анализ отправленной еды'}>
+    <section className={`capture-processing${issue ? ' capture-failed' : ''}`} aria-label={notFood ? 'Еда не распознана' : failure ? 'Ошибка разбора еды' : updating ? 'Повторный анализ еды' : 'Анализ отправленной еды'}>
       <p className="processing-receipt"><span aria-hidden="true">✓</span>{updating ? 'Правки сохранены' : photos.length > 1 ? 'Снимки сохранены' : 'Фото сохранено'}</p>
+      {issue && <><h3 className="processing-status" aria-live="polite">{issue.title}</h3><p className="processing-failure-copy">{issue.text}</p>{updating && <p className="processing-failure-copy">Прежний результат и его вклад остаются. Правки и новые снимки сохранены для {notFood ? 'уточнения' : 'повтора'}.</p>}</>}
       <figure className="processing-photo" aria-label={`Отправленное фото ${index + 1} из ${photos.length}`}>
-        <div className="processing-photo-image">{content ? <img src={samplePhoto(photo.imageKey).src} alt="" /> : <span>Фото еды</span>}<InspectionTool theme={theme} /></div>
+        <div className="processing-photo-image">{content ? <img src={samplePhoto(photo.imageKey).src} alt="" /> : <span>Снимок</span>}{!issue && <InspectionTool theme={theme} />}</div>
       </figure>
       {photos.length > 1 && <CapturePhotoStrip photos={photos} selected={photo.id} onSelect={setSelected} revealSelected />}
-      <h3 className="processing-status" role="status"><span className="processing-pulse" aria-hidden="true" />{updating ? 'Уточняем разбор' : 'Разбираем еду'}</h3>
-      <details className="processing-details"><summary>Что разбираем</summary><p>{photos.length === 1 ? 'Снимок этой еды' : `${photos.length} фото одной еды`}{job.notes?.trim() ? ' и твои уточнения.' : '.'}</p>{job.notes?.trim() && <p className="processing-user-note">{job.notes.trim()}</p>}{updating && <p>Пока готовится уточнение, в дневнике остаётся прежний результат.</p>}<p>Готовый разбор появится здесь и в лагере.</p></details>
+      {!issue && <h3 className="processing-status" role="status"><span className="processing-pulse" aria-hidden="true" />{updating ? 'Уточняем разбор' : 'Разбираем еду'}</h3>}
+      <details className="processing-details"><summary>{issue ? 'Сохранённые детали' : 'Что разбираем'}</summary><p>{photos.length === 1 ? 'Отправленный снимок' : `Отправленные снимки · ${photos.length}`}{job.notes?.trim() ? ' и твои уточнения.' : '.'}</p>{job.dishName?.trim() && <p>{job.dishName.trim()}</p>}{job.notes?.trim() && <p className="processing-user-note">{job.notes.trim()}</p>}{updating && <p>В дневнике остаётся прежний результат.</p>}{!issue && <p>Готовый разбор появится здесь и в лагере.</p>}</details>
+      {onCancel && <button type="button" className="capture-record-action" onClick={onCancel}>{updating ? 'Отменить уточнение' : 'Отменить разбор'}</button>}
     </section>
-    <footer className="processing-exit"><p>Можно закрыть приложение.<br />Результат будет в лагере.</p><button type="button" className="capture-primary" onClick={onCamp}>В лагерь</button></footer>
+    <footer className={`processing-exit${issue ? ' processing-failed-actions' : ''}`}>
+      {!issue && <p>Можно закрыть приложение.<br />Результат будет в лагере.</p>}
+      {notFood && <button type="button" className="capture-primary" onClick={onEdit}>Уточнить запись</button>}
+      {failure && <button type="button" className="capture-primary" onClick={onRetry}>Повторить</button>}
+      <div className="processing-exit-links">{updating && <button type="button" onClick={onPrevious}>Прежний результат</button>}<button type="button" className={issue || updating ? undefined : 'capture-primary'} onClick={onCamp}>{exitLabel}</button></div>
+    </footer>
   </>;
 }

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { CAPTURE_STORAGE_KEY, captureDay, capturePhotos, completeDueCaptures, createCapture, readCaptureSession, reviseCapture, writeCaptureSession } from './capture-session.js';
+import { dailyCampContributions, mealAssessment, nutritionSupplies } from './food-assessment.js';
 
 const storage = () => {
   const values = new Map();
@@ -113,4 +114,69 @@ test('legacy single-photo records remain editable, malformed photo lists fail', 
   writeCaptureSession(db,[{...legacy,photos:[]}]);
   assert.throws(()=>readCaptureSession(db));
   assert.throws(()=>createCapture({source:'camera',theme:'science',portion:1,notes:'',delay:20000,photos:[photos[0],photos[0]]}));
+});
+
+test('completed gallery entries save distinct answers and contribute before their result is viewed', () => {
+  const jobs = ['breakfast', 'chicken'].map(imageKey => createCapture({ source: 'gallery', theme: 'science', portion: 1, notes: '', delay: 0,
+    photos: [{ id: imageKey, imageKey, source: 'gallery' }] }));
+  const ready = completeDueCaptures(jobs);
+  assert.ok(ready.every(job => !job.seen && job.result.assessment));
+  assert.deepEqual(ready.map(job => job.result.name), ['Овсянка с ягодами', 'Курица с картофелем']);
+  assert.deepEqual(dailyCampContributions(captureDay([ready[0]]).meals), { protein: false, carbs: true, fats: false, plants: true });
+  assert.deepEqual(dailyCampContributions(captureDay([ready[1]]).meals), { protein: true, carbs: false, fats: false, plants: false });
+  assert.deepEqual(dailyCampContributions(captureDay(ready).meals), { protein: true, carbs: true, fats: false, plants: true });
+  assert.deepEqual(nutritionSupplies(captureDay(completeDueCaptures(ready, Infinity)).meals), nutritionSupplies(captureDay(ready).meals));
+});
+
+test('a saved answer and its supplies survive storage without being inferred again from the cover', () => {
+  const db = storage();
+  const [ready] = completeDueCaptures([capture()], Infinity);
+  ready.result.assessment.reason = 'Сохранённый ответ демоанализа.';
+  writeCaptureSession(db, [ready]);
+  const [loaded] = readCaptureSession(db);
+  assert.deepEqual(loaded.result.assessment, ready.result.assessment);
+  const [meal] = captureDay([loaded]).meals;
+  assert.strictEqual(meal.assessment, loaded.result.assessment);
+  assert.equal(mealAssessment(meal).reason, 'Сохранённый ответ демоанализа.');
+  assert.deepEqual(nutritionSupplies([meal]), nutritionSupplies(captureDay([ready]).meals));
+});
+
+test('extra views stay one meal with one contribution', () => {
+  const now = Date.now();
+  const make = photos => createCapture({ source: 'gallery', theme: 'science', portion: 1, notes: '', delay: 0, photos }, now);
+  const photo = { id: 'cover', imageKey: 'breakfast', source: 'gallery' };
+  const [single, multiple] = completeDueCaptures([make([photo]), make([photo, { ...photo, id: 'detail' }])], Infinity);
+  assert.equal(captureDay([multiple]).meals.length, 1);
+  assert.deepEqual(nutritionSupplies(captureDay([multiple]).meals), nutritionSupplies(captureDay([single]).meals));
+});
+
+test('a replacement answer changes only the original day after successful analysis', () => {
+  const now = Date.now();
+  const originalDate = new Date(now); originalDate.setDate(originalDate.getDate() - 1);
+  const [old] = completeDueCaptures([createCapture({ source: 'gallery', theme: 'science', portion: 1, notes: '', delay: 0,
+    photos: [{ id: 'old-photo', imageKey: 'chicken', source: 'gallery' }] }, originalDate.getTime())], Infinity);
+  const before = dailyCampContributions(captureDay([old], originalDate).meals);
+  const pending = reviseCapture(old, { dishName: 'Овсянка с ягодами', notes: '', portion: 1,
+    photos: [{ id: 'new-photo', imageKey: 'breakfast', source: 'gallery' }] }, 1000, now);
+  assert.deepEqual(dailyCampContributions(captureDay([pending], originalDate).meals), before);
+  const [ready] = completeDueCaptures([pending], now + 1000);
+  assert.equal(ready.id, old.id);
+  assert.equal(ready.createdAt, old.createdAt);
+  assert.equal(captureDay([ready], originalDate).meals.length, 1);
+  assert.deepEqual(dailyCampContributions(captureDay([ready], originalDate).meals), { protein: false, carbs: true, fats: false, plants: true });
+  assert.deepEqual(dailyCampContributions(captureDay([ready]).meals), { protein: false, carbs: false, fats: false, plants: false });
+});
+
+test('legacy answers have a conservative fallback and malformed saved assessments fail explicitly', () => {
+  const db = storage();
+  const [legacy] = completeDueCaptures([capture()], Infinity);
+  delete legacy.result.assessment;
+  writeCaptureSession(db, [legacy]);
+  const loaded = readCaptureSession(db);
+  assert.deepEqual(dailyCampContributions(captureDay(loaded).meals), { protein: true, carbs: true, fats: false, plants: true });
+  legacy.result.name = 'Неизвестное блюдо';
+  assert.equal(mealAssessment(captureDay([legacy]).meals[0]).tone, 'unknown');
+  assert.deepEqual(dailyCampContributions(captureDay([legacy]).meals), { protein: false, carbs: false, fats: false, plants: false });
+  writeCaptureSession(db, [{ ...legacy, result: { ...legacy.result, assessment: { supplies: { fats: [30, 'масло'] } } } }]);
+  assert.throws(() => readCaptureSession(db), /Invalid capture session/);
 });

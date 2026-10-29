@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { dayAssessment, mealAssessment, nutritionExampleMeals, nutritionSupplies } from './food-assessment.js';
+import { dailyCampContributions, dayAssessment, mealAssessment, nutritionExampleMeals, nutritionSupplies, snapshotMealAssessment, validMealAssessment } from './food-assessment.js';
 import { captureDay, completeDueCaptures, createCapture, reviseCapture } from './capture-session.js';
 
 test('an edited dish does not keep the confidence of its photo fixture', () => {
@@ -70,4 +70,32 @@ test('a revised capture replaces its supply contribution after analysis complete
   const after = nutritionSupplies(revisedDay.meals).values;
   assert.ok(after.fats.fill > 0);
   assert.ok(after.protein.fill < before.protein.fill);
+});
+
+test('daily camp components show confirmed presence independently of portions and repeated entries', () => {
+  const meal = nutritionExampleMeals('fats')[1];
+  const expected = { protein: true, carbs: true, fats: true, plants: true };
+  assert.deepEqual(dailyCampContributions([meal]), expected);
+  assert.deepEqual(dailyCampContributions([meal, meal, { ...meal, portion: 0 }]), expected);
+  assert.deepEqual(dailyCampContributions([]), { protein: false, carbs: false, fats: false, plants: false });
+});
+
+test('serialized unknown answers stay unknown and never gain supplies', () => {
+  const meal = { id: 'unknown', imageKey: 'meal', name: 'Домашнее блюдо' };
+  const saved = { ...meal, assessment: snapshotMealAssessment(meal) };
+  const loaded = JSON.parse(JSON.stringify(saved));
+  assert.equal(validMealAssessment(loaded.assessment), true);
+  assert.equal(nutritionSupplies([loaded]).hasUnknown, true);
+  assert.equal(dayAssessment([loaded]).tone, 'unknown');
+  assert.deepEqual(dailyCampContributions([loaded]), { protein: false, carbs: false, fats: false, plants: false });
+});
+
+test('analysis snapshots are independent of the authored fixtures and the prior answer', () => {
+  const meal = nutritionExampleMeals('fats')[1];
+  const prior = snapshotMealAssessment(meal);
+  assert.equal(validMealAssessment(prior), true);
+  prior.supplies.fats[1] = 'сохранённый источник';
+  const next = snapshotMealAssessment({ ...meal, assessment: prior });
+  assert.equal(next.supplies.fats[1], 'оливковое масло');
+  assert.equal(mealAssessment(meal).supplies.fats[1], 'оливковое масло');
 });

@@ -1,5 +1,5 @@
-import { CampSandbox } from './CampSandbox.jsx';
-import { ScreenStudy } from './ScreenStudy.jsx';
+import { CampSandbox } from '../../src/core/CampSandbox.jsx';
+import { ScreenStudy } from '../../src/core/ScreenStudy.jsx';
 
 export default {
   title: 'Core/Sandbox',

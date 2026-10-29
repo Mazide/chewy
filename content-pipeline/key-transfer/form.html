@@ -1,0 +1,159 @@
+<script>
+(() => {
+  const policy = document.createElement('meta');
+  policy.httpEquiv = 'Content-Security-Policy';
+  policy.content = "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src data:; font-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'";
+  document.head.appendChild(policy);
+})();
+</script>
+<!--__VENDORED_CRYPTO__-->
+<div id="chewy-runway-transfer-v2" style="display:grid;gap:16px">
+  <div style="display:grid;gap:8px">
+    <label class="form-label" for="chewy-transfer-secret-v2">API-ключ Runway</label>
+    <input class="form-control" id="chewy-transfer-secret-v2" type="password" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="2048" placeholder="Вставь ключ сюда" disabled>
+  </div>
+  <div class="viz-row">
+    <button class="btn btn-primary" id="chewy-transfer-encrypt-v2" type="button" disabled>Зашифровать ключ</button>
+  </div>
+  <div id="chewy-transfer-result-v2" hidden>
+    <label class="form-label" for="chewy-transfer-cipher-v2">Зашифрованная строка для чата</label>
+    <textarea class="form-control" id="chewy-transfer-cipher-v2" rows="3" readonly autocomplete="off" spellcheck="false"></textarea>
+  </div>
+  <div id="chewy-transfer-actions-v2" hidden>
+    <div class="viz-row">
+      <span id="chewy-transfer-send-wrap-v2" hidden><button class="btn btn-primary" id="chewy-transfer-send-v2" type="button" disabled>Отправить шифр в чат</button></span>
+      <button class="btn" id="chewy-transfer-copy-v2" type="button" disabled>Скопировать шифр</button>
+    </div>
+  </div>
+  <div id="chewy-transfer-status-v2" role="status" aria-live="polite">Подготовка…</div>
+  <div id="chewy-transfer-error-v2" class="text-destructive" role="alert" hidden></div>
+  <script type="application/json" id="chewy-transfer-config-v2">__TRANSFER_MANIFEST__</script>
+</div>
+<script>
+(() => {
+  'use strict';
+  const root = document.getElementById('chewy-runway-transfer-v2');
+  const input = root.querySelector('#chewy-transfer-secret-v2');
+  const encryptButton = root.querySelector('#chewy-transfer-encrypt-v2');
+  const copyButton = root.querySelector('#chewy-transfer-copy-v2');
+  const sendButton = root.querySelector('#chewy-transfer-send-v2');
+  const sendWrap = root.querySelector('#chewy-transfer-send-wrap-v2');
+  const actions = root.querySelector('#chewy-transfer-actions-v2');
+  const result = root.querySelector('#chewy-transfer-result-v2');
+  const output = root.querySelector('#chewy-transfer-cipher-v2');
+  const status = root.querySelector('#chewy-transfer-status-v2');
+  const error = root.querySelector('#chewy-transfer-error-v2');
+  let encryptor;
+  let busy = false;
+  let sending = false;
+  const canSend = () => typeof window.openai?.sendFollowUpMessage === 'function';
+  function showError(message) {
+    error.textContent = message;
+    error.hidden = false;
+  }
+  function clearResult() {
+    output.value = '';
+    result.hidden = true;
+    copyButton.disabled = true;
+    actions.hidden = true;
+    sendButton.disabled = true;
+    sendWrap.hidden = true;
+    error.hidden = true;
+  }
+  async function initialize() {
+    try {
+      const manifest = JSON.parse(root.querySelector('#chewy-transfer-config-v2').textContent);
+      encryptor = await window.ChewyKeyTransfer.createEncryptor(manifest);
+      root.dataset.cryptoMode = encryptor.mode;
+      input.disabled = false;
+      encryptButton.disabled = false;
+      status.textContent = 'Можно вставить ключ.';
+    } catch (failure) {
+      status.textContent = '';
+      root.dataset.cryptoMode = 'unavailable';
+      showError('Этот просмотр блокирует защищённый ввод. Ключ сюда пока не вставляй; сообщи мне об ошибке.');
+    }
+  }
+  input.addEventListener('input', () => {
+    clearResult();
+    status.textContent = 'Теперь нажми «Зашифровать ключ».';
+  });
+  input.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      encryptButton.click();
+    }
+  });
+  encryptButton.addEventListener('click', async () => {
+    if (busy || !encryptor) return;
+    clearResult();
+    let secret = input.value.trim();
+    if (!/^[\x21-\x7e]{8,2048}$/.test(secret)) {
+      showError('Вставь API-ключ целиком, без пробелов и переносов строки.');
+      secret = '';
+      return;
+    }
+    busy = true;
+    input.value = '';
+    input.disabled = true;
+    encryptButton.disabled = true;
+    status.textContent = 'Шифрую…';
+    try {
+      const ciphertext = await encryptor.encrypt(secret);
+      secret = '';
+      if (!/^CHEWYKEY1\.[A-Za-z0-9_-]+$/.test(ciphertext)) throw new Error('invalid');
+      output.value = ciphertext;
+      result.hidden = false;
+      copyButton.disabled = false;
+      actions.hidden = false;
+      sendButton.disabled = false;
+      sendWrap.hidden = !canSend();
+      status.textContent = canSend() ? 'Готово. Нажми «Отправить шифр в чат».' : 'Готово. Скопируй шифр и отправь его сообщением в этот чат.';
+    } catch {
+      status.textContent = '';
+      showError('Не удалось зашифровать. Ничего не отправлено. Вставь ключ и попробуй ещё раз.');
+    } finally {
+      secret = '';
+      busy = false;
+      input.disabled = false;
+      encryptButton.disabled = false;
+    }
+  });
+  copyButton.addEventListener('click', async () => {
+    if (!/^CHEWYKEY1\.[A-Za-z0-9_-]+$/.test(output.value)) return;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error('unavailable');
+      await navigator.clipboard.writeText(output.value);
+      status.textContent = 'Скопировано. Вставь шифр в сообщение в этом чате.';
+    } catch {
+      output.focus();
+      output.select();
+      output.setSelectionRange(0, output.value.length);
+      status.textContent = 'Шифр выделен. Нажми «Копировать» и вставь его в сообщение в этом чате.';
+    }
+  });
+  sendButton.addEventListener('click', async () => {
+    const ciphertext = output.value;
+    if (sending || !canSend() || !/^CHEWYKEY1\.[A-Za-z0-9_-]+$/.test(ciphertext)) return;
+    sending = true;
+    sendButton.disabled = true;
+    try {
+      await window.openai.sendFollowUpMessage({
+        title: 'Передать зашифрованный ключ Runway',
+        prompt: 'Это мой зашифрованный ключ Runway для мастерской:\n' + ciphertext
+      });
+      status.textContent = 'Шифр передан в чат.';
+    } catch {
+      status.textContent = 'Отправка не завершена. Можно скопировать шифр и вставить его в чат вручную.';
+      sendButton.disabled = false;
+    } finally {
+      sending = false;
+    }
+  });
+  window.addEventListener('pagehide', () => {
+    input.value = '';
+    output.value = '';
+  });
+  initialize();
+})();
+</script>

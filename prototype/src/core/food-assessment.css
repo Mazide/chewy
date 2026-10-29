@@ -81,3 +81,4 @@
   .nutrition-day h3 { font-size:17px; }
   .nutrition-groups { padding:9px 0; }
 }
+.nutrition-uncertainty-note { margin:0; padding:10px 12px; border-left:2px solid #b49a69; background:#fff7df88; font-size:13px; line-height:1.45; overflow-wrap:anywhere; }

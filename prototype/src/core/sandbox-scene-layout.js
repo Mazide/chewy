@@ -34,7 +34,7 @@ const SURFACE_CONTACTS = {
   },
 };
 
-export function getSandboxLayout(device, { foodLayout = 'stacked', growthStage } = {}) {
+export function getSandboxLayout(device, { foodLayout = 'stacked', growthStage, withMirror = false } = {}) {
   const { width, height, safeTop, safeBottom } = device;
   const gutter = width < 360 ? 16 : 24;
   const header = [gutter, safeTop + 12, width - gutter * 2, 40];
@@ -66,17 +66,19 @@ export function getSandboxLayout(device, { foodLayout = 'stacked', growthStage }
     const grass = (surface?.grass ?? []).map(([x, y, size]) => [x * w - size * scale / 2, y * h - size * scale * .40, size * scale, size * scale * .55]);
     return { id, foot, frame, shadows, contacts, grass };
   }).sort((a, b) => a.foot[1] - b.foot[1]);
-  const controlWidth = scale < .85 ? 56 : 64;
-  const controlHeight = growthStage && scale < .85 ? 60 : controlWidth + 18;
-  const controlGap = growthStage && scale < .85 ? 8 : 14;
+  const compactMirror = withMirror && width < 360;
+  const controlWidth = compactMirror ? 84 : scale < .85 ? 56 : 64;
+  const controlHeight = compactMirror ? 44 : withMirror && width < 420 ? 72 : growthStage && scale < .85 ? 60 : controlWidth + 18;
+  const controlGap = compactMirror ? 4 : withMirror && width < 420 ? 10 : growthStage && scale < .85 ? 8 : 14;
   const fireTop = objects.find((object) => object.id === (growthStage ? 'fuel' : 'fire')).frame[1];
-  const controlTop = growthStage ? sceneTop + 6 : Math.max(sceneTop, Math.min(sceneTop + availableHeight * .34, fireTop - 16 - (controlHeight * 2 + controlGap)));
+  const controlTop = compactMirror ? header[1] + header[3] + 4 : growthStage ? sceneTop + 6 : Math.max(sceneTop, Math.min(sceneTop + availableHeight * .34, fireTop - 16 - (controlHeight * (withMirror ? 3 : 2) + controlGap * (withMirror ? 2 : 1))));
   const controlX = width - 12 - controlWidth;
   return {
     width, height, scale, header, action, food, foodLayout, scene: [offsetX, offsetY, 390 * scale, 500 * groundScaleY], objects,
     controls: [
       { id: 'map', screen: 'path', label: 'Путь', frame: [controlX, controlTop, controlWidth, controlHeight] },
       { id: 'backpack', screen: 'backpack', label: 'Рюкзак', frame: [controlX, controlTop + controlHeight + controlGap, controlWidth, controlHeight] },
+      ...(withMirror ? [{ id: 'mirror', screen: 'mirror', label: 'Зеркало', frame: [controlX, controlTop + (controlHeight + controlGap) * 2, controlWidth, controlHeight] }] : []),
     ],
   };
 }

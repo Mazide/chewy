@@ -137,3 +137,7 @@
 
 .study-inspector .study-zone-label-toggle { display:flex; flex-direction:row; align-items:center; gap:8px; margin-bottom:12px; }
 .study-inspector .study-zone-label-toggle input { width:auto; margin:0; }
+
+.study-inspector[hidden] { display:none; }
+.study-inspector-toggle { margin-top:12px; min-height:36px; padding:6px 12px; border:1px solid #b8bdb8; border-radius:8px; background:#fff; color:inherit; font:inherit; cursor:pointer; }
+.study-inspector-toggle:focus-visible { outline:3px solid #5b867a; outline-offset:3px; }

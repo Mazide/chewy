@@ -1,0 +1,58 @@
+.study-phone:has(> .hero-mirror) {
+  height:calc(min(var(--study-width), 100vw - 56px) * var(--onboarding-ratio));
+  max-height:none;
+}
+
+.hero-mirror { display:flex; flex-direction:column; flex:1; min-width:0; min-height:0; height:100%; }
+.hero-mirror .hero-mirror-heading { margin:0 0 6px; }
+.hero-mirror .hero-mirror-heading h1:focus { outline:none; }
+.hero-mirror .hero-mirror-room { position:relative; display:flex; justify-content:center; flex:1; min-height:150px; max-height:370px; padding:4px 0 12px; }
+.hero-mirror .hero-mirror-frame {
+  position:relative; width:64%; max-width:226px; height:100%; padding:13px 14px 9px;
+  overflow:hidden; border:9px solid #ad8056; border-radius:48% 48% 18px 18px;
+  background:linear-gradient(125deg, #f5f0d9 0 24%, #e3e9d8 24% 74%, #f0edd9 74%);
+  box-shadow:inset 0 0 0 2px #d9be8c, 0 0 0 2px #69523b, 3px 4px 0 #bca274;
+  z-index:1;
+}
+.hero-mirror .hero-mirror-frame > .hero-appearance { width:100%; height:100%; }
+.hero-mirror .hero-mirror-stand { position:absolute; width:73%; max-width:260px; height:10px; bottom:3px; background:#9a7552; border:2px solid #69523b; border-radius:5px; box-shadow:0 3px 0 #cbb487; }
+.hero-mirror .hero-mirror-tabs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:5px; margin:12px 0 8px; flex-shrink:0; }
+.hero-mirror .hero-mirror-tabs button { min-width:0; min-height:44px; padding:7px 3px; font-size:13px; border-color:transparent; background:transparent; box-shadow:none; }
+.hero-mirror .hero-mirror-tabs button[aria-pressed=true] { background:#38594b; color:#fff5d8; border-color:#263d2e; }
+.hero-mirror .hero-mirror-choices { flex:0 1 192px; min-height:110px; overflow-y:auto; overflow-x:hidden; padding:5px 3px 10px; scrollbar-width:thin; }
+.hero-mirror fieldset { min-width:0; margin:0 0 17px; padding:0; border:0; }
+.hero-mirror fieldset:last-child { margin-bottom:0; }
+.hero-mirror legend { width:100%; display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding:0; margin-bottom:8px; font-size:13px; font-weight:650; }
+.hero-mirror .hero-mirror-color-name { color:#685b48; font-size:11px; font-weight:500; text-align:right; }
+.hero-mirror .hero-mirror-cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.hero-mirror .hero-mirror-cards button { min-width:0; min-height:46px; display:flex; align-items:center; justify-content:center; gap:6px; padding:8px 5px; background:#fbf1ce; font-size:13px; }
+.hero-mirror .hero-mirror-cards button[aria-pressed=true] { background:#dce4b9; border-color:#38594b; box-shadow:0 2px 0 #809570; }
+.hero-mirror .hero-mirror-choice-mark { flex:0 0 13px; color:#38594b; font-weight:800; }
+.hero-mirror .hero-mirror-hair-cards { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.hero-mirror .hero-mirror-hair-cards button { flex-direction:column; gap:5px; min-height:76px; }
+.hero-mirror .hero-mirror-hair-cards .hero-mirror-choice-mark { min-height:18px; }
+.hero-mirror .hero-mirror-swatches { display:flex; flex-wrap:wrap; gap:9px; }
+.hero-mirror .hero-mirror-swatches button {
+  position:relative; flex:0 0 44px; width:44px; height:44px; min-height:44px; padding:4px;
+  display:grid; place-items:center; border:2px solid transparent; border-radius:50%; background:transparent; box-shadow:none;
+}
+.hero-mirror .hero-mirror-swatches button[aria-pressed=true] { border-color:#38594b; }
+.hero-mirror .hero-mirror-color { display:block; width:32px; height:32px; border:1px solid #76624c80; border-radius:50%; }
+.hero-mirror .hero-mirror-swatch-mark { position:absolute; right:-1px; bottom:-1px; display:grid; place-items:center; width:19px; height:19px; border:2px solid #f5e8be; border-radius:50%; background:#38594b; color:#fff; font-size:11px; font-weight:800; }
+.hero-mirror .hero-mirror-actions { display:grid; grid-template-columns:1fr 1.6fr; flex-shrink:0; gap:10px; margin-top:auto; padding:10px 0 4px; border-top:1px dashed #b49a69; }
+.hero-mirror .hero-mirror-actions button { min-height:48px; }
+.hero-mirror .hero-mirror-actions button:first-child { background:transparent; box-shadow:none; border-color:transparent; }
+.hero-mirror button:focus-visible { outline:3px solid #5b867a; outline-offset:2px; }
+
+.study-device-compact .hero-mirror .hero-mirror-room { min-height:142px; }
+.study-device-compact .hero-mirror .hero-mirror-heading { margin-bottom:2px; }
+.study-device-compact .hero-mirror .hero-mirror-frame { border-width:7px; padding:8px 11px 6px; }
+.study-device-compact .hero-mirror .hero-mirror-tabs { margin-top:8px; margin-bottom:4px; }
+.study-device-compact .hero-mirror .hero-mirror-tabs button { font-size:12px; }
+.study-device-compact .hero-mirror .hero-mirror-choices { flex-basis:175px; }
+.study-device-compact .hero-mirror fieldset { margin-bottom:12px; }
+.study-device-compact .hero-mirror .hero-mirror-actions { padding-top:7px; }
+
+@media (prefers-reduced-motion:reduce) {
+  .hero-mirror *, .hero-mirror *::before, .hero-mirror *::after { animation:none; transition:none; scroll-behavior:auto; }
+}
