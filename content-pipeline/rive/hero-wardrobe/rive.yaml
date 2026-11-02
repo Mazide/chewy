@@ -1,0 +1,8 @@
+name: hero-wardrobe
+main: Hero
+exclude:
+  - exports
+  - references
+logs:
+  file: build/rive.log
+  problems: build/problems.log

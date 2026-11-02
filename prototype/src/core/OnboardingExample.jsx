@@ -35,7 +35,7 @@ export function OnboardingExample({ onContinue, onSkip }) {
         <StudyMedia kind="hero" label="Чуви" />
         <StudyMedia kind="fire" label="Костёр" />
         {step === 'camp' && <div className="onboarding-example-supplies" aria-label="Запасы в примере">
-          {[['protein', 'Материалы'], ['carbs', 'Дрова'], ['plants', 'Семена']].map(([metric, label]) => <span key={metric}><CampSupplyIcon metric={metric} /><span>{label}</span></span>)}
+          {[['protein', 'Материалы'], ['carbs', 'Припасы'], ['plants', 'Семена']].map(([metric, label]) => <span key={metric}><CampSupplyIcon metric={metric} /><span>{label}</span></span>)}
         </div>}
       </div>}
       <div className="study-intro-copy onboarding-copy">
@@ -54,7 +54,7 @@ export function OnboardingExample({ onContinue, onSkip }) {
           </div>
           <p>По фото ты увидишь состав своей еды. А Чуви получит запасы для лагеря.</p>
         </>}
-        {step === 'camp' && <><p>Из этой еды — материалы, дрова и семена. «Вот и обустроимся!»</p><p className="onboarding-aside">Это был пример. Теперь познакомимся с твоим Чуви. Свою еду покажешь, когда будешь есть.</p></>}
+        {step === 'camp' && <><p>Из этой еды — материалы, припасы и семена. «Вот и обустроимся!»</p><p className="onboarding-aside">Это был пример. Теперь познакомимся с твоим Чуви. Свою еду покажешь, когда будешь есть.</p></>}
       </div>
     </div>
     <footer className="study-intro-actions onboarding-actions">

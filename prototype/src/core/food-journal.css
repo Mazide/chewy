@@ -62,3 +62,6 @@
 .food-journal-empty > svg { width:48px; height:48px; }
 .food-journal-quiet .food-journal-empty p { margin:0; font-size:13px; }
 .food-journal-empty > button { min-height:44px; margin-top:6px; padding:9px 16px; border:1px solid #263d2e; border-radius:7px; background:#38594b; color:#fff5d8; font:inherit; font-size:13px; font-weight:650; cursor:pointer; }
+
+.food-journal-activity.sandbox-capture-activity { position:relative; margin-bottom:12px; }
+.food-journal-summary .food-journal-summary-verdict { white-space:normal; line-height:1.2; }

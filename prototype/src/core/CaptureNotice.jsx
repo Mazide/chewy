@@ -5,6 +5,15 @@ import { samplePhoto } from './study-content.js';
 import { moveCapturePhoto } from './capture-motion.js';
 import './capture-notice.css';
 
+export function captureNoticeTitle(job) {
+  if (!job) return '';
+  const ready = job.status === 'ready';
+  const failed = job.status === 'failed';
+  const notFood = job.status === 'notFood';
+  const uncertain = ready && job.result?.assessment?.tone === 'unknown';
+  return notFood ? 'Не удалось узнать еду' : uncertain ? 'Есть что уточнить' : failed ? job.result ? 'Уточнение ждёт повтора' : 'Разбор ждёт повтора' : ready ? 'Результат готов' : job.result ? 'Уточняем разбор' : 'Разбираем еду';
+}
+
 export function CaptureNotice({ job, onOpen, now = Date.now() }) {
   const content = useContext(StudyContentContext);
   if (!job) return null;
@@ -12,8 +21,7 @@ export function CaptureNotice({ job, onOpen, now = Date.now() }) {
   const ready = job.status === 'ready';
   const failed = job.status === 'failed';
   const notFood = job.status === 'notFood';
-  const uncertain = ready && job.result?.assessment?.tone === 'unknown';
-  const title = notFood ? 'Не удалось узнать еду' : uncertain ? 'Есть что уточнить' : failed ? job.result ? 'Уточнение ждёт повтора' : 'Разбор ждёт повтора' : ready ? 'Результат готов' : job.result ? 'Уточняем разбор' : 'Разбираем еду';
+  const title = captureNoticeTitle(job);
   const date = new Date(job.createdAt);
   const dayKey = job.dayKey ?? localDayKey(job.createdAt);
   const time = date.toLocaleTimeString('ru-RU', { hour:'2-digit', minute:'2-digit' });

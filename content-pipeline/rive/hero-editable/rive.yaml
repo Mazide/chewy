@@ -1,0 +1,12 @@
+name: hero-editable
+main: Hero
+exclude:
+  - exports
+  - references
+  - history
+logs:
+  file: build/rive.log
+  problems: build/problems.log
+push:
+  projectId: 2039511
+  fileId: 2696405

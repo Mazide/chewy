@@ -2,8 +2,8 @@ import { nutritionSupplies } from './food-assessment.js';
 
 export const CAMP_SUPPLY_METAPHORS = {
   protein: { zone:'workshop', label:'Материалы', detail:'В лагере это материалы: Чуви обустраивает своё место.' },
-  carbs: { zone:'fuel', label:'Дрова', detail:'В лагере это дрова: для уютного очага и чайника.' },
-  fats: { zone:'light', label:'Фонарь', detail:'В лагере это масло для фонаря: тёплый свет на вечер.' },
+  carbs: { zone:'provisions', label:'Припасы', detail:'В лагере это припасы в рюкзаке: запас сил для дел и дороги.' },
+  fats: { zone:'fuel', label:'Очаг', detail:'В лагере это топливо: ненасыщенные жиры поддерживают уютный очаг.' },
   plants: { zone:'garden', label:'Семена', detail:'В лагере это семена: для маленького сада Чуви.' },
 };
 

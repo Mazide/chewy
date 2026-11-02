@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "date": "2026-10-30",
+  "status": "awaiting_provider_access",
+  "provider": "QuiverAI Arrow 2",
+  "purpose": "Три статичных художественных варианта костра перед выбором рисунка и анимацией в Rive.",
+  "reference_assets": [
+    "prototype/public/assets/sandbox/camp-v3-flat/background.png",
+    "prototype/public/assets/sandbox/camp-v3-flat/tent.png",
+    "prototype/public/assets/sandbox/camp-v3-flat/kettle.png"
+  ],
+  "reference_usage": "Только стиль линий, палитра, перспектива и масштаб деталей. Не воспроизводить фон, палатку или чайник в результате.",
+  "output_requirements": {
+    "format": "editable SVG",
+    "background": "transparent",
+    "composition": "one isolated campfire, no labels or layout",
+    "review": "На фоне лагеря при ширине видимого объекта 120–160 px. Оценивать рисунок до анимации.",
+    "rive_import": "Explicit fills and strokes; ordinary paths and groups. No filters, embedded raster images, gradient transforms or skew."
+  },
+  "candidates": [
+    {
+      "id": "warm_nest",
+      "name": "Тёплое гнездо",
+      "direction": "Низкий широкий очаг, короткие толстые поленья, три неравных округлых языка огня.",
+      "prompt": "Create one isolated campfire prop for a warm hand-drawn woodland game. Use the supplied images only as references for linework, palette and illustration style. A low, wide hearth: irregular rounded river stones cradle three short chunky logs, with a broad cluster of three unequal curling flames above them. Give the fire a soft, welcoming silhouette with flowing concave curves, warm orange, golden yellow and a small pale cream center. Slightly uneven dark brown outlines, simple warm fills, a few purposeful wood marks. Gentle three-quarter view from slightly above. Keep stones, logs and flame regions as separate editable vector groups. Transparent background. Natural storybook illustration, not a pictogram or emoji; no text, scenery, glow filters or tiny decorative details."
+    },
+    {
+      "id": "dancing_tongue",
+      "name": "Живой язычок",
+      "direction": "Компактное основание, высокий мягкий S-образный огонь и один короткий боковой язык.",
+      "prompt": "Create one isolated campfire prop in the hand-drawn woodland illustration style of the supplied references. A compact base of crossed wooden logs and a few uneven stones supports one tall, supple flame sweeping upward in a gentle S curve, with one shorter curling side tongue. The silhouette feels lively and curious, like a small dancing flame, while the base stays sturdy. Use rich warm orange, golden yellow and a narrow pale cream inner flame, dark brown expressive outlines and restrained wood details. Gentle three-quarter view from slightly above. Build broad flowing shapes with clear negative spaces, keeping logs, stones and flame regions in separate editable vector groups. Transparent background. No face, text, scenery, radial glow or symmetrical flame-symbol shape."
+    },
+    {
+      "id": "woodland_teepee",
+      "name": "Шалашик из поленьев",
+      "direction": "Неровные поленья образуют небольшую конструкцию, огонь проходит между ними и над ними.",
+      "prompt": "Create one isolated little woodland campfire in the illustrated style of the supplied references. Build a charming handmade teepee of several uneven split logs leaning together, with visible warm cut ends, bark edges and small gaps. Orange and golden flames weave through the gaps and emerge as a few loose curved tongues above the wood; the wooden structure remains a major part of the silhouette. Add a sparse uneven ring of rounded grey-green stones. Warm storybook colors, slightly irregular dark brown outlines, broad simple shading and only a few wood-grain marks. Gentle three-quarter view from slightly above. Separate the front logs, rear logs, stones and flame shapes into editable vector groups. Transparent background. No text, scenery, dense texture, realistic smoke or glow filters."
+    }
+  ],
+  "next_steps": [
+    "Сгенерировать все три варианта после подключения аккаунта; сохранить оригинальный SVG и сведения о модели.",
+    "Показать варианты в масштабе лагеря и выбрать рисунок с владельцем.",
+    "Подготовить части и довести один активный огонь.",
+    "После принятия рисунка и движения подготовить пять состояний."
+  ]
+}

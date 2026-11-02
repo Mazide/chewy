@@ -1,0 +1,54 @@
+{
+  "reduced_motion_max_channel_delta": 1,
+  "reduced_motion_changed_pixels_gt_1": 0,
+  "object_nonbackground_pixels": {
+    "Tent": 28340,
+    "Hero": 130671,
+    "Dog": 31748,
+    "Campfire": 39985,
+    "Kettle": 37383,
+    "CampScene": 125184
+  },
+  "runtime": "@rive-app/webgl2@2.40.1",
+  "real_riv_loaded": true,
+  "motion": true,
+  "pause_stable": true,
+  "resumes": true,
+  "artboards": [
+    {
+      "artboard": "Tent",
+      "title": "Палатка",
+      "paused": true
+    },
+    {
+      "artboard": "Hero",
+      "title": "Герой",
+      "paused": true
+    },
+    {
+      "artboard": "Dog",
+      "title": "Пёс",
+      "paused": true
+    },
+    {
+      "artboard": "Campfire",
+      "title": "Костёр",
+      "paused": true
+    },
+    {
+      "artboard": "Kettle",
+      "title": "Чайник",
+      "paused": true
+    },
+    {
+      "artboard": "CampScene",
+      "title": "Вся сцена",
+      "paused": true
+    }
+  ],
+  "reduced_motion_paused": true,
+  "reduced_motion_stable": true,
+  "mobile_no_horizontal_overflow": true,
+  "external_requests": [],
+  "page_errors": []
+}

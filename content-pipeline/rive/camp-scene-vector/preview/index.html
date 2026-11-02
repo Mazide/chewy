@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Chewy — проба Rive</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./vendor/webgl2-2.40.1/rive.js" defer></script>
+  <script src="./viewer.js" defer></script>
+</head>
+<body>
+  <main class="review">
+    <aside class="controls">
+      <a class="wordmark" href="./">chewy<span>проба Rive</span></a>
+      <h1>Лагерь<br>в движении</h1>
+      <p class="intro">Одна сцена из базовых ассетов. Выберите объект, чтобы рассмотреть его отдельно.</p>
+      <nav class="objects" aria-label="Выбор сцены или объекта">
+        <button class="object scene-choice" data-artboard="CampScene" aria-pressed="true">Вся сцена <span aria-hidden="true">↗</span></button>
+        <button class="object" data-artboard="Tent" aria-pressed="false">Палатка</button>
+        <button class="object" data-artboard="Hero" aria-pressed="false">Герой</button>
+        <button class="object" data-artboard="Dog" aria-pressed="false">Пёс</button>
+        <button class="object" data-artboard="Campfire" aria-pressed="false">Костёр</button>
+        <button class="object" data-artboard="Kettle" aria-pressed="false">Чайник</button>
+      </nav>
+      <button id="playback" class="playback" type="button" disabled>
+        <span id="playback-icon" aria-hidden="true">Ⅱ</span>
+        <span id="playback-label">Пауза</span>
+      </button>
+      <p id="status" class="status" role="status" aria-live="polite">Загружаем сцену…</p>
+      <div id="error" class="error" role="alert" hidden>
+        <p id="error-message"></p>
+        <button id="retry" type="button">Попробовать снова</button>
+      </div>
+      <footer>
+        <a class="download" href="../exports/camp-scene-vector.riv" download>Скачать .riv</a>
+        <p>Черновик для ревью.<br>Векторный рисунок и движение.</p>
+      </footer>
+    </aside>
+    <section class="stage-area" aria-labelledby="stage-title">
+      <div class="stage-header"><h2 id="stage-title">Вся сцена</h2><span id="stage-detail">390 × 844</span></div>
+      <div id="stage" class="stage" aria-busy="true">
+        <canvas id="rive-canvas" width="390" height="844" aria-label="Анимированный лагерь Chewy">Ваш браузер не поддерживает canvas.</canvas>
+        <div class="loading" aria-hidden="true">Собираем лагерь…</div>
+      </div>
+      <p class="stage-caption">Живое воспроизведение Rive</p>
+    </section>
+  </main>
+  <noscript>Для просмотра анимации включите JavaScript.</noscript>
+</body>
+</html>

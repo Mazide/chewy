@@ -63,13 +63,8 @@ export function CampSprite({ kind, className = '', paused = false, flightRef }) 
   return <canvas ref={ref} width={right - left} height={bottom - top} className={`camp-life-sprite ${className}`} data-camp-sprite={kind} aria-hidden="true" />;
 }
 
-export function CampLife({ phase, clouds = false, paused = false }) {
-  const bird = useRef(null);
+export function CampLife({ clouds = false, paused = false }) {
   return <div className={`camp-life${paused ? ' camp-life-paused' : ''}`} aria-hidden="true">
     {clouds && <div className="camp-life-sky"><img className="camp-life-cloud" src="/assets/camp-life/clouds/sprite.png" alt="" /></div>}
-    {phase !== 'night' && <>
-      <div ref={bird} className="camp-life-bird"><CampSprite kind="bird" paused={paused} flightRef={bird} /></div>
-      <div className="camp-life-butterfly"><CampSprite kind="butterfly" paused={paused} /></div>
-    </>}
   </div>;
 }

@@ -1,0 +1,18 @@
+{
+  "source": "prototype/public/assets/sandbox/camp-v3-flat/fire.png",
+  "source_sha256": "4acd7b7cb70847149ff171f1f74e4161e762274d6514908d4fa7781e473e49f2",
+  "artifact": "exports/campfire-base.riv",
+  "artifact_bytes": 181806,
+  "artifact_sha256": "f2c5e60bbb5f3b533b0777068954944a6b50a2f0696576d52d59394971a84b22",
+  "authoring": "Editable vector tracing of existing source; RML compiled with Rive CLI 1.8.0",
+  "loop_seconds": 6,
+  "artboard": "CampfireBase",
+  "state_machine": "CampfireBase",
+  "animation": "Living fire",
+  "raster_images_embedded": false,
+  "scripts_embedded": false,
+  "owner_approved": false,
+  "ios_verified": false,
+  "base_art_direction_accepted": true,
+  "motion_owner_approved": false
+}

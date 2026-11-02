@@ -55,3 +55,9 @@ export const CampAnimations = {
     </div>
   </div>,
 };
+
+export const HeroActions = {
+  name: 'Чуви · управляемые движения',
+  parameters: { layout: 'fullscreen' },
+  render: () => <iframe title="Чуви: проба движения, одежды и реквизита" src="/hero-actions/index.html" style={{ display: 'block', width: '100%', height: '100vh', minHeight: 720, border: 0 }} />,
+};

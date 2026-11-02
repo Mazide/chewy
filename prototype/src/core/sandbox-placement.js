@@ -1,5 +1,5 @@
 export const PLACEMENT_STORAGE_KEY = 'chewy.sandbox.placement.v1';
-const MOVABLE_IDS = ['tent', 'hero', 'fire', 'pet', 'kettle', 'workshop', 'fuel', 'light', 'garden', 'map', 'backpack', 'food', 'action'];
+const MOVABLE_IDS = ['tent', 'hero', 'fire', 'pet', 'kettle', 'workshop', 'provisions', 'log', 'fuel', 'light', 'garden', 'map', 'backpack', 'food', 'action'];
 const DEVICE_IDS = ['compact', 'standard', 'large'];
 
 export function readPlacements(raw) {
@@ -12,13 +12,6 @@ export function readPlacements(raw) {
     }))]));
   } catch { return {}; }
 }
-
-export function clampMovement(frame, delta, viewport) {
-  const [x, y, width, height] = frame;
-  return [Math.max(-x, Math.min(viewport.width - width - x, delta[0])), Math.max(-y, Math.min(viewport.height - height - y, delta[1]))];
-}
-
-const translate = ([x, y, width, height], [dx, dy]) => [x + dx, y + dy, width, height];
 
 export function getResizeLimits(base, id) {
   const frame = getMovableFrame(base, id);
@@ -43,14 +36,12 @@ export function moveSandboxLayout(base, offsets = {}) {
     const [dx, dy, requestedScale = 1] = offsets[object.id] ?? [0, 0, 1];
     const limits = getResizeLimits(base, object.id);
     const scale = Math.max(limits.min, Math.min(limits.max, requestedScale));
-    let foot = [object.foot[0] + dx, object.foot[1] + dy];
+    const foot = [object.foot[0] + dx, object.foot[1] + dy];
     const width = object.frame[2] * scale, height = object.frame[3] * scale;
     const frame = [foot[0] - width / 2, foot[1] - height, width, height];
-    const clamp = clampMovement(frame, [0, 0], base);
-    foot = [foot[0] + clamp[0], foot[1] + clamp[1]];
     const transform = ([x, y, w, h]) => [foot[0] + (x - object.foot[0]) * scale, foot[1] + (y - object.foot[1]) * scale, w * scale, h * scale];
     return {
-      ...object, foot, frame: translate(frame, clamp),
+      ...object, foot, frame,
       shadows: object.shadows.map(transform),
       contacts: object.contacts.map(transform),
       grass: object.grass.map((frame) => frame.map((value) => value * scale)),
@@ -61,7 +52,7 @@ export function moveSandboxLayout(base, offsets = {}) {
     const limits = getResizeLimits(base, id);
     const scale = Math.max(limits.min, Math.min(limits.max, requestedScale));
     const frame = [original[0] + dx, original[1] + dy, original[2] * scale, original[3] * scale];
-    return translate(frame, clampMovement(frame, [0, 0], base));
+    return frame;
   };
   return {
     ...base, objects,

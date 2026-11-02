@@ -10,9 +10,8 @@
 .sandbox-background { inset: 0; }
 .sandbox-background img { width: 100%; height: 100%; display: block; object-fit: cover; }
 .sandbox-sprite-crop { position: absolute; inset: 0; overflow: hidden; }
+.sandbox-world-object[data-scene-object="provisions"] > .camp-provisions > svg { transform:scaleX(-1); }
 .sandbox-sprite-crop img, .sandbox-control-crop img { display: block; position: absolute; max-width: none; }
-.sandbox-contact-shadow { position: absolute; border-radius: 50%; background: #3b572e29; filter: blur(1.5px); pointer-events: none; }
-.sandbox-contact-shadow-dense { background: #35472380; filter: blur(.35px); }
 .sandbox-ground-grass { position: absolute; overflow: visible; pointer-events: none; }
 .sandbox-ground-grass path { fill: #9dbd43; stroke: #718d35; stroke-width: .9; stroke-linejoin: round; stroke-linecap: round; }
 .sandbox-show-bounds .sandbox-world-object { outline: 1px dashed #aa215d; outline-offset: -1px; }
@@ -46,6 +45,7 @@
 .sandbox-mirror-icon { display:block; width:100%; height:100%; }
 .sandbox-nav-control-compact { display:grid; grid-template-columns:22px 1fr; gap:4px; align-items:center; padding:4px; font-size:11px; }
 .sandbox-nav-control-compact .sandbox-nav-icon { width:22px; height:28px; align-items:center; }
+.sandbox-phone .sandbox-hero-bubble-mirror-compact { transform:translateX(calc(-50% - 44px)); }
 .sandbox-nav-control:active, .sandbox-add-food:active { transform: translateY(2px); box-shadow: 0 1px 0 #754c26; }
 .sandbox-food-area { position: absolute; border: 1px dashed #6a794c; background: #fff7d4b3; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px; font-size: 13px; }
 .sandbox-food-area > span { font-size: 11px; color: #6a734d; }

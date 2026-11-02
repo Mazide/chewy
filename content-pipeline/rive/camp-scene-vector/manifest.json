@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-31",
+  "status": "draft-for-owner-review",
+  "format": "pure-vector-rive",
+  "artboard": "CampScene",
+  "state_machine": "CampScene",
+  "size": [
+    390,
+    844
+  ],
+  "loop_seconds": 6.0,
+  "assets": [
+    {
+      "name": "Tent",
+      "artboard": "Tent",
+      "state_machine": "Tent",
+      "source_size": [
+        1563,
+        1006
+      ],
+      "source_bounds": [
+        94,
+        171,
+        1395,
+        683
+      ],
+      "scene_frame": [
+        -18,
+        310,
+        272,
+        133.2
+      ]
+    },
+    {
+      "name": "Hero",
+      "artboard": "Hero",
+      "state_machine": "Hero",
+      "source_size": [
+        506,
+        1060
+      ],
+      "source_bounds": [
+        37,
+        36,
+        450,
+        981
+      ],
+      "scene_frame": [
+        159,
+        372,
+        104,
+        226.72
+      ]
+    },
+    {
+      "name": "Dog",
+      "artboard": "Dog",
+      "state_machine": "Dog",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_bounds": [
+        294,
+        48,
+        781,
+        1100
+      ],
+      "scene_frame": [
+        281,
+        488,
+        76,
+        107.04
+      ]
+    },
+    {
+      "name": "Campfire",
+      "artboard": "Campfire",
+      "state_machine": "Campfire",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_bounds": [
+        279,
+        95,
+        756,
+        1010
+      ],
+      "scene_frame": [
+        71,
+        557,
+        77,
+        102.87
+      ]
+    },
+    {
+      "name": "Kettle",
+      "artboard": "Kettle",
+      "state_machine": "Kettle",
+      "source_size": [
+        1312,
+        1199
+      ],
+      "source_bounds": [
+        251,
+        141,
+        809,
+        917
+      ],
+      "scene_frame": [
+        167,
+        622,
+        38,
+        43.07
+      ]
+    }
+  ],
+  "sources": {
+    "background": {
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/background.png",
+      "sha256": "72a6f5e4cd68c15b6729bd32722e58377e563d152a35a046def7461ee2ad202b"
+    },
+    "tent": {
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/tent.png",
+      "sha256": "c9080a196124457525f0dc508bcc0f23a1c5c93ec935e1b9d9035bc4f131f352"
+    },
+    "hero": {
+      "path": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_000.imageset/idle_000@2x.png",
+      "sha256": "def0f19b913bf8992c1727e956f07650244e03f574f33f296d171bedbd206354"
+    },
+    "dog": {
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/dog.png",
+      "sha256": "5cb34f839ee82e69eb46deb7d1c7454b67d60a35dd65ceecd6cab86b3beacd33"
+    },
+    "fire": {
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/fire.png",
+      "sha256": "4acd7b7cb70847149ff171f1f74e4161e762274d6514908d4fa7781e473e49f2"
+    },
+    "kettle": {
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/kettle.png",
+      "sha256": "77445a1b4b07f35aa835910d6efe9743982c7cc53beeee2576233eb5aa5bbe28"
+    }
+  },
+  "raster_assets": 0,
+  "scripts": 0,
+  "native_tested": false,
+  "owner_approved": false,
+  "editable_hero": {
+    "path": "content-pipeline/rive/hero-editable/scene.rml",
+    "sha256": "c162b78def98588b33c92dd2f7896ba28c611ab51082528645f75cbaaed1bc8d"
+  }
+}

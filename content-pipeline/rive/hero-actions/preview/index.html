@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Chewy — действия и одежда</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./style.css">
+  <script src="/hero-actions/vendor/rive.js" defer></script>
+  <script src="./viewer.js" defer></script>
+</head>
+<body>
+  <main class="workbench">
+    <header class="intro">
+      <span class="wordmark">chewy</span>
+      <div><h1>Один Чуви, разные действия</h1><p>Поменяй одежду прямо в движении. Поза, палочка и положение управляются отдельно.</p></div>
+    </header>
+    <section class="preview" aria-label="Просмотр персонажа">
+      <div class="view-switch" role="group" aria-label="Масштаб просмотра">
+        <button data-view="phone" aria-pressed="true">На телефоне</button>
+        <button data-view="detail" aria-pressed="false">Крупно</button>
+      </div>
+      <div id="stage" class="stage" data-view="phone" aria-busy="true">
+        <span class="stage-note" aria-hidden="true">Мастерская Чуви</span>
+        <div class="ground" aria-hidden="true"></div>
+        <div class="actor"><canvas id="rive-canvas" width="1400" height="1120" role="img" aria-label="Чуви: управляемая анимация Rive">Для просмотра нужен браузер с поддержкой canvas.</canvas></div>
+        <span class="ground-line" aria-hidden="true"></span>
+        <div id="loading" class="loading">Открываем персонажа…</div>
+        <span id="pose-caption" class="pose-caption">Спокойно стоит</span>
+      </div>
+      <p class="preview-note">Техническая проба фронтального рига.<br>Ходьба и позы черновые; сцены с костром и палаткой ещё не собраны.</p>
+    </section>
+    <aside class="controls" aria-label="Управление персонажем">
+      <fieldset disabled id="action-controls"><legend>Что делает</legend><div class="choices actions">
+        <button data-action="idle" aria-pressed="true">Стоит</button>
+        <button data-action="walk" aria-pressed="false">Шагает на месте</button>
+        <button data-action="sit" aria-pressed="false">Сидит</button>
+        <button data-action="reach" aria-pressed="false">Тянется рукой</button>
+      </div></fieldset>
+      <fieldset disabled id="outfit-controls"><legend>Во что одет</legend><div class="choices">
+        <button data-outfit="camp" aria-pressed="true"><i class="swatch camp" aria-hidden="true"></i>Обычный</button>
+        <button data-outfit="trail" aria-pressed="false"><i class="swatch trail" aria-hidden="true"></i>Походный</button>
+      </div><p class="hint">Одежда меняется на том же движущемся теле.</p></fieldset>
+      <fieldset disabled id="prop-controls"><legend>Что в руке</legend><div class="choices">
+        <button data-prop="none" aria-pressed="true">Пусто</button>
+        <button data-prop="stick" aria-pressed="false">Палочка с зефиром</button>
+      </div></fieldset>
+      <fieldset disabled id="placement-controls"><legend>Место и направление</legend>
+        <label class="position-label" for="position">Передвинуть Чуви <output id="position-value" for="position">50</output></label>
+        <input id="position" type="range" min="0" max="100" step="1" value="50" aria-describedby="position-hint">
+        <p id="position-hint" class="hint">Положение в полосе перемещения. Сам шаг его не меняет.</p>
+        <button id="flip" class="flip" aria-pressed="false">Отзеркалить</button>
+      </fieldset>
+      <div class="playback-row"><button id="playback" class="primary" disabled>Пауза</button><button id="reset" class="reset" disabled>Сначала</button></div>
+      <p id="status" class="status" role="status" aria-live="polite">Загружаем Rive…</p>
+      <div id="error" class="error" role="alert" hidden><p id="error-message"></p><button id="retry">Загрузить снова</button></div>
+      <details class="api-help"><summary>Управление из кода</summary><p><code>await chewyHero.ready</code></p><pre>chewyHero.set({
+  action: 'walk', outfit: 'trail',
+  prop: 'stick', x: 50, facing: 1
+})</pre><p><code>x</code>: 0–100 внутри полосы; <code>facing</code>: 1 или −1. <code>pause()</code>, <code>resume()</code>, <code>reset()</code>, <code>state()</code>.</p><p>Стенд не читает и не сохраняет сессию приложения.</p></details>
+    </aside>
+  </main>
+  <noscript>Для просмотра персонажа включите JavaScript.</noscript>
+</body>
+</html>

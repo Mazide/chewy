@@ -56,3 +56,20 @@
 @media (prefers-reduced-motion:reduce) {
   .hero-mirror *, .hero-mirror *::before, .hero-mirror *::after { animation:none; transition:none; scroll-behavior:auto; }
 }
+
+/* One camera transform includes the hero and every camp object. */
+html[data-mirror-transition] .study-camp-host .sandbox-phone,
+html[data-mirror-transition] .study-screen-mirror { view-transition-name: mirror-room; }
+html[data-mirror-transition]::view-transition-group(mirror-room) { animation-duration:1000ms; overflow:hidden; border-radius:28px; }
+html[data-mirror-transition="enter"]::view-transition-old(mirror-room) {
+  transform-origin:0 0; animation:mirror-camera-in 1000ms cubic-bezier(.22,.68,.16,1) both;
+}
+html[data-mirror-transition="enter"]::view-transition-new(mirror-room) { animation:mirror-room-reveal 1000ms ease both; }
+html[data-mirror-transition="exit"]::view-transition-old(mirror-room) { animation:mirror-room-reveal 1000ms ease reverse both; }
+html[data-mirror-transition="exit"]::view-transition-new(mirror-room) { animation:mirror-camera-in 1000ms cubic-bezier(.22,.68,.16,1) reverse both; transform-origin:0 0; }
+@keyframes mirror-camera-in {
+  0% { transform:none; opacity:1; }
+  60% { transform:var(--mirror-camera); opacity:1; }
+  100% { transform:var(--mirror-camera); opacity:0; }
+}
+@keyframes mirror-room-reveal { 0%, 60% { opacity:0; } 100% { opacity:1; } }

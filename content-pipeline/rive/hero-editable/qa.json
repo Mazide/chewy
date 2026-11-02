@@ -1,0 +1,18 @@
+{
+  "source_sha256": "c162b78def98588b33c92dd2f7896ba28c611ab51082528645f75cbaaed1bc8d",
+  "preserved_across_builds": 2,
+  "source_and_composition_pixels_identical": [
+    0,
+    60
+  ],
+  "focused_tests_passed": 7,
+  "rive_verify_errors": 0,
+  "rive_inspect_problems": [],
+  "editor_roundtrip_tested": false,
+  "rev_exported": true,
+  "rev_bytes": 14087,
+  "editor_open_verified": true,
+  "remote_project_id": 2039511,
+  "remote_file_id": 2696405,
+  "remote_revision_id": 49250896
+}

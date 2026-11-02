@@ -1,7 +1,12 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
   stories: ['../src/core/**/*.stories.@(js|jsx)'],
-  staticDirs: ['../public'],
+  staticDirs: [
+    '../public',
+    { from: '../../content-pipeline/rive/hero-actions/preview', to: '/hero-actions' },
+    { from: '../../content-pipeline/rive/hero-actions/exports', to: '/hero-actions/exports' },
+    { from: '../../content-pipeline/rive/camp-scene-vector/preview/vendor/webgl2-2.40.1', to: '/hero-actions/vendor' },
+  ],
   addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/react-vite',

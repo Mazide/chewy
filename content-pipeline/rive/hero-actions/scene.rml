@@ -1,0 +1,2199 @@
+<Rive version="1" kind="fragment">
+  <Artboard name="HeroActions" id="60:1" width="1400" height="1120" defaultStateMachineId="60:2" viewModelId="60:3" viewModelInstanceId="60:4" styleId="60:5">
+    <LayoutComponentStyle id="60:5" name="Hero actions style" />
+    <Node name="Program placement" id="60:139" x="700" y="1040">
+      <Node name="Body" id="60:138" y="-398">
+        <Node name="Upper body" id="60:119">
+          <Node name="Left shoulder" id="60:110" x="-77" y="-228">
+            <Node name="Left elbow" id="60:107" y="102">
+              <Node name="Left hand socket" id="60:106" y="108">
+                <Node name="Left preserved fist" x="-140" y="-555" id="60:170">
+                  <Shape name="Left fingers" id="9:13955">
+                    <PointsPath id="9:13956">
+                      <CubicDetachedVertex outRotation="0.4636476" outDistance="5.9628477" x="149" y="565" id="9:13957" />
+                      <CubicDetachedVertex inRotation="2.6011732" inDistance="3.8873012" x="162" y="566" id="9:13958" />
+                    </PointsPath>
+                    <Stroke thickness="2.5999999" cap="round" join="round" id="9:13959">
+                      <SolidColor colorValue="FF24241B" id="9:13960" />
+                    </Stroke>
+                  </Shape>
+                  <Shape name="Left knuckles" id="9:13961">
+                    <PointsPath id="9:13962">
+                      <CubicDetachedVertex outRotation="0.62024951" outDistance="5.7348833" x="150" y="552" id="9:13963" />
+                      <CubicDetachedVertex inRotation="2.5213432" inDistance="5.7348833" x="164" y="552" id="9:13964" />
+                    </PointsPath>
+                    <Stroke thickness="2.5999999" cap="round" join="round" id="9:13965">
+                      <SolidColor colorValue="FF24241B" id="9:13966" />
+                    </Stroke>
+                  </Shape>
+                  <Shape name="Left hand" id="9:13967">
+                    <PointsPath isClosed="true" id="9:13968">
+                      <CubicDetachedVertex inRotation="2.4186132" inDistance="15.114379" outRotation="-0.5070985" outDistance="6.8637533" x="129" y="532" id="9:13969" />
+                      <CubicDetachedVertex inRotation="-2.4668517" inDistance="8.5374994" outRotation="-0.32175055" outDistance="10.540926" x="148" y="535" id="9:13970" />
+                      <CubicDetachedVertex inRotation="-1.9513026" inDistance="7.1802197" outRotation="0.78539819" outDistance="5.6568542" x="167" y="540" id="9:13971" />
+                      <CubicDetachedVertex inRotation="-0.58800262" inDistance="7.2111025" outRotation="0.83798122" outDistance="8.9690828" x="164" y="552" id="9:13972" />
+                      <CubicDetachedVertex inRotation="-0.42662749" inDistance="8.0553637" outRotation="1.1760052" outDistance="8.666667" x="162" y="567" id="9:13973" />
+                      <CubicDetachedVertex inRotation="-0.062418811" inDistance="10.68748" outRotation="3.1415927" outDistance="13.333333" x="151" y="580" id="9:13974" />
+                      <CubicDetachedVertex inRotation="0.66104317" inDistance="15.202339" outRotation="-1.6233793" outDistance="12.684198" x="113" y="566" id="9:13975" />
+                    </PointsPath>
+                    <Fill id="9:13976">
+                      <SolidColor colorValue="FFF2C9A3" id="9:13977" />
+                    </Fill>
+                    <Stroke thickness="3.8" cap="round" join="round" id="9:13978">
+                      <SolidColor colorValue="FF24241B" id="9:13979" />
+                    </Stroke>
+                  </Shape>
+                </Node>
+              </Node>
+              <Node name="Trail Left forearm" id="60:105" opacity="0">
+                <Shape name="Trail Left forearm" id="60:171">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:172">
+                    <CubicDetachedVertex x="-20.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.46364760900080615" outDistance="14.9071198499986" id="60:173" />
+                    <CubicDetachedVertex x="20.0" y="-12.0" inRotation="-2.677945044588987" inDistance="14.9071198499986" outRotation="0.0" outDistance="0.0" id="60:174" />
+                    <CubicDetachedVertex x="17.0" y="105.0" inRotation="0.0" inDistance="0.0" outRotation="2.4186133001883023" outDistance="15.114378731672845" id="60:175" />
+                    <CubicDetachedVertex x="-17.0" y="105.0" inRotation="0.7229793534014909" inDistance="15.114378731672845" outRotation="0.0" outDistance="0.0" id="60:176" />
+                  </PointsPath>
+                  <Fill id="60:177">
+                    <SolidColor colorValue="FF65794F" id="60:178" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="60:179">
+                    <SolidColor colorValue="FF24241B" id="60:180" />
+                  </Stroke>
+                </Shape>
+              </Node>
+              <Node name="Camp Left forearm" id="60:104" opacity="1">
+                <Shape name="Left forearm" id="60:181">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:182">
+                    <CubicDetachedVertex x="-20.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.46364760900080615" outDistance="14.9071198499986" id="60:183" />
+                    <CubicDetachedVertex x="20.0" y="-12.0" inRotation="-2.677945044588987" inDistance="14.9071198499986" outRotation="0.0" outDistance="0.0" id="60:184" />
+                    <CubicDetachedVertex x="17.0" y="105.0" inRotation="0.0" inDistance="0.0" outRotation="2.4186133001883023" outDistance="15.114378731672845" id="60:185" />
+                    <CubicDetachedVertex x="-17.0" y="105.0" inRotation="0.7229793534014909" inDistance="15.114378731672845" outRotation="0.0" outDistance="0.0" id="60:186" />
+                  </PointsPath>
+                  <Fill id="60:187">
+                    <SolidColor colorValue="FFEDEBD1" id="60:188" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="60:189">
+                    <SolidColor colorValue="FF24241B" id="60:190" />
+                  </Stroke>
+                </Shape>
+              </Node>
+            </Node>
+            <Node name="Trail Left upper sleeve" id="60:109" opacity="0">
+              <Shape name="Trail Left upper sleeve" id="60:191">
+                <PointsPath isClosed="true" isClockwise="true" id="60:192">
+                  <CubicDetachedVertex x="-23.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.410127340541491" outDistance="16.71991493864594" id="60:193" />
+                  <CubicDetachedVertex x="23.0" y="-12.0" inRotation="-2.731465313048302" inDistance="16.71991493864594" outRotation="0.0" outDistance="0.0" id="60:194" />
+                  <CubicDetachedVertex x="20.0" y="106.0" inRotation="0.0" inDistance="0.0" outRotation="2.498091544796509" outDistance="16.666666666666668" id="60:195" />
+                  <CubicDetachedVertex x="-20.0" y="106.0" inRotation="0.6435011087932844" inDistance="16.666666666666668" outRotation="0.0" outDistance="0.0" id="60:196" />
+                </PointsPath>
+                <Fill id="60:197">
+                  <SolidColor colorValue="FF65794F" id="60:198" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:199">
+                  <SolidColor colorValue="FF24241B" id="60:200" />
+                </Stroke>
+              </Shape>
+            </Node>
+            <Node name="Camp Left upper sleeve" id="60:108" opacity="1">
+              <Shape name="Left upper sleeve" id="60:201">
+                <PointsPath isClosed="true" isClockwise="true" id="60:202">
+                  <CubicDetachedVertex x="-23.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.410127340541491" outDistance="16.71991493864594" id="60:203" />
+                  <CubicDetachedVertex x="23.0" y="-12.0" inRotation="-2.731465313048302" inDistance="16.71991493864594" outRotation="0.0" outDistance="0.0" id="60:204" />
+                  <CubicDetachedVertex x="20.0" y="106.0" inRotation="0.0" inDistance="0.0" outRotation="2.498091544796509" outDistance="16.666666666666668" id="60:205" />
+                  <CubicDetachedVertex x="-20.0" y="106.0" inRotation="0.6435011087932844" inDistance="16.666666666666668" outRotation="0.0" outDistance="0.0" id="60:206" />
+                </PointsPath>
+                <Fill id="60:207">
+                  <SolidColor colorValue="FFEDEBD1" id="60:208" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:209">
+                  <SolidColor colorValue="FF24241B" id="60:210" />
+                </Stroke>
+              </Shape>
+            </Node>
+          </Node>
+          <Node name="Right shoulder" id="60:118" x="77" y="-228">
+            <Node name="Right elbow" id="60:115" y="102">
+              <Node name="Right hand socket" id="60:114" y="108">
+                <Node name="Right preserved fist" x="-380" y="-555" id="60:211">
+                  <Shape name="Right fingers" id="9:13930">
+                    <PointsPath id="9:13931">
+                      <CubicDetachedVertex outRotation="0.69473827" outDistance="5.2068329" x="357" y="561" id="9:13932" />
+                      <CubicDetachedVertex inRotation="2.5829933" inDistance="6.2893209" x="371" y="561" id="9:13933" />
+                    </PointsPath>
+                    <Stroke thickness="2.5999999" cap="round" join="round" id="9:13934">
+                      <SolidColor colorValue="FF24241B" id="9:13935" />
+                    </Stroke>
+                  </Shape>
+                  <Shape name="Right knuckles" id="9:13936">
+                    <PointsPath id="9:13937">
+                      <CubicDetachedVertex outRotation="0.58800262" outDistance="4.8074017" x="356" y="548" id="9:13938" />
+                      <CubicDetachedVertex inRotation="2.6779451" inDistance="7.4535599" x="372" y="547" id="9:13939" />
+                    </PointsPath>
+                    <Stroke thickness="2.5999999" cap="round" join="round" id="9:13940">
+                      <SolidColor colorValue="FF24241B" id="9:13941" />
+                    </Stroke>
+                  </Shape>
+                  <Shape name="Right hand" id="9:13942">
+                    <PointsPath isClosed="true" isClockwise="false" id="9:13943">
+                      <CubicDetachedVertex outRotation="-2.7091849" outDistance="9.5452137" x="387" y="533" id="9:13944" />
+                      <CubicDetachedVertex inRotation="-0.90975314" inDistance="7.6011696" outRotation="-3.0791738" outDistance="10.68748" x="367" y="536" id="9:13945" />
+                      <CubicDetachedVertex inRotation="-1.8692952" inDistance="9.067647" outRotation="2.4227626" outDistance="7.0867639" x="355" y="548" id="9:13946" />
+                      <CubicDetachedVertex inRotation="-2.4805496" inDistance="7.6011696" outRotation="2.1112158" outDistance="7.7746024" x="356" y="562" id="9:13947" />
+                      <CubicDetachedVertex inRotation="-2.8023" inDistance="12.018504" outRotation="0.099668652" outDistance="13.399835" x="367" y="578" id="9:13948" />
+                      <CubicDetachedVertex inRotation="2.5127964" inDistance="18.135294" outRotation="-1.7782925" outDistance="12.944325" x="409" y="564" id="9:13949" />
+                      <CubicDetachedVertex inRotation="0.6857295" inDistance="9.4751139" x="394" y="536" id="9:13950" />
+                    </PointsPath>
+                    <Fill id="9:13951">
+                      <SolidColor colorValue="FFF2C9A3" id="9:13952" />
+                    </Fill>
+                    <Stroke thickness="3.8" cap="round" join="round" id="9:13953">
+                      <SolidColor colorValue="FF24241B" id="9:13954" />
+                    </Stroke>
+                  </Shape>
+                </Node>
+                <Node name="Marshmallow stick" id="60:113" opacity="0">
+                  <Shape name="Marshmallow toasted edge" id="60:212">
+                    <PointsPath isClosed="false" isClockwise="true" id="60:213">
+                      <CubicDetachedVertex x="-21.0" y="231.0" inRotation="0.0" inDistance="0.0" outRotation="0.12435499454676231" outDistance="10.7496769977314" id="60:214" />
+                      <CubicDetachedVertex x="8.0" y="229.0" inRotation="2.8430937220036148" inDistance="9.067647005823625" outRotation="0.0" outDistance="0.0" id="60:215" />
+                    </PointsPath>
+                    <Stroke thickness="2.7" cap="round" join="round" id="60:216">
+                      <SolidColor colorValue="FFC49A61" id="60:217" />
+                    </Stroke>
+                  </Shape>
+                  <Shape name="Marshmallow" id="60:218">
+                    <PointsPath isClosed="true" isClockwise="true" id="60:219">
+                      <CubicDetachedVertex x="-19.0" y="202.0" inRotation="0.0" inDistance="0.0" outRotation="-1.292496667789785" outDistance="4.85340659285367" id="60:220" />
+                      <CubicDetachedVertex x="-7.0" y="196.0" inRotation="-3.0419240010986326" inDistance="6.699917080747261" outRotation="0.0" outDistance="0.0" id="60:221" />
+                      <CubicDetachedVertex x="8.0" y="199.0" inRotation="0.0" inDistance="0.0" outRotation="0.24497866312686586" outDistance="5.497474167490215" id="60:222" />
+                      <CubicDetachedVertex x="14.0" y="211.0" inRotation="-1.3734007669450154" inDistance="6.798692684790371" outRotation="0.0" outDistance="0.0" id="60:223" />
+                      <CubicDetachedVertex x="9.0" y="233.0" inRotation="0.0" inDistance="0.0" outRotation="1.8490959858000084" outDistance="4.85340659285367" id="60:224" />
+                      <CubicDetachedVertex x="-3.0" y="238.0" inRotation="0.1973955598498821" inDistance="6.798692684790382" outRotation="0.0" outDistance="0.0" id="60:225" />
+                      <CubicDetachedVertex x="-20.0" y="234.0" inRotation="0.0" inDistance="0.0" outRotation="-2.86329299458468" outDistance="4.853406592853682" id="60:226" />
+                      <CubicDetachedVertex x="-24.0" y="223.0" inRotation="1.892546881191539" inDistance="6.324555320336759" outRotation="0.0" outDistance="0.0" id="60:227" />
+                    </PointsPath>
+                    <Fill id="60:228">
+                      <SolidColor colorValue="FFF4E2BB" id="60:229" />
+                    </Fill>
+                    <Stroke thickness="2.7" cap="round" join="round" id="60:230">
+                      <SolidColor colorValue="FF24241B" id="60:231" />
+                    </Stroke>
+                  </Shape>
+                  <Shape name="Stick" id="60:232">
+                    <PointsPath isClosed="false" isClockwise="true" id="60:233">
+                      <CubicDetachedVertex x="0.0" y="0.0" inRotation="0.0" inDistance="0.0" outRotation="1.550798992821746" outDistance="66.67999866693327" id="60:234" />
+                      <CubicDetachedVertex x="-5.0" y="231.0" inRotation="-1.5174119833041613" inDistance="87.45792639257397" outRotation="0.0" outDistance="0.0" id="60:235" />
+                    </PointsPath>
+                    <Stroke thickness="5" cap="round" join="round" id="60:236">
+                      <SolidColor colorValue="FF79583B" id="60:237" />
+                    </Stroke>
+                  </Shape>
+                </Node>
+              </Node>
+              <Node name="Trail Right forearm" id="60:112" opacity="0">
+                <Shape name="Trail Right forearm" id="60:238">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:239">
+                    <CubicDetachedVertex x="-20.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.46364760900080615" outDistance="14.9071198499986" id="60:240" />
+                    <CubicDetachedVertex x="20.0" y="-12.0" inRotation="-2.677945044588987" inDistance="14.9071198499986" outRotation="0.0" outDistance="0.0" id="60:241" />
+                    <CubicDetachedVertex x="17.0" y="105.0" inRotation="0.0" inDistance="0.0" outRotation="2.4186133001883023" outDistance="15.114378731672845" id="60:242" />
+                    <CubicDetachedVertex x="-17.0" y="105.0" inRotation="0.7229793534014909" inDistance="15.114378731672845" outRotation="0.0" outDistance="0.0" id="60:243" />
+                  </PointsPath>
+                  <Fill id="60:244">
+                    <SolidColor colorValue="FF65794F" id="60:245" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="60:246">
+                    <SolidColor colorValue="FF24241B" id="60:247" />
+                  </Stroke>
+                </Shape>
+              </Node>
+              <Node name="Camp Right forearm" id="60:111" opacity="1">
+                <Shape name="Right forearm" id="60:248">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:249">
+                    <CubicDetachedVertex x="-20.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.46364760900080615" outDistance="14.9071198499986" id="60:250" />
+                    <CubicDetachedVertex x="20.0" y="-12.0" inRotation="-2.677945044588987" inDistance="14.9071198499986" outRotation="0.0" outDistance="0.0" id="60:251" />
+                    <CubicDetachedVertex x="17.0" y="105.0" inRotation="0.0" inDistance="0.0" outRotation="2.4186133001883023" outDistance="15.114378731672845" id="60:252" />
+                    <CubicDetachedVertex x="-17.0" y="105.0" inRotation="0.7229793534014909" inDistance="15.114378731672845" outRotation="0.0" outDistance="0.0" id="60:253" />
+                  </PointsPath>
+                  <Fill id="60:254">
+                    <SolidColor colorValue="FFEDEBD1" id="60:255" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="60:256">
+                    <SolidColor colorValue="FF24241B" id="60:257" />
+                  </Stroke>
+                </Shape>
+              </Node>
+            </Node>
+            <Node name="Trail Right upper sleeve" id="60:117" opacity="0">
+              <Shape name="Trail Right upper sleeve" id="60:258">
+                <PointsPath isClosed="true" isClockwise="true" id="60:259">
+                  <CubicDetachedVertex x="-23.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.410127340541491" outDistance="16.71991493864594" id="60:260" />
+                  <CubicDetachedVertex x="23.0" y="-12.0" inRotation="-2.731465313048302" inDistance="16.71991493864594" outRotation="0.0" outDistance="0.0" id="60:261" />
+                  <CubicDetachedVertex x="20.0" y="106.0" inRotation="0.0" inDistance="0.0" outRotation="2.498091544796509" outDistance="16.666666666666668" id="60:262" />
+                  <CubicDetachedVertex x="-20.0" y="106.0" inRotation="0.6435011087932844" inDistance="16.666666666666668" outRotation="0.0" outDistance="0.0" id="60:263" />
+                </PointsPath>
+                <Fill id="60:264">
+                  <SolidColor colorValue="FF65794F" id="60:265" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:266">
+                  <SolidColor colorValue="FF24241B" id="60:267" />
+                </Stroke>
+              </Shape>
+            </Node>
+            <Node name="Camp Right upper sleeve" id="60:116" opacity="1">
+              <Shape name="Right upper sleeve" id="60:268">
+                <PointsPath isClosed="true" isClockwise="true" id="60:269">
+                  <CubicDetachedVertex x="-23.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.410127340541491" outDistance="16.71991493864594" id="60:270" />
+                  <CubicDetachedVertex x="23.0" y="-12.0" inRotation="-2.731465313048302" inDistance="16.71991493864594" outRotation="0.0" outDistance="0.0" id="60:271" />
+                  <CubicDetachedVertex x="20.0" y="106.0" inRotation="0.0" inDistance="0.0" outRotation="2.498091544796509" outDistance="16.666666666666668" id="60:272" />
+                  <CubicDetachedVertex x="-20.0" y="106.0" inRotation="0.6435011087932844" inDistance="16.666666666666668" outRotation="0.0" outDistance="0.0" id="60:273" />
+                </PointsPath>
+                <Fill id="60:274">
+                  <SolidColor colorValue="FFEDEBD1" id="60:275" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:276">
+                  <SolidColor colorValue="FF24241B" id="60:277" />
+                </Stroke>
+              </Shape>
+            </Node>
+          </Node>
+          <Node name="Preserved torso geometry" x="-261.0" y="-626.5" id="60:278">
+            <Node x="260" y="346" name="Head pivot" id="5:20">
+              <Node x="-260" y="-346" name="Head geometry" id="9:13834">
+                <Shape name="Easy smile" id="9:13835">
+                  <PointsPath isClockwise="false" id="9:13836">
+                    <CubicDetachedVertex outRotation="0.45145309" outDistance="24.449495" x="222" y="248" id="9:13837" />
+                    <CubicDetachedVertex inRotation="2.6011732" inDistance="23.323807" x="285" y="246" id="9:13838" />
+                  </PointsPath>
+                  <Stroke thickness="3.5999999" cap="round" join="round" id="9:13839">
+                    <SolidColor colorValue="FF24241B" id="9:13840" />
+                  </Stroke>
+                </Shape>
+                <Shape x="310" y="218" name="Right eye" id="5:22">
+                  <Ellipse width="13" height="23" id="9:13841" />
+                  <Fill id="9:13842">
+                    <SolidColor colorValue="FF20241B" id="9:13843" />
+                  </Fill>
+                </Shape>
+                <Shape x="196" y="218" name="Left eye" id="5:21">
+                  <Ellipse width="13" height="23" id="9:13844" />
+                  <Fill id="9:13845">
+                    <SolidColor colorValue="FF20241B" id="9:13846" />
+                  </Fill>
+                </Shape>
+                <Shape name="Front golden hair" id="9:13847">
+                  <PointsPath isClosed="true" id="9:13848">
+                    <CubicDetachedVertex outRotation="-2.7367008" outDistance="20.308729" x="237" y="73" id="9:13849" />
+                    <CubicDetachedVertex inRotation="1.0040671" inDistance="8.6922703" outRotation="-2.0344439" outDistance="11.925695" x="202" y="50" id="9:13850" />
+                    <CubicDetachedVertex inRotation="-2.927532" inDistance="15.69147" outRotation="0.27416745" outDistance="22.161026" x="217" y="39" id="9:13851" />
+                    <CubicDetachedVertex inRotation="-2.4578834" inDistance="23.218767" outRotation="-2.1293957" outDistance="18.867962" x="276" y="70" id="9:13852" />
+                    <CubicDetachedVertex inRotation="2.2896264" inDistance="7.0867639" outRotation="-0.49934673" outDistance="8.3533096" x="268" y="38" id="9:13853" />
+                    <CubicDetachedVertex inRotation="-1.9672376" inDistance="31.076965" outRotation="-0.73459446" outDistance="27.848799" x="297" y="75" id="9:13854" />
+                    <CubicDetachedVertex inRotation="-2.4149504" inDistance="8.02773" outRotation="0.96007037" outDistance="8.1377039" x="337" y="55" id="9:13855" />
+                    <CubicDetachedVertex inRotation="-0.47734538" inDistance="21.766438" outRotation="-0.124355" outDistance="37.623871" x="315" y="80" id="9:13856" />
+                    <CubicDetachedVertex inRotation="-2.2027705" inDistance="46.269741" outRotation="0.98279375" outDistance="26.44071" x="412" y="129" id="9:13857" />
+                    <CubicDetachedVertex inRotation="-2.4980915" inDistance="16.666666" outRotation="0.93804747" outDistance="12.400717" x="454" y="177" id="9:13858" />
+                    <CubicDetachedVertex inDistance="14" x="444" y="192" id="9:13859" />
+                    <CubicDetachedVertex outRotation="1.0768549" outDistance="29.529646" x="427" y="185" id="9:13860" />
+                    <CubicDetachedVertex inRotation="-1.4432868" inDistance="26.212805" outRotation="1.7429872" outDistance="15.56349" x="443" y="263" id="9:13861" />
+                    <CubicDetachedVertex inRotation="0.96007037" inDistance="16.275408" x="425" y="266" id="9:13862" />
+                    <CubicDetachedVertex outRotation="1.4501727" outDistance="22.161026" x="416" y="245" id="9:13863" />
+                    <CubicDetachedVertex inRotation="0.60554469" inDistance="10.540926" outRotation="-2.5535901" outDistance="4.8074017" x="407" y="269" id="9:13864" />
+                    <CubicDetachedVertex inRotation="1.1659045" inDistance="15.231546" outRotation="1.3521274" outDistance="24.585451" x="392" y="244" id="9:13865" />
+                    <CubicDetachedVertex inRotation="-0.15264933" inDistance="8.768631" outRotation="-2.9996955" outDistance="9.4280901" x="387" y="282" id="9:13866" />
+                    <CubicDetachedVertex inRotation="1.3339475" inDistance="19.888578" x="366" y="251" id="9:13867" />
+                    <CubicDetachedVertex outRotation="-2.9163158" outDistance="32.829525" x="361" y="195" id="9:13868" />
+                    <CubicDetachedVertex inRotation="1.0405805" inDistance="44.820629" outRotation="1.959115" outDistance="31.692972" x="279" y="126" id="9:13869" />
+                    <CubicDetachedVertex inRotation="-0.36172923" inDistance="26.373386" outRotation="2.7928216" outDistance="15.606267" x="224" y="184" id="9:13870" />
+                    <CubicDetachedVertex inRotation="1.94013" inDistance="22.161026" outRotation="2.3107712" outDistance="20.763216" x="214" y="161" id="9:13871" />
+                    <CubicDetachedVertex inRotation="-0.27490985" inDistance="27.014399" outRotation="2.878598" outDistance="17.95055" x="154" y="195" id="9:13872" />
+                    <CubicDetachedVertex inRotation="1.8766752" inDistance="13.283239" x="134" y="183" id="9:13873" />
+                    <CubicDetachedVertex outRotation="2.6779451" outDistance="8.944272" x="145" y="164" id="9:13874" />
+                    <CubicDetachedVertex inRotation="-1.3045443" inDistance="22.803509" x="124" y="203" id="9:13875" />
+                    <CubicDetachedVertex outRotation="1.670465" outDistance="13.399835" x="119" y="257" id="9:13876" />
+                    <CubicDetachedVertex inRotation="1.0040671" inDistance="8.6922703" outRotation="-2.0988708" outDistance="9.2616291" x="110" y="266" id="9:13877" />
+                    <CubicDetachedVertex inRotation="1.7942729" inDistance="15.040686" outRotation="1.9255019" outDistance="19.194906" x="108" y="232" id="9:13878" />
+                    <CubicDetachedVertex inRotation="0.55859929" inDistance="6.2893209" outRotation="-2.4468544" outDistance="5.2068329" x="90" y="254" id="9:13879" />
+                    <CubicDetachedVertex inRotation="1.7942729" inDistance="15.040686" outRotation="1.8673421" outDistance="25.095373" x="89" y="227" id="9:13880" />
+                    <CubicDetachedVertex inRotation="1.2277724" inDistance="9.9107122" outRotation="-1.7126933" outDistance="18.85618" x="73" y="249" id="9:13881" />
+                    <CubicDetachedVertex inRotation="2.0564184" inDistance="27.13751" outRotation="2.7790484" outDistance="20.677416" x="88" y="185" id="9:13882" />
+                    <CubicDetachedVertex inRotation="1.7818897" inDistance="9.5452137" outRotation="-1.5707964" outDistance="5.3333335" x="62" y="182" id="9:13883" />
+                    <CubicDetachedVertex inRotation="2.4610715" inDistance="18.012341" outRotation="-0.6435011" outDistance="20" x="83" y="157" id="9:13884" />
+                    <CubicDetachedVertex inRotation="2.1975393" inDistance="23.870018" outRotation="-0.86217004" outDistance="36.878178" x="128" y="110" id="9:13885" />
+                    <CubicDetachedVertex inRotation="-3.071938" inDistance="28.736349" x="207" y="71" id="9:13886" />
+                  </PointsPath>
+                  <Fill id="9:13887">
+                    <SolidColor colorValue="FFDDB84F" id="9:13888" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="9:13889">
+                    <SolidColor colorValue="FF24241B" id="9:13890" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Face and neck" id="9:13891">
+                  <PointsPath isClosed="true" id="9:13892">
+                    <CubicDetachedVertex outRotation="-0.91622555" outDistance="36.135548" x="142" y="168" id="9:13893" />
+                    <CubicDetachedVertex inRotation="3.0284417" inDistance="59.044239" outRotation="0.038442589" outDistance="52.038448" x="263" y="115" id="9:13894" />
+                    <CubicDetachedVertex inRotation="-1.9974238" inDistance="40.276821" x="366" y="173" id="9:13895" />
+                    <CubicDetachedVertex outRotation="1.7152379" outDistance="37.052517" x="373" y="261" id="9:13896" />
+                    <CubicDetachedVertex inRotation="-0.30288488" inDistance="55.87685" x="285" y="341" id="9:13897" />
+                    <CubicDetachedVertex outRotation="1.8692952" outDistance="9.067647" x="284" y="368" id="9:13898" />
+                    <CubicDetachedVertex inRotation="-0.26625204" inDistance="7.6011696" x="269" y="384" id="9:13899" />
+                    <CubicDetachedVertex x="255" y="432" id="9:13900" />
+                    <CubicDetachedVertex outRotation="-2.8632929" outDistance="9.7068129" x="241" y="387" id="9:13901" />
+                    <CubicDetachedVertex inRotation="0.6857295" inDistance="9.4751139" x="216" y="374" id="9:13902" />
+                    <CubicDetachedVertex x="235" y="367" id="9:13903" />
+                    <CubicDetachedVertex outRotation="-3.0237205" outDistance="51.020695" x="235" y="342" id="9:13904" />
+                    <CubicDetachedVertex inRotation="1.2348287" inDistance="44.487202" x="137" y="270" id="9:13905" />
+                  </PointsPath>
+                  <Fill id="9:13906">
+                    <SolidColor colorValue="FFF3CBA5" id="9:13907" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="9:13908">
+                    <SolidColor colorValue="FF24241B" id="9:13909" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Back hair" id="9:13910">
+                  <PointsPath isClosed="true" id="9:13911">
+                    <CubicDetachedVertex outRotation="-1.0723369" outDistance="89.944427" x="133" y="144" id="9:13912" />
+                    <CubicDetachedVertex inRotation="-2.209959" inDistance="92.200867" outRotation="0.91596425" outDistance="47.069687" x="389" y="138" id="9:13913" />
+                    <CubicDetachedVertex inRotation="-1.5707964" inDistance="40.666668" outRotation="1.5707964" outDistance="27.333334" x="432" y="255" id="9:13914" />
+                    <CubicDetachedVertex inRotation="-0.82109725" inDistance="26.415483" outRotation="2.1587989" outDistance="14.422205" x="405" y="325" id="9:13915" />
+                    <CubicDetachedVertex inRotation="0.75092906" inDistance="13.678856" outRotation="2.0183163" outDistance="18.487232" x="378" y="329" id="9:13916" />
+                    <CubicDetachedVertex inRotation="0.13706617" inDistance="19.516375" x="337" y="350" id="9:13917" />
+                    <CubicDetachedVertex outRotation="2.5283854" outDistance="22.010099" x="329" y="340" id="9:13918" />
+                    <CubicDetachedVertex inRotation="0.32175055" inDistance="16.86548" x="278" y="351" id="9:13919" />
+                    <CubicDetachedVertex outRotation="2.9375746" outDistance="19.74279" x="234" y="353" id="9:13920" />
+                    <CubicDetachedVertex inRotation="0.70449406" inDistance="17.499207" outRotation="1.6295521" outDistance="11.352924" x="185" y="342" id="9:13921" />
+                    <CubicDetachedVertex inRotation="0.61466295" inDistance="13.872435" outRotation="-2.6642473" outDistance="21.766438" x="167" y="347" id="9:13922" />
+                    <CubicDetachedVertex inRotation="1.160669" inDistance="16.719915" outRotation="1.6262949" outDistance="12.018504" x="128" y="309" id="9:13923" />
+                    <CubicDetachedVertex inRotation="0.78539819" inDistance="12.256517" outRotation="-2.3373289" outDistance="24.988886" x="114" y="314" id="9:13924" />
+                    <CubicDetachedVertex inRotation="1.6614562" inDistance="36.817871" x="93" y="232" id="9:13925" />
+                  </PointsPath>
+                  <Fill id="9:13926">
+                    <SolidColor colorValue="FFDDB84F" id="9:13927" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="9:13928">
+                    <SolidColor colorValue="FF24241B" id="9:13929" />
+                  </Stroke>
+                </Shape>
+              </Node>
+            </Node>
+            <Node name="Trail torso" id="60:101" opacity="0">
+              <Shape name="Trail buckle inset" id="60:279">
+                <PointsPath isClosed="true" isClockwise="true" id="60:280">
+                  <CubicDetachedVertex x="248.0" y="576.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:281" />
+                  <CubicDetachedVertex x="262.0" y="576.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:282" />
+                  <CubicDetachedVertex x="262.0" y="584.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:283" />
+                  <CubicDetachedVertex x="248.0" y="584.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:284" />
+                </PointsPath>
+                <Fill id="60:285">
+                  <SolidColor colorValue="FF735637" id="60:286" />
+                </Fill>
+              </Shape>
+              <Shape name="Trail brass buckle" id="60:287">
+                <PointsPath isClosed="true" isClockwise="true" id="60:288">
+                  <CubicDetachedVertex x="241.0" y="570.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:289" />
+                  <CubicDetachedVertex x="269.0" y="570.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:290" />
+                  <CubicDetachedVertex x="269.0" y="590.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:291" />
+                  <CubicDetachedVertex x="241.0" y="590.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:292" />
+                </PointsPath>
+                <Fill id="60:293">
+                  <SolidColor colorValue="FFD6BA72" id="60:294" />
+                </Fill>
+                <Stroke thickness="3" cap="round" join="round" id="60:295">
+                  <SolidColor colorValue="FF24241B" id="60:296" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail leather belt" id="60:297">
+                <PointsPath isClosed="true" isClockwise="true" id="60:298">
+                  <CubicDetachedVertex x="151.0" y="565.0" inRotation="0.0" inDistance="0.0" outRotation="0.13640260440094798" outDistance="68.63753427324667" id="60:299" />
+                  <CubicDetachedVertex x="368.0" y="565.0" inRotation="3.0204496394318694" inDistance="77.2326931350247" outRotation="0.0" outDistance="0.0" id="60:300" />
+                  <CubicDetachedVertex x="369.0" y="583.0" inRotation="0.0" inDistance="0.0" outRotation="3.0204496394318694" outDistance="77.2326931350247" id="60:301" />
+                  <CubicDetachedVertex x="149.0" y="583.0" inRotation="0.13255153229667455" inDistance="70.61948110196727" outRotation="0.0" outDistance="0.0" id="60:302" />
+                </PointsPath>
+                <Fill id="60:303">
+                  <SolidColor colorValue="FF735637" id="60:304" />
+                </Fill>
+                <Stroke thickness="3" cap="round" join="round" id="60:305">
+                  <SolidColor colorValue="FF24241B" id="60:306" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail right pocket flap" id="60:307">
+                <PointsPath isClosed="true" isClockwise="true" id="60:308">
+                  <CubicDetachedVertex x="280.0" y="456.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:309" />
+                  <CubicDetachedVertex x="328.0" y="456.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:310" />
+                  <CubicDetachedVertex x="326.0" y="471.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:311" />
+                  <CubicDetachedVertex x="303.0" y="478.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:312" />
+                  <CubicDetachedVertex x="282.0" y="471.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:313" />
+                </PointsPath>
+                <Fill id="60:314">
+                  <SolidColor colorValue="FFD5B874" id="60:315" />
+                </Fill>
+                <Stroke thickness="3" cap="round" join="round" id="60:316">
+                  <SolidColor colorValue="FF24241B" id="60:317" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail right pocket" id="60:318">
+                <PointsPath isClosed="true" isClockwise="true" id="60:319">
+                  <CubicDetachedVertex x="281.0" y="456.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:320" />
+                  <CubicDetachedVertex x="327.0" y="456.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:321" />
+                  <CubicDetachedVertex x="324.0" y="498.0" inRotation="0.0" inDistance="0.0" outRotation="2.6590793585673174" outDistance="15.804359454839588" id="60:322" />
+                  <CubicDetachedVertex x="281.0" y="497.0" inRotation="0.49934672168012956" inDistance="16.70661878152224" outRotation="0.0" outDistance="0.0" id="60:323" />
+                </PointsPath>
+                <Fill id="60:324">
+                  <SolidColor colorValue="FFB28E4E" id="60:325" />
+                </Fill>
+                <Stroke thickness="3" cap="round" join="round" id="60:326">
+                  <SolidColor colorValue="FF24241B" id="60:327" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail left pocket flap" id="60:328">
+                <PointsPath isClosed="true" isClockwise="true" id="60:329">
+                  <CubicDetachedVertex x="184.0" y="456.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:330" />
+                  <CubicDetachedVertex x="231.0" y="456.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:331" />
+                  <CubicDetachedVertex x="229.0" y="471.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:332" />
+                  <CubicDetachedVertex x="208.0" y="478.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:333" />
+                  <CubicDetachedVertex x="186.0" y="471.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:334" />
+                </PointsPath>
+                <Fill id="60:335">
+                  <SolidColor colorValue="FFD5B874" id="60:336" />
+                </Fill>
+                <Stroke thickness="3" cap="round" join="round" id="60:337">
+                  <SolidColor colorValue="FF24241B" id="60:338" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail left pocket" id="60:339">
+                <PointsPath isClosed="true" isClockwise="true" id="60:340">
+                  <CubicDetachedVertex x="185.0" y="456.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:341" />
+                  <CubicDetachedVertex x="230.0" y="456.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:342" />
+                  <CubicDetachedVertex x="230.0" y="497.0" inRotation="0.0" inDistance="0.0" outRotation="2.6422459319096627" outDistance="16.706618781522216" id="60:343" />
+                  <CubicDetachedVertex x="187.0" y="498.0" inRotation="0.48251329502247586" inDistance="15.804359454839588" outRotation="0.0" outDistance="0.0" id="60:344" />
+                </PointsPath>
+                <Fill id="60:345">
+                  <SolidColor colorValue="FFB28E4E" id="60:346" />
+                </Fill>
+                <Stroke thickness="3" cap="round" join="round" id="60:347">
+                  <SolidColor colorValue="FF24241B" id="60:348" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail jacket placket" id="60:349">
+                <PointsPath isClosed="false" isClockwise="true" id="60:350">
+                  <CubicDetachedVertex x="255.0" y="450.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:351" />
+                  <CubicDetachedVertex x="255.0" y="566.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:352" />
+                </PointsPath>
+                <Stroke thickness="3" cap="round" join="round" id="60:353">
+                  <SolidColor colorValue="FF80683D" id="60:354" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail right shoulder yoke" id="60:355">
+                <PointsPath isClosed="true" isClockwise="true" id="60:356">
+                  <CubicDetachedVertex x="273.0" y="383.0" inRotation="0.0" inDistance="0.0" outRotation="-0.19739555984988075" outDistance="10.198039027185569" id="60:357" />
+                  <CubicDetachedVertex x="303.0" y="370.0" inRotation="2.5535900500422244" inDistance="12.018504251546641" outRotation="0.21406068356382058" outDistance="15.691469727919737" id="60:358" />
+                  <CubicDetachedVertex x="349.0" y="389.0" inRotation="-2.594803812700546" inDistance="17.950549357114987" outRotation="0.0" outDistance="0.0" id="60:359" />
+                  <CubicDetachedVertex x="347.0" y="422.0" inRotation="0.0" inDistance="0.0" outRotation="-2.478389660883699" outDistance="27.071920672329266" id="60:360" />
+                  <CubicDetachedVertex x="268.0" y="400.0" inRotation="-0.06374331253268711" inDistance="31.397098238177627" outRotation="0.0" outDistance="0.0" id="60:361" />
+                </PointsPath>
+                <Fill id="60:362">
+                  <SolidColor colorValue="FF65794F" id="60:363" />
+                </Fill>
+                <Stroke thickness="3" cap="round" join="round" id="60:364">
+                  <SolidColor colorValue="FF24241B" id="60:365" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail left shoulder yoke" id="60:366">
+                <PointsPath isClosed="true" isClockwise="true" id="60:367">
+                  <CubicDetachedVertex x="210.0" y="370.0" inRotation="0.0" inDistance="0.0" outRotation="-0.05258306161094325" outDistance="12.684198393626957" id="60:368" />
+                  <CubicDetachedVertex x="241.0" y="379.0" inRotation="-2.446854377393089" inDistance="10.413666234542218" outRotation="0.0" outDistance="0.0" id="60:369" />
+                  <CubicDetachedVertex x="246.0" y="400.0" inRotation="0.0" inDistance="0.0" outRotation="-3.0393859354825388" outDistance="26.136394378550214" id="60:370" />
+                  <CubicDetachedVertex x="174.0" y="426.0" inRotation="-0.7378150601204649" inDistance="29.732137494637012" outRotation="0.0" outDistance="0.0" id="60:371" />
+                  <CubicDetachedVertex x="172.0" y="418.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:372" />
+                </PointsPath>
+                <Fill id="60:373">
+                  <SolidColor colorValue="FF65794F" id="60:374" />
+                </Fill>
+                <Stroke thickness="3" cap="round" join="round" id="60:375">
+                  <SolidColor colorValue="FF24241B" id="60:376" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail open neckline" id="60:377">
+                <PointsPath isClosed="false" isClockwise="false" id="60:378">
+                  <CubicDetachedVertex x="224.0" y="375.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:379" />
+                  <CubicDetachedVertex x="242.0" y="437.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:380" />
+                  <CubicDetachedVertex x="255.0" y="449.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:381" />
+                  <CubicDetachedVertex x="269.0" y="436.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:382" />
+                  <CubicDetachedVertex x="289.0" y="379.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:383" />
+                </PointsPath>
+                <Stroke thickness="3" cap="round" join="round" id="60:384">
+                  <SolidColor colorValue="FF6B623C" id="60:385" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail ochre jacket" id="60:386">
+                <PointsPath isClosed="true" isClockwise="true" id="60:387">
+                  <CubicDetachedVertex x="210.0" y="370.0" inRotation="0.0" inDistance="0.0" outRotation="-0.05258306161094325" outDistance="12.684198393626957" id="60:388" />
+                  <CubicDetachedVertex x="241.0" y="379.0" inRotation="-2.446854377393089" inDistance="10.413666234542218" outRotation="0.0" outDistance="0.0" id="60:389" />
+                  <CubicDetachedVertex x="255.0" y="433.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:390" />
+                  <CubicDetachedVertex x="273.0" y="383.0" inRotation="0.0" inDistance="0.0" outRotation="-0.19739555984988075" outDistance="10.198039027185569" id="60:391" />
+                  <CubicDetachedVertex x="303.0" y="370.0" inRotation="2.5535900500422244" inDistance="12.018504251546641" outRotation="0.21406068356382058" outDistance="15.691469727919737" id="60:392" />
+                  <CubicDetachedVertex x="349.0" y="389.0" inRotation="-2.594803812700546" inDistance="17.950549357114987" outRotation="0.0" outDistance="0.0" id="60:393" />
+                  <CubicDetachedVertex x="346.0" y="438.0" inRotation="0.0" inDistance="0.0" outRotation="1.5526165117219177" outDistance="36.67272677193353" id="60:394" />
+                  <CubicDetachedVertex x="365.0" y="535.0" inRotation="-1.97568811307998" inDistance="30.463092423455635" outRotation="0.0" outDistance="0.0" id="60:395" />
+                  <CubicDetachedVertex x="369.0" y="579.0" inRotation="0.0" inDistance="0.0" outRotation="1.5707963267948966" outDistance="15.333333333333371" id="60:396" />
+                  <CubicDetachedVertex x="350.0" y="607.0" inRotation="-0.2573237149710911" inDistance="13.097921802925695" outRotation="0.0" outDistance="0.0" id="60:397" />
+                  <CubicDetachedVertex x="272.0" y="608.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:398" />
+                  <CubicDetachedVertex x="256.0" y="597.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:399" />
+                  <CubicDetachedVertex x="241.0" y="608.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:400" />
+                  <CubicDetachedVertex x="172.0" y="608.0" inRotation="0.0" inDistance="0.0" outRotation="-3.026716048172894" outDistance="17.448336437736543" id="60:401" />
+                  <CubicDetachedVertex x="148.0" y="581.0" inRotation="1.6539375586833385" inDistance="16.05545943838973" outRotation="0.0" outDistance="0.0" id="60:402" />
+                  <CubicDetachedVertex x="154.0" y="534.0" inRotation="0.0" inDistance="0.0" outRotation="-1.2167988899630005" outDistance="32.69386622730463" id="60:403" />
+                  <CubicDetachedVertex x="172.0" y="418.0" inRotation="1.585081069382293" inDistance="46.671428328499054" outRotation="0.0" outDistance="0.0" id="60:404" />
+                </PointsPath>
+                <Fill id="60:405">
+                  <SolidColor colorValue="FFC4A15A" id="60:406" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:407">
+                  <SolidColor colorValue="FF24241B" id="60:408" />
+                </Stroke>
+              </Shape>
+            </Node>
+            <Node name="Camp torso" id="60:100" opacity="1">
+              <Shape name="Shirt hem right" id="9:13980">
+                <PointsPath id="9:13981">
+                  <CubicDetachedVertex outRotation="2.2264919" outDistance="10.934146" x="326" y="594" id="9:13982" />
+                  <CubicDetachedVertex inRotation="-0.21866895" inDistance="12.292726" x="298" y="611" id="9:13983" />
+                </PointsPath>
+                <Stroke thickness="3" cap="round" join="round" id="9:13984">
+                  <SolidColor colorValue="FF24241B" id="9:13985" />
+                </Stroke>
+              </Shape>
+              <Shape name="Shirt hem left" id="9:13986">
+                <PointsPath id="9:13987">
+                  <CubicDetachedVertex outRotation="0.92729521" outDistance="13.333333" x="196" y="594" id="9:13988" />
+                  <CubicDetachedVertex inRotation="-2.976444" inDistance="16.220699" x="232" y="614" id="9:13989" />
+                </PointsPath>
+                <Stroke thickness="3" cap="round" join="round" id="9:13990">
+                  <SolidColor colorValue="FF24241B" id="9:13991" />
+                </Stroke>
+              </Shape>
+              <Shape x="0.20953001" y="2.4055712" scaleX="0.99857461" scaleY="0.99612355" name="Linen shirt" id="9:13992">
+                <PointsPath isClosed="true" id="9:13993">
+                  <CubicDetachedVertex outRotation="-0.052583061" outDistance="12.684198" x="211" y="369" id="9:13994" />
+                  <CubicDetachedVertex inRotation="-2.4558632" inDistance="9.4751139" x="241" y="377" id="9:13995" />
+                  <CubicDetachedVertex x="255" y="431" id="9:13996" />
+                  <CubicDetachedVertex outRotation="-0.21109334" outDistance="9.5452137" x="272" y="383" id="9:13997" />
+                  <CubicDetachedVertex inRotation="2.5393052" inDistance="12.944325" outRotation="0.13552772" outDistance="14.802402" x="302" y="369" id="9:13998" />
+                  <CubicDetachedVertex inRotation="-2.6311042" inDistance="19.102064" x="349" y="386" id="9:13999" />
+                  <CubicDetachedVertex outRotation="1.5544044" outDistance="40.672131" x="348" y="431" id="9:14000" />
+                  <CubicDetachedVertex inRotation="-1.9672376" inDistance="31.076965" x="367" y="535" id="9:14001" />
+                  <CubicDetachedVertex outRotation="1.4601392" outDistance="18.110771" x="372" y="577" id="9:14002" />
+                  <CubicDetachedVertex inRotation="-0.15865526" inDistance="16.878653" x="350" y="608" id="9:14003" />
+                  <CubicDetachedVertex outRotation="2.6197584" outDistance="30.760725" x="326" y="607" id="9:14004" />
+                  <CubicDetachedVertex inRotation="0.27829966" inDistance="38.827251" outRotation="-3.0509329" outDistance="14.727148" x="230" y="614" id="9:14005" />
+                  <CubicDetachedVertex inRotation="0.56672919" inDistance="8.6922703" outRotation="2.8520889" outDistance="32.693867" x="197" y="605" id="9:14006" />
+                  <CubicDetachedVertex inRotation="1.4743226" inDistance="20.763216" x="147" y="588" id="9:14007" />
+                  <CubicDetachedVertex outRotation="-1.1071488" outDistance="29.81424" x="153" y="532" id="9:14008" />
+                  <CubicDetachedVertex inRotation="1.5576392" inDistance="50.671051" x="172" y="416" id="9:14009" />
+                </PointsPath>
+                <Fill id="9:14010">
+                  <SolidColor colorValue="FFEDEBD1" id="9:14011" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="9:14012">
+                  <SolidColor colorValue="FF24241B" id="9:14013" />
+                </Stroke>
+              </Shape>
+            </Node>
+          </Node>
+        </Node>
+        <Node name="Trail pelvis" id="60:103" opacity="0">
+          <Shape name="Trail hip fabric" id="60:409">
+            <PointsPath isClosed="true" isClockwise="true" id="60:410">
+              <CubicDetachedVertex x="-98.0" y="-26.0" inRotation="0.0" inDistance="0.0" outRotation="0.18164883000001195" outDistance="66.4262331044328" id="60:411" />
+              <CubicDetachedVertex x="98.0" y="-26.0" inRotation="2.9599438235897813" inDistance="66.4262331044328" outRotation="0.0" outDistance="0.0" id="60:412" />
+              <CubicDetachedVertex x="93.0" y="59.0" inRotation="0.0" inDistance="0.0" outRotation="2.65711472455277" outDistance="28.627880738111845" id="60:413" />
+              <CubicDetachedVertex x="0.0" y="66.0" inRotation="0.2321038380751558" inDistance="37.67698973585278" outRotation="2.9210988922231214" outDistance="39.626029604569545" id="60:414" />
+              <CubicDetachedVertex x="-96.0" y="59.0" inRotation="0.48447792903702314" inDistance="28.627880738111845" outRotation="0.0" outDistance="0.0" id="60:415" />
+            </PointsPath>
+            <Fill id="60:416">
+              <SolidColor colorValue="FF9A7956" id="60:417" />
+            </Fill>
+            <Stroke thickness="3.8" cap="round" join="round" id="60:418">
+              <SolidColor colorValue="FF24241B" id="60:419" />
+            </Stroke>
+          </Shape>
+        </Node>
+        <Node name="Camp pelvis" id="60:102" opacity="1">
+          <Shape name="Camp hip fabric" id="60:420">
+            <PointsPath isClosed="true" isClockwise="true" id="60:421">
+              <CubicDetachedVertex x="-98.0" y="-26.0" inRotation="0.0" inDistance="0.0" outRotation="0.18164883000001195" outDistance="66.4262331044328" id="60:422" />
+              <CubicDetachedVertex x="98.0" y="-26.0" inRotation="2.9599438235897813" inDistance="66.4262331044328" outRotation="0.0" outDistance="0.0" id="60:423" />
+              <CubicDetachedVertex x="93.0" y="59.0" inRotation="0.0" inDistance="0.0" outRotation="2.65711472455277" outDistance="28.627880738111845" id="60:424" />
+              <CubicDetachedVertex x="0.0" y="66.0" inRotation="0.2321038380751558" inDistance="37.67698973585278" outRotation="2.9210988922231214" outDistance="39.626029604569545" id="60:425" />
+              <CubicDetachedVertex x="-96.0" y="59.0" inRotation="0.48447792903702314" inDistance="28.627880738111845" outRotation="0.0" outDistance="0.0" id="60:426" />
+            </PointsPath>
+            <Fill id="60:427">
+              <SolidColor colorValue="FF477B98" id="60:428" />
+            </Fill>
+            <Stroke thickness="3.8" cap="round" join="round" id="60:429">
+              <SolidColor colorValue="FF24241B" id="60:430" />
+            </Stroke>
+          </Shape>
+        </Node>
+        <Node name="Right hip" id="60:137" x="58" y="20">
+          <Node name="Right knee" id="60:134" y="158">
+            <Node name="Right ankle" id="60:133" y="158">
+              <Node name="Trail Right boot" id="60:132" opacity="0">
+                <Shape name="Trail Right sole" id="60:431">
+                  <PointsPath isClosed="false" isClockwise="true" id="60:432">
+                    <CubicDetachedVertex x="-31.0" y="84.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:433" />
+                    <CubicDetachedVertex x="59.0" y="84.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:434" />
+                  </PointsPath>
+                  <Stroke thickness="3.5" cap="round" join="round" id="60:435">
+                    <SolidColor colorValue="FF24241B" id="60:436" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Trail Right cuff" id="60:437">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:438">
+                    <CubicDetachedVertex x="-28.0" y="-13.0" inRotation="0.0" inDistance="0.0" outRotation="0.27829965900511133" outDistance="19.413626371414715" id="60:439" />
+                    <CubicDetachedVertex x="24.0" y="-13.0" inRotation="2.819842099193151" inDistance="16.865480854231357" outRotation="0.0" outDistance="0.0" id="60:440" />
+                    <CubicDetachedVertex x="25.0" y="11.0" inRotation="0.0" inDistance="0.0" outRotation="2.796037073008081" outDistance="17.71377367411523" id="60:441" />
+                    <CubicDetachedVertex x="-29.0" y="9.0" inRotation="0.3625442372645076" inDistance="20.677416559027762" outRotation="0.0" outDistance="0.0" id="60:442" />
+                  </PointsPath>
+                  <Fill id="60:443">
+                    <SolidColor colorValue="FF94704B" id="60:444" />
+                  </Fill>
+                  <Stroke thickness="3" cap="round" join="round" id="60:445">
+                    <SolidColor colorValue="FF24241B" id="60:446" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Trail Right boot" id="60:447">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:448">
+                    <CubicDetachedVertex x="-25.0" y="-18.0" inRotation="0.0" inDistance="0.0" outRotation="0.29849893158617924" outDistance="18.135294011647257" id="60:449" />
+                    <CubicDetachedVertex x="24.0" y="-18.0" inRotation="2.8068558162729786" inDistance="16.234394215847892" outRotation="0.0" outDistance="0.0" id="60:450" />
+                    <CubicDetachedVertex x="26.0" y="55.0" inRotation="0.0" inDistance="0.0" outRotation="0.25877089196369757" outDistance="23.447340526758637" id="60:451" />
+                    <CubicDetachedVertex x="67.0" y="84.0" inRotation="-1.9074711461816238" inDistance="14.126413400278055" outRotation="1.2793395323170298" outDistance="6.960204339273704" id="60:452" />
+                    <CubicDetachedVertex x="55.0" y="94.0" inRotation="0.0" inDistance="10.0" outRotation="0.0" outDistance="0.0" id="60:453" />
+                    <CubicDetachedVertex x="-25.0" y="94.0" inRotation="0.0" inDistance="0.0" outRotation="-3.0584514217013514" outDistance="8.027729719194864" id="60:454" />
+                    <CubicDetachedVertex x="-35.0" y="78.0" inRotation="1.703347859091571" inDistance="10.088497300281038" outRotation="0.0" outDistance="0.0" id="60:455" />
+                    <CubicDetachedVertex x="-29.0" y="32.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:456" />
+                  </PointsPath>
+                  <Fill id="60:457">
+                    <SolidColor colorValue="FF705037" id="60:458" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="60:459">
+                    <SolidColor colorValue="FF24241B" id="60:460" />
+                  </Stroke>
+                </Shape>
+              </Node>
+              <Node name="Camp Right boot" id="60:131" opacity="1">
+                <Shape name="Right lower boot wrap" id="60:461">
+                  <PointsPath isClosed="false" isClockwise="true" id="60:462">
+                    <CubicDetachedVertex x="-28.0" y="42.0" inRotation="0.0" inDistance="0.0" outRotation="0.43467021514924464" outDistance="20.580465387244175" id="60:463" />
+                    <CubicDetachedVertex x="26.0" y="38.0" inRotation="2.5625183842220625" inDistance="20.70963275601209" outRotation="0.0" outDistance="0.0" id="60:464" />
+                  </PointsPath>
+                  <Stroke thickness="3" cap="round" join="round" id="60:465">
+                    <SolidColor colorValue="FF24241B" id="60:466" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Right upper boot wrap" id="60:467">
+                  <PointsPath isClosed="false" isClockwise="true" id="60:468">
+                    <CubicDetachedVertex x="-29.0" y="19.0" inRotation="0.0" inDistance="0.0" outRotation="0.5041659614791529" outDistance="22.080660215572255" id="60:469" />
+                    <CubicDetachedVertex x="25.0" y="18.0" inRotation="2.5444159954971157" inDistance="20.154955277107966" outRotation="0.0" outDistance="0.0" id="60:470" />
+                  </PointsPath>
+                  <Stroke thickness="3" cap="round" join="round" id="60:471">
+                    <SolidColor colorValue="FF24241B" id="60:472" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Right boot" id="60:473">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:474">
+                    <CubicDetachedVertex x="-25.0" y="-18.0" inRotation="0.0" inDistance="0.0" outRotation="0.29849893158617924" outDistance="18.135294011647257" id="60:475" />
+                    <CubicDetachedVertex x="24.0" y="-18.0" inRotation="2.8068558162729786" inDistance="16.234394215847892" outRotation="0.0" outDistance="0.0" id="60:476" />
+                    <CubicDetachedVertex x="26.0" y="55.0" inRotation="0.0" inDistance="0.0" outRotation="0.25877089196369757" outDistance="23.447340526758637" id="60:477" />
+                    <CubicDetachedVertex x="67.0" y="84.0" inRotation="-1.9074711461816238" inDistance="14.126413400278055" outRotation="1.2793395323170298" outDistance="6.960204339273704" id="60:478" />
+                    <CubicDetachedVertex x="55.0" y="94.0" inRotation="0.0" inDistance="10.0" outRotation="0.0" outDistance="0.0" id="60:479" />
+                    <CubicDetachedVertex x="-25.0" y="94.0" inRotation="0.0" inDistance="0.0" outRotation="-3.0584514217013514" outDistance="8.027729719194864" id="60:480" />
+                    <CubicDetachedVertex x="-35.0" y="78.0" inRotation="1.703347859091571" inDistance="10.088497300281038" outRotation="0.0" outDistance="0.0" id="60:481" />
+                    <CubicDetachedVertex x="-29.0" y="32.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:482" />
+                  </PointsPath>
+                  <Fill id="60:483">
+                    <SolidColor colorValue="FFC3C1A0" id="60:484" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="60:485">
+                    <SolidColor colorValue="FF24241B" id="60:486" />
+                  </Stroke>
+                </Shape>
+              </Node>
+            </Node>
+            <Node name="Trail Right shin" id="60:130" opacity="0">
+              <Shape name="Trail Right shin patch" id="60:487">
+                <PointsPath isClosed="true" isClockwise="true" id="60:488">
+                  <CubicDetachedVertex x="-16.0" y="35.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:489" />
+                  <CubicDetachedVertex x="16.0" y="35.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:490" />
+                  <CubicDetachedVertex x="15.0" y="78.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:491" />
+                  <CubicDetachedVertex x="-15.0" y="78.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:492" />
+                </PointsPath>
+                <Fill id="60:493">
+                  <SolidColor colorValue="FFA88A64" id="60:494" />
+                </Fill>
+                <Stroke thickness="2.6" cap="round" join="round" id="60:495">
+                  <SolidColor colorValue="FF24241B" id="60:496" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail Right shin" id="60:497">
+                <PointsPath isClosed="true" isClockwise="true" id="60:498">
+                  <CubicDetachedVertex x="-24.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.3947911196997616" outDistance="17.333333333333332" id="60:499" />
+                  <CubicDetachedVertex x="24.0" y="-12.0" inRotation="-2.746801533890032" inDistance="17.333333333333332" outRotation="0.0" outDistance="0.0" id="60:500" />
+                  <CubicDetachedVertex x="21.0" y="160.0" inRotation="0.0" inDistance="0.0" outRotation="2.5213431676069717" outDistance="17.204650534085253" id="60:501" />
+                  <CubicDetachedVertex x="-21.0" y="160.0" inRotation="0.6202494859828215" inDistance="17.204650534085253" outRotation="0.0" outDistance="0.0" id="60:502" />
+                </PointsPath>
+                <Fill id="60:503">
+                  <SolidColor colorValue="FF9A7956" id="60:504" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:505">
+                  <SolidColor colorValue="FF24241B" id="60:506" />
+                </Stroke>
+              </Shape>
+            </Node>
+            <Node name="Camp Right shin" id="60:129" opacity="1">
+              <Shape name="Right shin" id="60:507">
+                <PointsPath isClosed="true" isClockwise="true" id="60:508">
+                  <CubicDetachedVertex x="-24.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.3947911196997616" outDistance="17.333333333333332" id="60:509" />
+                  <CubicDetachedVertex x="24.0" y="-12.0" inRotation="-2.746801533890032" inDistance="17.333333333333332" outRotation="0.0" outDistance="0.0" id="60:510" />
+                  <CubicDetachedVertex x="21.0" y="160.0" inRotation="0.0" inDistance="0.0" outRotation="2.5213431676069717" outDistance="17.204650534085253" id="60:511" />
+                  <CubicDetachedVertex x="-21.0" y="160.0" inRotation="0.6202494859828215" inDistance="17.204650534085253" outRotation="0.0" outDistance="0.0" id="60:512" />
+                </PointsPath>
+                <Fill id="60:513">
+                  <SolidColor colorValue="FF477B98" id="60:514" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:515">
+                  <SolidColor colorValue="FF24241B" id="60:516" />
+                </Stroke>
+              </Shape>
+            </Node>
+          </Node>
+          <Node name="Trail Right thigh" id="60:136" opacity="0">
+            <Shape name="Trail Right thigh" id="60:517">
+              <PointsPath isClosed="true" isClockwise="true" id="60:518">
+                <CubicDetachedVertex x="-29.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.33205946754288557" outDistance="20.45048220023729" id="60:519" />
+                <CubicDetachedVertex x="29.0" y="-12.0" inRotation="-2.8095331860469077" inDistance="20.45048220023729" outRotation="0.0" outDistance="0.0" id="60:520" />
+                <CubicDetachedVertex x="26.0" y="162.0" inRotation="0.0" inDistance="0.0" outRotation="2.618314331457818" outDistance="20.011108026404845" id="60:521" />
+                <CubicDetachedVertex x="-26.0" y="162.0" inRotation="0.5232783221319756" inDistance="20.011108026404845" outRotation="0.0" outDistance="0.0" id="60:522" />
+              </PointsPath>
+              <Fill id="60:523">
+                <SolidColor colorValue="FF9A7956" id="60:524" />
+              </Fill>
+              <Stroke thickness="3.8" cap="round" join="round" id="60:525">
+                <SolidColor colorValue="FF24241B" id="60:526" />
+              </Stroke>
+            </Shape>
+          </Node>
+          <Node name="Camp Right thigh" id="60:135" opacity="1">
+            <Shape name="Right thigh" id="60:527">
+              <PointsPath isClosed="true" isClockwise="true" id="60:528">
+                <CubicDetachedVertex x="-29.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.33205946754288557" outDistance="20.45048220023729" id="60:529" />
+                <CubicDetachedVertex x="29.0" y="-12.0" inRotation="-2.8095331860469077" inDistance="20.45048220023729" outRotation="0.0" outDistance="0.0" id="60:530" />
+                <CubicDetachedVertex x="26.0" y="162.0" inRotation="0.0" inDistance="0.0" outRotation="2.618314331457818" outDistance="20.011108026404845" id="60:531" />
+                <CubicDetachedVertex x="-26.0" y="162.0" inRotation="0.5232783221319756" inDistance="20.011108026404845" outRotation="0.0" outDistance="0.0" id="60:532" />
+              </PointsPath>
+              <Fill id="60:533">
+                <SolidColor colorValue="FF477B98" id="60:534" />
+              </Fill>
+              <Stroke thickness="3.8" cap="round" join="round" id="60:535">
+                <SolidColor colorValue="FF24241B" id="60:536" />
+              </Stroke>
+            </Shape>
+          </Node>
+        </Node>
+        <Node name="Left hip" id="60:128" x="-58" y="20">
+          <Node name="Left knee" id="60:125" y="158">
+            <Node name="Left ankle" id="60:124" y="158">
+              <Node name="Trail Left boot" id="60:123" opacity="0">
+                <Shape name="Trail Left sole" id="60:537">
+                  <PointsPath isClosed="false" isClockwise="true" id="60:538">
+                    <CubicDetachedVertex x="-31.0" y="84.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:539" />
+                    <CubicDetachedVertex x="59.0" y="84.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:540" />
+                  </PointsPath>
+                  <Stroke thickness="3.5" cap="round" join="round" id="60:541">
+                    <SolidColor colorValue="FF24241B" id="60:542" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Trail Left cuff" id="60:543">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:544">
+                    <CubicDetachedVertex x="-28.0" y="-13.0" inRotation="0.0" inDistance="0.0" outRotation="0.27829965900511133" outDistance="19.413626371414715" id="60:545" />
+                    <CubicDetachedVertex x="24.0" y="-13.0" inRotation="2.819842099193151" inDistance="16.865480854231357" outRotation="0.0" outDistance="0.0" id="60:546" />
+                    <CubicDetachedVertex x="25.0" y="11.0" inRotation="0.0" inDistance="0.0" outRotation="2.796037073008081" outDistance="17.71377367411523" id="60:547" />
+                    <CubicDetachedVertex x="-29.0" y="9.0" inRotation="0.3625442372645076" inDistance="20.677416559027762" outRotation="0.0" outDistance="0.0" id="60:548" />
+                  </PointsPath>
+                  <Fill id="60:549">
+                    <SolidColor colorValue="FF94704B" id="60:550" />
+                  </Fill>
+                  <Stroke thickness="3" cap="round" join="round" id="60:551">
+                    <SolidColor colorValue="FF24241B" id="60:552" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Trail Left boot" id="60:553">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:554">
+                    <CubicDetachedVertex x="-25.0" y="-18.0" inRotation="0.0" inDistance="0.0" outRotation="0.29849893158617924" outDistance="18.135294011647257" id="60:555" />
+                    <CubicDetachedVertex x="24.0" y="-18.0" inRotation="2.8068558162729786" inDistance="16.234394215847892" outRotation="0.0" outDistance="0.0" id="60:556" />
+                    <CubicDetachedVertex x="26.0" y="55.0" inRotation="0.0" inDistance="0.0" outRotation="0.25877089196369757" outDistance="23.447340526758637" id="60:557" />
+                    <CubicDetachedVertex x="67.0" y="84.0" inRotation="-1.9074711461816238" inDistance="14.126413400278055" outRotation="1.2793395323170298" outDistance="6.960204339273704" id="60:558" />
+                    <CubicDetachedVertex x="55.0" y="94.0" inRotation="0.0" inDistance="10.0" outRotation="0.0" outDistance="0.0" id="60:559" />
+                    <CubicDetachedVertex x="-25.0" y="94.0" inRotation="0.0" inDistance="0.0" outRotation="-3.0584514217013514" outDistance="8.027729719194864" id="60:560" />
+                    <CubicDetachedVertex x="-35.0" y="78.0" inRotation="1.703347859091571" inDistance="10.088497300281038" outRotation="0.0" outDistance="0.0" id="60:561" />
+                    <CubicDetachedVertex x="-29.0" y="32.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:562" />
+                  </PointsPath>
+                  <Fill id="60:563">
+                    <SolidColor colorValue="FF705037" id="60:564" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="60:565">
+                    <SolidColor colorValue="FF24241B" id="60:566" />
+                  </Stroke>
+                </Shape>
+              </Node>
+              <Node name="Camp Left boot" id="60:122" opacity="1">
+                <Shape name="Left lower boot wrap" id="60:567">
+                  <PointsPath isClosed="false" isClockwise="true" id="60:568">
+                    <CubicDetachedVertex x="-28.0" y="42.0" inRotation="0.0" inDistance="0.0" outRotation="0.43467021514924464" outDistance="20.580465387244175" id="60:569" />
+                    <CubicDetachedVertex x="26.0" y="38.0" inRotation="2.5625183842220625" inDistance="20.70963275601209" outRotation="0.0" outDistance="0.0" id="60:570" />
+                  </PointsPath>
+                  <Stroke thickness="3" cap="round" join="round" id="60:571">
+                    <SolidColor colorValue="FF24241B" id="60:572" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Left upper boot wrap" id="60:573">
+                  <PointsPath isClosed="false" isClockwise="true" id="60:574">
+                    <CubicDetachedVertex x="-29.0" y="19.0" inRotation="0.0" inDistance="0.0" outRotation="0.5041659614791529" outDistance="22.080660215572255" id="60:575" />
+                    <CubicDetachedVertex x="25.0" y="18.0" inRotation="2.5444159954971157" inDistance="20.154955277107966" outRotation="0.0" outDistance="0.0" id="60:576" />
+                  </PointsPath>
+                  <Stroke thickness="3" cap="round" join="round" id="60:577">
+                    <SolidColor colorValue="FF24241B" id="60:578" />
+                  </Stroke>
+                </Shape>
+                <Shape name="Left boot" id="60:579">
+                  <PointsPath isClosed="true" isClockwise="true" id="60:580">
+                    <CubicDetachedVertex x="-25.0" y="-18.0" inRotation="0.0" inDistance="0.0" outRotation="0.29849893158617924" outDistance="18.135294011647257" id="60:581" />
+                    <CubicDetachedVertex x="24.0" y="-18.0" inRotation="2.8068558162729786" inDistance="16.234394215847892" outRotation="0.0" outDistance="0.0" id="60:582" />
+                    <CubicDetachedVertex x="26.0" y="55.0" inRotation="0.0" inDistance="0.0" outRotation="0.25877089196369757" outDistance="23.447340526758637" id="60:583" />
+                    <CubicDetachedVertex x="67.0" y="84.0" inRotation="-1.9074711461816238" inDistance="14.126413400278055" outRotation="1.2793395323170298" outDistance="6.960204339273704" id="60:584" />
+                    <CubicDetachedVertex x="55.0" y="94.0" inRotation="0.0" inDistance="10.0" outRotation="0.0" outDistance="0.0" id="60:585" />
+                    <CubicDetachedVertex x="-25.0" y="94.0" inRotation="0.0" inDistance="0.0" outRotation="-3.0584514217013514" outDistance="8.027729719194864" id="60:586" />
+                    <CubicDetachedVertex x="-35.0" y="78.0" inRotation="1.703347859091571" inDistance="10.088497300281038" outRotation="0.0" outDistance="0.0" id="60:587" />
+                    <CubicDetachedVertex x="-29.0" y="32.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:588" />
+                  </PointsPath>
+                  <Fill id="60:589">
+                    <SolidColor colorValue="FFC3C1A0" id="60:590" />
+                  </Fill>
+                  <Stroke thickness="3.8" cap="round" join="round" id="60:591">
+                    <SolidColor colorValue="FF24241B" id="60:592" />
+                  </Stroke>
+                </Shape>
+              </Node>
+            </Node>
+            <Node name="Trail Left shin" id="60:121" opacity="0">
+              <Shape name="Trail Left shin patch" id="60:593">
+                <PointsPath isClosed="true" isClockwise="true" id="60:594">
+                  <CubicDetachedVertex x="-16.0" y="35.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:595" />
+                  <CubicDetachedVertex x="16.0" y="35.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:596" />
+                  <CubicDetachedVertex x="15.0" y="78.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:597" />
+                  <CubicDetachedVertex x="-15.0" y="78.0" inRotation="0.0" inDistance="0.0" outRotation="0.0" outDistance="0.0" id="60:598" />
+                </PointsPath>
+                <Fill id="60:599">
+                  <SolidColor colorValue="FFA88A64" id="60:600" />
+                </Fill>
+                <Stroke thickness="2.6" cap="round" join="round" id="60:601">
+                  <SolidColor colorValue="FF24241B" id="60:602" />
+                </Stroke>
+              </Shape>
+              <Shape name="Trail Left shin" id="60:603">
+                <PointsPath isClosed="true" isClockwise="true" id="60:604">
+                  <CubicDetachedVertex x="-24.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.3947911196997616" outDistance="17.333333333333332" id="60:605" />
+                  <CubicDetachedVertex x="24.0" y="-12.0" inRotation="-2.746801533890032" inDistance="17.333333333333332" outRotation="0.0" outDistance="0.0" id="60:606" />
+                  <CubicDetachedVertex x="21.0" y="160.0" inRotation="0.0" inDistance="0.0" outRotation="2.5213431676069717" outDistance="17.204650534085253" id="60:607" />
+                  <CubicDetachedVertex x="-21.0" y="160.0" inRotation="0.6202494859828215" inDistance="17.204650534085253" outRotation="0.0" outDistance="0.0" id="60:608" />
+                </PointsPath>
+                <Fill id="60:609">
+                  <SolidColor colorValue="FF9A7956" id="60:610" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:611">
+                  <SolidColor colorValue="FF24241B" id="60:612" />
+                </Stroke>
+              </Shape>
+            </Node>
+            <Node name="Camp Left shin" id="60:120" opacity="1">
+              <Shape name="Left shin" id="60:613">
+                <PointsPath isClosed="true" isClockwise="true" id="60:614">
+                  <CubicDetachedVertex x="-24.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.3947911196997616" outDistance="17.333333333333332" id="60:615" />
+                  <CubicDetachedVertex x="24.0" y="-12.0" inRotation="-2.746801533890032" inDistance="17.333333333333332" outRotation="0.0" outDistance="0.0" id="60:616" />
+                  <CubicDetachedVertex x="21.0" y="160.0" inRotation="0.0" inDistance="0.0" outRotation="2.5213431676069717" outDistance="17.204650534085253" id="60:617" />
+                  <CubicDetachedVertex x="-21.0" y="160.0" inRotation="0.6202494859828215" inDistance="17.204650534085253" outRotation="0.0" outDistance="0.0" id="60:618" />
+                </PointsPath>
+                <Fill id="60:619">
+                  <SolidColor colorValue="FF477B98" id="60:620" />
+                </Fill>
+                <Stroke thickness="3.8" cap="round" join="round" id="60:621">
+                  <SolidColor colorValue="FF24241B" id="60:622" />
+                </Stroke>
+              </Shape>
+            </Node>
+          </Node>
+          <Node name="Trail Left thigh" id="60:127" opacity="0">
+            <Shape name="Trail Left thigh" id="60:623">
+              <PointsPath isClosed="true" isClockwise="true" id="60:624">
+                <CubicDetachedVertex x="-29.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.33205946754288557" outDistance="20.45048220023729" id="60:625" />
+                <CubicDetachedVertex x="29.0" y="-12.0" inRotation="-2.8095331860469077" inDistance="20.45048220023729" outRotation="0.0" outDistance="0.0" id="60:626" />
+                <CubicDetachedVertex x="26.0" y="162.0" inRotation="0.0" inDistance="0.0" outRotation="2.618314331457818" outDistance="20.011108026404845" id="60:627" />
+                <CubicDetachedVertex x="-26.0" y="162.0" inRotation="0.5232783221319756" inDistance="20.011108026404845" outRotation="0.0" outDistance="0.0" id="60:628" />
+              </PointsPath>
+              <Fill id="60:629">
+                <SolidColor colorValue="FF9A7956" id="60:630" />
+              </Fill>
+              <Stroke thickness="3.8" cap="round" join="round" id="60:631">
+                <SolidColor colorValue="FF24241B" id="60:632" />
+              </Stroke>
+            </Shape>
+          </Node>
+          <Node name="Camp Left thigh" id="60:126" opacity="1">
+            <Shape name="Left thigh" id="60:633">
+              <PointsPath isClosed="true" isClockwise="true" id="60:634">
+                <CubicDetachedVertex x="-29.0" y="-12.0" inRotation="0.0" inDistance="0.0" outRotation="-0.33205946754288557" outDistance="20.45048220023729" id="60:635" />
+                <CubicDetachedVertex x="29.0" y="-12.0" inRotation="-2.8095331860469077" inDistance="20.45048220023729" outRotation="0.0" outDistance="0.0" id="60:636" />
+                <CubicDetachedVertex x="26.0" y="162.0" inRotation="0.0" inDistance="0.0" outRotation="2.618314331457818" outDistance="20.011108026404845" id="60:637" />
+                <CubicDetachedVertex x="-26.0" y="162.0" inRotation="0.5232783221319756" inDistance="20.011108026404845" outRotation="0.0" outDistance="0.0" id="60:638" />
+              </PointsPath>
+              <Fill id="60:639">
+                <SolidColor colorValue="FF477B98" id="60:640" />
+              </Fill>
+              <Stroke thickness="3.8" cap="round" join="round" id="60:641">
+                <SolidColor colorValue="FF24241B" id="60:642" />
+              </Stroke>
+            </Shape>
+          </Node>
+        </Node>
+      </Node>
+      <DataBindContext sourcePathIds="60:3-60:10" propertyKey="13" id="60:643" />
+      <DataBindContext sourcePathIds="60:3-60:11" propertyKey="14" id="60:644" />
+      <DataBindContext sourcePathIds="60:3-60:12" propertyKey="16" id="60:645" />
+    </Node>
+    <StateMachine name="HeroActions" id="60:2">
+      <StateMachineLayer name="Action" id="60:646">
+        <AnyState x="0" y="-180" id="60:647" />
+        <ExitState x="0" y="-360" id="60:648" />
+        <EntryState x="0" y="80" id="60:649">
+          <StateTransition stateToId="60:162" duration="0" id="60:650" />
+        </EntryState>
+        <AnimationState id="60:162" animationId="60:154" x="280" y="80">
+          <StateTransition stateToId="60:163" duration="220" id="60:651">
+            <TransitionViewModelCondition opValue="equal" id="60:652">
+              <TransitionPropertyViewModelComparator id="60:653">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:654" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:143" id="60:655" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="60:164" duration="220" id="60:656">
+            <TransitionViewModelCondition opValue="equal" id="60:657">
+              <TransitionPropertyViewModelComparator id="60:658">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:659" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:144" id="60:660" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="60:165" duration="220" id="60:661">
+            <TransitionViewModelCondition opValue="equal" id="60:662">
+              <TransitionPropertyViewModelComparator id="60:663">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:664" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:145" id="60:665" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+        <AnimationState id="60:163" animationId="60:155" x="560" y="80">
+          <StateTransition stateToId="60:162" duration="220" id="60:666">
+            <TransitionViewModelCondition opValue="equal" id="60:667">
+              <TransitionPropertyViewModelComparator id="60:668">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:669" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:142" id="60:670" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="60:164" duration="220" id="60:671">
+            <TransitionViewModelCondition opValue="equal" id="60:672">
+              <TransitionPropertyViewModelComparator id="60:673">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:674" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:144" id="60:675" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="60:165" duration="220" id="60:676">
+            <TransitionViewModelCondition opValue="equal" id="60:677">
+              <TransitionPropertyViewModelComparator id="60:678">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:679" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:145" id="60:680" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+        <AnimationState id="60:164" animationId="60:156" x="840" y="80">
+          <StateTransition stateToId="60:162" duration="220" id="60:681">
+            <TransitionViewModelCondition opValue="equal" id="60:682">
+              <TransitionPropertyViewModelComparator id="60:683">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:684" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:142" id="60:685" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="60:163" duration="220" id="60:686">
+            <TransitionViewModelCondition opValue="equal" id="60:687">
+              <TransitionPropertyViewModelComparator id="60:688">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:689" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:143" id="60:690" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="60:165" duration="220" id="60:691">
+            <TransitionViewModelCondition opValue="equal" id="60:692">
+              <TransitionPropertyViewModelComparator id="60:693">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:694" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:145" id="60:695" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+        <AnimationState id="60:165" animationId="60:157" x="1120" y="80">
+          <StateTransition stateToId="60:162" duration="220" id="60:696">
+            <TransitionViewModelCondition opValue="equal" id="60:697">
+              <TransitionPropertyViewModelComparator id="60:698">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:699" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:142" id="60:700" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="60:163" duration="220" id="60:701">
+            <TransitionViewModelCondition opValue="equal" id="60:702">
+              <TransitionPropertyViewModelComparator id="60:703">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:704" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:143" id="60:705" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="60:164" duration="220" id="60:706">
+            <TransitionViewModelCondition opValue="equal" id="60:707">
+              <TransitionPropertyViewModelComparator id="60:708">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:141" propertyKey="637" id="60:709" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:144" id="60:710" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+      </StateMachineLayer>
+      <StateMachineLayer name="Outfit" id="60:711">
+        <AnyState x="0" y="-180" id="60:712" />
+        <ExitState x="0" y="-360" id="60:713" />
+        <EntryState x="0" y="80" id="60:714">
+          <StateTransition stateToId="60:166" duration="0" id="60:715" />
+        </EntryState>
+        <AnimationState id="60:166" animationId="60:158" x="280" y="80">
+          <StateTransition stateToId="60:167" duration="0" id="60:716">
+            <TransitionViewModelCondition opValue="equal" id="60:717">
+              <TransitionPropertyViewModelComparator id="60:718">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:147" propertyKey="637" id="60:719" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:149" id="60:720" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+        <AnimationState id="60:167" animationId="60:159" x="560" y="80">
+          <StateTransition stateToId="60:166" duration="0" id="60:721">
+            <TransitionViewModelCondition opValue="equal" id="60:722">
+              <TransitionPropertyViewModelComparator id="60:723">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:147" propertyKey="637" id="60:724" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:148" id="60:725" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+      </StateMachineLayer>
+      <StateMachineLayer name="Prop" id="60:726">
+        <AnyState x="0" y="-180" id="60:727" />
+        <ExitState x="0" y="-360" id="60:728" />
+        <EntryState x="0" y="80" id="60:729">
+          <StateTransition stateToId="60:168" duration="0" id="60:730" />
+        </EntryState>
+        <AnimationState id="60:168" animationId="60:160" x="280" y="80">
+          <StateTransition stateToId="60:169" duration="0" id="60:731">
+            <TransitionViewModelCondition opValue="equal" id="60:732">
+              <TransitionPropertyViewModelComparator id="60:733">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:151" propertyKey="637" id="60:734" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:153" id="60:735" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+        <AnimationState id="60:169" animationId="60:161" x="560" y="80">
+          <StateTransition stateToId="60:168" duration="0" id="60:736">
+            <TransitionViewModelCondition opValue="equal" id="60:737">
+              <TransitionPropertyViewModelComparator id="60:738">
+                <BindablePropertyEnum>
+                  <DataBindContext sourcePathIds="60:3-60:151" propertyKey="637" id="60:739" />
+                </BindablePropertyEnum>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueEnumComparator value="60:152" id="60:740" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+      </StateMachineLayer>
+    </StateMachine>
+    <LinearAnimation name="Idle" id="60:154" fps="60" duration="180" loopValue="loop">
+      <KeyedObject objectId="60:138" id="60:741">
+        <KeyedProperty property="y" id="60:742">
+          <KeyFrameDouble frame="0" value="-398" id="60:743" />
+          <KeyFrameDouble frame="180" value="-398" id="60:744" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:138" id="60:745">
+        <KeyedProperty property="rotation" id="60:746">
+          <KeyFrameDouble frame="0" value="0" id="60:747" />
+          <KeyFrameDouble frame="180" value="0" id="60:748" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:119" id="60:749">
+        <KeyedProperty property="y" id="60:750">
+          <KeyFrameDouble frame="0" value="0.0" id="60:751" />
+          <KeyFrameDouble frame="3" value="-0.209057" id="60:752" />
+          <KeyFrameDouble frame="6" value="-0.415823" id="60:753" />
+          <KeyFrameDouble frame="9" value="-0.618034" id="60:754" />
+          <KeyFrameDouble frame="12" value="-0.813473" id="60:755" />
+          <KeyFrameDouble frame="15" value="-1.0" id="60:756" />
+          <KeyFrameDouble frame="18" value="-1.175571" id="60:757" />
+          <KeyFrameDouble frame="21" value="-1.338261" id="60:758" />
+          <KeyFrameDouble frame="24" value="-1.48629" id="60:759" />
+          <KeyFrameDouble frame="27" value="-1.618034" id="60:760" />
+          <KeyFrameDouble frame="30" value="-1.732051" id="60:761" />
+          <KeyFrameDouble frame="33" value="-1.827091" id="60:762" />
+          <KeyFrameDouble frame="36" value="-1.902113" id="60:763" />
+          <KeyFrameDouble frame="39" value="-1.956295" id="60:764" />
+          <KeyFrameDouble frame="42" value="-1.989044" id="60:765" />
+          <KeyFrameDouble frame="45" value="-2.0" id="60:766" />
+          <KeyFrameDouble frame="48" value="-1.989044" id="60:767" />
+          <KeyFrameDouble frame="51" value="-1.956295" id="60:768" />
+          <KeyFrameDouble frame="54" value="-1.902113" id="60:769" />
+          <KeyFrameDouble frame="57" value="-1.827091" id="60:770" />
+          <KeyFrameDouble frame="60" value="-1.732051" id="60:771" />
+          <KeyFrameDouble frame="63" value="-1.618034" id="60:772" />
+          <KeyFrameDouble frame="66" value="-1.48629" id="60:773" />
+          <KeyFrameDouble frame="69" value="-1.338261" id="60:774" />
+          <KeyFrameDouble frame="72" value="-1.175571" id="60:775" />
+          <KeyFrameDouble frame="75" value="-1.0" id="60:776" />
+          <KeyFrameDouble frame="78" value="-0.813473" id="60:777" />
+          <KeyFrameDouble frame="81" value="-0.618034" id="60:778" />
+          <KeyFrameDouble frame="84" value="-0.415823" id="60:779" />
+          <KeyFrameDouble frame="87" value="-0.209057" id="60:780" />
+          <KeyFrameDouble frame="90" value="-0.0" id="60:781" />
+          <KeyFrameDouble frame="93" value="0.209057" id="60:782" />
+          <KeyFrameDouble frame="96" value="0.415823" id="60:783" />
+          <KeyFrameDouble frame="99" value="0.618034" id="60:784" />
+          <KeyFrameDouble frame="102" value="0.813473" id="60:785" />
+          <KeyFrameDouble frame="105" value="1.0" id="60:786" />
+          <KeyFrameDouble frame="108" value="1.175571" id="60:787" />
+          <KeyFrameDouble frame="111" value="1.338261" id="60:788" />
+          <KeyFrameDouble frame="114" value="1.48629" id="60:789" />
+          <KeyFrameDouble frame="117" value="1.618034" id="60:790" />
+          <KeyFrameDouble frame="120" value="1.732051" id="60:791" />
+          <KeyFrameDouble frame="123" value="1.827091" id="60:792" />
+          <KeyFrameDouble frame="126" value="1.902113" id="60:793" />
+          <KeyFrameDouble frame="129" value="1.956295" id="60:794" />
+          <KeyFrameDouble frame="132" value="1.989044" id="60:795" />
+          <KeyFrameDouble frame="135" value="2.0" id="60:796" />
+          <KeyFrameDouble frame="138" value="1.989044" id="60:797" />
+          <KeyFrameDouble frame="141" value="1.956295" id="60:798" />
+          <KeyFrameDouble frame="144" value="1.902113" id="60:799" />
+          <KeyFrameDouble frame="147" value="1.827091" id="60:800" />
+          <KeyFrameDouble frame="150" value="1.732051" id="60:801" />
+          <KeyFrameDouble frame="153" value="1.618034" id="60:802" />
+          <KeyFrameDouble frame="156" value="1.48629" id="60:803" />
+          <KeyFrameDouble frame="159" value="1.338261" id="60:804" />
+          <KeyFrameDouble frame="162" value="1.175571" id="60:805" />
+          <KeyFrameDouble frame="165" value="1.0" id="60:806" />
+          <KeyFrameDouble frame="168" value="0.813473" id="60:807" />
+          <KeyFrameDouble frame="171" value="0.618034" id="60:808" />
+          <KeyFrameDouble frame="174" value="0.415823" id="60:809" />
+          <KeyFrameDouble frame="177" value="0.209057" id="60:810" />
+          <KeyFrameDouble frame="180" value="0.0" id="60:811" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:119" id="60:812">
+        <KeyedProperty property="rotation" id="60:813">
+          <KeyFrameDouble frame="0" value="0" id="60:814" />
+          <KeyFrameDouble frame="180" value="0" id="60:815" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:128" id="60:816">
+        <KeyedProperty property="rotation" id="60:817">
+          <KeyFrameDouble frame="0" value="0.05" id="60:818" />
+          <KeyFrameDouble frame="180" value="0.05" id="60:819" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:137" id="60:820">
+        <KeyedProperty property="rotation" id="60:821">
+          <KeyFrameDouble frame="0" value="-0.05" id="60:822" />
+          <KeyFrameDouble frame="180" value="-0.05" id="60:823" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:125" id="60:824">
+        <KeyedProperty property="rotation" id="60:825">
+          <KeyFrameDouble frame="0" value="0" id="60:826" />
+          <KeyFrameDouble frame="180" value="0" id="60:827" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:134" id="60:828">
+        <KeyedProperty property="rotation" id="60:829">
+          <KeyFrameDouble frame="0" value="0" id="60:830" />
+          <KeyFrameDouble frame="180" value="0" id="60:831" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:124" id="60:832">
+        <KeyedProperty property="rotation" id="60:833">
+          <KeyFrameDouble frame="0" value="0" id="60:834" />
+          <KeyFrameDouble frame="180" value="0" id="60:835" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:133" id="60:836">
+        <KeyedProperty property="rotation" id="60:837">
+          <KeyFrameDouble frame="0" value="0" id="60:838" />
+          <KeyFrameDouble frame="180" value="0" id="60:839" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:110" id="60:840">
+        <KeyedProperty property="rotation" id="60:841">
+          <KeyFrameDouble frame="0" value="0.18" id="60:842" />
+          <KeyFrameDouble frame="180" value="0.18" id="60:843" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:118" id="60:844">
+        <KeyedProperty property="rotation" id="60:845">
+          <KeyFrameDouble frame="0" value="-0.18" id="60:846" />
+          <KeyFrameDouble frame="180" value="-0.18" id="60:847" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:107" id="60:848">
+        <KeyedProperty property="rotation" id="60:849">
+          <KeyFrameDouble frame="0" value="-0.22" id="60:850" />
+          <KeyFrameDouble frame="180" value="-0.22" id="60:851" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:115" id="60:852">
+        <KeyedProperty property="rotation" id="60:853">
+          <KeyFrameDouble frame="0" value="0.22" id="60:854" />
+          <KeyFrameDouble frame="180" value="0.22" id="60:855" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:20" id="60:856">
+        <KeyedProperty property="rotation" id="60:857">
+          <KeyFrameDouble frame="0" value="0" id="60:858" />
+          <KeyFrameDouble frame="180" value="0" id="60:859" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:21" id="60:860">
+        <KeyedProperty property="scaleY" id="60:861">
+          <KeyFrameDouble frame="0" value="1" id="60:862" />
+          <KeyFrameDouble frame="165" value="1" id="60:863" />
+          <KeyFrameDouble frame="170" value="0.08" id="60:864" />
+          <KeyFrameDouble frame="175" value="1" id="60:865" />
+          <KeyFrameDouble frame="180" value="1" id="60:866" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:22" id="60:867">
+        <KeyedProperty property="scaleY" id="60:868">
+          <KeyFrameDouble frame="0" value="1" id="60:869" />
+          <KeyFrameDouble frame="165" value="1" id="60:870" />
+          <KeyFrameDouble frame="170" value="0.08" id="60:871" />
+          <KeyFrameDouble frame="175" value="1" id="60:872" />
+          <KeyFrameDouble frame="180" value="1" id="60:873" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+    <LinearAnimation name="Walk" id="60:155" fps="60" duration="48" loopValue="loop">
+      <KeyedObject objectId="60:138" id="60:874">
+        <KeyedProperty property="y" id="60:875">
+          <KeyFrameDouble frame="0" value="-398.0" id="60:876" />
+          <KeyFrameDouble frame="3" value="-401.535534" id="60:877" />
+          <KeyFrameDouble frame="6" value="-403.0" id="60:878" />
+          <KeyFrameDouble frame="9" value="-401.535534" id="60:879" />
+          <KeyFrameDouble frame="12" value="-398.0" id="60:880" />
+          <KeyFrameDouble frame="15" value="-394.464466" id="60:881" />
+          <KeyFrameDouble frame="18" value="-393.0" id="60:882" />
+          <KeyFrameDouble frame="21" value="-394.464466" id="60:883" />
+          <KeyFrameDouble frame="24" value="-398.0" id="60:884" />
+          <KeyFrameDouble frame="27" value="-401.535534" id="60:885" />
+          <KeyFrameDouble frame="30" value="-403.0" id="60:886" />
+          <KeyFrameDouble frame="33" value="-401.535534" id="60:887" />
+          <KeyFrameDouble frame="36" value="-398.0" id="60:888" />
+          <KeyFrameDouble frame="39" value="-394.464466" id="60:889" />
+          <KeyFrameDouble frame="42" value="-393.0" id="60:890" />
+          <KeyFrameDouble frame="45" value="-394.464466" id="60:891" />
+          <KeyFrameDouble frame="48" value="-398.0" id="60:892" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:138" id="60:893">
+        <KeyedProperty property="rotation" id="60:894">
+          <KeyFrameDouble frame="0" value="0" id="60:895" />
+          <KeyFrameDouble frame="48" value="0" id="60:896" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:119" id="60:897">
+        <KeyedProperty property="y" id="60:898">
+          <KeyFrameDouble frame="0" value="0.0" id="60:899" />
+          <KeyFrameDouble frame="3" value="-1.414214" id="60:900" />
+          <KeyFrameDouble frame="6" value="-2.0" id="60:901" />
+          <KeyFrameDouble frame="9" value="-1.414214" id="60:902" />
+          <KeyFrameDouble frame="12" value="-0.0" id="60:903" />
+          <KeyFrameDouble frame="15" value="1.414214" id="60:904" />
+          <KeyFrameDouble frame="18" value="2.0" id="60:905" />
+          <KeyFrameDouble frame="21" value="1.414214" id="60:906" />
+          <KeyFrameDouble frame="24" value="0.0" id="60:907" />
+          <KeyFrameDouble frame="27" value="-1.414214" id="60:908" />
+          <KeyFrameDouble frame="30" value="-2.0" id="60:909" />
+          <KeyFrameDouble frame="33" value="-1.414214" id="60:910" />
+          <KeyFrameDouble frame="36" value="-0.0" id="60:911" />
+          <KeyFrameDouble frame="39" value="1.414214" id="60:912" />
+          <KeyFrameDouble frame="42" value="2.0" id="60:913" />
+          <KeyFrameDouble frame="45" value="1.414214" id="60:914" />
+          <KeyFrameDouble frame="48" value="0.0" id="60:915" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:119" id="60:916">
+        <KeyedProperty property="rotation" id="60:917">
+          <KeyFrameDouble frame="0" value="0" id="60:918" />
+          <KeyFrameDouble frame="48" value="0" id="60:919" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:128" id="60:920">
+        <KeyedProperty property="rotation" id="60:921">
+          <KeyFrameDouble frame="0" value="0.05" id="60:922" />
+          <KeyFrameDouble frame="3" value="0.160978" id="60:923" />
+          <KeyFrameDouble frame="6" value="0.255061" id="60:924" />
+          <KeyFrameDouble frame="9" value="0.317925" id="60:925" />
+          <KeyFrameDouble frame="12" value="0.34" id="60:926" />
+          <KeyFrameDouble frame="15" value="0.317925" id="60:927" />
+          <KeyFrameDouble frame="18" value="0.255061" id="60:928" />
+          <KeyFrameDouble frame="21" value="0.160978" id="60:929" />
+          <KeyFrameDouble frame="24" value="0.05" id="60:930" />
+          <KeyFrameDouble frame="27" value="-0.060978" id="60:931" />
+          <KeyFrameDouble frame="30" value="-0.155061" id="60:932" />
+          <KeyFrameDouble frame="33" value="-0.217925" id="60:933" />
+          <KeyFrameDouble frame="36" value="-0.24" id="60:934" />
+          <KeyFrameDouble frame="39" value="-0.217925" id="60:935" />
+          <KeyFrameDouble frame="42" value="-0.155061" id="60:936" />
+          <KeyFrameDouble frame="45" value="-0.060978" id="60:937" />
+          <KeyFrameDouble frame="48" value="0.05" id="60:938" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:137" id="60:939">
+        <KeyedProperty property="rotation" id="60:940">
+          <KeyFrameDouble frame="0" value="-0.05" id="60:941" />
+          <KeyFrameDouble frame="3" value="-0.160978" id="60:942" />
+          <KeyFrameDouble frame="6" value="-0.255061" id="60:943" />
+          <KeyFrameDouble frame="9" value="-0.317925" id="60:944" />
+          <KeyFrameDouble frame="12" value="-0.34" id="60:945" />
+          <KeyFrameDouble frame="15" value="-0.317925" id="60:946" />
+          <KeyFrameDouble frame="18" value="-0.255061" id="60:947" />
+          <KeyFrameDouble frame="21" value="-0.160978" id="60:948" />
+          <KeyFrameDouble frame="24" value="-0.05" id="60:949" />
+          <KeyFrameDouble frame="27" value="0.060978" id="60:950" />
+          <KeyFrameDouble frame="30" value="0.155061" id="60:951" />
+          <KeyFrameDouble frame="33" value="0.217925" id="60:952" />
+          <KeyFrameDouble frame="36" value="0.24" id="60:953" />
+          <KeyFrameDouble frame="39" value="0.217925" id="60:954" />
+          <KeyFrameDouble frame="42" value="0.155061" id="60:955" />
+          <KeyFrameDouble frame="45" value="0.060978" id="60:956" />
+          <KeyFrameDouble frame="48" value="-0.05" id="60:957" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:125" id="60:958">
+        <KeyedProperty property="rotation" id="60:959">
+          <KeyFrameDouble frame="0" value="0.0" id="60:960" />
+          <KeyFrameDouble frame="3" value="0.08419" id="60:961" />
+          <KeyFrameDouble frame="6" value="0.155563" id="60:962" />
+          <KeyFrameDouble frame="9" value="0.203253" id="60:963" />
+          <KeyFrameDouble frame="12" value="0.22" id="60:964" />
+          <KeyFrameDouble frame="15" value="0.203253" id="60:965" />
+          <KeyFrameDouble frame="18" value="0.155563" id="60:966" />
+          <KeyFrameDouble frame="21" value="0.08419" id="60:967" />
+          <KeyFrameDouble frame="24" value="0.0" id="60:968" />
+          <KeyFrameDouble frame="27" value="0.0" id="60:969" />
+          <KeyFrameDouble frame="30" value="0.0" id="60:970" />
+          <KeyFrameDouble frame="33" value="0.0" id="60:971" />
+          <KeyFrameDouble frame="36" value="0.0" id="60:972" />
+          <KeyFrameDouble frame="39" value="0.0" id="60:973" />
+          <KeyFrameDouble frame="42" value="0.0" id="60:974" />
+          <KeyFrameDouble frame="45" value="0.0" id="60:975" />
+          <KeyFrameDouble frame="48" value="0.0" id="60:976" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:134" id="60:977">
+        <KeyedProperty property="rotation" id="60:978">
+          <KeyFrameDouble frame="0" value="0.0" id="60:979" />
+          <KeyFrameDouble frame="3" value="0.0" id="60:980" />
+          <KeyFrameDouble frame="6" value="0.0" id="60:981" />
+          <KeyFrameDouble frame="9" value="0.0" id="60:982" />
+          <KeyFrameDouble frame="12" value="0.0" id="60:983" />
+          <KeyFrameDouble frame="15" value="0.0" id="60:984" />
+          <KeyFrameDouble frame="18" value="0.0" id="60:985" />
+          <KeyFrameDouble frame="21" value="0.0" id="60:986" />
+          <KeyFrameDouble frame="24" value="0.0" id="60:987" />
+          <KeyFrameDouble frame="27" value="0.08419" id="60:988" />
+          <KeyFrameDouble frame="30" value="0.155563" id="60:989" />
+          <KeyFrameDouble frame="33" value="0.203253" id="60:990" />
+          <KeyFrameDouble frame="36" value="0.22" id="60:991" />
+          <KeyFrameDouble frame="39" value="0.203253" id="60:992" />
+          <KeyFrameDouble frame="42" value="0.155563" id="60:993" />
+          <KeyFrameDouble frame="45" value="0.08419" id="60:994" />
+          <KeyFrameDouble frame="48" value="0.0" id="60:995" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:124" id="60:996">
+        <KeyedProperty property="rotation" id="60:997">
+          <KeyFrameDouble frame="0" value="0" id="60:998" />
+          <KeyFrameDouble frame="48" value="0" id="60:999" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:133" id="60:1000">
+        <KeyedProperty property="rotation" id="60:1001">
+          <KeyFrameDouble frame="0" value="0" id="60:1002" />
+          <KeyFrameDouble frame="48" value="0" id="60:1003" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:110" id="60:1004">
+        <KeyedProperty property="rotation" id="60:1005">
+          <KeyFrameDouble frame="0" value="0.18" id="60:1006" />
+          <KeyFrameDouble frame="3" value="0.088156" id="60:1007" />
+          <KeyFrameDouble frame="6" value="0.010294" id="60:1008" />
+          <KeyFrameDouble frame="9" value="-0.041731" id="60:1009" />
+          <KeyFrameDouble frame="12" value="-0.06" id="60:1010" />
+          <KeyFrameDouble frame="15" value="-0.041731" id="60:1011" />
+          <KeyFrameDouble frame="18" value="0.010294" id="60:1012" />
+          <KeyFrameDouble frame="21" value="0.088156" id="60:1013" />
+          <KeyFrameDouble frame="24" value="0.18" id="60:1014" />
+          <KeyFrameDouble frame="27" value="0.271844" id="60:1015" />
+          <KeyFrameDouble frame="30" value="0.349706" id="60:1016" />
+          <KeyFrameDouble frame="33" value="0.401731" id="60:1017" />
+          <KeyFrameDouble frame="36" value="0.42" id="60:1018" />
+          <KeyFrameDouble frame="39" value="0.401731" id="60:1019" />
+          <KeyFrameDouble frame="42" value="0.349706" id="60:1020" />
+          <KeyFrameDouble frame="45" value="0.271844" id="60:1021" />
+          <KeyFrameDouble frame="48" value="0.18" id="60:1022" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:118" id="60:1023">
+        <KeyedProperty property="rotation" id="60:1024">
+          <KeyFrameDouble frame="0" value="-0.18" id="60:1025" />
+          <KeyFrameDouble frame="3" value="-0.088156" id="60:1026" />
+          <KeyFrameDouble frame="6" value="-0.010294" id="60:1027" />
+          <KeyFrameDouble frame="9" value="0.041731" id="60:1028" />
+          <KeyFrameDouble frame="12" value="0.06" id="60:1029" />
+          <KeyFrameDouble frame="15" value="0.041731" id="60:1030" />
+          <KeyFrameDouble frame="18" value="-0.010294" id="60:1031" />
+          <KeyFrameDouble frame="21" value="-0.088156" id="60:1032" />
+          <KeyFrameDouble frame="24" value="-0.18" id="60:1033" />
+          <KeyFrameDouble frame="27" value="-0.271844" id="60:1034" />
+          <KeyFrameDouble frame="30" value="-0.349706" id="60:1035" />
+          <KeyFrameDouble frame="33" value="-0.401731" id="60:1036" />
+          <KeyFrameDouble frame="36" value="-0.42" id="60:1037" />
+          <KeyFrameDouble frame="39" value="-0.401731" id="60:1038" />
+          <KeyFrameDouble frame="42" value="-0.349706" id="60:1039" />
+          <KeyFrameDouble frame="45" value="-0.271844" id="60:1040" />
+          <KeyFrameDouble frame="48" value="-0.18" id="60:1041" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:107" id="60:1042">
+        <KeyedProperty property="rotation" id="60:1043">
+          <KeyFrameDouble frame="0" value="-0.22" id="60:1044" />
+          <KeyFrameDouble frame="48" value="-0.22" id="60:1045" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:115" id="60:1046">
+        <KeyedProperty property="rotation" id="60:1047">
+          <KeyFrameDouble frame="0" value="0.22" id="60:1048" />
+          <KeyFrameDouble frame="48" value="0.22" id="60:1049" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:20" id="60:1050">
+        <KeyedProperty property="rotation" id="60:1051">
+          <KeyFrameDouble frame="0" value="0" id="60:1052" />
+          <KeyFrameDouble frame="48" value="0" id="60:1053" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:21" id="60:1054">
+        <KeyedProperty property="scaleY" id="60:1055">
+          <KeyFrameDouble frame="0" value="1" id="60:1056" />
+          <KeyFrameDouble frame="33" value="1" id="60:1057" />
+          <KeyFrameDouble frame="38" value="0.08" id="60:1058" />
+          <KeyFrameDouble frame="43" value="1" id="60:1059" />
+          <KeyFrameDouble frame="48" value="1" id="60:1060" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:22" id="60:1061">
+        <KeyedProperty property="scaleY" id="60:1062">
+          <KeyFrameDouble frame="0" value="1" id="60:1063" />
+          <KeyFrameDouble frame="33" value="1" id="60:1064" />
+          <KeyFrameDouble frame="38" value="0.08" id="60:1065" />
+          <KeyFrameDouble frame="43" value="1" id="60:1066" />
+          <KeyFrameDouble frame="48" value="1" id="60:1067" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+    <LinearAnimation name="Sit" id="60:156" fps="60" duration="180" loopValue="loop">
+      <KeyedObject objectId="60:138" id="60:1068">
+        <KeyedProperty property="y" id="60:1069">
+          <KeyFrameDouble frame="0" value="-292" id="60:1070" />
+          <KeyFrameDouble frame="180" value="-292" id="60:1071" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:138" id="60:1072">
+        <KeyedProperty property="rotation" id="60:1073">
+          <KeyFrameDouble frame="0" value="0" id="60:1074" />
+          <KeyFrameDouble frame="180" value="0" id="60:1075" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:119" id="60:1076">
+        <KeyedProperty property="y" id="60:1077">
+          <KeyFrameDouble frame="0" value="0.0" id="60:1078" />
+          <KeyFrameDouble frame="3" value="-0.209057" id="60:1079" />
+          <KeyFrameDouble frame="6" value="-0.415823" id="60:1080" />
+          <KeyFrameDouble frame="9" value="-0.618034" id="60:1081" />
+          <KeyFrameDouble frame="12" value="-0.813473" id="60:1082" />
+          <KeyFrameDouble frame="15" value="-1.0" id="60:1083" />
+          <KeyFrameDouble frame="18" value="-1.175571" id="60:1084" />
+          <KeyFrameDouble frame="21" value="-1.338261" id="60:1085" />
+          <KeyFrameDouble frame="24" value="-1.48629" id="60:1086" />
+          <KeyFrameDouble frame="27" value="-1.618034" id="60:1087" />
+          <KeyFrameDouble frame="30" value="-1.732051" id="60:1088" />
+          <KeyFrameDouble frame="33" value="-1.827091" id="60:1089" />
+          <KeyFrameDouble frame="36" value="-1.902113" id="60:1090" />
+          <KeyFrameDouble frame="39" value="-1.956295" id="60:1091" />
+          <KeyFrameDouble frame="42" value="-1.989044" id="60:1092" />
+          <KeyFrameDouble frame="45" value="-2.0" id="60:1093" />
+          <KeyFrameDouble frame="48" value="-1.989044" id="60:1094" />
+          <KeyFrameDouble frame="51" value="-1.956295" id="60:1095" />
+          <KeyFrameDouble frame="54" value="-1.902113" id="60:1096" />
+          <KeyFrameDouble frame="57" value="-1.827091" id="60:1097" />
+          <KeyFrameDouble frame="60" value="-1.732051" id="60:1098" />
+          <KeyFrameDouble frame="63" value="-1.618034" id="60:1099" />
+          <KeyFrameDouble frame="66" value="-1.48629" id="60:1100" />
+          <KeyFrameDouble frame="69" value="-1.338261" id="60:1101" />
+          <KeyFrameDouble frame="72" value="-1.175571" id="60:1102" />
+          <KeyFrameDouble frame="75" value="-1.0" id="60:1103" />
+          <KeyFrameDouble frame="78" value="-0.813473" id="60:1104" />
+          <KeyFrameDouble frame="81" value="-0.618034" id="60:1105" />
+          <KeyFrameDouble frame="84" value="-0.415823" id="60:1106" />
+          <KeyFrameDouble frame="87" value="-0.209057" id="60:1107" />
+          <KeyFrameDouble frame="90" value="-0.0" id="60:1108" />
+          <KeyFrameDouble frame="93" value="0.209057" id="60:1109" />
+          <KeyFrameDouble frame="96" value="0.415823" id="60:1110" />
+          <KeyFrameDouble frame="99" value="0.618034" id="60:1111" />
+          <KeyFrameDouble frame="102" value="0.813473" id="60:1112" />
+          <KeyFrameDouble frame="105" value="1.0" id="60:1113" />
+          <KeyFrameDouble frame="108" value="1.175571" id="60:1114" />
+          <KeyFrameDouble frame="111" value="1.338261" id="60:1115" />
+          <KeyFrameDouble frame="114" value="1.48629" id="60:1116" />
+          <KeyFrameDouble frame="117" value="1.618034" id="60:1117" />
+          <KeyFrameDouble frame="120" value="1.732051" id="60:1118" />
+          <KeyFrameDouble frame="123" value="1.827091" id="60:1119" />
+          <KeyFrameDouble frame="126" value="1.902113" id="60:1120" />
+          <KeyFrameDouble frame="129" value="1.956295" id="60:1121" />
+          <KeyFrameDouble frame="132" value="1.989044" id="60:1122" />
+          <KeyFrameDouble frame="135" value="2.0" id="60:1123" />
+          <KeyFrameDouble frame="138" value="1.989044" id="60:1124" />
+          <KeyFrameDouble frame="141" value="1.956295" id="60:1125" />
+          <KeyFrameDouble frame="144" value="1.902113" id="60:1126" />
+          <KeyFrameDouble frame="147" value="1.827091" id="60:1127" />
+          <KeyFrameDouble frame="150" value="1.732051" id="60:1128" />
+          <KeyFrameDouble frame="153" value="1.618034" id="60:1129" />
+          <KeyFrameDouble frame="156" value="1.48629" id="60:1130" />
+          <KeyFrameDouble frame="159" value="1.338261" id="60:1131" />
+          <KeyFrameDouble frame="162" value="1.175571" id="60:1132" />
+          <KeyFrameDouble frame="165" value="1.0" id="60:1133" />
+          <KeyFrameDouble frame="168" value="0.813473" id="60:1134" />
+          <KeyFrameDouble frame="171" value="0.618034" id="60:1135" />
+          <KeyFrameDouble frame="174" value="0.415823" id="60:1136" />
+          <KeyFrameDouble frame="177" value="0.209057" id="60:1137" />
+          <KeyFrameDouble frame="180" value="0.0" id="60:1138" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:119" id="60:1139">
+        <KeyedProperty property="rotation" id="60:1140">
+          <KeyFrameDouble frame="0" value="0" id="60:1141" />
+          <KeyFrameDouble frame="180" value="0" id="60:1142" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:128" id="60:1143">
+        <KeyedProperty property="rotation" id="60:1144">
+          <KeyFrameDouble frame="0" value="-1.22" id="60:1145" />
+          <KeyFrameDouble frame="180" value="-1.22" id="60:1146" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:137" id="60:1147">
+        <KeyedProperty property="rotation" id="60:1148">
+          <KeyFrameDouble frame="0" value="-1.1" id="60:1149" />
+          <KeyFrameDouble frame="180" value="-1.1" id="60:1150" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:125" id="60:1151">
+        <KeyedProperty property="rotation" id="60:1152">
+          <KeyFrameDouble frame="0" value="1.22" id="60:1153" />
+          <KeyFrameDouble frame="180" value="1.22" id="60:1154" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:134" id="60:1155">
+        <KeyedProperty property="rotation" id="60:1156">
+          <KeyFrameDouble frame="0" value="1.1" id="60:1157" />
+          <KeyFrameDouble frame="180" value="1.1" id="60:1158" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:124" id="60:1159">
+        <KeyedProperty property="rotation" id="60:1160">
+          <KeyFrameDouble frame="0" value="0" id="60:1161" />
+          <KeyFrameDouble frame="180" value="0" id="60:1162" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:133" id="60:1163">
+        <KeyedProperty property="rotation" id="60:1164">
+          <KeyFrameDouble frame="0" value="0" id="60:1165" />
+          <KeyFrameDouble frame="180" value="0" id="60:1166" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:110" id="60:1167">
+        <KeyedProperty property="rotation" id="60:1168">
+          <KeyFrameDouble frame="0" value="-0.1" id="60:1169" />
+          <KeyFrameDouble frame="180" value="-0.1" id="60:1170" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:118" id="60:1171">
+        <KeyedProperty property="rotation" id="60:1172">
+          <KeyFrameDouble frame="0" value="-0.42" id="60:1173" />
+          <KeyFrameDouble frame="180" value="-0.42" id="60:1174" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:107" id="60:1175">
+        <KeyedProperty property="rotation" id="60:1176">
+          <KeyFrameDouble frame="0" value="-0.65" id="60:1177" />
+          <KeyFrameDouble frame="180" value="-0.65" id="60:1178" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:115" id="60:1179">
+        <KeyedProperty property="rotation" id="60:1180">
+          <KeyFrameDouble frame="0" value="-0.92" id="60:1181" />
+          <KeyFrameDouble frame="180" value="-0.92" id="60:1182" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:20" id="60:1183">
+        <KeyedProperty property="rotation" id="60:1184">
+          <KeyFrameDouble frame="0" value="0" id="60:1185" />
+          <KeyFrameDouble frame="180" value="0" id="60:1186" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:21" id="60:1187">
+        <KeyedProperty property="scaleY" id="60:1188">
+          <KeyFrameDouble frame="0" value="1" id="60:1189" />
+          <KeyFrameDouble frame="165" value="1" id="60:1190" />
+          <KeyFrameDouble frame="170" value="0.08" id="60:1191" />
+          <KeyFrameDouble frame="175" value="1" id="60:1192" />
+          <KeyFrameDouble frame="180" value="1" id="60:1193" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:22" id="60:1194">
+        <KeyedProperty property="scaleY" id="60:1195">
+          <KeyFrameDouble frame="0" value="1" id="60:1196" />
+          <KeyFrameDouble frame="165" value="1" id="60:1197" />
+          <KeyFrameDouble frame="170" value="0.08" id="60:1198" />
+          <KeyFrameDouble frame="175" value="1" id="60:1199" />
+          <KeyFrameDouble frame="180" value="1" id="60:1200" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+    <LinearAnimation name="Reach" id="60:157" fps="60" duration="180" loopValue="loop">
+      <KeyedObject objectId="60:138" id="60:1201">
+        <KeyedProperty property="y" id="60:1202">
+          <KeyFrameDouble frame="0" value="-398" id="60:1203" />
+          <KeyFrameDouble frame="180" value="-398" id="60:1204" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:138" id="60:1205">
+        <KeyedProperty property="rotation" id="60:1206">
+          <KeyFrameDouble frame="0" value="0" id="60:1207" />
+          <KeyFrameDouble frame="180" value="0" id="60:1208" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:119" id="60:1209">
+        <KeyedProperty property="y" id="60:1210">
+          <KeyFrameDouble frame="0" value="0.0" id="60:1211" />
+          <KeyFrameDouble frame="3" value="-0.209057" id="60:1212" />
+          <KeyFrameDouble frame="6" value="-0.415823" id="60:1213" />
+          <KeyFrameDouble frame="9" value="-0.618034" id="60:1214" />
+          <KeyFrameDouble frame="12" value="-0.813473" id="60:1215" />
+          <KeyFrameDouble frame="15" value="-1.0" id="60:1216" />
+          <KeyFrameDouble frame="18" value="-1.175571" id="60:1217" />
+          <KeyFrameDouble frame="21" value="-1.338261" id="60:1218" />
+          <KeyFrameDouble frame="24" value="-1.48629" id="60:1219" />
+          <KeyFrameDouble frame="27" value="-1.618034" id="60:1220" />
+          <KeyFrameDouble frame="30" value="-1.732051" id="60:1221" />
+          <KeyFrameDouble frame="33" value="-1.827091" id="60:1222" />
+          <KeyFrameDouble frame="36" value="-1.902113" id="60:1223" />
+          <KeyFrameDouble frame="39" value="-1.956295" id="60:1224" />
+          <KeyFrameDouble frame="42" value="-1.989044" id="60:1225" />
+          <KeyFrameDouble frame="45" value="-2.0" id="60:1226" />
+          <KeyFrameDouble frame="48" value="-1.989044" id="60:1227" />
+          <KeyFrameDouble frame="51" value="-1.956295" id="60:1228" />
+          <KeyFrameDouble frame="54" value="-1.902113" id="60:1229" />
+          <KeyFrameDouble frame="57" value="-1.827091" id="60:1230" />
+          <KeyFrameDouble frame="60" value="-1.732051" id="60:1231" />
+          <KeyFrameDouble frame="63" value="-1.618034" id="60:1232" />
+          <KeyFrameDouble frame="66" value="-1.48629" id="60:1233" />
+          <KeyFrameDouble frame="69" value="-1.338261" id="60:1234" />
+          <KeyFrameDouble frame="72" value="-1.175571" id="60:1235" />
+          <KeyFrameDouble frame="75" value="-1.0" id="60:1236" />
+          <KeyFrameDouble frame="78" value="-0.813473" id="60:1237" />
+          <KeyFrameDouble frame="81" value="-0.618034" id="60:1238" />
+          <KeyFrameDouble frame="84" value="-0.415823" id="60:1239" />
+          <KeyFrameDouble frame="87" value="-0.209057" id="60:1240" />
+          <KeyFrameDouble frame="90" value="-0.0" id="60:1241" />
+          <KeyFrameDouble frame="93" value="0.209057" id="60:1242" />
+          <KeyFrameDouble frame="96" value="0.415823" id="60:1243" />
+          <KeyFrameDouble frame="99" value="0.618034" id="60:1244" />
+          <KeyFrameDouble frame="102" value="0.813473" id="60:1245" />
+          <KeyFrameDouble frame="105" value="1.0" id="60:1246" />
+          <KeyFrameDouble frame="108" value="1.175571" id="60:1247" />
+          <KeyFrameDouble frame="111" value="1.338261" id="60:1248" />
+          <KeyFrameDouble frame="114" value="1.48629" id="60:1249" />
+          <KeyFrameDouble frame="117" value="1.618034" id="60:1250" />
+          <KeyFrameDouble frame="120" value="1.732051" id="60:1251" />
+          <KeyFrameDouble frame="123" value="1.827091" id="60:1252" />
+          <KeyFrameDouble frame="126" value="1.902113" id="60:1253" />
+          <KeyFrameDouble frame="129" value="1.956295" id="60:1254" />
+          <KeyFrameDouble frame="132" value="1.989044" id="60:1255" />
+          <KeyFrameDouble frame="135" value="2.0" id="60:1256" />
+          <KeyFrameDouble frame="138" value="1.989044" id="60:1257" />
+          <KeyFrameDouble frame="141" value="1.956295" id="60:1258" />
+          <KeyFrameDouble frame="144" value="1.902113" id="60:1259" />
+          <KeyFrameDouble frame="147" value="1.827091" id="60:1260" />
+          <KeyFrameDouble frame="150" value="1.732051" id="60:1261" />
+          <KeyFrameDouble frame="153" value="1.618034" id="60:1262" />
+          <KeyFrameDouble frame="156" value="1.48629" id="60:1263" />
+          <KeyFrameDouble frame="159" value="1.338261" id="60:1264" />
+          <KeyFrameDouble frame="162" value="1.175571" id="60:1265" />
+          <KeyFrameDouble frame="165" value="1.0" id="60:1266" />
+          <KeyFrameDouble frame="168" value="0.813473" id="60:1267" />
+          <KeyFrameDouble frame="171" value="0.618034" id="60:1268" />
+          <KeyFrameDouble frame="174" value="0.415823" id="60:1269" />
+          <KeyFrameDouble frame="177" value="0.209057" id="60:1270" />
+          <KeyFrameDouble frame="180" value="0.0" id="60:1271" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:119" id="60:1272">
+        <KeyedProperty property="rotation" id="60:1273">
+          <KeyFrameDouble frame="0" value="-0.025" id="60:1274" />
+          <KeyFrameDouble frame="180" value="-0.025" id="60:1275" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:128" id="60:1276">
+        <KeyedProperty property="rotation" id="60:1277">
+          <KeyFrameDouble frame="0" value="0.05" id="60:1278" />
+          <KeyFrameDouble frame="180" value="0.05" id="60:1279" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:137" id="60:1280">
+        <KeyedProperty property="rotation" id="60:1281">
+          <KeyFrameDouble frame="0" value="-0.05" id="60:1282" />
+          <KeyFrameDouble frame="180" value="-0.05" id="60:1283" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:125" id="60:1284">
+        <KeyedProperty property="rotation" id="60:1285">
+          <KeyFrameDouble frame="0" value="0" id="60:1286" />
+          <KeyFrameDouble frame="180" value="0" id="60:1287" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:134" id="60:1288">
+        <KeyedProperty property="rotation" id="60:1289">
+          <KeyFrameDouble frame="0" value="0" id="60:1290" />
+          <KeyFrameDouble frame="180" value="0" id="60:1291" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:124" id="60:1292">
+        <KeyedProperty property="rotation" id="60:1293">
+          <KeyFrameDouble frame="0" value="0" id="60:1294" />
+          <KeyFrameDouble frame="180" value="0" id="60:1295" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:133" id="60:1296">
+        <KeyedProperty property="rotation" id="60:1297">
+          <KeyFrameDouble frame="0" value="0" id="60:1298" />
+          <KeyFrameDouble frame="180" value="0" id="60:1299" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:110" id="60:1300">
+        <KeyedProperty property="rotation" id="60:1301">
+          <KeyFrameDouble frame="0" value="0.18" id="60:1302" />
+          <KeyFrameDouble frame="180" value="0.18" id="60:1303" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:118" id="60:1304">
+        <KeyedProperty property="rotation" id="60:1305">
+          <KeyFrameDouble frame="0" value="-1.08" id="60:1306" />
+          <KeyFrameDouble frame="180" value="-1.08" id="60:1307" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:107" id="60:1308">
+        <KeyedProperty property="rotation" id="60:1309">
+          <KeyFrameDouble frame="0" value="-0.22" id="60:1310" />
+          <KeyFrameDouble frame="180" value="-0.22" id="60:1311" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:115" id="60:1312">
+        <KeyedProperty property="rotation" id="60:1313">
+          <KeyFrameDouble frame="0" value="-0.36" id="60:1314" />
+          <KeyFrameDouble frame="180" value="-0.36" id="60:1315" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:20" id="60:1316">
+        <KeyedProperty property="rotation" id="60:1317">
+          <KeyFrameDouble frame="0" value="-0.035" id="60:1318" />
+          <KeyFrameDouble frame="180" value="-0.035" id="60:1319" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:21" id="60:1320">
+        <KeyedProperty property="scaleY" id="60:1321">
+          <KeyFrameDouble frame="0" value="1" id="60:1322" />
+          <KeyFrameDouble frame="165" value="1" id="60:1323" />
+          <KeyFrameDouble frame="170" value="0.08" id="60:1324" />
+          <KeyFrameDouble frame="175" value="1" id="60:1325" />
+          <KeyFrameDouble frame="180" value="1" id="60:1326" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="5:22" id="60:1327">
+        <KeyedProperty property="scaleY" id="60:1328">
+          <KeyFrameDouble frame="0" value="1" id="60:1329" />
+          <KeyFrameDouble frame="165" value="1" id="60:1330" />
+          <KeyFrameDouble frame="170" value="0.08" id="60:1331" />
+          <KeyFrameDouble frame="175" value="1" id="60:1332" />
+          <KeyFrameDouble frame="180" value="1" id="60:1333" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+    <LinearAnimation name="Outfit camp" id="60:158" fps="60" duration="1" loopValue="loop">
+      <KeyedObject objectId="60:100" id="60:1334">
+        <KeyedProperty property="opacity" id="60:1335">
+          <KeyFrameDouble frame="0" value="1" id="60:1336" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:101" id="60:1337">
+        <KeyedProperty property="opacity" id="60:1338">
+          <KeyFrameDouble frame="0" value="0" id="60:1339" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:102" id="60:1340">
+        <KeyedProperty property="opacity" id="60:1341">
+          <KeyFrameDouble frame="0" value="1" id="60:1342" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:103" id="60:1343">
+        <KeyedProperty property="opacity" id="60:1344">
+          <KeyFrameDouble frame="0" value="0" id="60:1345" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:104" id="60:1346">
+        <KeyedProperty property="opacity" id="60:1347">
+          <KeyFrameDouble frame="0" value="1" id="60:1348" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:105" id="60:1349">
+        <KeyedProperty property="opacity" id="60:1350">
+          <KeyFrameDouble frame="0" value="0" id="60:1351" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:108" id="60:1352">
+        <KeyedProperty property="opacity" id="60:1353">
+          <KeyFrameDouble frame="0" value="1" id="60:1354" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:109" id="60:1355">
+        <KeyedProperty property="opacity" id="60:1356">
+          <KeyFrameDouble frame="0" value="0" id="60:1357" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:111" id="60:1358">
+        <KeyedProperty property="opacity" id="60:1359">
+          <KeyFrameDouble frame="0" value="1" id="60:1360" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:112" id="60:1361">
+        <KeyedProperty property="opacity" id="60:1362">
+          <KeyFrameDouble frame="0" value="0" id="60:1363" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:116" id="60:1364">
+        <KeyedProperty property="opacity" id="60:1365">
+          <KeyFrameDouble frame="0" value="1" id="60:1366" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:117" id="60:1367">
+        <KeyedProperty property="opacity" id="60:1368">
+          <KeyFrameDouble frame="0" value="0" id="60:1369" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:120" id="60:1370">
+        <KeyedProperty property="opacity" id="60:1371">
+          <KeyFrameDouble frame="0" value="1" id="60:1372" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:121" id="60:1373">
+        <KeyedProperty property="opacity" id="60:1374">
+          <KeyFrameDouble frame="0" value="0" id="60:1375" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:122" id="60:1376">
+        <KeyedProperty property="opacity" id="60:1377">
+          <KeyFrameDouble frame="0" value="1" id="60:1378" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:123" id="60:1379">
+        <KeyedProperty property="opacity" id="60:1380">
+          <KeyFrameDouble frame="0" value="0" id="60:1381" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:126" id="60:1382">
+        <KeyedProperty property="opacity" id="60:1383">
+          <KeyFrameDouble frame="0" value="1" id="60:1384" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:127" id="60:1385">
+        <KeyedProperty property="opacity" id="60:1386">
+          <KeyFrameDouble frame="0" value="0" id="60:1387" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:129" id="60:1388">
+        <KeyedProperty property="opacity" id="60:1389">
+          <KeyFrameDouble frame="0" value="1" id="60:1390" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:130" id="60:1391">
+        <KeyedProperty property="opacity" id="60:1392">
+          <KeyFrameDouble frame="0" value="0" id="60:1393" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:131" id="60:1394">
+        <KeyedProperty property="opacity" id="60:1395">
+          <KeyFrameDouble frame="0" value="1" id="60:1396" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:132" id="60:1397">
+        <KeyedProperty property="opacity" id="60:1398">
+          <KeyFrameDouble frame="0" value="0" id="60:1399" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:135" id="60:1400">
+        <KeyedProperty property="opacity" id="60:1401">
+          <KeyFrameDouble frame="0" value="1" id="60:1402" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:136" id="60:1403">
+        <KeyedProperty property="opacity" id="60:1404">
+          <KeyFrameDouble frame="0" value="0" id="60:1405" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+    <LinearAnimation name="Outfit trail" id="60:159" fps="60" duration="1" loopValue="loop">
+      <KeyedObject objectId="60:100" id="60:1406">
+        <KeyedProperty property="opacity" id="60:1407">
+          <KeyFrameDouble frame="0" value="0" id="60:1408" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:101" id="60:1409">
+        <KeyedProperty property="opacity" id="60:1410">
+          <KeyFrameDouble frame="0" value="1" id="60:1411" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:102" id="60:1412">
+        <KeyedProperty property="opacity" id="60:1413">
+          <KeyFrameDouble frame="0" value="0" id="60:1414" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:103" id="60:1415">
+        <KeyedProperty property="opacity" id="60:1416">
+          <KeyFrameDouble frame="0" value="1" id="60:1417" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:104" id="60:1418">
+        <KeyedProperty property="opacity" id="60:1419">
+          <KeyFrameDouble frame="0" value="0" id="60:1420" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:105" id="60:1421">
+        <KeyedProperty property="opacity" id="60:1422">
+          <KeyFrameDouble frame="0" value="1" id="60:1423" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:108" id="60:1424">
+        <KeyedProperty property="opacity" id="60:1425">
+          <KeyFrameDouble frame="0" value="0" id="60:1426" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:109" id="60:1427">
+        <KeyedProperty property="opacity" id="60:1428">
+          <KeyFrameDouble frame="0" value="1" id="60:1429" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:111" id="60:1430">
+        <KeyedProperty property="opacity" id="60:1431">
+          <KeyFrameDouble frame="0" value="0" id="60:1432" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:112" id="60:1433">
+        <KeyedProperty property="opacity" id="60:1434">
+          <KeyFrameDouble frame="0" value="1" id="60:1435" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:116" id="60:1436">
+        <KeyedProperty property="opacity" id="60:1437">
+          <KeyFrameDouble frame="0" value="0" id="60:1438" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:117" id="60:1439">
+        <KeyedProperty property="opacity" id="60:1440">
+          <KeyFrameDouble frame="0" value="1" id="60:1441" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:120" id="60:1442">
+        <KeyedProperty property="opacity" id="60:1443">
+          <KeyFrameDouble frame="0" value="0" id="60:1444" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:121" id="60:1445">
+        <KeyedProperty property="opacity" id="60:1446">
+          <KeyFrameDouble frame="0" value="1" id="60:1447" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:122" id="60:1448">
+        <KeyedProperty property="opacity" id="60:1449">
+          <KeyFrameDouble frame="0" value="0" id="60:1450" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:123" id="60:1451">
+        <KeyedProperty property="opacity" id="60:1452">
+          <KeyFrameDouble frame="0" value="1" id="60:1453" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:126" id="60:1454">
+        <KeyedProperty property="opacity" id="60:1455">
+          <KeyFrameDouble frame="0" value="0" id="60:1456" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:127" id="60:1457">
+        <KeyedProperty property="opacity" id="60:1458">
+          <KeyFrameDouble frame="0" value="1" id="60:1459" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:129" id="60:1460">
+        <KeyedProperty property="opacity" id="60:1461">
+          <KeyFrameDouble frame="0" value="0" id="60:1462" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:130" id="60:1463">
+        <KeyedProperty property="opacity" id="60:1464">
+          <KeyFrameDouble frame="0" value="1" id="60:1465" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:131" id="60:1466">
+        <KeyedProperty property="opacity" id="60:1467">
+          <KeyFrameDouble frame="0" value="0" id="60:1468" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:132" id="60:1469">
+        <KeyedProperty property="opacity" id="60:1470">
+          <KeyFrameDouble frame="0" value="1" id="60:1471" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:135" id="60:1472">
+        <KeyedProperty property="opacity" id="60:1473">
+          <KeyFrameDouble frame="0" value="0" id="60:1474" />
+        </KeyedProperty>
+      </KeyedObject>
+      <KeyedObject objectId="60:136" id="60:1475">
+        <KeyedProperty property="opacity" id="60:1476">
+          <KeyFrameDouble frame="0" value="1" id="60:1477" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+    <LinearAnimation name="Prop none" id="60:160" fps="60" duration="1" loopValue="loop">
+      <KeyedObject objectId="60:113" id="60:1478">
+        <KeyedProperty property="opacity" id="60:1479">
+          <KeyFrameDouble frame="0" value="0" id="60:1480" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+    <LinearAnimation name="Prop stick" id="60:161" fps="60" duration="1" loopValue="loop">
+      <KeyedObject objectId="60:113" id="60:1481">
+        <KeyedProperty property="opacity" id="60:1482">
+          <KeyFrameDouble frame="0" value="1" id="60:1483" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+  </Artboard>
+  <DataEnumCustom name="Action" id="60:140">
+    <DataEnumValue key="idle" value="idle" id="60:142" />
+    <DataEnumValue key="walk" value="walk" id="60:143" />
+    <DataEnumValue key="sit" value="sit" id="60:144" />
+    <DataEnumValue key="reach" value="reach" id="60:145" />
+  </DataEnumCustom>
+  <DataEnumCustom name="Outfit" id="60:146">
+    <DataEnumValue key="camp" value="camp" id="60:148" />
+    <DataEnumValue key="trail" value="trail" id="60:149" />
+  </DataEnumCustom>
+  <DataEnumCustom name="Prop" id="60:150">
+    <DataEnumValue key="none" value="none" id="60:152" />
+    <DataEnumValue key="stick" value="stick" id="60:153" />
+  </DataEnumCustom>
+  <ViewModel name="HeroControls" id="60:3" defaultInstanceId="60:4">
+    <ViewModelPropertyEnumCustom name="action" id="60:141" enumId="60:140" />
+    <ViewModelPropertyEnumCustom name="outfit" id="60:147" enumId="60:146" />
+    <ViewModelPropertyEnumCustom name="prop" id="60:151" enumId="60:150" />
+    <ViewModelPropertyNumber name="rootX" id="60:10" />
+    <ViewModelPropertyNumber name="rootY" id="60:11" />
+    <ViewModelPropertyNumber name="facing" id="60:12" />
+    <ViewModelInstance name="Default" id="60:4" exports="true">
+      <ViewModelInstanceEnum viewModelPropertyId="60:141" propertyValue="60:142" id="60:1484" />
+      <ViewModelInstanceEnum viewModelPropertyId="60:147" propertyValue="60:148" id="60:1485" />
+      <ViewModelInstanceEnum viewModelPropertyId="60:151" propertyValue="60:152" id="60:1486" />
+      <ViewModelInstanceNumber viewModelPropertyId="60:10" propertyValue="700" id="60:1487" />
+      <ViewModelInstanceNumber viewModelPropertyId="60:11" propertyValue="1040" id="60:1488" />
+      <ViewModelInstanceNumber viewModelPropertyId="60:12" propertyValue="1" id="60:1489" />
+    </ViewModelInstance>
+  </ViewModel>
+</Rive>

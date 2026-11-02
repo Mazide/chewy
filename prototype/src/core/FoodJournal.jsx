@@ -47,7 +47,7 @@ function makeDay(key) {
   return { plate, meals };
 }
 
-function JournalPage({ source, device, day, onClose, onMealSelect, onAddFood, binaryContributions }) {
+function JournalPage({ activity, source, device, day, onClose, onMealSelect, onAddFood, binaryContributions }) {
   const content = useContext(StudyContentContext);
   const dialog = useRef(null);
   const closeButton = useRef(null);
@@ -99,14 +99,14 @@ function JournalPage({ source, device, day, onClose, onMealSelect, onAddFood, bi
     if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) close();
   }}>
     <header className="food-journal-page-heading"><h2 id="food-journal-title">Сегодня</h2><button ref={closeButton} type="button" onClick={close} aria-label="Свернуть дневник">×</button></header>
-    <div className="food-journal-scroll"><DayFoodAssessment meals={day.meals} binaryContributions={binaryContributions} />
+    <div className="food-journal-scroll">{activity && <div className="food-journal-activity sandbox-capture-activity">{activity}</div>}<DayFoodAssessment meals={day.meals} binaryContributions={binaryContributions} />
     <div className="food-journal-entries">
       {day.meals.length ? <FoodJournalEntries meals={day.meals} onMealSelect={onMealSelect ? id => close(() => onMealSelect(id)) : undefined} /> : <div className="food-journal-empty"><CaptureIcon kind="camera" /><p>Начнём с первого снимка</p>{onAddFood && <button type="button" onClick={() => close(onAddFood)}>Добавить еду</button>}</div>}
     </div></div>
   </dialog>;
 }
 
-export function FoodJournal({ frame, device, dayKey, dayData, binaryContributions = false, editing, selected, movableProps, onSelect, open, onOpen, onClose, onAddFood }) {
+export function FoodJournal({ activity, activityLabel, frame, device, dayKey, dayData, binaryContributions = false, editing, selected, movableProps, onSelect, open, onOpen, onClose, onAddFood }) {
   const source = useRef(null);
   const wasOpen = useRef(open);
   useEffect(() => {
@@ -118,9 +118,9 @@ export function FoodJournal({ frame, device, dayKey, dayData, binaryContribution
   return <>
     <button ref={source} type="button" className={`food-journal-summary${selected ? ' sandbox-layer-selected' : ''}`} style={{ ...viewportFrame(frame, device), visibility: open ? 'hidden' : undefined }} {...movableProps} onClick={() => editing ? onSelect() : onOpen()} aria-label={editing ? 'Переместить дневник еды' : 'Открыть дневник еды за сегодня'} aria-haspopup={editing ? undefined : 'dialog'}>
       <MiniSupplies meals={day.meals} binaryContributions={binaryContributions} />
-      <span className="food-journal-summary-copy"><strong>Сегодня</strong><small className="food-journal-summary-verdict">{assessment.short}</small></span>
+      <span className="food-journal-summary-copy"><strong>Сегодня</strong><small className="food-journal-summary-verdict">{activityLabel || assessment.short}</small></span>
       <span className="food-journal-fold" aria-hidden="true" />
     </button>
-    {open && <><div className="food-journal-shade" aria-hidden="true" /><JournalPage source={source} device={device} day={day} binaryContributions={binaryContributions} onClose={onClose} onMealSelect={dayData?.onMealSelect} onAddFood={onAddFood} /></>}
+    {open && <><div className="food-journal-shade" aria-hidden="true" /><JournalPage activity={activity} source={source} device={device} day={day} binaryContributions={binaryContributions} onClose={onClose} onMealSelect={dayData?.onMealSelect} onAddFood={onAddFood} /></>}
   </>;
 }

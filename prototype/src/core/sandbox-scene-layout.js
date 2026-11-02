@@ -78,7 +78,7 @@ export function getSandboxLayout(device, { foodLayout = 'stacked', growthStage, 
     controls: [
       { id: 'map', screen: 'path', label: 'Путь', frame: [controlX, controlTop, controlWidth, controlHeight] },
       { id: 'backpack', screen: 'backpack', label: 'Рюкзак', frame: [controlX, controlTop + controlHeight + controlGap, controlWidth, controlHeight] },
-      ...(withMirror ? [{ id: 'mirror', screen: 'mirror', label: 'Зеркало', frame: [controlX, controlTop + (controlHeight + controlGap) * 2, controlWidth, controlHeight] }] : []),
+      ...(withMirror ? [{ id: 'mirror', screen: 'mirror', label: 'Зеркало', frame: [controlX, controlTop + (controlHeight + controlGap) * 2 + (compactMirror ? 12 : 24), controlWidth, controlHeight] }] : []),
     ],
   };
 }
