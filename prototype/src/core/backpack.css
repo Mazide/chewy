@@ -1,0 +1,27 @@
+.study-screen-backpack { gap:0; }
+.backpack-heading h1 { font-size:20px; }
+.backpack-heading .reward-wallet { margin-left:auto; }
+.backpack-scroll { flex:1; min-height:0; overflow-y:auto; padding:2px 2px 12px; scrollbar-width:thin; }
+.backpack-item-card { display:flex; align-items:center; gap:18px; min-height:185px; margin-bottom:16px; padding:18px 14px; border:1px solid #c5b17e; border-radius:18px 14px 18px 12px; background:#fff8e5; }
+.backpack-item-card > .garden-appearance { width:43%; height:145px; flex-shrink:0; }
+.backpack-item-card h2 { font-size:20px; margin:3px 0 8px; }
+.backpack-item-card small { font-size:10px; color:#756849; }
+.backpack-item-card p { margin:0; font-size:12px; }
+.study-screen-backpack .backpack-catalog { flex:none; overflow:visible; grid-auto-rows:minmax(132px,auto); min-height:0; }
+.backpack-catalog .garden-appearance { flex-shrink:0; width:100%; height:64px; }
+.backpack-actions { display:grid; gap:8px; flex-shrink:0; border-top:1px dashed #b49a69; padding-top:10px; }
+.backpack-actions p { margin:0; font-size:12px; }
+.backpack-notice { min-height:34px; }
+.backpack-preview-body { display:flex; flex:1; min-height:0; flex-direction:column; overflow-y:auto; padding:4px 0 16px; }
+.backpack-preview-body .backpack-camp-preview { flex:1; min-height:175px; max-height:380px; }
+.study-screen-backpack .backpack-camp-preview { border-radius:16px; }
+.backpack-preview-body h2 { font-size:20px; margin:14px 0 3px; }
+.backpack-preview-body p { font-size:12px; margin:0; }
+.study-device-compact .backpack-item-card { min-height:130px; padding:10px; gap:12px; margin-bottom:12px; }
+.study-device-compact .backpack-item-card > .garden-appearance { height:110px; }
+.study-device-compact .backpack-item-card h2 { font-size:17px; }
+.study-device-compact .backpack-heading { gap:6px; }
+.screen-study .study-device-compact .backpack-heading h1 { font-size:18px; }
+.screen-study .study-device-compact .study-screen-backpack .backpack-heading h1::before { display:none; }
+.study-device-compact .backpack-actions { padding-top:6px; gap:6px; }
+.study-device-compact .backpack-preview-body h2 { margin-top:8px; }

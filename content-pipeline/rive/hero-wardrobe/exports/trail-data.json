@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "artboard": "Hero",
+  "stateMachine": "Hero",
+  "viewModel": {
+    "name": "Camp",
+    "viewModel": "Wardrobe",
+    "properties": [
+      {
+        "name": "outfit",
+        "path": "outfit",
+        "type": "enum",
+        "enumType": "Outfit",
+        "value": "trail",
+        "index": 1,
+        "values": ["camp", "trail"],
+        "changed": true
+      }
+    ]
+  },
+  "globals": [],
+  "nested": []
+}

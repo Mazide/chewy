@@ -1,7 +1,12 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ['../src/**/*.stories.@(js|jsx)'],
-  staticDirs: ['../public'],
+  stories: ['../src/core/**/*.stories.@(js|jsx)'],
+  staticDirs: [
+    '../public',
+    { from: '../../content-pipeline/rive/hero-actions/preview', to: '/hero-actions' },
+    { from: '../../content-pipeline/rive/hero-actions/exports', to: '/hero-actions/exports' },
+    { from: '../../content-pipeline/rive/camp-scene-vector/preview/vendor/webgl2-2.40.1', to: '/hero-actions/vendor' },
+  ],
   addons: ['@storybook/addon-essentials'],
   framework: {
     name: '@storybook/react-vite',
@@ -10,7 +15,7 @@ const config = {
   async viteFinal(config) {
     const { mergeConfig } = await import('vite');
     return mergeConfig(config, {
-      esbuild: { jsxInject: "import React from 'react'" },
+      esbuild: { jsx: 'automatic' },
     });
   },
 };

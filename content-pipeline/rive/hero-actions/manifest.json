@@ -1,0 +1,60 @@
+{
+  "status": "technical proof, not final art",
+  "source": "content-pipeline/rive/hero-wardrobe/references/hero-from-editor.rml",
+  "source_sha256": "20e5ebb18b7e18d8ee3caeeaafe1b63dc592427c7c4e5fd3d2945b228ea9c482",
+  "artboard": "HeroActions",
+  "state_machine": "HeroActions",
+  "view_model": "HeroControls",
+  "controls": {
+    "action": [
+      "idle",
+      "walk",
+      "sit",
+      "reach"
+    ],
+    "outfit": [
+      "camp",
+      "trail"
+    ],
+    "prop": [
+      "none",
+      "stick"
+    ],
+    "rootX": 700,
+    "rootY": 1040,
+    "facing": [
+      -1,
+      1
+    ]
+  },
+  "preview_safe_root_x": [
+    600,
+    800
+  ],
+  "joints": {
+    "Left hand socket": "60:106",
+    "Left elbow": "60:107",
+    "Left shoulder": "60:110",
+    "stick": "60:113",
+    "Right hand socket": "60:114",
+    "Right elbow": "60:115",
+    "Right shoulder": "60:118",
+    "Upper body": "60:119",
+    "Left ankle": "60:124",
+    "Left knee": "60:125",
+    "Left hip": "60:128",
+    "Right ankle": "60:133",
+    "Right knee": "60:134",
+    "Right hip": "60:137",
+    "Body": "60:138",
+    "Program placement": "60:139"
+  },
+  "shared_outfit_pairs": 12,
+  "limits": [
+    "front-facing technical rig",
+    "new draft limb geometry",
+    "no foot IK",
+    "no native validation",
+    "no gameplay integration"
+  ]
+}

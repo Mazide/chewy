@@ -1,0 +1,11 @@
+{
+  "source": "content-pipeline/workspace/exports/camp-life-2026-10-29/tent/frames",
+  "processing": "Original 512px RGBA frames; fixed union crop with 2px margin; lossless packing, no scaling or retiming",
+  "sourceCrop": [
+    47,
+    257,
+    465,
+    466
+  ],
+  "frameCount": 121
+}

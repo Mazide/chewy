@@ -1,0 +1,23 @@
+.camp-life-sprite { display:block; width:100%; height:100%; min-width:0; min-height:0; object-fit:contain; object-position:center bottom; pointer-events:none; }
+/* A canvas has intrinsic dimensions: keep it out of the grid's min-content sizing. */
+.study-media > .camp-life-sprite { position:absolute; inset:0; }
+.camp-life { position:absolute; inset:0; pointer-events:none; }
+.camp-life-sky { position:absolute; inset:0; mask:url('/assets/camp-life/sky-mask.png') center / cover no-repeat; }
+.camp-life-cloud { position:absolute; top:14%; left:-32%; width:28%; height:7%; object-fit:contain; opacity:.55; animation:camp-cloud-drift 55s linear infinite; animation-delay:-22s; }
+.camp-life-bird { position:absolute; left:-12%; top:27%; width:7%; height:5%; transform-origin:65% 55%; }
+.camp-life-butterfly { position:absolute; left:79%; top:67%; width:5%; height:4%; animation:camp-butterfly-flight 11s ease-in-out infinite alternate; }
+@keyframes camp-cloud-drift { from { left:-32%; } to { left:108%; } }
+@keyframes camp-butterfly-flight { from { transform:translate(0,0) rotate(-5deg); } to { transform:translate(-110%,-40%) rotate(5deg); } }
+.camp-growth-motion > svg { display:block; width:100%; height:100%; overflow:visible; }
+.camp-growth-lamp-glow { animation:camp-lamp-glow 2.1s ease-in-out infinite alternate; }
+@keyframes camp-lamp-glow { from { opacity:.08; } to { opacity:.4; } }
+.camp-life-paused *, .camp-growth-motion-paused * { animation-play-state:paused; }
+@media (prefers-reduced-motion:reduce) {
+  .camp-life *, .camp-growth-motion * { animation:none; }
+  .camp-life-bird { display:none; }
+  .camp-life-cloud { left:24%; }
+  .camp-growth-lamp-glow { opacity:.15; }
+}
+
+/* The animated source includes its own logs; the scene supplies the fixed hearth. */
+.camp-flame-only { clip-path:polygon(0 0,100% 0,100% 65%,84% 65%,53% 72%,23% 63%,0 61%); }

@@ -1,0 +1,24 @@
+.found-wardrobe-heading h1 { font-size:22px; }
+.found-wardrobe-heading h1:focus { outline:none; }
+.found-wardrobe-scroll { flex:1; min-height:0; overflow-y:auto; padding:4px 3px 14px; scrollbar-width:thin; }
+.found-wardrobe-portrait { position:relative; height:228px; display:flex; justify-content:center; border-radius:40% 45% 18% 22%; background:#dce6c8; }
+.found-wardrobe-portrait > .hero-appearance { position:relative; width:112px; height:214px; z-index:1; align-self:flex-end; }
+.found-wardrobe-portrait > span { position:absolute; bottom:0; left:calc(50% - 64px); width:128px; height:14px; border-radius:50%; background:#a9bb91; }
+.found-wardrobe-copy { padding:14px 2px 12px; }
+.found-wardrobe-copy small { font-size:11px; color:#59634f; }
+.found-wardrobe-copy h2 { margin:3px 0 7px; font-size:21px; line-height:1.2; }
+.found-wardrobe-copy p { margin:0; font-size:13px; line-height:1.45; }
+.found-wardrobe-collection { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.found-wardrobe-collection button { display:flex; flex-direction:column; align-items:center; gap:5px; text-align:center; background:transparent; border-color:transparent; min-width:0; padding:8px; }
+.found-wardrobe-collection button[aria-pressed=true] { border-color:#647859; background:#e1e8cf; }
+.found-wardrobe-collection .headwear { height:68px; }
+.found-wardrobe-collection strong { font-size:12px; line-height:1.3; }
+.found-wardrobe-collection small { font-size:10px; color:#59634f; }
+.found-wardrobe-actions { flex-shrink:0; display:grid; gap:8px; border-top:1px dashed #b49a69; padding-top:10px; }
+.found-wardrobe-actions p { margin:0; font-size:12px; }
+.found-wardrobe-actions p:empty { display:none; }
+.study-device-compact .found-wardrobe-portrait { height:160px; }
+.study-device-compact .found-wardrobe-portrait > .hero-appearance { height:151px; width:80px; }
+.study-device-compact .found-wardrobe-copy { padding-top:10px; }
+.study-device-compact .found-wardrobe-copy h2 { font-size:19px; }
+.study-device-compact .found-wardrobe-actions { gap:6px; padding-top:6px; }

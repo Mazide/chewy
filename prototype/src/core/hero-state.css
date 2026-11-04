@@ -1,0 +1,50 @@
+.hero-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  max-width: 220px;
+  padding: 8px 12px;
+  color: #554b3b;
+  background: #fff8e8f2;
+  border: 1px solid #c1ae8b80;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px #493e3014;
+  font: 600 12px/1.35 system-ui, sans-serif;
+  text-align: left;
+  pointer-events: none;
+}
+
+.hero-state-icon {
+  flex: 0 0 auto;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.hero-state-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.hero-state-name { display:block; overflow-wrap:anywhere; font-size:inherit; }
+.hero-state-copy { min-width:0; }
+
+.hero-state-happy { color: #994b43; background: #fff2e9f2; }
+.hero-state-happy .hero-state-icon { animation: hero-state-joy 650ms ease-out; }
+.hero-state-sleeping { color: #565779; background: #eeedf9f2; }
+.hero-state-returning { color: #4b6b4f; background: #f1f6e8f2; }
+.hero-state-compact { gap: 5px; padding: 6px 9px; font-size: 11px; }
+.hero-state-compact .hero-state-icon { font-size: 16px; }
+
+@keyframes hero-state-joy {
+  0%, 100% { transform: scale(1); }
+  45% { transform: scale(1.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-state-happy .hero-state-icon { animation: none; }
+}

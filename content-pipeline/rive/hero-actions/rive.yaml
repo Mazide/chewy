@@ -1,0 +1,8 @@
+name: hero-actions
+main: HeroActions
+exclude:
+  - exports
+  - references
+logs:
+  file: build/rive.log
+  problems: build/problems.log

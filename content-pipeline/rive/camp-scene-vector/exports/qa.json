@@ -1,0 +1,101 @@
+{
+  "renderer": "Rive CLI 1.8.0",
+  "loop_seconds": 6.0,
+  "frames": 180,
+  "preview_fps": 30,
+  "raster_assets": 0,
+  "scripts": 0,
+  "authored_loop_max_key_delta": 0.0,
+  "native_tested": false,
+  "owner_approved": false,
+  "components": {
+    "Tent": {
+      "motion": {
+        "changed_pixels": 20528,
+        "mean_channel_delta": 1.3437621233571062,
+        "max_channel_delta": 229
+      },
+      "loop": {
+        "changed_pixels": 3,
+        "mean_channel_delta": 6.762580838280193e-05,
+        "max_channel_delta": 57
+      },
+      "grounded_region": null
+    },
+    "Hero": {
+      "motion": {
+        "changed_pixels": 18114,
+        "mean_channel_delta": 3.6031614338628284,
+        "max_channel_delta": 212
+      },
+      "loop": {
+        "changed_pixels": 1,
+        "mean_channel_delta": 5.966142143336565e-05,
+        "max_channel_delta": 46
+      },
+      "grounded_region": {
+        "changed_pixels": 0,
+        "mean_channel_delta": 0.0,
+        "max_channel_delta": 0
+      }
+    },
+    "Dog": {
+      "motion": {
+        "changed_pixels": 18281,
+        "mean_channel_delta": 1.4713855804633942,
+        "max_channel_delta": 225
+      },
+      "loop": {
+        "changed_pixels": 6,
+        "mean_channel_delta": 0.00017799385666917553,
+        "max_channel_delta": 54
+      },
+      "grounded_region": {
+        "changed_pixels": 0,
+        "mean_channel_delta": 0.0,
+        "max_channel_delta": 0
+      }
+    },
+    "Campfire": {
+      "motion": {
+        "changed_pixels": 54584,
+        "mean_channel_delta": 4.692426403778216,
+        "max_channel_delta": 239
+      },
+      "loop": {
+        "changed_pixels": 19,
+        "mean_channel_delta": 0.0004685052584470799,
+        "max_channel_delta": 60
+      },
+      "grounded_region": {
+        "changed_pixels": 0,
+        "mean_channel_delta": 0.0,
+        "max_channel_delta": 0
+      }
+    },
+    "Kettle": {
+      "motion": {
+        "changed_pixels": 3259,
+        "mean_channel_delta": 0.009175583311295999,
+        "max_channel_delta": 12
+      },
+      "loop": {
+        "changed_pixels": 0,
+        "mean_channel_delta": 4.2379489683137034e-07,
+        "max_channel_delta": 1
+      },
+      "grounded_region": null
+    }
+  },
+  "scene_loop": {
+    "changed_pixels": 0,
+    "mean_channel_delta": 0.0,
+    "max_channel_delta": 0
+  },
+  "scene_motion": {
+    "changed_pixels": 5258,
+    "mean_channel_delta": 0.3784663993194799,
+    "max_channel_delta": 238
+  },
+  "riv_bytes": 375518
+}

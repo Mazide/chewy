@@ -1,0 +1,58 @@
+.screen-study-content { --study-paper:#f3eedc; --study-ink:#29382e; --study-accent:#38594b; --study-line:#b4bc9d; --study-soft:#dce9dc; }
+.screen-study-content .study-phone { background:var(--study-paper); border-color:#8b9d84; }
+.study-media-content { background:transparent; border:0; color:inherit; }
+.study-media-content > svg { width:100%; height:100%; overflow:hidden; }
+.study-media-content > .study-photo { width:100%; height:100%; object-fit:cover; }
+.screen-study-content .study-mini-camp { background:#b9c98b url('/assets/sandbox/camp-v3-flat/background.png') center 34%/cover; }
+.screen-study-content .study-mini-ground { background:transparent; }
+.screen-study-content .study-mini-camp > .study-media { filter:drop-shadow(0 3px 1px #31462b26); }
+.screen-study-content .study-preview-item { border:0; }
+.screen-study-content .study-categories button[aria-pressed=true] { background:#38594b; }
+.screen-study-content .study-catalog button[aria-pressed=true] { background:#e2e8cf; border-color:#647859; }
+.screen-study-content .study-catalog button { border-radius:14px 14px 9px 9px; }
+.screen-study-content .study-catalog .study-media { height:68px; padding:0 4px; flex-shrink:0; }
+.screen-study-content .study-preview-label { background:#f8f5e6e8; color:#38594b; }
+.screen-study-content .study-wallet { background:#ebcf84; border-radius:50% 50% 12px 12px; padding:3px 9px; border:1px solid #a48a4e; }
+.study-theme-preview { position:relative; width:100%; height:100%; border-radius:18px; overflow:hidden; background:#dce9dc; }
+.study-theme-preview-theme_magic { background:#ded6e0; }
+.study-theme-preview > .study-media:first-child { position:absolute; left:12%; top:28%; width:25%; height:42%; transform:rotate(-8deg); border:4px solid #f8f5e6; }
+.study-theme-preview > .study-media:nth-child(2) { position:absolute; left:38%; top:9%; width:55%; height:83%; }
+.study-theme-preview > span { position:absolute; bottom:9px; left:12px; font-size:10px; }
+.screen-study-content .study-trail-map { background:radial-gradient(ellipse at 8% 36%,#b8c99655 0 9%,transparent 9.5%),radial-gradient(ellipse at 90% 68%,#a6bf9160 0 10%,transparent 10.5%); }
+.screen-study-content .study-trail-map path { stroke:#bfa77d; stroke-width:10; }
+.screen-study-content .study-trail-first path { stroke:#c6ba9e; stroke-width:4; }
+.screen-study-content .study-trail-stop .study-media { border-radius:0; overflow:visible; filter:drop-shadow(0 3px 1px #a4ad8955); }
+.screen-study-content .study-trail-stop[aria-pressed=true] .study-media { outline:0; }
+.screen-study-content .study-trail-stop[aria-pressed=true] > span { background:#38594b; color:#fff; }
+.screen-study-content .study-trail-stop.study-stop-today .study-media { background:transparent; }
+.screen-study-content .study-trail-stop i { background:#e5ba59; color:#29382e; }
+.screen-study-content .study-path-detail { border-color:#c1bb9b; }
+.screen-study-content .study-intro-cycle span { border:0; border-radius:0; padding-left:0; color:#38594b; font-weight:650; }
+.screen-study-content .study-notification { background:#fbf8ed; border-color:#c2c5aa; box-shadow:0 4px 0 #c5cdb733; }
+.screen-study-content .study-intro-copy h1 { color:#38594b; font-weight:700; }
+.screen-study-content .study-status-content .study-media { background:#e3e8d4; }
+.screen-study-content .study-status-content .study-media-camera { border:0; background:transparent; box-shadow:none; }
+.screen-study-content .study-camp-equipped { border:0; filter:drop-shadow(0 3px 1px #263b2b45); }
+.screen-study-content .sandbox-camp-header > span:first-child { color:#29382e; }
+.screen-study-content .sandbox-camp-header > span:last-child { background:#f3e4afeb; color:#29382e; border-color:#a8a479; }
+.screen-study-content .sandbox-add-food { background:#38594b; border-color:#20382c; color:#fff; box-shadow:0 3px 0 #20382c; }
+.screen-study-content .sandbox-nav-control { background:#f3eedce6; border-color:#a3b18e; color:#29382e; }
+.food-journal-photo img,.food-journal-thumbnails img { display:block; width:100%; height:100%; object-fit:cover; }
+.food-journal-photo,.food-journal-thumbnails > span { overflow:hidden; }
+.screen-study-content .food-journal-summary { background:#fbf8e9; border-color:#b9b08f; }
+.screen-study-content .food-journal-page { background:#fbf8e9; color:#29382e; border-color:#b9b08f; }
+.screen-study-content .food-journal-photo,.screen-study-content .food-journal-thumbnails > span,.screen-study-content .food-journal-summary .core-plate,.screen-study-content .food-journal-day-plate .core-plate { filter:none; }
+.capture-live-photo { display:block; width:100%; height:100%; object-fit:cover; filter:brightness(.78); }
+.screen-study-content .capture-camera-world::after { content:''; position:absolute; inset:0; background:linear-gradient(#14251e75,transparent 25%,transparent 65%,#14251e75); }
+.screen-study-content .capture-aim { text-shadow:0 1px 3px #17271b; }
+.screen-study-content .capture-scan-photo { padding:0; overflow:hidden; }
+.capture-scan-photo img,.capture-result-photo img,.capture-gallery-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.screen-study-content .capture-theme-prop { position:absolute; width:77%; height:87%; left:22%; bottom:0; }
+.screen-study-content .capture-theme-science .capture-scan-photo,.screen-study-content .capture-theme-alchemy .capture-scan-photo { inset:auto; top:5%; left:0; width:35%; height:43%; transform:rotate(-8deg); z-index:2; }
+.screen-study-content .capture-orbit { opacity:.5; }
+.screen-study-content .capture-gallery-photo { border:0; border-radius:4px; overflow:hidden; background:transparent; }
+.screen-study-content .capture-gallery-grid button { border-radius:8px; padding:6px; }
+.screen-study-content .capture-result-photo { overflow:hidden; }
+.screen-study-content .capture-theme-computer .capture-apparatus { background:repeating-linear-gradient(0deg,transparent 0 17px,#99bb9920 17px 18px); border:1px solid #a3cf9b55; border-radius:8px; }
+.screen-study-content .capture-result-content { gap:16px; }
+@media (prefers-reduced-motion:reduce) { .screen-study-content * { scroll-behavior:auto; } }

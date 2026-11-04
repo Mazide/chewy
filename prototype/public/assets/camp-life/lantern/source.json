@@ -1,0 +1,11 @@
+{
+  "source": "content-pipeline/workspace/exports/camp-life-2026-10-29/lantern/frames",
+  "processing": "Original 512px RGBA frames; fixed union crop with 2px margin; lossless packing, no scaling or retiming",
+  "sourceCrop": [
+    161,
+    47,
+    352,
+    466
+  ],
+  "frameCount": 121
+}

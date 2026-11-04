@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf3f2">
+  <title>Chewy / Мастерская контента</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/motion.js" defer></script>
+  <script src="/runway.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workbench">К рабочему столу</a>
+  <header class="app-header">
+    <div class="brand-mark" aria-hidden="true"><span></span><span></span></div>
+    <div class="brand-copy"><h1><span>Chewy /</span> Мастерская контента</h1><p>От задания до проверенного исходника</p></div>
+    <span class="local-label"><span aria-hidden="true"></span> Локальная мастерская</span>
+  </header>
+
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+  <div id="loading" class="loading">Открываем задания и референсы…</div>
+  <div id="load-error" class="load-error" hidden><h2>Не удалось открыть мастерскую</h2><p id="load-error-text"></p><button id="retry-load" type="button">Попробовать снова</button></div>
+
+  <div id="workspace" class="workspace" hidden>
+    <aside class="job-sidebar" aria-label="Задания на контент">
+      <div class="sidebar-heading"><h2>Пробная партия</h2><span id="job-count"></span></div>
+      <p class="sidebar-intro">Один образ. По одному изменению за пробу.</p>
+      <nav id="job-list" class="job-list" aria-label="Выбрать задание"></nav>
+      <div class="sidebar-footnote"><span class="seed-icon" aria-hidden="true">↗</span><p>Здесь собираем кандидаты.<br>Финальный арт выбирает владелец.</p></div>
+    </aside>
+
+    <main id="workbench" class="workbench" tabindex="-1">
+      <ol id="workflow" class="workflow" aria-label="Этапы текущего варианта"></ol>
+      <div class="workbench-heading"><div><p id="job-location" class="job-location"></p><h2 id="job-title"></h2></div><span id="job-status" class="status-pill"></span></div>
+      <p id="job-purpose" class="job-purpose"></p>
+
+      <section class="comparison-section" aria-labelledby="comparison-heading">
+        <div class="section-toolbar"><h3 id="comparison-heading">Сверяем с образом</h3><div class="preview-controls"><div class="segmented" role="group" aria-label="Фон для проверки прозрачности"><button type="button" data-background="checker" aria-pressed="true">Сетка</button><button type="button" data-background="day" aria-pressed="false">День</button><button type="button" data-background="night" aria-pressed="false">Ночь</button></div><button id="scale-button" class="quiet-button" type="button" aria-pressed="false">В размере показа</button></div></div>
+        <div id="comparison" class="comparison background-checker">
+          <figure class="art-panel"><figcaption><span id="reference-heading">Референс</span><label class="sr-only" for="reference-select">Выбрать референс</label><select id="reference-select"></select></figcaption><div class="art-stage"><img id="reference-image" alt="" hidden><p id="reference-empty" class="art-fallback" hidden>Для этого задания пока нет референса.</p></div><div id="reference-caption" class="art-caption"></div></figure>
+          <figure class="art-panel candidate-panel"><figcaption><span id="candidate-heading">Вариант</span><label class="sr-only" for="attempt-select">Выбрать вариант текущего запроса</label><select id="attempt-select"></select></figcaption><div class="art-stage"><img id="candidate-image" alt="" hidden><canvas id="animation-canvas" role="img" aria-label="Первый кадр анимации" hidden></canvas><div id="candidate-empty" class="candidate-empty"><span class="empty-frame" aria-hidden="true">+</span><h4>Место для новой пробы</h4><p id="candidate-empty-text">Подготовьте запрос, сгенерируйте изображение в Codex и загрузите PNG сюда.</p></div></div><div id="candidate-caption" class="art-caption"></div></figure>
+        </div>
+        <div id="animation-player" class="animation-player" hidden>
+          <div class="animation-topline"><span class="motion-label">Покадровая анимация</span><span id="animation-metadata" class="subtle-text"></span></div>
+          <div class="animation-transport"><button id="animation-play" class="primary-button" type="button" aria-pressed="false">Воспроизвести</button><button id="animation-restart" type="button">В начало</button><output id="animation-frame" for="animation-timeline">Кадр 1</output></div>
+          <label class="sr-only" for="animation-timeline">Кадр анимации</label><input id="animation-timeline" type="range" min="0" max="1" value="0" step="1" aria-valuetext="Кадр 1">
+          <div class="animation-preview-settings"><label for="animation-fps">Скорость просмотра, FPS<input id="animation-fps" type="number" min="1" max="60" step="1" value="24"></label><label for="animation-mode">Повтор при просмотре<select id="animation-mode"><option value="once">Один раз</option><option value="loop">Цикл</option><option value="pingpong">Туда-обратно</option></select></label></div>
+          <p id="animation-preview-note" class="subtle-text"></p><p id="animation-status" class="animation-status"></p><p id="animation-error" class="animation-error" role="alert" hidden></p>
+        </div>
+        <p id="scale-caption" class="subtle-text preview-caption"></p>
+      </section>
+
+      <section class="request-section" aria-labelledby="request-heading">
+        <div class="section-heading"><h3 id="request-heading">Запрос генератору</h3><span id="request-count" class="subtle-text"></span></div>
+        <div class="request-picker"><label for="request-select">Сохранённый запрос</label><select id="request-select"></select></div>
+        <label class="sr-only" for="prompt-editor">Текст запроса генератору</label>
+        <textarea id="prompt-editor" rows="9" spellcheck="false"></textarea>
+        <div class="prompt-helper"><span id="prompt-state">Черновик задания</span><span>Правки сохраняются новым запросом.</span></div>
+        <div class="request-actions"><button id="prepare-button" type="button" class="primary-button">Подготовить запрос</button><button id="copy-button" type="button">Скопировать для Codex</button><a id="request-download" class="text-link" download>Скачать JSON</a></div>
+        <p id="generation-note" class="generation-note">Генерация проходит в чате Codex. Эта мастерская сохраняет запрос, принимает готовый PNG и проверяет файл.</p>
+      </section>
+
+      <section id="runway-section" class="runway-section" aria-labelledby="runway-heading" hidden>
+        <div class="section-heading"><h3 id="runway-heading">Сгенерировать движение · Runway</h3><span id="runway-connection" class="tiny-status">Проверяем подключение…</span></div>
+        <p class="subtle-text">Сохранённый промпт и один референс отправятся в Runway. Результат — видеочерновик на 5 секунд.</p>
+        <details id="runway-key-details" class="runway-key-details"><summary>API-ключ Runway</summary><form id="runway-key-form" class="runway-key-form"><label for="runway-key">Ключ для локальной мастерской</label><div class="runway-key-row"><input id="runway-key" type="password" autocomplete="off" spellcheck="false" placeholder="Вставьте API-ключ" required><button id="runway-key-save" type="submit">Сохранить ключ</button></div><p class="subtle-text">Ключ сохраняется локально на сервере мастерской и не записывается в хранилище браузера.</p></form></details>
+        <div id="runway-service-error" class="runway-error" role="alert" hidden></div><button id="runway-reconnect" class="quiet-button" type="button" hidden>Проверить подключение снова</button>
+        <div class="runway-generation-fields"><label for="runway-model">Модель<select id="runway-model"></select></label><label for="runway-reference">Референс из сохранённого запроса<select id="runway-reference"></select></label></div>
+        <div class="runway-generate-row"><button id="runway-generate" type="button" class="primary-button" disabled>Сгенерировать 5 с</button><span id="runway-cost" class="subtle-text"></span></div>
+        <p id="runway-generate-reason" class="subtle-text"></p><p id="runway-action-error" class="runway-error" role="alert" hidden></p>
+        <div class="runway-history-heading"><h4>Видеопробы этого запроса</h4><button id="runway-reload-list" class="quiet-button" type="button">Обновить список</button></div><p id="runway-history-empty" class="subtle-text">Здесь появятся запущенные генерации.</p><div id="runway-generations" class="runway-generations"></div>
+      </section>
+
+      <section class="import-section" aria-labelledby="import-heading">
+        <div class="section-heading"><h3 id="import-heading">Добавить результат</h3><span id="import-format" class="format-label">PNG с прозрачностью</span></div>
+        <p id="import-context" class="subtle-text"></p>
+        <form id="import-form" class="import-form">
+          <div class="file-field"><label id="file-label" for="image-file">Сгенерированное изображение</label><input id="image-file" type="file" accept="image/png,.png" required><small id="file-limit">До 20 МБ. Исходный файл сохраняется без изменений.</small></div>
+          <div id="motion-import-fields" class="source-fields motion-import-fields" hidden><label>Частота кадров в экспорте, FPS<input id="import-fps" type="number" min="1" max="60" step="1" value="24"></label><label>Режим в экспорте<select id="import-playback"><option value="once">Один раз</option><option value="loop">Цикл</option><option value="pingpong">Туда-обратно</option></select></label></div>
+          <div class="source-fields"><label>Инструмент<input id="tool-input" type="text" value="Внешний файл" maxlength="120" required></label><label>Модель <span class="optional-label">необязательно</span><input id="model-input" type="text" placeholder="Если известна" maxlength="120"></label></div>
+          <button id="import-button" type="submit">Загрузить и проверить</button>
+        </form>
+      </section>
+    </main>
+
+    <aside class="context-sidebar" aria-label="Задание и проверка варианта">
+      <section class="context-section"><h2>В рамке задания</h2><p id="job-brief"></p><dl class="target-details"><div><dt>Формат</dt><dd id="target-format"></dd></div><div><dt>Показ в приложении</dt><dd id="target-size"></dd></div></dl></section>
+      <section class="context-section"><h3>Проверить глазами</h3><p class="subtle-text">Автопроверка не оценивает образ.</p><ul id="criteria-list" class="criteria-list"></ul></section>
+      <section class="context-section qa-section"><div class="section-heading"><h3>Проверка файла</h3><span id="qa-summary" class="tiny-status"></span></div><p id="qa-empty" class="subtle-text">Появится после загрузки варианта.</p><ul id="qa-list" class="qa-list"></ul></section>
+      <section class="context-section review-section"><h3>Решение владельца</h3><p id="review-status" class="review-status">Сначала нужен вариант.</p><label for="review-note">Комментарий к варианту</label><textarea id="review-note" rows="3" placeholder="Что оставить или поправить"></textarea><div class="review-actions"><button id="approve-button" type="button" class="primary-button">Принять вариант</button><button id="reject-button" type="button">На доработку</button></div><button id="reset-review-button" type="button" class="quiet-button" hidden>Снять решение</button></section>
+      <section class="package-section"><span class="package-symbol" aria-hidden="true">↧</span><h3>Исходный пакет</h3><p id="package-description">Изображение, точный запрос и паспорт проверки для следующего шага.</p><button id="export-button" type="button">Скачать исходный пакет</button><p id="export-reason" class="subtle-text"></p><p class="package-boundary">Примерка в Storybook и подготовка для iOS — отдельные шаги.</p></section>
+    </aside>
+  </div>
+
+  <dialog id="copy-dialog"><form method="dialog"><div class="section-heading"><h2>Запрос для чата Codex</h2><button class="quiet-button" aria-label="Закрыть" type="submit">Закрыть</button></div><p>Автоматическое копирование недоступно. Скопируйте текст ниже и вставьте его в чат этого проекта.</p><textarea id="copy-fallback" rows="14" readonly aria-label="Запрос для копирования"></textarea></form></dialog>
+</body>
+</html>

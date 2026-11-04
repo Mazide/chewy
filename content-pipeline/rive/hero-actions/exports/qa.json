@@ -1,0 +1,64 @@
+{
+  "renderer": "Rive CLI 1.8.0",
+  "verify_errors": 0,
+  "verify_warnings": 0,
+  "inspect_problems": [],
+  "same_rig_two_outfits": true,
+  "results": {
+    "outfit_does_not_restart_walk": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "prop_does_not_restart_walk": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "sit_to_idle_complete_pose": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "walk_loop": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "walk_moves_limbs": {
+      "changed_pixels": 81387,
+      "mean_channel_delta": 5.190475127551021
+    },
+    "idle_feet_stable": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "sit_feet_stable": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "reach_feet_stable": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "root_translation_independent": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.01214373897707231
+    },
+    "mid_transition_interruption": "walk \u2192 sit interrupted \u2192 reach, outfit and prop retained",
+    "advertised_placement_bounds": {
+      "combinations": 32,
+      "minimum_edge_clearance_px": 27,
+      "root_x_range": [
+        600,
+        800
+      ],
+      "facing": [
+        -1,
+        1
+      ],
+      "prop": "stick"
+    }
+  },
+  "native_tested": false,
+  "final_art": false,
+  "source_unchanged": true,
+  "editable_rig_unchanged": true,
+  "riv_bytes": 19282
+}

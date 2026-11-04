@@ -1,0 +1,9 @@
+{
+  "package": "node-forge",
+  "version": "1.4.2",
+  "source": "https://registry.npmjs.org/node-forge/-/node-forge-1.4.2.tgz",
+  "npmIntegrity": "sha512-rRtAR5XLJ8gCKd9du4qrKAsgCG1ObGP4gLeNJMa4vYSeq4bmBMOJk5IHkrviBV0q7uoAJlVd8HEQYQSVUb4FGQ==",
+  "bundleSha256": "52b553e747df79daa5056ff5e4dff37094c7d8a71194efe2b153d7c3f12763ff",
+  "license": "BSD-3-Clause OR GPL-2.0",
+  "upstream": "https://github.com/digitalbazaar/forge/tree/v1.4.2"
+}

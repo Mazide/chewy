@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "summary": true,
+  "problems": [],
+  "artboards": [
+    {"name": "CampScene", "objects": 254, "types": {"AnimationState": 1, "AnyState": 1, "Artboard": 1, "CubicDetachedVertex": 133, "EntryState": 1, "ExitState": 1, "Fill": 13, "LayoutComponentStyle": 1, "LinearAnimation": 1, "NestedArtboard": 5, "NestedStateMachine": 5, "Node": 1, "PointsPath": 16, "Shape": 16, "SolidColor": 25, "StateMachine": 1, "StateMachineLayer": 1, "StateTransition": 1, "StraightVertex": 18, "Stroke": 12}},
+    {"name": "Tent", "objects": 13947, "types": {"AnimationState": 1, "AnyState": 1, "Artboard": 1, "CubicDetachedVertex": 99, "EntryState": 1, "ExitState": 1, "Fill": 22, "GradientStop": 22, "KeyFrameDouble": 13420, "KeyedObject": 40, "KeyedProperty": 220, "LayoutComponentStyle": 1, "LinearAnimation": 1, "LinearGradient": 11, "PointsPath": 27, "Shape": 27, "SolidColor": 30, "StateMachine": 1, "StateMachineLayer": 1, "StateTransition": 1, "Stroke": 19}},
+    {"name": "Hero", "objects": 456, "types": {"AnimationState": 1, "AnyState": 1, "Artboard": 1, "CubicDetachedVertex": 171, "Ellipse": 2, "EntryState": 1, "ExitState": 1, "Fill": 13, "KeyFrameDouble": 138, "KeyedObject": 4, "KeyedProperty": 4, "LayoutComponentStyle": 1, "LinearAnimation": 1, "Node": 3, "PointsPath": 24, "Shape": 26, "SolidColor": 37, "StateMachine": 1, "StateMachineLayer": 1, "StateTransition": 1, "Stroke": 24}},
+    {"name": "Dog", "objects": 618, "types": {"AnimationState": 1, "AnyState": 1, "Artboard": 1, "CubicDetachedVertex": 204, "EntryState": 1, "ExitState": 1, "Fill": 17, "GradientStop": 22, "KeyFrameDouble": 203, "KeyedObject": 5, "KeyedProperty": 5, "LayoutComponentStyle": 1, "LinearAnimation": 1, "LinearGradient": 11, "Node": 5, "PointsPath": 36, "Shape": 36, "SolidColor": 35, "StateMachine": 1, "StateMachineLayer": 1, "StateTransition": 1, "Stroke": 29}},
+    {"name": "Campfire", "objects": 15587, "types": {"AnimationState": 1, "AnyState": 1, "Artboard": 1, "CubicDetachedVertex": 97, "EntryState": 1, "ExitState": 1, "Fill": 10, "GradientStop": 20, "KeyFrameDouble": 15132, "KeyedObject": 32, "KeyedProperty": 192, "LayoutComponentStyle": 1, "LinearAnimation": 1, "LinearGradient": 10, "PointsPath": 21, "Shape": 21, "SolidColor": 21, "StateMachine": 1, "StateMachineLayer": 1, "StateTransition": 1, "Stroke": 21}},
+    {"name": "Kettle", "objects": 218, "types": {"AnimationState": 1, "AnyState": 1, "Artboard": 1, "CubicDetachedVertex": 76, "EntryState": 1, "ExitState": 1, "Fill": 10, "KeyFrameDouble": 45, "KeyedObject": 3, "KeyedProperty": 9, "LayoutComponentStyle": 1, "LinearAnimation": 1, "PointsPath": 14, "Shape": 14, "SolidColor": 23, "StateMachine": 1, "StateMachineLayer": 1, "StateTransition": 1, "StraightVertex": 1, "Stroke": 13}}
+  ],
+  "events": [],
+  "roots": {"objects": 6, "types": {"Backboard": 1, "ComponentAsset": 5}}
+}

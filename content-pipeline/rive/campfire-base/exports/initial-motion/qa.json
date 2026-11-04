@@ -1,0 +1,15 @@
+{
+  "renderer": "Rive CLI 1.8.0; actual state machine; headless",
+  "loop_seconds": 4,
+  "preview_fps": 30,
+  "frames": 120,
+  "loop_first_last_max_channel_delta": 10,
+  "loop_first_last_changed_pixels": 10,
+  "loop_first_last_mean_channel_delta": 0.00011517615176151762,
+  "last_interval_changed_pixels": 6416,
+  "max_flame_changed_pixels": 16641,
+  "max_static_base_changed_pixels": 0,
+  "source": "prototype/public/assets/sandbox/camp-v3-flat/fire.png",
+  "ios_runtime_tested": false,
+  "art_owner_approved": false
+}
