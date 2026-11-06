@@ -1,6 +1,7 @@
 // Fresh browser context; no writes to the owner's Storybook session.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession } from './lib/session-ui.mjs';
 import { DEMO_GARDEN_COSTS } from '../src/core/demo-config.js';
 
 const browser = await chromium.launch({ headless: true });
@@ -16,7 +17,7 @@ const inventory = () => page.evaluate(key => JSON.parse(localStorage.getItem(key
 const choose = name => button(`Выбрать: ${name}`).click();
 const campAppearance = async id => assert.equal(await page.locator('[data-camp-component="plants"] [data-garden-appearance]').getAttribute('data-garden-appearance'), id);
 const inspector = async () => { if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click(); };
-const reload = async () => { await page.reload(); await button('Инструменты пробы').waitFor(); };
+const reload = async () => { await page.reload(); await waitForSession(page); };
 const earn = async () => {
   await button('Добавить еду').click(); await button('Сфотографировать еду').click();
   await button('Сохранить и разобрать').click(); await button('Рюкзак').waitFor();
@@ -27,7 +28,7 @@ const purchase = async id => {
 };
 try {
   await page.clock.install({ time: new Date('2026-10-29T12:00:00Z') });
-  await page.goto(url); await button('Инструменты пробы').waitFor();
+  await page.goto(url); await waitForSession(page);
   await campAppearance('garden-base');
   assert.deepEqual(await inventory(), { coins: 0, owned: [], applied: {} });
   await button('Рюкзак').click(); await button('Магазин').click();

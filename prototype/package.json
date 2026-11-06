@@ -7,6 +7,8 @@
   "scripts": {
     "test": "node --test src/core/*.test.mjs",
     "dev": "storybook dev -p 6006 --no-open",
+    "mobile": "npm run build && node scripts/serve-mobile.mjs",
+    "check-mobile": "node scripts/check-mobile.mjs",
     "build": "storybook build",
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"

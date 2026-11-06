@@ -1,6 +1,7 @@
 // Run against Storybook. The fresh browser context never touches the owner's data.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession } from './lib/session-ui.mjs';
 
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ reducedMotion: 'reduce', timezoneId: 'Europe/London' });
@@ -14,7 +15,13 @@ const inspector = async () => {
   if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click();
 };
 const phase = async value => { await inspector(); await page.getByLabel('Время суток').selectOption(value); };
-const hero = async state => assert.equal(await page.locator('[data-hero-state]').getAttribute('data-hero-state'), state);
+// Camp captions were intentionally removed. Camera reactions still expose their
+// state; model tests cover camp joy expiry, sleep precedence and welcome-back.
+const cameraHero = async state => assert.equal(await page.locator('[data-hero-state]').getAttribute('data-hero-state'), state);
+const campHero = async () => {
+  assert.equal(await page.locator('.sandbox-phone [data-hero-state]').count(), 0, 'camp reaction captions remain hidden');
+  assert.equal(await page.locator('.sandbox-phone [data-scene-object="hero"]').isVisible(), true);
+};
 const components = async expected => {
   const actual = await page.locator('[data-camp-component]').evaluateAll(elements => Object.fromEntries(elements.map(el => [el.dataset.campComponent, el.dataset.dailyContribution === 'present'])));
   assert.deepEqual(actual, expected);
@@ -28,20 +35,22 @@ const chooseFood = async label => {
 };
 const submit = async () => { await button('Сохранить и разобрать').click(); await button('Добавить еду').waitFor(); };
 const complete = async () => { await inspector(); await button('Завершить анализ').click(); };
-const reload = async () => { await page.reload(); await button('Инструменты пробы').waitFor(); };
+const reload = async () => { await page.reload(); await waitForSession(page); };
 try {
   await page.clock.install({ time: new Date('2026-10-29T12:00:00Z') });
   await page.goto(`${process.argv[2] ?? 'http://localhost:6006'}/iframe.html?id=core-sandbox--all-screens&viewMode=story`);
-  await button('Инструменты пробы').waitFor();
-  await components(empty); await hero('idle');
+  await waitForSession(page);
+  await components(empty); await campHero();
   await page.locator('.sandbox-phone').screenshot({ path: '/tmp/chewy-daily-empty.png' });
-  await chooseFood('Ужин'); await hero('happy');
+  await chooseFood('Ужин'); await cameraHero('happy');
+  await page.clock.fastForward(61000); await cameraHero('idle');
+  await button('Сфотографировать еду').click(); await cameraHero('happy');
   const rewarded = await read();
   assert.equal(rewarded.rewardEvents.length, 1);
   assert.equal(rewarded.jobs.length, 0);
-  await submit(); await components(empty); await hero('happy');
+  await submit(); await components(empty); await campHero();
   // Restore the pending task; natural ticking completes it without opening results.
-  await reload(); await hero('idle');
+  await reload(); await campHero();
   assert.equal((await read()).jobs[0].status, 'processing');
   await page.clock.fastForward(21000);
   await page.waitForFunction(key => JSON.parse(localStorage.getItem(key)).jobs[0].status === 'ready', key);
@@ -73,26 +82,26 @@ try {
   assert.equal(completed.jobs.length, 3);
   assert.equal(completed.creditedDays.length, 1);
   assert.equal(completed.rewardEvents.length, 3);
-  await reload(); await components(all); await hero('idle');
+  await reload(); await components(all); await campHero();
   assert.deepEqual((await read()).jobs, completed.jobs);
   for (const device of ['compact', 'standard', 'large']) {
     await inspector(); await page.getByLabel('Размер телефона').selectOption(device);
     const phone = await page.locator('.sandbox-phone').boundingBox();
-    const bubble = await page.locator('[data-hero-state]').boundingBox();
+    const bubble = await page.locator('[data-scene-object="hero"]').boundingBox();
     assert.ok(bubble.x >= phone.x && bubble.x + bubble.width <= phone.x + phone.width + 1);
     assert.ok(bubble.y >= phone.y && bubble.y + bubble.height < phone.y + phone.height);
   }
   await page.getByLabel('Размер телефона').selectOption('standard');
   await page.locator('.sandbox-phone').screenshot({ path: '/tmp/chewy-daily-color.png' });
-  await phase('night'); await hero('sleeping');
-  await chooseFood('Завтрак'); await hero('sleeping');
+  await phase('night'); await campHero();
+  await chooseFood('Завтрак'); await cameraHero('sleeping');
   assert.equal((await read()).rewardEvents.length, 4);
-  await submit(); await complete(); await components(all); await hero('sleeping');
-  await phase('day'); await hero('happy');
-  await page.clock.fastForward(61000); await hero('idle');
+  await submit(); await complete(); await components(all); await campHero();
+  await phase('day'); await campHero();
+  await page.clock.fastForward(61000); await campHero();
   const beforeDay = await read();
   await button('Следующий день').click();
-  await components(empty); await hero('returning');
+  await components(empty); await campHero();
   const afterDay = await read();
   assert.deepEqual(afterDay.inventory, beforeDay.inventory);
   assert.deepEqual(afterDay.jobs, beforeDay.jobs);
@@ -105,9 +114,9 @@ try {
   await page.goto('about:blank');
   await page.clock.fastForward(7 * 60 * 60 * 1000);
   await page.goto(`${process.argv[2] ?? 'http://localhost:6006'}/iframe.html?id=core-sandbox--all-screens&viewMode=story`);
-  await button('Инструменты пробы').waitFor();
-  await phase('day'); await hero('returning');
-  await chooseFood('Обед'); await hero('happy');
+  await waitForSession(page);
+  await phase('day'); await campHero();
+  await chooseFood('Обед'); await cameraHero('happy');
   assert.deepEqual(errors, []);
-  console.log('PASS: persisted analysis, distinct daily meals, binary camp, repeat contribution, reload, next day, hero joy/expiry/sleep/return, rewards independent, three sizes.');
+  console.log('PASS: persisted analysis, distinct daily meals, binary camp, repeat contribution, reload, next day, camera joy/expiry/sleep, camp captions intentionally hidden, rewards independent, three sizes. Camp return-state transitions are covered by model tests.');
 } finally { await browser.close(); }

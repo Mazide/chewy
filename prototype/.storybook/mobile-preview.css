@@ -1,0 +1,66 @@
+html.chewy-mobile,
+.chewy-mobile body,
+.chewy-mobile #storybook-root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #d5e6b5;
+}
+
+.chewy-mobile .screen-study {
+  max-width: none;
+  padding: 0;
+}
+
+.chewy-mobile .study-workbench-heading,
+.chewy-mobile .study-inspector,
+.chewy-mobile .sandbox-status,
+.chewy-mobile .sandbox-home-indicator,
+.chewy-mobile .study-home-indicator,
+.chewy-mobile .capture-home-indicator {
+  display: none;
+}
+
+.chewy-mobile .study-workbench-layout {
+  display: block;
+}
+
+.chewy-mobile .study-device-host {
+  width: 100%;
+}
+
+.chewy-mobile .screen-study :is(.sandbox-phone, .study-phone, .capture-phone) {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  aspect-ratio: auto !important;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Keep Safari from zooming the entire preview when editing a meal. */
+.chewy-mobile .screen-study :is(input, textarea, select) {
+  font-size: max(16px, 1em);
+}
+
+.chewy-mobile .screen-study > .capture-error {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  margin: 0;
+  padding: 12px;
+  background: #fff;
+}
+
+@media (max-width: 360px) {
+  .chewy-mobile .study-phone .study-top { gap: 6px; flex-wrap: wrap; }
+  .chewy-mobile .study-phone .study-top > button:first-child { flex-shrink: 0; }
+  .chewy-mobile .study-phone .study-top h1 { font-size: 18px; }
+  .chewy-mobile .study-phone .study-top h1::before { width: 24px; height: 30px; }
+  .chewy-mobile .study-phone .study-top .reward-wallet-button { padding: 5px 6px; }
+}

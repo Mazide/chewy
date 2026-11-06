@@ -1,0 +1,30 @@
+{
+  "origin": "synthetic",
+  "response": {
+    "outcome": "food",
+    "dishName": "Синтетический пример",
+    "components": [
+      {
+        "label": "Демонстрационный компонент",
+        "directions": [],
+        "photoIds": [
+          "photo-1"
+        ],
+        "source": "image",
+        "certainty": "clear"
+      }
+    ],
+    "unknowns": [
+      "Синтетический ответ, не распознавание."
+    ],
+    "assessment": {
+      "directions": {
+        "protein": "unknown",
+        "fiberRichCarbs": "unknown",
+        "unsaturatedFats": "unknown",
+        "vegetablesFruit": "unknown"
+      }
+    }
+  },
+  "review": null
+}

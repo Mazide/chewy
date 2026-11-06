@@ -1,0 +1,33 @@
+{
+  "origin": "synthetic",
+  "response": {
+    "outcome": "food",
+    "dishName": "Синтетический пример",
+    "components": [
+      {
+        "label": "Демонстрационный компонент",
+        "directions": [
+          "fiberRichCarbs",
+          "vegetablesFruit"
+        ],
+        "photoIds": [
+          "2c044f69924c5615f7f1acdacc80a9529d760df240d531fb9267261d1bcde834"
+        ],
+        "source": "image",
+        "certainty": "clear"
+      }
+    ],
+    "unknowns": [
+      "Синтетический ответ, не распознавание."
+    ],
+    "assessment": {
+      "directions": {
+        "protein": "unknown",
+        "fiberRichCarbs": "present",
+        "unsaturatedFats": "unknown",
+        "vegetablesFruit": "present"
+      }
+    }
+  },
+  "review": null
+}

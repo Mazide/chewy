@@ -283,8 +283,9 @@ export function createDemoSessionStore({ storage, storageKey = DEMO_STORAGE_KEY,
       if (previous.found.every(id => previous.seenFindings.includes(id))) return true;
       return update(session => ({ ...session, exploration: { ...session.exploration, seenFindings: [...session.exploration.found] } }));
     },
-    startEntry: (id = crypto.randomUUID()) => {
+    startEntry: id => {
       if (blocked || !writable) return false;
+      id ??= crypto.randomUUID();
       const existing = snapshot.session.entries.find(entry => entry.id === id);
       if (existing) return existing;
       const firstPhotoAt = currentTime();

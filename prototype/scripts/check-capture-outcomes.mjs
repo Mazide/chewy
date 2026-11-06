@@ -2,6 +2,7 @@
 // A fresh browser context keeps the owner's Storybook session untouched.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession, withToday } from './lib/session-ui.mjs';
 
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ reducedMotion: 'reduce', timezoneId: 'Europe/London' });
@@ -19,7 +20,7 @@ const progress = session => ({
 });
 const savedContent = ({ lastSeenAt, ...session }) => session;
 const identity = job => ({ id: job.id, createdAt: job.createdAt, dayKey: job.dayKey });
-const loaded = () => button('Инструменты пробы').waitFor();
+const loaded = () => waitForSession(page);
 const reload = async () => { await page.reload(); await loaded(); };
 const inspector = async () => {
   if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click();
@@ -97,7 +98,7 @@ try {
   await button('К дню').click();
   assert.equal(await page.locator('.journey-day').getAttribute('data-history-day'), first.dayKey);
   await button('К пути').click(); await button('В лагерь').click();
-  await notice(first.id).click(); await heading('Не удалось узнать еду').waitFor();
+  await withToday(page, () => notice(first.id).click()); await heading('Не удалось узнать еду').waitFor();
 
   // Correcting an initial non-food answer uses the same entry and can replace its photos.
   await button('Уточнить запись').click(); await heading('Уточним запись').waitFor();
@@ -155,7 +156,7 @@ try {
   await button('Путь').click(); await button('Открыть день').click();
   await page.getByRole('list', { name: 'Еда за выбранный день' }).getByRole('button', { name: /Овсянка с ягодами/ }).click();
   await heading('Не удалось узнать еду').waitFor(); await button('К дню').click();
-  await button('К пути').click(); await button('В лагерь').click(); await notice(first.id).click();
+  await button('К пути').click(); await button('В лагерь').click(); await withToday(page, () => notice(first.id).click());
   await button('Уточнить запись').click();
   assert.equal(await page.getByLabel('Название блюда').inputValue(), revision.dishName);
   assert.equal(await page.getByLabel('Что уточнить?').inputValue(), revision.notes);
@@ -183,7 +184,7 @@ try {
   assert.deepEqual(identity(uncertain), identity(uncertainJob));
   assert.deepEqual(progress(await read()), progress(uncertainSave)); await components(knownContribution);
   await reload(); assert.deepEqual((await read()).jobs.at(-1), uncertain);
-  await notice(uncertain.id).click(); await heading('Овощи с гарниром').waitFor();
+  await withToday(page, () => notice(uncertain.id).click()); await heading('Овощи с гарниром').waitFor();
   assert.equal(await page.locator('.nutrition-meal.nutrition-tone-unknown').isVisible(), true);
   assert.equal(await page.locator('.nutrition-uncertainty-note').isVisible(), true);
   const uncertaintyCopy = await page.locator('.nutrition-uncertainty-note').innerText();

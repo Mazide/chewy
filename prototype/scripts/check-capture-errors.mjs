@@ -2,6 +2,7 @@
 // A fresh browser context never touches the owner's Storybook session.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession, withToday } from './lib/session-ui.mjs';
 
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ reducedMotion: 'reduce', timezoneId: 'Europe/London' });
@@ -19,7 +20,7 @@ const progress = session => ({
   regularity: session.regularity, inventory: session.inventory,
 });
 const identity = job => ({ id: job.id, createdAt: job.createdAt, dayKey: job.dayKey, photos: job.photos });
-const loaded = () => button('Инструменты пробы').waitFor();
+const loaded = () => waitForSession(page);
 const reload = async () => { await page.reload(); await loaded(); };
 const inspector = async () => {
   if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click();
@@ -70,11 +71,11 @@ try {
     assert.equal(failed.result, null); assert.deepEqual(identity(failed), identity(pending));
     assert.deepEqual(progress(failedSession), progress(saved));
     await components(failure === 'offline' ? empty : protein);
-    await notice(failed.id).click(); await heading(failureTitles[failure]).waitFor();
+    await withToday(page, () => notice(failed.id).click()); await heading(failureTitles[failure]).waitFor();
     assert.equal(await page.locator('.capture-photo-thumb').count(), 2);
     await button('В лагерь').click(); await reload();
     assert.deepEqual((await read()).jobs.at(-1), failed);
-    await notice(failed.id).click(); await heading(failureTitles[failure]).waitFor();
+    await withToday(page, () => notice(failed.id).click()); await heading(failureTitles[failure]).waitFor();
     await outcome('success');
 
     if (failure === 'offline') {
@@ -98,7 +99,7 @@ try {
     assert.deepEqual(identity(completed.jobs.at(-1)), identity(pending));
     assert.deepEqual(completed.jobs.at(-1).result.photos, pending.photos);
     assert.deepEqual(progress(completed), progress(saved));
-    await notice(retry.id).click(); await heading('Курица с картофелем').waitFor();
+    await withToday(page, () => notice(retry.id).click()); await heading('Курица с картофелем').waitFor();
     await button('В лагерь').click(); await components(protein);
   }
 
@@ -150,7 +151,7 @@ try {
   }
   await button('В лагерь').click(); await components(protein); await reload();
   assert.deepEqual((await read()).jobs.at(-1), failedRevision); await components(protein);
-  await notice(original.id).click(); await heading(failureTitles.error).waitFor();
+  await withToday(page, () => notice(original.id).click()); await heading(failureTitles.error).waitFor();
   await button('Прежний результат').click(); await heading('Курица с картофелем').waitFor();
   await button('К разбору').click(); await outcome('success'); await button('Повторить').click();
   const retryRevision = (await read()).jobs.at(-1);

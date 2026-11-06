@@ -139,7 +139,14 @@ class Store:
         with self.connection(write=True) as db:
             job = self._job(db, job_id)
             if job["status"] == "succeeded":
-                raise StoreError("job_already_completed")
+                meal = db.execute("SELECT accepted_job_id,pending_job_id FROM meals WHERE id=?",
+                                  (job["mealId"],)).fetchone()
+                rejected_correction = (job["result"].get("outcome") == "non_food"
+                                       and meal["pending_job_id"] == job_id
+                                       and meal["accepted_job_id"] is not None
+                                       and meal["accepted_job_id"] != job_id)
+                if not rejected_correction:
+                    raise StoreError("job_already_completed")
             db.execute("UPDATE jobs SET status='cancelled',attempt_token=NULL WHERE id=?", (job_id,))
             db.execute("UPDATE meals SET pending_job_id=NULL WHERE pending_job_id=?", (job_id,))
             return self._job(db, job_id)
@@ -177,7 +184,7 @@ class Store:
 
     def finish(self, claim, *, result=None, error=None, retry=False):
         with self.connection(write=True) as db:
-            row = db.execute("SELECT j.*,m.pending_job_id,m.deleted FROM jobs j JOIN meals m "
+            row = db.execute("SELECT j.*,m.pending_job_id,m.accepted_job_id,m.deleted FROM jobs j JOIN meals m "
                              "ON m.id=j.meal_id WHERE j.id=?", (claim["id"],)).fetchone()
             if (not row or row["deleted"] or row["status"] != "running"
                     or row["attempt_token"] != claim["token"] or row["pending_job_id"] != claim["id"]):
@@ -185,8 +192,12 @@ class Store:
             if result is not None:
                 db.execute("UPDATE jobs SET status='succeeded',result=?,error=NULL,attempt_token=NULL WHERE id=?",
                            (json.dumps(result, ensure_ascii=False), claim["id"]))
-                db.execute("UPDATE meals SET accepted_job_id=?,pending_job_id=NULL WHERE id=?",
-                           (claim["id"], row["meal_id"]))
+                # A non-food correction is a completed analysis, but it cannot
+                # replace the accepted meal. Retain it as the pending revision so
+                # clients can recover its new photos/details after a restart.
+                if result.get("outcome") != "non_food" or row["accepted_job_id"] is None:
+                    db.execute("UPDATE meals SET accepted_job_id=?,pending_job_id=NULL WHERE id=?",
+                               (claim["id"], row["meal_id"]))
             else:
                 db.execute("UPDATE jobs SET status=?,error=?,attempt_token=NULL,available_at=? WHERE id=?",
                            ("queued" if retry else "failed", error, time.time() + 2 ** claim["attempts"], claim["id"]))

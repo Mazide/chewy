@@ -16,6 +16,8 @@ const config = {
     const { mergeConfig } = await import('vite');
     return mergeConfig(config, {
       esbuild: { jsx: 'automatic' },
+      // Storybook owns staticDirs; Vite copying public in parallel races mkdir.
+      build: { copyPublicDir: false },
     });
   },
 };

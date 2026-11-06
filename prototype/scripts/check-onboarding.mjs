@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession } from './lib/session-ui.mjs';
 
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ reducedMotion: 'reduce', viewport: { width: 1150, height: 1100 } });
@@ -7,7 +8,7 @@ const page = await context.newPage();
 const errors = [];
 page.on('pageerror', error => errors.push(error.message));
 const origin = process.argv[2] ?? 'http://localhost:6006';
-const url = id => `${origin}/iframe.html?id=core-sandbox--${id}&viewMode=story`;
+const url = id => `${origin}/iframe.html?id=${id === 'welcome' ? 'deferred-intro--original-welcome' : `core-sandbox--${id}`}&viewMode=story`;
 const button = name => page.getByRole('button', { name, exact: true });
 const key = 'chewy.demo-session.v1';
 const example = async () => {
@@ -35,7 +36,7 @@ const fit = async () => {
 };
 try {
   await page.clock.install({ time: new Date('2026-10-29T12:00:00Z') });
-  await page.goto(url('all-screens')); await button('Добавить еду').waitFor();
+  await page.goto(url('all-screens')); await waitForSession(page);
   assert.ok(await saved(), 'main session exists for isolation check');
   await page.goto(url('welcome')); await button('Покажи, как это работает').waitFor();
   const mainSession = await saved(); // Main app records its last visit when leaving.
@@ -55,9 +56,9 @@ try {
     await page.locator('.study-phone').evaluate(el => el.style.height = '360px');
     await fit(); await page.getByLabel('Имя друга').press('Enter');
     await button('Добавить еду').waitFor();
-    assert.match(await page.locator('.hero-state-label').innerText(), /^Лисёнок /);
-    assert.equal(await page.locator('.hero-state-name').innerText(), 'Лисёнок');
-    assert.ok(await page.locator('.hero-state-name').isVisible());
+    // Verify the applied name through the review UI while camp labels stay hidden.
+    assert.equal(await page.locator('.onboarding-review-summary strong').innerText(), 'Лисёнок');
+    assert.equal(await page.locator('.hero-state-label, .hero-state-name').count(), 0);
     assert.equal(await page.locator('.reward-wallet strong').innerText(), '0 монет');
     assert.equal(await page.getByLabel('Стадия лагеря').inputValue(), 'initial');
     assert.equal(await page.getByLabel('Продвижение по пути').inputValue(), '0');
@@ -95,21 +96,23 @@ try {
   await button('Начать знакомство заново').click(); await button('Сбросить и начать заново').click();
   await example(); assert.equal(await page.getByLabel('Имя друга').inputValue(), '');
   await page.getByLabel('Имя друга').fill('Не сохранять'); await button('Оставить Чуви').click();
-  assert.match(await page.locator('.hero-state-label').innerText(), /^Чуви /);
+  assert.equal(await page.locator('.onboarding-review-summary strong').innerText(), 'Чуви');
+  assert.equal(await page.locator('.hero-state-label, .hero-state-name').count(), 0, 'camp labels remain hidden');
   assert.equal(await page.locator('.reward-wallet strong').innerText(), '0 монет');
   await page.reload(); await button('Покажи, как это работает').waitFor();
   await example(); await page.getByLabel('Имя друга').fill('   '); await button('В лагерь').click();
-  assert.match(await page.locator('.hero-state-label').innerText(), /^Чуви /);
+  assert.equal(await page.locator('.onboarding-review-summary strong').innerText(), 'Чуви');
+  assert.equal(await page.locator('.hero-state-label, .hero-state-name').count(), 0, 'camp labels remain hidden');
   assert.equal(await saved(), mainSession);
   await page.goto(url('name')); await page.getByLabel('Имя друга').waitFor();
   await button('Оставить Чуви').click(); await button('Добавить еду').waitFor();
   await page.goto(url('reminders')); await button('Пока без напоминаний').click(); await button('Добавить еду').waitFor();
   assert.equal(await saved(), mainSession, 'all legacy intro links stay isolated');
-  await page.goto(url('all-screens')); await button('Добавить еду').waitFor();
+  await page.goto(url('all-screens')); await waitForSession(page);
   assert.equal(await page.locator('.onboarding-intro').count(), 0, 'main entry still opens camp');
   assert.equal(await page.locator('.reward-wallet strong').innerText(), '0 монет');
   assert.deepEqual(errors, []);
-  console.log('PASS onboarding: three sizes, back/skip/name/keyboard, empty camp, first photo, reset, reload, isolation and legacy URLs');
+  console.log('PASS onboarding: three sizes, back/skip/name/keyboard, empty camp, first photo, reset, reload, isolation and legacy URLs; camp name labels intentionally hidden');
 } catch (error) {
   await page.screenshot({ path: '/tmp/chewy-onboarding-check-failure.png' });
   console.error((await page.locator('body').innerText()).slice(0, 900));

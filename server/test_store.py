@@ -76,13 +76,83 @@ class StoreTests(unittest.TestCase):
         self.assertEqual(meal["acceptedJob"]["id"], first["id"])
         self.assertEqual(self.submit("correction", changed)["status"], "cancelled")
 
-    def test_successful_non_food_replaces_old_result(self):
-        self.accept()
-        replacement = self.accept("correction", result={"outcome": "non_food"})
+    def test_non_food_correction_preserves_accepted_result_and_retains_new_input(self):
+        first = self.accept()
+        accepted = self.store.meal("meal-1")["acceptedJob"]
+        changed = request()
+        changed["photos"][0]["id"] = "correction-photo"
+        changed["photos"][0]["dataBase64"] = base64.b64encode(b"new-photo-content").decode()
+        changed["userInput"]["notes"] = "Please check this new photo"
+        correction = self.submit("correction", changed)
+        claim = self.store.claim(3)
+        result = {"outcome": "non_food"}
+        self.assertTrue(self.store.finish(claim, result=result))
+        # Duplicate completion cannot promote a rejected correction.
+        self.assertFalse(self.store.finish(claim, result=result))
+        self.store = Store(self.path)
+        self.store.recover()
         meal = self.store.meal("meal-1")
-        self.assertEqual(meal["acceptedJob"]["id"], replacement["id"])
+        self.assertEqual(meal["acceptedJob"], accepted)
+        self.assertEqual(meal["pendingJob"]["id"], correction["id"])
+        self.assertEqual(meal["pendingJob"]["status"], "succeeded")
+        self.assertEqual(meal["pendingJob"]["result"], result)
+        self.assertEqual(meal["pendingJob"]["userInput"], changed["userInput"])
+        self.assertEqual(self.store.photo(correction["id"], "correction-photo"), changed["photos"][0])
+        self.assertEqual(self.store.photo(first["id"], "photo-1"), request()["photos"][0])
+        self.assertEqual(self.submit("correction", changed), meal["pendingJob"])
+        self.assertIsNone(self.store.claim(3))
+
+    def test_first_non_food_is_visible_and_can_be_corrected(self):
+        first = self.accept(result={"outcome": "non_food"})
+        meal = self.store.meal("meal-1")
+        self.assertEqual(meal["acceptedJob"]["id"], first["id"])
         self.assertEqual(meal["acceptedJob"]["result"], {"outcome": "non_food"})
         self.assertIsNone(meal["pendingJob"])
+        correction = self.accept("correction", result={"outcome": "food", "dishName": "Lunch"})
+        self.assertEqual(self.store.meal("meal-1")["acceptedJob"]["id"], correction["id"])
+
+    def test_food_after_non_food_correction_replaces_result_and_clears_pending(self):
+        first = self.accept()
+        self.accept("non-food-correction", result={"outcome": "non_food"})
+        correction = self.submit("food-correction")
+        self.assertEqual(self.store.meal("meal-1")["acceptedJob"]["id"], first["id"])
+        result = {"outcome": "food", "dishName": "Updated lunch"}
+        self.store.finish(self.store.claim(3), result=result)
+        meal = self.store.meal("meal-1")
+        self.assertEqual(meal["acceptedJob"]["id"], correction["id"])
+        self.assertEqual(meal["acceptedJob"]["result"], result)
+        self.assertIsNone(meal["pendingJob"])
+        for key in ("firstPhotoAddedAt", "localDate", "timeZone"):
+            self.assertEqual(meal[key], request()[key])
+
+    def test_cancel_completed_non_food_correction_keeps_accepted_result(self):
+        first = self.accept()
+        accepted = self.store.meal("meal-1")["acceptedJob"]
+        correction = self.submit("non-food-correction")
+        claim = self.store.claim(3)
+        self.store.finish(claim, result={"outcome": "non_food"})
+        cancelled = self.store.cancel(correction["id"])
+        self.assertEqual(cancelled["status"], "cancelled")
+        self.assertEqual(self.store.meal("meal-1")["acceptedJob"], accepted)
+        self.assertIsNone(self.store.meal("meal-1")["pendingJob"])
+        self.assertFalse(self.store.finish(claim, result={"outcome": "food"}))
+        self.assertEqual(self.submit("non-food-correction")["status"], "cancelled")
+        self.assertEqual(self.store.photo(first["id"], "photo-1"), request()["photos"][0])
+        self.assertEqual(self.store.cancel(correction["id"])["status"], "cancelled")
+
+    def test_cancel_cannot_remove_accepted_or_superseded_completed_results(self):
+        for outcome in ("food", "non_food"):
+            accepted = self.accept(f"accepted-{outcome}", result={"outcome": outcome})
+            if outcome == "non_food":
+                # This is a pending correction; a newer revision supersedes it.
+                self.submit("newer-correction")
+            with self.assertRaisesRegex(StoreError, "job_already_completed"):
+                self.store.cancel(accepted["id"])
+        self.store.delete("meal-1")
+        initial = self.submit("initial-non-food", meal="meal-2")
+        self.store.finish(self.store.claim(3), result={"outcome": "non_food"})
+        with self.assertRaisesRegex(StoreError, "job_already_completed"):
+            self.store.cancel(initial["id"])
 
     def test_newer_revision_fences_old_response(self):
         first = self.submit()

@@ -2,6 +2,7 @@
 // Separate browser contexts keep the owner's Storybook session untouched.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession, withToday } from './lib/session-ui.mjs';
 
 const browser = await chromium.launch({ headless: true });
 const origin = process.argv[2] ?? 'http://localhost:6006';
@@ -24,7 +25,7 @@ const run = async (name, check) => {
   const heading = name => page.getByRole('heading', { name, exact: true });
   const dialog = name => page.getByRole('dialog', { name, exact: true });
   const read = () => page.evaluate(key => JSON.parse(localStorage.getItem(key)), key);
-  const loaded = () => button('Инструменты пробы').waitFor();
+  const loaded = () => waitForSession(page);
   const inspector = async () => {
     if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click();
   };
@@ -169,9 +170,9 @@ try {
   await run('plain processing exit persists; confirmed cancellation rejects queued replies and write failure', async ({ page,
     button, heading, dialog, read, add, notice, reload, remember, deliver, confirm, failureInDialog, focused, components }) => {
     const job = await add('Ужин'); const submitted = await read();
-    await notice(job.id).click(); await page.getByText('Разбираем еду', { exact: true }).waitFor();
+    await withToday(page, () => notice(job.id).click()); await page.getByText('Разбираем еду', { exact: true }).waitFor();
     await button('В лагерь').click(); assert.deepEqual((await read()).jobs, submitted.jobs);
-    await reload(); assert.deepEqual((await read()).jobs, submitted.jobs); await notice(job.id).click();
+    await reload(); assert.deepEqual((await read()).jobs, submitted.jobs); await withToday(page, () => notice(job.id).click());
     await remember(); await button('Отменить разбор').click();
     await focused(dialog('Отменить разбор?').getByRole('button', { name: 'Оставить запись', exact: true }));
     await confirm('Отменить разбор?', 'Оставить запись'); await focused(button('Отменить разбор'));
@@ -189,7 +190,7 @@ try {
 
   await run('completion while cancellation confirmation is open keeps the finished result', async ({ page, button, heading,
     dialog, read, add, notice, confirm, focused }) => {
-    const job = await add('Ужин'); await notice(job.id).click(); await button('Отменить разбор').click();
+    const job = await add('Ужин'); await withToday(page, () => notice(job.id).click()); await button('Отменить разбор').click();
     await page.clock.fastForward(21000); assert.equal((await read()).jobs[0].status, 'ready');
     const ready = await read(); await confirm('Отменить разбор?', 'Отменить разбор');
     await dialog('Отменить разбор?').waitFor();
@@ -201,7 +202,7 @@ try {
 
   await run('cancel clarification restores prior photos and contribution without accepting the old attempt', async ({ page,
     button, heading, read, add, complete, notice, remember, deliver, confirm, failureInDialog, components, outcome, reload }) => {
-    const job = await add('Ужин'); await complete(); await notice(job.id).click();
+    const job = await add('Ужин'); await complete(); await withToday(page, () => notice(job.id).click());
     await heading('Курица с картофелем').waitFor(); const original = (await read()).jobs[0];
     const oldPhoto = await page.locator('.capture-result-photo img').getAttribute('src');
     const edit = async () => {

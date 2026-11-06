@@ -1,0 +1,122 @@
+{
+  "notice": "Offline checks are not proof of Gemini recognition quality. No release threshold is defined.",
+  "cases": [
+    {
+      "case": "demo-meal",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "generated-demo"
+    },
+    {
+      "case": "demo-breakfast",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "generated-demo"
+    },
+    {
+      "case": "simple-plate",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "missing"
+    },
+    {
+      "case": "mixed-dish",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "missing"
+    },
+    {
+      "case": "repeated-view",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "generated-duplicate"
+    },
+    {
+      "case": "unreadable",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "missing"
+    },
+    {
+      "case": "hidden-oil",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "generated-demo"
+    },
+    {
+      "case": "oil-clarification",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "generated-demo"
+    },
+    {
+      "case": "non-food",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "missing"
+    },
+    {
+      "case": "portion-only",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "missing"
+    },
+    {
+      "case": "untrusted-text",
+      "failures": [],
+      "humanReview": "pending",
+      "origin": "synthetic",
+      "status": "contract_checked",
+      "qualityEvidence": false,
+      "qualityNote": "Recognition quality requires photo-grounded review and verified run provenance; this tool only checks a supplied record.",
+      "material": "generated-demo"
+    }
+  ],
+  "unexpectedFiles": [],
+  "counts": {
+    "missing_response": 0,
+    "invalid_record": 0,
+    "failed": 0,
+    "contract_checked": 11
+  }
+}

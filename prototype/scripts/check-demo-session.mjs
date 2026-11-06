@@ -2,6 +2,7 @@
 // A fresh context keeps the owner's session untouched; only reads inspect storage.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession, withToday } from './lib/session-ui.mjs';
 import { DEMO_GARDEN_COSTS } from '../src/core/demo-config.js';
 
 const browser = await chromium.launch({ headless: true });
@@ -18,7 +19,7 @@ const progress = session => ({
   entries: session.entries, rewards: session.rewardEvents, days: session.creditedDays,
   regularity: session.regularity, inventory: session.inventory,
 });
-const loaded = () => button('Инструменты пробы').waitFor();
+const loaded = () => waitForSession(page);
 const reload = async () => { await page.reload(); await loaded(); };
 const inspector = async () => {
   if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click();
@@ -75,7 +76,7 @@ try {
   assert.deepEqual((await read()).jobs, pending.jobs);
   await finishAnalysis(); await components(full);
   assert.deepEqual(progress(await read()), progress(firstPhoto));
-  await page.locator('.capture-notice').click();
+  await withToday(page, () => page.locator('.capture-notice').click());
   await page.getByRole('heading', { name: 'Овощи с гарниром', exact: true }).waitFor();
   await button('В лагерь').click();
   await button('Открыть дневник еды за сегодня').click();

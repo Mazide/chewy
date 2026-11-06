@@ -1,6 +1,7 @@
 // Focused regressions from the stage 3 review. Fresh contexts preserve the owner's data.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession, withToday } from './lib/session-ui.mjs';
 
 const browser = await chromium.launch({ headless: true });
 const origin = process.argv[2] ?? 'http://localhost:6006';
@@ -15,7 +16,7 @@ const run = async (name, check) => {
   const button = name => page.getByRole('button', { name, exact: true });
   try {
     await page.clock.install({ time: new Date('2026-10-29T12:00:00Z') });
-    await page.goto(url); await button('Инструменты пробы').waitFor();
+    await page.goto(url); await waitForSession(page);
     await check(page, button);
     console.log(`PASS: ${name}`);
   } catch (error) {
@@ -29,9 +30,9 @@ try {
     await button('Добавить еду').click(); await button('Сфотографировать еду').click();
     await button('Сохранить и разобрать').click();
     const stamp = page.locator('.capture-notice time');
-    assert.match(await stamp.innerText(), /^12:00$/);
+    assert.match(await withToday(page, () => stamp.innerText()), /^12:00$/);
     await button('Инструменты пробы').click(); await button('Следующий день').click();
-    assert.match(await stamp.innerText(), /^29 окт\. · 12:00$/);
+    assert.match(await withToday(page, () => stamp.innerText()), /^29 окт\. · 12:00$/);
     // A late/travelling record keeps its original dayKey even when its timestamp
     // falls on another calendar date in this browser. Reading does not migrate it.
     await page.addInitScript(key => {
@@ -40,10 +41,10 @@ try {
       session.entries.find(entry => entry.id === session.jobs[0].id).firstPhotoAt = session.jobs[0].createdAt;
       localStorage.setItem(key, JSON.stringify(session));
     }, key);
-    await page.reload(); await button('Инструменты пробы').waitFor();
-    assert.match(await stamp.innerText(), /^29 окт\. · 23:00$/);
+    await page.reload(); await waitForSession(page);
+    assert.match(await withToday(page, () => stamp.innerText()), /^29 окт\. · 23:00$/);
     assert.equal(await page.evaluate(key => JSON.parse(localStorage.getItem(key)).jobs[0].dayKey, key), '2026-10-29');
-    assert.match(await page.locator('.capture-notice').getAttribute('aria-label'), /29 окт\. · 23:00/);
+    assert.match(await withToday(page, () => page.locator('.capture-notice').getAttribute('aria-label')), /29 окт\. · 23:00/);
   });
 
   await run('resizing the map keeps the selected stop visible without moving the camp', async (page, button) => {

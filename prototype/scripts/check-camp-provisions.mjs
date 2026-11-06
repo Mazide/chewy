@@ -1,6 +1,7 @@
 // Fresh context: visual previews must never change the owner's stored session.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession } from './lib/session-ui.mjs';
 
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ reducedMotion: 'reduce', timezoneId: 'Europe/London', viewport: { width: 1440, height: 1100 } });
@@ -34,7 +35,7 @@ const submit = async () => {
 };
 try {
   await page.clock.install({ time: new Date('2026-11-02T12:00:00Z') });
-  await page.goto(url); await button('Инструменты пробы').waitFor();
+  await page.goto(url); await waitForSession(page);
   await stage('resting'); await contributions(empty);
   assert.equal(await page.locator('.sandbox-phone [data-scene-object="log"]').count(), 1);
   assert.equal(await page.locator('.sandbox-phone [data-scene-object="log"]').getAttribute('data-camp-component'), null);
@@ -84,7 +85,7 @@ try {
   await button('Рюкзак').click(); await button('Моё').waitFor();
   await button('В лагерь').click(); await stage('first');
   assert.deepEqual((await read()).inventory, completed.inventory);
-  await page.reload(); await button('Инструменты пробы').waitFor(); await stage('first');
+  await page.reload(); await waitForSession(page); await stage('first');
   assert.deepEqual((await read()).jobs, completed.jobs);
   await inspector(); await button('Следующий день').click();
   await stage('resting'); await contributions(empty);
@@ -93,7 +94,7 @@ try {
   assert.deepEqual(nextDay.jobs, completed.jobs);
   assert.deepEqual(nextDay.rewardEvents, completed.rewardEvents);
   await preview.selectOption('extra'); await stage('extra');
-  await page.reload(); await button('Инструменты пробы').waitFor(); await stage('resting');
+  await page.reload(); await waitForSession(page); await stage('resting');
   assert.deepEqual((await read()).inventory, completed.inventory);
   await page.goto(`${origin}/iframe.html?id=core-sandbox--camp-collage&viewMode=story`);
   const movableBag = page.getByRole('button', { name: 'Переместить: Припасы. Можно двигать стрелками.', exact: true });

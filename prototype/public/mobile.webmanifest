@@ -1,0 +1,10 @@
+{
+  "name": "Чуви — прототип",
+  "short_name": "Чуви",
+  "lang": "ru",
+  "start_url": "./mobile.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#d5e6b5",
+  "theme_color": "#d5e6b5"
+}

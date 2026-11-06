@@ -1,6 +1,7 @@
 // Real Web Locks and shared storage, inside a fresh context separate from the owner.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession } from './lib/session-ui.mjs';
 import { DEMO_GARDEN_COSTS } from '../src/core/demo-config.js';
 
 const browser = await chromium.launch({ headless: true });
@@ -11,7 +12,7 @@ const errors = [];
 const button = (page, name) => page.getByRole('button', { name, exact: true });
 const read = page => page.evaluate(key => JSON.parse(localStorage.getItem(key)), key);
 const progress = ({ lastSeenAt, ...session }) => session;
-const writable = page => page.waitForFunction(() => !document.querySelector('[role="alert"]'));
+const writable = page => waitForSession(page);
 const inspector = async page => {
   if (await button(page, 'Инструменты пробы').isVisible()) await button(page, 'Инструменты пробы').click();
 };

@@ -1,3 +1,8 @@
+import './mobile-preview.css';
+
+// Opt in only from the standalone mobile entry; keep the review workbench intact.
+document.documentElement.classList.toggle('chewy-mobile', new URLSearchParams(window.location.search).get('mobile') === '1');
+
 /** @type { import('@storybook/react').Preview } */
 const preview = {
   parameters: {

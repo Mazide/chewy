@@ -2,6 +2,7 @@
 // Each flow uses a fresh browser context; no authored session data is injected.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession, withToday } from './lib/session-ui.mjs';
 
 const browser = await chromium.launch({ headless: true });
 const origin = process.argv[2] ?? 'http://localhost:6006';
@@ -32,7 +33,7 @@ const run = async (name, time, check) => {
       return original.call(this, name, value);
     };
   }, key);
-  const loaded = () => button('Инструменты пробы').waitFor();
+  const loaded = () => waitForSession(page);
   const inspector = async () => {
     if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click();
   };
@@ -119,7 +120,7 @@ try {
     assert.equal(await page.locator('.capture-analysis').count(), 0, 'several replies do not force a result scene');
     assert.equal((await read()).jobs.every(job => job.status === 'ready'), true);
     assert.deepEqual(progress(await read()), progress(submitted));
-    await reload(); await components(breakfast); await notice(current.id).waitFor();
+    await reload(); await components(breakfast); await withToday(page, () => notice(current.id).waitFor());
 
     // Current-day diary contains only today's meal; the late meal remains independently reachable.
     await button('Открыть дневник еды за сегодня').click();
@@ -132,16 +133,16 @@ try {
     assert.deepEqual((await read()).jobs, beforeViewedWrite.jobs);
     assert.deepEqual(progress(await read()), progress(submitted));
     await button('В лагерь').click();
-    await notice(old.id).waitFor(); assert.match(await notice(old.id).innerText(), /29 окт/);
+    await withToday(page, () => notice(old.id).waitFor()); assert.match(await withToday(page, () => notice(old.id).innerText()), /29 окт/);
     assert.equal(await page.locator('.capture-analysis').count(), 0, 'another unseen result stays optional');
     for (const size of ['compact', 'standard', 'large']) {
       await inspector(); await page.getByLabel('Размер телефона').selectOption(size);
       await controlsFit(['Добавить еду', 'Рюкзак', 'Путь'], size, '.sandbox-phone');
-      await page.locator('.sandbox-phone').screenshot({ path: `/tmp/chewy-late-notice-${size}.png` });
+      await withToday(page, () => page.locator('.sandbox-phone').screenshot({ path: `/tmp/chewy-late-notice-${size}.png` }));
     }
-    await notice(old.id).click(); await heading('Курица с картофелем').waitFor();
+    await withToday(page, () => notice(old.id).click()); await heading('Курица с картофелем').waitFor();
     await button('В лагерь').click(); await components(breakfast);
-    assert.equal(await page.locator('.capture-notice').count(), 0);
+    assert.equal(await withToday(page, () => page.locator('.capture-notice').count()), 0);
     assert.deepEqual(progress(await read()), progress(submitted));
 
     await history(old.dayKey); assert.equal(await mealRow(old.id).count(), 1); assert.equal(await mealRow(current.id).count(), 0);
@@ -180,8 +181,8 @@ try {
     await setTime('2026-10-30T11:00:00Z'); assert.equal(await localDate(), '2026-10-31');
     assert.equal((await read()).jobs[0].status, 'notFood'); await components(empty);
     assert.deepEqual(progress(await read()), progress(firstPhoto));
-    assert.match(await notice(original.id).innerText(), /29 окт/);
-    await notice(original.id).click(); await heading('Не удалось узнать еду').waitFor();
+    assert.match(await withToday(page, () => notice(original.id).innerText()), /29 окт/);
+    await withToday(page, () => notice(original.id).click()); await heading('Не удалось узнать еду').waitFor();
     await button('В лагерь').click();
     await history(original.dayKey); await mealRow(original.id).getByRole('button').click();
     await heading('Не удалось узнать еду').waitFor(); await outcome('success');
@@ -208,7 +209,7 @@ try {
   }) => {
     await outcome('offline'); await draft('Ужин'); const original = await submit(); const submitted = await read();
     await setTime('2026-10-30T12:00:00Z'); assert.equal((await read()).jobs[0].status, 'failed');
-    await components(empty); await reload(); await notice(original.id).click(); await heading('Нет связи').waitFor();
+    await components(empty); await reload(); await withToday(page, () => notice(original.id).click()); await heading('Нет связи').waitFor();
     await outcome('success'); await button('Повторить').click();
     const retry = (await read()).jobs[0]; assert.deepEqual(identity(retry), identity(original));
     assert.deepEqual(retry.photos, original.photos); assert.equal(retry.attempt, original.attempt + 1);

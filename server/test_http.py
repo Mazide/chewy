@@ -100,6 +100,60 @@ class HTTPTests(unittest.TestCase):
         status, _, error = self.submit(changed)
         self.assertEqual((status, error["error"]["code"]), (409, "idempotency_conflict"))
 
+    def test_non_food_correction_keeps_previous_result_and_exposes_new_photos(self):
+        _, _, first = self.submit()
+        self.store.finish(self.store.claim(3), result={"outcome": "food", "dishName": "Lunch"})
+        _, _, original = self.request("/v1/meals/meal-1")
+        changed = copy.deepcopy(self.body)
+        changed_image = IMAGE + b"-correction"
+        changed["photos"][0] = {
+            "id": "correction-photo", "mimeType": "image/png",
+            "dataBase64": base64.b64encode(changed_image).decode(),
+        }
+        changed["userInput"]["notes"] = "New details"
+        status, _, correction = self.submit(changed, key="correction")
+        self.assertEqual(status, 202)
+        self.store.finish(self.store.claim(3), result={"outcome": "non_food"})
+        status, _, meal = self.request("/v1/meals/meal-1")
+        self.assertEqual(status, 200)
+        self.assertEqual(meal["acceptedJob"], original["acceptedJob"])
+        self.assertEqual(meal["pendingJob"]["id"], correction["id"])
+        self.assertEqual(meal["pendingJob"]["status"], "succeeded")
+        self.assertEqual(meal["pendingJob"]["result"]["outcome"], "non_food")
+        self.assertEqual(meal["pendingJob"]["userInput"], changed["userInput"])
+        self.assertEqual(self.request(first["photos"][0]["url"])[2], IMAGE)
+        self.assertEqual(self.request(meal["pendingJob"]["photos"][0]["url"])[2], changed_image)
+        self.assertEqual(self.request(f"/v1/jobs/{correction['id']}")[2], meal["pendingJob"])
+        self.assertEqual(self.submit(changed, key="correction")[2], meal["pendingJob"])
+        # Explicit deletion still purges both the accepted and rejected revisions.
+        self.assertEqual(self.request("/v1/meals/meal-1", method="DELETE")[0], 200)
+        for job in (first, correction):
+            self.assertEqual(self.request(job["photos"][0]["url"])[0], 410)
+            self.assertEqual(self.request(f"/v1/jobs/{job['id']}")[0], 410)
+
+    def test_cancel_completed_non_food_correction_via_http(self):
+        _, _, first = self.submit()
+        self.store.finish(self.store.claim(3), result={"outcome": "food", "dishName": "Lunch"})
+        _, _, correction = self.submit(key="correction")
+        self.store.finish(self.store.claim(3), result={"outcome": "non_food"})
+        status, _, cancelled = self.request(f"/v1/jobs/{correction['id']}/cancel", method="POST")
+        self.assertEqual((status, cancelled["status"]), (200, "cancelled"))
+        _, _, meal = self.request("/v1/meals/meal-1")
+        self.assertEqual(meal["acceptedJob"]["id"], first["id"])
+        self.assertIsNone(meal["pendingJob"])
+        status, _, error = self.request(f"/v1/jobs/{first['id']}/cancel", method="POST")
+        self.assertEqual((status, error["error"]["code"]), (409, "job_already_completed"))
+
+    def test_first_non_food_result_is_returned_without_a_pending_correction(self):
+        _, _, job = self.submit()
+        self.store.finish(self.store.claim(3), result={"outcome": "non_food"})
+        status, _, meal = self.request("/v1/meals/meal-1")
+        self.assertEqual(status, 200)
+        self.assertEqual(meal["acceptedJob"]["id"], job["id"])
+        self.assertEqual(meal["acceptedJob"]["result"]["outcome"], "non_food")
+        self.assertIsNone(meal["pendingJob"])
+        self.assertEqual(self.request(meal["acceptedJob"]["photos"][0]["url"])[2], IMAGE)
+
     def test_cors_allows_local_prototype_and_blocks_foreign_origin_and_host(self):
         origin = "http://localhost:6006"
         status, headers, _ = self.request("/v1/meals/meal-1/analyses", method="OPTIONS",

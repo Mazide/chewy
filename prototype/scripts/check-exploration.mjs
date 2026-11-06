@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession } from './lib/session-ui.mjs';
 import { createDemoSession } from '../src/core/demo-session.js';
 
 // Isolated browser storage never modifies the owner's prototype.
@@ -12,7 +13,7 @@ const main = `${origin}/iframe.html?id=core-sandbox--all-screens&viewMode=story`
 const key = 'chewy.demo-session.v1';
 const button = name => page.getByRole('button', {name,exact:true});
 const read = () => page.evaluate(key => JSON.parse(localStorage.getItem(key)), key);
-const loaded = async () => { await button('Инструменты пробы').waitFor(); await page.waitForFunction(key => JSON.parse(localStorage.getItem(key))?.version === 2, key); };
+const loaded = () => waitForSession(page);
 const inspect = async () => { if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click(); };
 const send = async (kind, amount) => {
   await page.getByLabel('Вид активности').selectOption(kind);
@@ -84,8 +85,8 @@ try {
       const target = await button(control).boundingBox();
       assert.ok(notice.x + notice.width <= target.x || notice.y + notice.height <= target.y || target.y + target.height <= notice.y, 'finding notice must not cover navigation');
     }
-    const capture = await page.locator('.capture-notice').boundingBox();
-    if (capture) assert.ok(capture.y + capture.height <= notice.y, 'finding and food notices must not overlap');
+    const today = await button('Открыть дневник еды за сегодня').boundingBox();
+    assert.ok(today.y + today.height <= notice.y || notice.y + notice.height <= today.y, 'finding notice must not cover Today');
     await page.locator('.sandbox-phone').screenshot({path:`/tmp/chewy-finding-notice-${size}.png`});
   }
   // The ordinary backpack entry also acknowledges findings.

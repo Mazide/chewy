@@ -1,6 +1,7 @@
 // Run against local Storybook; each context is isolated from the owner's data.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession } from './lib/session-ui.mjs';
 import { createDemoSessionStore } from '../src/core/demo-session.js';
 import { JOURNEY_STOPS } from '../src/core/journey-world.js';
 
@@ -18,7 +19,7 @@ const economy = session => ({ inventory: session.inventory, events: session.rewa
 const inspector = async () => { if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click(); };
 const advance = async label => { await inspector(); await button(label).click(); };
 const complete = () => advance('Завершить анализ');
-const reload = async () => { await page.reload(); await button('Инструменты пробы').waitFor(); };
+const reload = async () => { await page.reload(); await waitForSession(page); };
 const add = async label => {
   await button('Добавить еду').click(); await button('Галерея').click();
   await button(`Выбрать фото: ${label}`).click(); await button('Добавить фото · 1').click();
@@ -32,7 +33,7 @@ const selectStop = async index => {
 const campAppearance = async id => assert.equal(await page.locator('[data-camp-component="plants"] [data-garden-appearance]').getAttribute('data-garden-appearance'), id);
 try {
   await page.clock.install({ time: new Date('2026-10-29T12:00:00Z') });
-  await page.goto(url); await button('Инструменты пробы').waitFor();
+  await page.goto(url); await waitForSession(page);
   await button('Путь').click(); assert.equal(await button('Открыть день').count(), 0);
   await button('В лагерь').click();
   await add('Ужин'); await complete(); await add('Завтрак'); await complete();
@@ -97,7 +98,7 @@ try {
   assert.equal(await page.locator('[aria-pressed="true"][data-stop-index]').getAttribute('data-stop-index'), '3');
   await button('В лагерь').click(); await advance('Пропустить неделю');
   assert.deepEqual(economy(await read()), economy(third));
-  assert.equal(await page.locator('[data-hero-state]').getAttribute('data-hero-state'), 'returning');
+  assert.equal(await page.locator('.sandbox-phone [data-hero-state]').count(), 0, 'camp reaction captions stay hidden by design; return state is covered in hero-state tests');
   await campAppearance('flowers'); await reload(); await campAppearance('flowers');
   assert.match(await page.locator('.sandbox-background img').getAttribute('src'), /camp-lake/);
   await button('Путь').click(); await button('Открыть день').click();
@@ -125,7 +126,7 @@ try {
   const edgeContext = await browser.newContext({ reducedMotion: 'reduce', timezoneId: 'Europe/London' });
   const edge = await edgeContext.newPage(); edge.on('pageerror', error => errors.push(error.message));
   await edge.addInitScript(({ key, value }) => { if (!localStorage.getItem(key)) localStorage.setItem(key, value); }, { key, value: JSON.stringify(edgeSession) });
-  await edge.goto(url); await edge.getByRole('button', { name: 'Путь', exact: true }).click();
+  await edge.goto(url); await waitForSession(edge); await edge.getByRole('button', { name: 'Путь', exact: true }).click();
   assert.equal(await edge.locator('.forest-stop-today').getAttribute('data-stop-index'), String(JOURNEY_STOPS.length - 1));
   assert.equal(await edge.getByLabel('День на стоянке').locator('option').count(), 5);
   await edge.getByRole('button', { name: 'Открыть день', exact: true }).click();

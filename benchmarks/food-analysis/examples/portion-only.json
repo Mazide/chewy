@@ -1,0 +1,20 @@
+{
+  "origin": "synthetic",
+  "response": {
+    "outcome": "insufficient_evidence",
+    "dishName": "",
+    "components": [],
+    "unknowns": [
+      "Синтетический ответ, не распознавание."
+    ],
+    "assessment": {
+      "directions": {
+        "protein": "unknown",
+        "fiberRichCarbs": "unknown",
+        "unsaturatedFats": "unknown",
+        "vegetablesFruit": "unknown"
+      }
+    }
+  },
+  "review": null
+}

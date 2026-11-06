@@ -149,3 +149,25 @@ test('stale unmanaged or external writers cannot overwrite a newer saved snapsho
   assert.deepEqual(reloaded.inventory.owned, ['flowers']);
   assert.deepEqual(reloaded.inventory.applied, { garden: 'flowers' });
 });
+
+
+test('blocked photo capture does not request a UUID when browser crypto is unavailable', () => {
+  const original = Object.getOwnPropertyDescriptor(globalThis, 'crypto');
+  Object.defineProperty(globalThis, 'crypto', { configurable: true, value: {} });
+  try {
+    const storage = memoryStorage();
+    const waiting = createDemoSessionStore({ storage, lockManager: null });
+    const release = waiting.connectAccess();
+    assert.equal(waiting.startEntry(), false);
+    assert.equal(storage.getItem(DEMO_STORAGE_KEY), null);
+    release();
+
+    storage.setItem(DEMO_STORAGE_KEY, '{broken');
+    const unreadable = createDemoSessionStore({ storage });
+    assert.equal(unreadable.startEntry(), false);
+    assert.equal(storage.getItem(DEMO_STORAGE_KEY), '{broken');
+  } finally {
+    if (original) Object.defineProperty(globalThis, 'crypto', original);
+    else delete globalThis.crypto;
+  }
+});

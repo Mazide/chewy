@@ -39,7 +39,7 @@
 .sandbox-camp-header { position: absolute; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .sandbox-camp-header > span:first-child { font-size: clamp(20px, 6.154cqw, 27px); font-weight: 850; letter-spacing: -.5px; color: #263a25; text-shadow: 0 1px 0 #ffffaabb; }
 .sandbox-camp-header > span:last-child { font-size: 12px; background: #fff3cddd; border: 1px solid #82683b; padding: 6px 12px; border-radius: 10px; }
-.sandbox-nav-control { position: absolute; border: 2px solid #74512e; background: #fff1cc; box-shadow: 0 3px 0 #82613e; border-radius: 14px; padding: 5px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; color: #3d361f; font: inherit; font-size: clamp(11px, 3cqw, 12px); font-weight: 650; cursor: pointer; }
+.sandbox-nav-control { min-width:44px; min-height:44px; position: absolute; border: 2px solid #74512e; background: #fff1cc; box-shadow: 0 3px 0 #82613e; border-radius: 14px; padding: 5px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; color: #3d361f; font: inherit; font-size: clamp(11px, 3cqw, 12px); font-weight: 650; cursor: pointer; }
 .sandbox-nav-icon { height: calc(100% - 18px); width: 100%; display: flex; justify-content: center; }
 .sandbox-control-crop { height: 100%; max-width: 100%; position: relative; overflow: hidden; }
 .sandbox-mirror-icon { display:block; width:100%; height:100%; }

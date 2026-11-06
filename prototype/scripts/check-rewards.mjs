@@ -2,6 +2,7 @@
 // Each run has a fresh browser context and never touches the owner's session.
 import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
+import { waitForSession, withToday } from './lib/session-ui.mjs';
 import { DEMO_REWARDS } from '../src/core/demo-config.js';
 const browser = await chromium.launch({ headless: true });
 const context = await browser.newContext({ reducedMotion: 'reduce', timezoneId: 'Europe/London' });
@@ -13,7 +14,7 @@ const url = `${origin}/iframe.html?id=core-sandbox--all-screens&viewMode=story`;
 const key = 'chewy.demo-session.v1';
 const read = () => page.evaluate(key => { const { lastSeenAt, ...progress } = JSON.parse(localStorage.getItem(key)); return progress; }, key);
 const button = name => page.getByRole('button', { name, exact: true });
-const loaded = () => button('Инструменты пробы').waitFor();
+const loaded = () => waitForSession(page);
 const inspector = async () => {
   if (await button('Инструменты пробы').isVisible()) await button('Инструменты пробы').click();
 };
@@ -71,7 +72,7 @@ try {
   await button('Сохранить и разобрать').click();
   await button('Добавить еду').waitFor();
   await page.waitForFunction(key => JSON.parse(localStorage.getItem(key)).jobs[0].status === 'ready', key, { timeout: 25000 });
-  await page.locator('.capture-notice').click();
+  await withToday(page, () => page.locator('.capture-notice').click());
   await button('Уточнить результат').click();
   await page.getByLabel('Название блюда', { exact: true }).fill('Уточнённый обед');
   await button('Повторить анализ').click();

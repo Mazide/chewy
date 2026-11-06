@@ -1,0 +1,17 @@
+.onboarding-draft-result { margin:20px 0; padding:18px 10px; border-radius:18px; background:#f3eedc; color:#29382e; text-align:center; }
+.onboarding-draft-result .onboarding-example-plate { width:160px; margin-bottom:14px; }
+.onboarding-draft-arrow { font-size:28px; margin:4px; }
+.onboarding-draft-supplies { display:flex; justify-content:space-around; gap:8px; }
+.onboarding-draft-supplies > span { display:flex; flex-direction:column; align-items:center; font-size:12px; }
+.onboarding-draft-supplies svg { width:40px; height:40px; }
+.onboarding-camp-invite { position:absolute; z-index:12; bottom:19%; left:5%; right:5%; padding:12px 14px; border:1px solid #38594b; border-radius:16px; background:#f3eedcf5; color:#29382e; font-size:14px; box-shadow:0 4px 16px #29382e20; }
+.onboarding-camp-invite p { margin:6px 0 10px; line-height:1.35; }
+.onboarding-camp-invite button { border:1px solid #38594b; border-radius:10px; padding:8px 12px; background:#38594b; color:#fff; font:inherit; cursor:pointer; }
+.onboarding-camp-invite button + button { margin-left:8px; background:transparent; color:#29382e; }
+
+.study-device-compact .onboarding-draft-result { margin:12px 0; padding:10px; }
+.study-device-compact .onboarding-draft-result .onboarding-example-plate { width:120px; margin-bottom:10px; }
+.study-device-compact .onboarding-draft-result .onboarding-example-plate > span { font-size:11px; }
+
+.onboarding-draft .onboarding-nav .study-text-button { width:84px; white-space:normal; padding:4px; font-size:12px; }
+.onboarding-draft .onboarding-nav > span { min-width:0; font-size:14px; }

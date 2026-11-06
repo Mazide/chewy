@@ -40,7 +40,7 @@ function GroundGrass({ frame, object }) {
   </svg>;
 }
 
-export function CampSandbox({ initialDevice = 'standard', initialPreset = 'growth', presentation = 'art', foodLayout = 'stacked', foodPresentation = 'block', initialEditing = true, onDeviceChange, onAddFood, onNavigate, activity, activityLabel, journalData, dailyContributions, wallet, walletControl, sceneOverlay, supplyMoment, objectReplacements = {}, initialJournalOpen = false, worldBackground, worldLabel, dayPhase = 'day', campStage, showZoneLabels = false, animatedLantern = false, motionVariants = {}, withMirror = false, provisionsPreview }) {
+export function CampSandbox({ initialDevice = 'standard', initialPreset = 'growth', presentation = 'art', foodLayout = 'stacked', foodPresentation = 'block', initialEditing = true, onDeviceChange, onAddFood, onNavigate, activity, activityLabel, journalData, dailyContributions, wallet, walletControl, sceneOverlay, supplyMoment, objectReplacements = {}, initialJournalOpen = false, worldBackground, worldLabel, dayPhase = 'day', campStage, showZoneLabels = false, animatedLantern = false, motionVariants = {}, withMirror = false, provisionsPreview, persistPlacements = true }) {
   const blocks = presentation === 'blocks';
   const growth = initialPreset === 'growth';
   const [localStage, setLocalStage] = useState('initial');
@@ -68,6 +68,7 @@ export function CampSandbox({ initialDevice = 'standard', initialPreset = 'growt
   const [journalOpen, setJournalOpen] = useState(initialJournalOpen);
   const [placements, setPlacements] = useState(() => {
     const preset = defaultPlacements();
+    if (!persistPlacements) return preset;
     try {
       const saved = readPlacements(window.localStorage.getItem(storageKey));
       if (growth && separateFood) return mergeOwnerCampPlacements(saved);
@@ -95,11 +96,12 @@ export function CampSandbox({ initialDevice = 'standard', initialPreset = 'growt
   const resizeCorner = selectedFrame ? [selectedFrame[0] + selectedFrame[2], selectedIsObject ? selectedFrame[1] : selectedFrame[1] + selectedFrame[3]] : null;
 
   useEffect(() => {
+    if (!persistPlacements) return;
     try {
       window.localStorage.setItem(storageKey, JSON.stringify({ version: 1, devices: placements }));
       setSaveStatus('Раскладка сохранена в этом браузере · отдельно для каждого размера.');
     } catch { setSaveStatus('Раскладка работает до перезагрузки: локальное сохранение недоступно.'); }
-  }, [placements, storageKey]);
+  }, [placements, storageKey, persistPlacements]);
 
   const setPlacement = (id, placement) => setPlacements((current) => ({ ...current, [deviceKey]: { ...current[deviceKey], [id]: placement } }));
   const setScale = (id, scale) => {

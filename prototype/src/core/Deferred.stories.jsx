@@ -11,3 +11,5 @@ export default {
 export const Welcome = { name: 'Первый запуск', args: { initialScreen: 'welcome' }, parameters: { __id: 'core-sandbox--welcome' } };
 export const Name = { name: 'Имя', args: { initialScreen: 'name' }, parameters: { __id: 'core-sandbox--name' } };
 export const Reminders = { name: 'Напоминания · отдельная проба', args: { initialScreen: 'reminders' }, parameters: { __id: 'core-sandbox--reminders' } };
+
+export const OriginalWelcome = { name: 'Первый запуск · было (29 октября)', args: { initialScreen: 'welcome', onboardingVersion: 'original' } };
