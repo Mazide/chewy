@@ -1,0 +1,158 @@
+[
+  {
+    "time": 0,
+    "name": "phase-0",
+    "baseline": {
+      "filename": "frames/phase-0-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/phase-0-pilot.png",
+      "sha256": "f06fa519292724e5c1e414e0b42c8dfe137db750656ff494e815f022bcbe0353"
+    }
+  },
+  {
+    "time": 0.65,
+    "name": "phase-1",
+    "baseline": {
+      "filename": "frames/phase-1-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/phase-1-pilot.png",
+      "sha256": "9869bd85d7b336826fd115cfb6761fee1d4763157daf401de7adf7c14baaa901"
+    }
+  },
+  {
+    "time": 1.35,
+    "name": "phase-2",
+    "baseline": {
+      "filename": "frames/phase-2-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/phase-2-pilot.png",
+      "sha256": "b6854ec8e5b0cf613478ca26ef4497a04d5407da4257d4a5bd83569db39d9fcf"
+    }
+  },
+  {
+    "time": 2.1,
+    "name": "phase-3",
+    "baseline": {
+      "filename": "frames/phase-3-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/phase-3-pilot.png",
+      "sha256": "2f8e10641426aa58fb9a1692f2eac47e23c55e4e55bc7bd5627ec92386cd4e6b"
+    }
+  },
+  {
+    "time": 2.85,
+    "name": "phase-4",
+    "baseline": {
+      "filename": "frames/phase-4-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/phase-4-pilot.png",
+      "sha256": "9389f3bf01edc4a16b3f66d54be592def2e784a8dd0088ce8dbf9f66b9c23e27"
+    }
+  },
+  {
+    "time": 3.6,
+    "name": "phase-5",
+    "baseline": {
+      "filename": "frames/phase-5-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/phase-5-pilot.png",
+      "sha256": "5b4d4922f712512b13d9bbcbf0ab8f7b488cc8c86b1ad3249754f7b4d50645a6"
+    }
+  },
+  {
+    "time": 4.25,
+    "name": "phase-6",
+    "baseline": {
+      "filename": "frames/phase-6-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/phase-6-pilot.png",
+      "sha256": "f06fa519292724e5c1e414e0b42c8dfe137db750656ff494e815f022bcbe0353"
+    }
+  },
+  {
+    "time": 4.8,
+    "name": "phase-7",
+    "baseline": {
+      "filename": "frames/phase-7-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/phase-7-pilot.png",
+      "sha256": "f06fa519292724e5c1e414e0b42c8dfe137db750656ff494e815f022bcbe0353"
+    }
+  },
+  {
+    "time": 1.8,
+    "name": "deterministic-first",
+    "baseline": {
+      "filename": "frames/deterministic-first-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/deterministic-first-pilot.png",
+      "sha256": "a7bc309c7e024b1c0092e404bd30bd2348106084238efcd5a9048480e5f4df60"
+    }
+  },
+  {
+    "time": 4.8,
+    "name": "detour",
+    "baseline": {
+      "filename": "frames/detour-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/detour-pilot.png",
+      "sha256": "f06fa519292724e5c1e414e0b42c8dfe137db750656ff494e815f022bcbe0353"
+    }
+  },
+  {
+    "time": 1.8,
+    "name": "deterministic-repeat",
+    "baseline": {
+      "filename": "frames/deterministic-repeat-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/deterministic-repeat-pilot.png",
+      "sha256": "a7bc309c7e024b1c0092e404bd30bd2348106084238efcd5a9048480e5f4df60"
+    }
+  },
+  {
+    "time": 1.8,
+    "name": "owner-pose",
+    "baseline": {
+      "filename": "frames/owner-pose-baseline.png",
+      "sha256": "763aef64c870194d04cb5ed4115d9a8d85775373f2efc95af15ea0424a112ebb"
+    },
+    "pilot": {
+      "filename": "frames/owner-pose-pilot.png",
+      "sha256": "a7bc309c7e024b1c0092e404bd30bd2348106084238efcd5a9048480e5f4df60"
+    }
+  },
+  {
+    "time": 1.8,
+    "name": "camp-scale",
+    "baseline": {
+      "filename": "frames/camp-scale-baseline.png",
+      "sha256": "c8ed6cc44e3df5a1449120a5d03c5e35f0304469541ce3436e5de8550138831f"
+    },
+    "pilot": {
+      "filename": "frames/camp-scale-pilot.png",
+      "sha256": "5d5ed6297b8a35540f887ed1be936f65a366d65888272cc04350f88cdc2d8765"
+    }
+  }
+]

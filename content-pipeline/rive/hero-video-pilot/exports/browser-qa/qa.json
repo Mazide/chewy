@@ -1,0 +1,1298 @@
+{
+  "passed": true,
+  "preview_url": "http://127.0.0.1:6014/hero-video-pilot/preview/review.html",
+  "original_frame_count": 121,
+  "fps": 24,
+  "duration_seconds": 5.041666666666667,
+  "artistic_approval": false,
+  "native_ios_tested": false,
+  "versions": {
+    "chromium": "149.0.7827.55",
+    "playwright": "1.61.1",
+    "rive_webgl2": "2.40.1"
+  },
+  "checks": {
+    "playback_pause_resume_one_shot_replay_and_reduced_motion": true,
+    "standalone_riv_without_external_images": true,
+    "all_frames_rendered": 121,
+    "mobile_and_retry_recovery": true
+  },
+  "pairs": [
+    {
+      "name": "light-000",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 0.020833333333333332,
+        "frame": 0,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/light-000-reference.png",
+        "sha256": "55fccb92b5d2ee12fe9ee138437d17169a606dd16a3c1812ad9adb71fd982ceb"
+      },
+      "rive": {
+        "filename": "frames/light-000-rive.png",
+        "sha256": "9b9ec1006103fb6631a29d82d90c745101bbea4b5c476cba996e3bc4c522d31a"
+      }
+    },
+    {
+      "name": "light-001",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 0.0625,
+        "frame": 1,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/light-001-reference.png",
+        "sha256": "ceec4013e95f065156d4f8c80e54f978c24b8dd64c56e0f2d1b9cdeb4bc8e4d4"
+      },
+      "rive": {
+        "filename": "frames/light-001-rive.png",
+        "sha256": "ae94506d9546fd434fd7c10da995f419715e82480ad46939715b99c9585d6fff"
+      }
+    },
+    {
+      "name": "light-024",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 1.0208333333333333,
+        "frame": 24,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/light-024-reference.png",
+        "sha256": "74917517494d2cef396619651e3aaa404563ce9992c28304ded114b8f8dba0b9"
+      },
+      "rive": {
+        "filename": "frames/light-024-rive.png",
+        "sha256": "16a8b220207b864686531a9ca94b9f1c4c7d1d6c2d20588088225b70134f4d39"
+      }
+    },
+    {
+      "name": "light-048",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 2.0208333333333335,
+        "frame": 48,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/light-048-reference.png",
+        "sha256": "da4ee250b10f45306bc5de80f617fe6a5b8495fcd1fe16dac0d3b55da551e487"
+      },
+      "rive": {
+        "filename": "frames/light-048-rive.png",
+        "sha256": "7375e85f3796f44dc6663cd1a100b6585d7586fa3588180ee2c500a76b18a9c3"
+      }
+    },
+    {
+      "name": "light-060",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 2.5208333333333335,
+        "frame": 60,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/light-060-reference.png",
+        "sha256": "d67df30b2b91811e98764904d8441ddc63c17c1ceee381fb6122863b1b791ac8"
+      },
+      "rive": {
+        "filename": "frames/light-060-rive.png",
+        "sha256": "8a06a76dd11494c4a393fd0d1994c626cbb9c1956615569ca83910f2399f5612"
+      }
+    },
+    {
+      "name": "light-072",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 3.0208333333333335,
+        "frame": 72,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/light-072-reference.png",
+        "sha256": "6ebe9e22e849c1bef06bda838203154ce899c0e9ed427b332bc1849e08f07bb5"
+      },
+      "rive": {
+        "filename": "frames/light-072-rive.png",
+        "sha256": "81c0aff2e606643685fb655f75c89508f6e61600e8f14c362d7ca3fc918c35af"
+      }
+    },
+    {
+      "name": "light-096",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 4.020833333333333,
+        "frame": 96,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/light-096-reference.png",
+        "sha256": "af93cdfc0f07920809b8a785e0cb2fd30908849dcd4c13027620ab1455863c62"
+      },
+      "rive": {
+        "filename": "frames/light-096-rive.png",
+        "sha256": "af93cdfc0f07920809b8a785e0cb2fd30908849dcd4c13027620ab1455863c62"
+      }
+    },
+    {
+      "name": "light-120",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 5.020833333333333,
+        "frame": 120,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/light-120-reference.png",
+        "sha256": "43cc777702a42a642ff3e8d6b89c5780eac2b26cd1ef88517f5e18159cf277da"
+      },
+      "rive": {
+        "filename": "frames/light-120-rive.png",
+        "sha256": "c13fd2cf22fd4df06a4ee68f40749876913740ec38386cbddd1b756cf8b543fe"
+      }
+    },
+    {
+      "name": "dark-000",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 0.020833333333333332,
+        "frame": 0,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "dark",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/dark-000-reference.png",
+        "sha256": "3e071d597049a53fb68e3a83a55583d4b2275dab20a8dda32b9bb7c8c885bb0f"
+      },
+      "rive": {
+        "filename": "frames/dark-000-rive.png",
+        "sha256": "0fd47ec0ead142817eb07243b18b922d8e59fe3b8d497eef244e4bef592906a1"
+      }
+    },
+    {
+      "name": "dark-024",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 1.0208333333333333,
+        "frame": 24,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "dark",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/dark-024-reference.png",
+        "sha256": "e27c1220fc83a6a3706413e5cd75b9052a4df412661f2035884a1504300f2cf4"
+      },
+      "rive": {
+        "filename": "frames/dark-024-rive.png",
+        "sha256": "0d7a9c03f88951c138f2d4420756a97b391e9ef44c7e9b67c02762a795ded5bf"
+      }
+    },
+    {
+      "name": "dark-060",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 2.5208333333333335,
+        "frame": 60,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "dark",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/dark-060-reference.png",
+        "sha256": "589d699bda255030cce1cb8f020999be6c2c3eb7a82e05d0f77ee2f01cdcaea2"
+      },
+      "rive": {
+        "filename": "frames/dark-060-rive.png",
+        "sha256": "7a0946425785274eff99f53aa2bac28a42830e3d9c4bd6fef17b764a01754841"
+      }
+    },
+    {
+      "name": "dark-096",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 4.020833333333333,
+        "frame": 96,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "dark",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/dark-096-reference.png",
+        "sha256": "4f7f0519887c6114b9a91d3f26f6af68781073fdd134eddf56cd21076ccc39ce"
+      },
+      "rive": {
+        "filename": "frames/dark-096-rive.png",
+        "sha256": "4f7f0519887c6114b9a91d3f26f6af68781073fdd134eddf56cd21076ccc39ce"
+      }
+    },
+    {
+      "name": "dark-120",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 5.020833333333333,
+        "frame": 120,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "dark",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/dark-120-reference.png",
+        "sha256": "35881405d7861225607f9aa2927a1f6ddb6361986f726ed856116e95d40340bd"
+      },
+      "rive": {
+        "filename": "frames/dark-120-rive.png",
+        "sha256": "753ecf0748d11ea24930103f8994eb2c7adfe2b3e82e9d92cdd2f81ed43b1867"
+      }
+    },
+    {
+      "name": "native-mid",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 1.5834019999999995,
+        "frame": 38,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/native-mid-reference.png",
+        "sha256": "0ef470a473ddf69c6df540cfc339f1c8fe87ed93fa6fc222cacf9e5e00777c9f"
+      },
+      "rive": {
+        "filename": "frames/native-mid-rive.png",
+        "sha256": "71d5c824c4ab0e652008ae6d69525c472ee62e7195cb0cac0b740dee186919fa"
+      }
+    },
+    {
+      "name": "native-end",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": true,
+        "elapsed": 5.041666666666667,
+        "frame": 120,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/native-end-reference.png",
+        "sha256": "43cc777702a42a642ff3e8d6b89c5780eac2b26cd1ef88517f5e18159cf277da"
+      },
+      "rive": {
+        "filename": "frames/native-end-rive.png",
+        "sha256": "c13fd2cf22fd4df06a4ee68f40749876913740ec38386cbddd1b756cf8b543fe"
+      }
+    },
+    {
+      "name": "native-replay",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 0.7000679999999997,
+        "frame": 16,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/native-replay-reference.png",
+        "sha256": "f4f43b89295a9e8e39e3413ebe5e296c9b40c493ae00ff205d8dd860f15e253d"
+      },
+      "rive": {
+        "filename": "frames/native-replay-rive.png",
+        "sha256": "3d858df811e04738f785e380939481b5c3acc698240c1274575fb20229e38b22"
+      }
+    },
+    {
+      "name": "native-reduced-paused",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 0.41669999999999896,
+        "frame": 10,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/native-reduced-paused-reference.png",
+        "sha256": "51d261e620be4dafdb02bccb579653049567b208ce6320231a34983b43972a74"
+      },
+      "rive": {
+        "filename": "frames/native-reduced-paused-rive.png",
+        "sha256": "9bfeac80aa3751022e17f40f274865b0241a73ca31a659ea19552c3db8247955"
+      }
+    },
+    {
+      "name": "native-explicit-resume-reduced",
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 0.7167999999999994,
+        "frame": 17,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 253,
+        "height": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native RecordedGesture timeline",
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/native-explicit-resume-reduced-reference.png",
+        "sha256": "68fcc6ac198544c8acaf1308673de22b6d8fcdc713369265b5f2539511a5672a"
+      },
+      "rive": {
+        "filename": "frames/native-explicit-resume-reduced-rive.png",
+        "sha256": "105a20e15ae148330206ce0b174e3a62e8dd6436757138024f35c997621ab8ba"
+      }
+    }
+  ],
+  "browser_errors": [],
+  "pixel_qa": {
+    "all_121_frames_match": true,
+    "alpha_preserved": true,
+    "frames": [
+      {
+        "mean_premultiplied_delta": 0.003759627463296056,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003822966478765011,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003825284307822585,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003923279698938131,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037993069272488356,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038528190925717354,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037319683469831944,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003756198100745678,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037368449848145247,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003785473294556141,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0039628781378269196,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003778447164222598,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038153480272740126,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.00384555128403008,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003816312877461314,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038632964715361595,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038195084780454636,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037371229846030474,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003871551249176264,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037867676001042128,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037258262746036053,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038861888460814953,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037906498182564974,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037555110175162554,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003725614631548524,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003707043593749404,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.00388413411565125,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003934561274945736,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003768415655940771,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038045563269406557,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003816247219219804,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003939650021493435,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038375381845980883,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038295830599963665,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038145214784890413,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037437323480844498,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037634074687957764,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0039290483109653,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003877312410622835,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003906821366399527,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.004032038152217865,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0039114574901759624,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003932368475943804,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003859911346808076,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003694519167765975,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003777123987674713,
+        "max_premultiplied_delta": 1,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038519639056175947,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037088566459715366,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003970526624470949,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003809732850641012,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003928178455680609,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037943278439342976,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.00381621066480875,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037571927532553673,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038602917920798063,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003882467281073332,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003788953647017479,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038941067177802324,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038466337136924267,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038235883694142103,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003847964573651552,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003990654367953539,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003764430759474635,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037986927200108767,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003828172804787755,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037666100542992353,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003852300113067031,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038258542772382498,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003766800509765744,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037741551641374826,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0037580186035484076,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003781890496611595,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038112758193165064,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003851920599117875,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038437896873801947,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038823867216706276,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038073493633419275,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003655848791822791,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003756155027076602,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003746766597032547,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003686315845698118,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0036527339834719896,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038123505655676126,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038411791902035475,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.00379168801009655,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.00373817584477365,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003732838202267885,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038194789085537195,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003930634818971157,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038357251323759556,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0038848286494612694,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003842210164293647,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0036693604197353125,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0036898248363286257,
+        "max_premultiplied_delta": 1,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0035959966480731964,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003485119203105569,
+        "max_premultiplied_delta": 1,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0034117705654352903,
+        "max_premultiplied_delta": 1,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003480146871879697,
+        "max_premultiplied_delta": 1,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.00343393930234015,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0035189413465559483,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003277759300544858,
+        "max_premultiplied_delta": 1,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0033038463443517685,
+        "max_premultiplied_delta": 1,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0032357987947762012,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003243965795263648,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0031622748356312513,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003182074287906289,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0032426423858851194,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0032586464658379555,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003199687460437417,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0032404048833996058,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0031179601792246103,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003222791478037834,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0032587053719908,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003231155453249812,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003208212787285447,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0031028108205646276,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0031744407024234533,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.00322894798591733,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003145473077893257,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.003291043918579817,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "mean_premultiplied_delta": 0.0032722020987421274,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      }
+    ],
+    "boundaries": [
+      {
+        "frame": 1,
+        "side": "before",
+        "mean_premultiplied_delta": 0.003759627463296056,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "frame": 1,
+        "side": "after",
+        "mean_premultiplied_delta": 0.003822966478765011,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "frame": 60,
+        "side": "before",
+        "mean_premultiplied_delta": 0.0038235883694142103,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "frame": 60,
+        "side": "after",
+        "mean_premultiplied_delta": 0.003847964573651552,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "frame": 120,
+        "side": "before",
+        "mean_premultiplied_delta": 0.003291043918579817,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      },
+      {
+        "frame": 120,
+        "side": "after",
+        "mean_premultiplied_delta": 0.0032722020987421274,
+        "max_premultiplied_delta": 0.9960784912109375,
+        "max_alpha_delta": 0
+      }
+    ],
+    "composites": [
+      {
+        "name": "light-000",
+        "frame": 0,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "light-001",
+        "frame": 1,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "light-024",
+        "frame": 24,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "light-048",
+        "frame": 48,
+        "mean_channel_delta": 0.000005933309694228228,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "light-060",
+        "frame": 60,
+        "mean_channel_delta": 0.000005933309694228228,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "light-072",
+        "frame": 72,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "light-096",
+        "frame": 96,
+        "mean_channel_delta": 0,
+        "max_channel_delta": 0
+      },
+      {
+        "name": "light-120",
+        "frame": 120,
+        "mean_channel_delta": 0.000007911079592304304,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "dark-000",
+        "frame": 0,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "dark-024",
+        "frame": 24,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "dark-060",
+        "frame": 60,
+        "mean_channel_delta": 0.000005933309694228228,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "dark-096",
+        "frame": 96,
+        "mean_channel_delta": 0,
+        "max_channel_delta": 0
+      },
+      {
+        "name": "dark-120",
+        "frame": 120,
+        "mean_channel_delta": 0.000007911079592304304,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "native-mid",
+        "frame": 38,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "native-end",
+        "frame": 120,
+        "mean_channel_delta": 0.000007911079592304304,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "native-replay",
+        "frame": 16,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "native-reduced-paused",
+        "frame": 10,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      },
+      {
+        "name": "native-explicit-resume-reduced",
+        "frame": 17,
+        "mean_channel_delta": 0.000002966654847114114,
+        "max_channel_delta": 1
+      }
+    ],
+    "max_frame_mean_delta": 0.004032038152217865,
+    "max_frame_channel_delta": 1
+  },
+  "review": {
+    "video": "review.mp4",
+    "sequence": "sequence-contact-sheet.png"
+  }
+}

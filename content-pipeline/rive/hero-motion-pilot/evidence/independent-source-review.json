@@ -1,0 +1,317 @@
+{
+  "kind": "independent_raw_cli_review",
+  "source": "content-pipeline/rive/hero-motion-pilot/chewy/scene.rml",
+  "source_sha256": "028630911f7e1f9d08b009f5f2191e659f70dfdd97719a0e8b1e7e276086d448",
+  "original_source": "content-pipeline/rive/hero-wardrobe/references/hero-from-editor.rml",
+  "original_source_sha256": "20e5ebb18b7e18d8ee3caeeaafe1b63dc592427c7c4e5fd3d2945b228ea9c482",
+  "renderer": "Rive CLI 1.8.0",
+  "sample_seconds": [
+    0,
+    0.3,
+    0.6,
+    0.85,
+    0.867,
+    1.1,
+    1.367,
+    1.7,
+    2.017,
+    2.4,
+    2.767,
+    3.13,
+    3.17,
+    3.267,
+    3.767,
+    4.167,
+    4.8,
+    6,
+    9.6
+  ],
+  "fixed_region_artboard_y": [
+    720,
+    1120
+  ],
+  "feet": [
+    {
+      "time": 0,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 0.3,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 0.6,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 0.85,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 0.867,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 1.1,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 1.367,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 1.7,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 2.017,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 2.4,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 2.767,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 3.13,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 3.17,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 3.267,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 3.767,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 4.167,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 4.8,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 6,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    {
+      "time": 9.6,
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    }
+  ],
+  "endpoints": {
+    "4.8": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "6": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    },
+    "9.6": {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0
+    }
+  },
+  "connectivity": [
+    {
+      "time": 0,
+      "connected_to_torso_pixels": 220200,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 0.3,
+      "connected_to_torso_pixels": 219076,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 0.6,
+      "connected_to_torso_pixels": 221089,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 0.85,
+      "connected_to_torso_pixels": 221554,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 0.867,
+      "connected_to_torso_pixels": 221405,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 1.1,
+      "connected_to_torso_pixels": 217276,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 1.367,
+      "connected_to_torso_pixels": 216390,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 1.7,
+      "connected_to_torso_pixels": 217913,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 2.017,
+      "connected_to_torso_pixels": 216868,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 2.4,
+      "connected_to_torso_pixels": 217748,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 2.767,
+      "connected_to_torso_pixels": 217453,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 3.13,
+      "connected_to_torso_pixels": 222240,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 3.17,
+      "connected_to_torso_pixels": 222262,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 3.267,
+      "connected_to_torso_pixels": 221319,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 3.767,
+      "connected_to_torso_pixels": 219784,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 4.167,
+      "connected_to_torso_pixels": 220203,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 4.8,
+      "connected_to_torso_pixels": 220200,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 6,
+      "connected_to_torso_pixels": 220200,
+      "disconnected_pixels": 0
+    },
+    {
+      "time": 9.6,
+      "connected_to_torso_pixels": 220200,
+      "disconnected_pixels": 0
+    }
+  ],
+  "artistic_approval": false,
+  "native_ios_tested": false,
+  "source_shapes": {
+    "unchanged": [
+      "Easy smile",
+      "Right eye",
+      "Left eye",
+      "Front golden hair",
+      "Face and neck",
+      "Back hair",
+      "Right fingers",
+      "Right knuckles",
+      "Right hand",
+      "Left fingers",
+      "Left knuckles",
+      "Left hand",
+      "Shirt hem right",
+      "Shirt hem left",
+      "Linen shirt",
+      "Left sleeve",
+      "Right wrap lower",
+      "Right wrap upper",
+      "Right cuff",
+      "Left wrap lower",
+      "Left wrap upper",
+      "Left cuff",
+      "Right boot",
+      "Left boot",
+      "Blue trousers"
+    ],
+    "changed": [
+      "Right sleeve"
+    ],
+    "missing": [],
+    "added": [
+      "Draft palm crease",
+      "Draft open hand - same palette"
+    ]
+  },
+  "wave_timeline": {
+    "name": "Wave",
+    "duration": "288",
+    "fps": "60",
+    "loopValue": "oneShot",
+    "id": "92:1124"
+  },
+  "master_unchanged": true,
+  "original_unchanged": true,
+  "technical_checks_passed": true,
+  "fixed_region_visible_pixels": 39611,
+  "pixel_thresholds": {
+    "changed_pixel_max_channel_delta_gt": 3,
+    "foreground_max_channel_delta_from_background_gt": 5
+  },
+  "visual_review": {
+    "checked": true,
+    "reviewed_full_size_seconds": [
+      0.6,
+      1.367,
+      3.17
+    ],
+    "dense_sheet_samples": 19,
+    "observations": [
+      "Лицо, волосы, одежда и пропорции исходного героя сохранены.",
+      "В проверенных позах нет видимых разрывов плеча, шеи или соединения кисти с рукавом.",
+      "Подготовка, подъём руки, два различающихся взмаха и возврат читаются в последовательности кадров.",
+      "Поднятый рукав частично перекрыт волосами; это соответствует порядку слоёв.",
+      "Открытая ладонь остаётся черновым новым рисунком; художественная приёмка владельцем не подменяется этими проверками."
+    ],
+    "limits": [
+      "Это проверка выбранных фаз, а не доказательство отсутствия любого дефекта между всеми возможными кадрами.",
+      "Нативный Apple runtime и устройство не проверены."
+    ]
+  },
+  "contact_sheet": "independent-motion-contact-sheet.png",
+  "master_unchanged_at_publication": true
+}

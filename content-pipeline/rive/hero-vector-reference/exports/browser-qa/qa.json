@@ -1,0 +1,399 @@
+{
+  "passed": true,
+  "preview_url": "http://127.0.0.1:6015/hero-vector-reference/preview/review.html",
+  "duration_seconds": 5.041666666666667,
+  "versions": {
+    "chromium": "149.0.7827.55",
+    "playwright": "1.61.1",
+    "rive_webgl2": "2.40.1"
+  },
+  "artistic_approval": false,
+  "native_ios_tested": false,
+  "artwork_pixel_equality_tested": false,
+  "vector_structure": "Covered by the separate source/build inspection; no-raster networking alone does not prove a vector file.",
+  "checks": {
+    "native_playback_pause_resume_finish_and_replay": true,
+    "initial_and_live_reduced_motion_with_explicit_resume": true,
+    "simulated_visibility_handler_clock": true,
+    "independent_live_pupil_controls": true,
+    "standalone_webgl2_without_image_requests": true,
+    "raw_native_one_shot_final_hold": true,
+    "numeric_action_state_machine_rest_gesture_and_replay": true,
+    "mobile_and_retry_recovery": true
+  },
+  "poses": [
+    {
+      "time": 0,
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 0,
+        "frame": 0,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 506,
+        "height": 1060,
+        "referenceWidth": 253,
+        "referenceHeight": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native ReferenceGesture timeline",
+        "overrides": {
+          "lookX": 0,
+          "lookY": 0
+        },
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/pose-0-reference.png",
+        "sha256": "55fccb92b5d2ee12fe9ee138437d17169a606dd16a3c1812ad9adb71fd982ceb"
+      },
+      "rive": {
+        "filename": "frames/pose-0-rive.png",
+        "sha256": "076a2e5a7ba404c56f3640b3ee287de25092c5381053948b8489a254d5bf273f"
+      }
+    },
+    {
+      "time": 1.6666666666666667,
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 1.6666666666666667,
+        "frame": 40,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 506,
+        "height": 1060,
+        "referenceWidth": 253,
+        "referenceHeight": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native ReferenceGesture timeline",
+        "overrides": {
+          "lookX": 0,
+          "lookY": 0
+        },
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/pose-1-reference.png",
+        "sha256": "5f8210ea4100513bf790e163c6ae9cc135d213baa7cdf20f31ebc105e0652ddd"
+      },
+      "rive": {
+        "filename": "frames/pose-1-rive.png",
+        "sha256": "3345c2ebbb9e31bd33e6fbd4d376fe7a68d4c67b6d5e62ab889a1f6210f6dcc1"
+      }
+    },
+    {
+      "time": 2.4,
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 2.4,
+        "frame": 57,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 506,
+        "height": 1060,
+        "referenceWidth": 253,
+        "referenceHeight": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native ReferenceGesture timeline",
+        "overrides": {
+          "lookX": 0,
+          "lookY": 0
+        },
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/pose-2-reference.png",
+        "sha256": "f4df89d5e06c9b08897c31ebf95ebc8d0fabab81c613ac69ff3228b1716c0883"
+      },
+      "rive": {
+        "filename": "frames/pose-2-rive.png",
+        "sha256": "96be66cc70870e65a8308e5a3570b948c6721939c8d2c6a02d2f2319f4188b07"
+      }
+    },
+    {
+      "time": 3.2,
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 3.2,
+        "frame": 76,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 506,
+        "height": 1060,
+        "referenceWidth": 253,
+        "referenceHeight": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native ReferenceGesture timeline",
+        "overrides": {
+          "lookX": 0,
+          "lookY": 0
+        },
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/pose-3-reference.png",
+        "sha256": "8c4fa4ed2db09d23a7cd48d2b306f9eaa984f6e8a279b1b662fce471f42f82be"
+      },
+      "rive": {
+        "filename": "frames/pose-3-rive.png",
+        "sha256": "9857e34a77c5aab8131a1328a8a8c0265839fbe542710502532b287c442f0627"
+      }
+    },
+    {
+      "time": 3.7916666666666665,
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 3.7916666666666665,
+        "frame": 91,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 506,
+        "height": 1060,
+        "referenceWidth": 253,
+        "referenceHeight": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native ReferenceGesture timeline",
+        "overrides": {
+          "lookX": 0,
+          "lookY": 0
+        },
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/pose-4-reference.png",
+        "sha256": "955a0e4df84fa853a0db06696a4fd0a12a35d8a9507040e97ae598caac81a5a0"
+      },
+      "rive": {
+        "filename": "frames/pose-4-rive.png",
+        "sha256": "6e7200fad7bef05c62da2adca9bfdc50ca5ca56a6e63a8656474071698922858"
+      }
+    },
+    {
+      "time": 4,
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 4,
+        "frame": 96,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 506,
+        "height": 1060,
+        "referenceWidth": 253,
+        "referenceHeight": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native ReferenceGesture timeline",
+        "overrides": {
+          "lookX": 0,
+          "lookY": 0
+        },
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/pose-5-reference.png",
+        "sha256": "af93cdfc0f07920809b8a785e0cb2fd30908849dcd4c13027620ab1455863c62"
+      },
+      "rive": {
+        "filename": "frames/pose-5-rive.png",
+        "sha256": "850b001bdc2791a2e6a6439a4253e1a3b873d5772cfe962654b507bbe8ba617a"
+      }
+    },
+    {
+      "time": 4.6,
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": false,
+        "elapsed": 4.6,
+        "frame": 110,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 506,
+        "height": 1060,
+        "referenceWidth": 253,
+        "referenceHeight": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native ReferenceGesture timeline",
+        "overrides": {
+          "lookX": 0,
+          "lookY": 0
+        },
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/pose-6-reference.png",
+        "sha256": "2910e6422c28c5b5fbfc56041c05a6d411d0e1d7ddc9e77acbdbf9bb2ac798af"
+      },
+      "rive": {
+        "filename": "frames/pose-6-rive.png",
+        "sha256": "9dc6cee328970d65542ee597e8292ba8e9d0a8b555380160e39e2036137d956b"
+      }
+    },
+    {
+      "time": 5.041666666666667,
+      "state": {
+        "ready": true,
+        "playing": false,
+        "finished": true,
+        "elapsed": 5.041666666666667,
+        "frame": 120,
+        "duration": 5.041666666666667,
+        "fps": 24,
+        "frameCount": 121,
+        "width": 506,
+        "height": 1060,
+        "referenceWidth": 253,
+        "referenceHeight": 530,
+        "reducedMotion": true,
+        "background": "light",
+        "nativeClock": "Rive onAdvance elapsed seconds",
+        "playback": "native ReferenceGesture timeline",
+        "overrides": {
+          "lookX": 0,
+          "lookY": 0
+        },
+        "errors": []
+      },
+      "reference": {
+        "filename": "frames/pose-7-reference.png",
+        "sha256": "43cc777702a42a642ff3e8d6b89c5780eac2b26cd1ef88517f5e18159cf277da"
+      },
+      "rive": {
+        "filename": "frames/pose-7-rive.png",
+        "sha256": "f35e924c6b0f83f75a741db3ae8e2c51fe158ab2c83a2825adee817e7df96fcf"
+      }
+    }
+  ],
+  "browser_errors": [],
+  "webgl_contexts": [
+    {
+      "kind": "webgl2",
+      "success": true
+    },
+    {
+      "kind": "webgl2",
+      "success": true
+    }
+  ],
+  "visual_checks": {
+    "transparent_vector_poses": true,
+    "pose_bounds": [
+      {
+        "time": 0,
+        "bounds": [
+          31,
+          29,
+          488,
+          1017
+        ],
+        "minimum_margin": 17
+      },
+      {
+        "time": 1.6666666666666667,
+        "bounds": [
+          22,
+          28,
+          488,
+          1017
+        ],
+        "minimum_margin": 17
+      },
+      {
+        "time": 2.4,
+        "bounds": [
+          23,
+          28,
+          488,
+          1017
+        ],
+        "minimum_margin": 17
+      },
+      {
+        "time": 3.2,
+        "bounds": [
+          20,
+          28,
+          487,
+          1017
+        ],
+        "minimum_margin": 18
+      },
+      {
+        "time": 3.7916666666666665,
+        "bounds": [
+          49,
+          28,
+          461,
+          1017
+        ],
+        "minimum_margin": 28
+      },
+      {
+        "time": 4,
+        "bounds": [
+          59,
+          29,
+          459,
+          1017
+        ],
+        "minimum_margin": 29
+      },
+      {
+        "time": 4.6,
+        "bounds": [
+          59,
+          29,
+          458,
+          1017
+        ],
+        "minimum_margin": 29
+      },
+      {
+        "time": 5.041666666666667,
+        "bounds": [
+          59,
+          29,
+          458,
+          1017
+        ],
+        "minimum_margin": 29
+      }
+    ],
+    "reference_to_vector_pixel_comparison": false
+  },
+  "review": {
+    "video": "review.mp4",
+    "contact_sheet": "comparison-contact-sheet.png"
+  }
+}

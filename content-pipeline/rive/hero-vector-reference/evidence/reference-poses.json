@@ -1,0 +1,1022 @@
+{
+  "schema_version": 1,
+  "kind": "manual_visual_reference_annotation",
+  "method": {
+    "tracking": "none; no ML tracking, optical flow or automated joint detection",
+    "selection": "Вручную просмотрены исходные PNG и контактные листы; координаты записаны по сетке в нативных 506×1060.",
+    "coordinate_system": "x вправо, y вниз; (0,0) — левый верхний угол исходного PNG. Screen-left/right всегда стороны экрана, не анатомические стороны.",
+    "units": "native source pixels",
+    "precision_note": "Ручные приблизительные ориентиры, а не измеренные суставы. Обычная погрешность 8–15 px; у скрытых кистей/локтей до 20 px.",
+    "head_reference_definition": "Видимая середина между глазами, а не центр массы головы или готовый pivot. Угол линии глаз — визуальный ориентир, не 3D поворот головы.",
+    "arm_reference_definition": "Плечо/локоть — оценка центра рукава; wrist — место перехода рукава в кисть; palm_center — визуальный центр ладони.",
+    "visibility_note": "null watch_center означает, что часы не различимы в просмотренном кадре. Не утверждается, что часы физически исчезли.",
+    "approval": "Техническая опора для переноса движения; художественная приёмка не выполнена."
+  },
+  "source": {
+    "video": "assets/idle.mov",
+    "video_sha256": "8370419264d6f55269f8cd8a008b4209331a97490d58c3fc7e6f3c877ac34098",
+    "width": 506,
+    "height": 1060,
+    "fps": 24,
+    "frame_count": 121,
+    "duration_seconds": 5.041666666666667,
+    "frame_indexing": "0..120; frame i nominal timestamp i/24; final display interval ends at 121/24"
+  },
+  "phases": [
+    {
+      "frames": [
+        0,
+        36
+      ],
+      "seconds": [
+        0,
+        1.5
+      ],
+      "description": "Руки на бёдрах, спокойное удержание."
+    },
+    {
+      "frames": [
+        37,
+        48
+      ],
+      "seconds": [
+        1.5416666666666667,
+        2
+      ],
+      "description": "Быстрый подъём screen-left руки к виску; промежуточные генеративные дефекты не переносить."
+    },
+    {
+      "frames": [
+        48,
+        84
+      ],
+      "seconds": [
+        2,
+        3.5
+      ],
+      "description": "Касание/приветствие у виска, короткие моргания. Это не серия широких махов ладонью."
+    },
+    {
+      "frames": [
+        84,
+        102
+      ],
+      "seconds": [
+        3.5,
+        4.25
+      ],
+      "description": "Ладонь отходит от виска; обе руки сходятся к часам перед грудью."
+    },
+    {
+      "frames": [
+        102,
+        120
+      ],
+      "seconds": [
+        4.25,
+        5
+      ],
+      "description": "Удержание позы с часами. Последний кадр не совпадает с первым."
+    }
+  ],
+  "planted_reference_anchors": {
+    "screen_left": {
+      "ankle": [
+        151,
+        917
+      ],
+      "outer_toe_sole_contact": [
+        98,
+        1012
+      ]
+    },
+    "screen_right": {
+      "ankle": [
+        365,
+        917
+      ],
+      "outer_toe_sole_contact": [
+        421,
+        1012
+      ]
+    },
+    "note": "Эти общие ручные ориентиры обозначают опору; они не притворяются независимым покадровым трекингом. Небольшое дрожание исходного растра не переносить на стопы вектора."
+  },
+  "poses": [
+    {
+      "frame_zero_based": 0,
+      "time_seconds": 0.0,
+      "name": "neutral",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_000.imageset/idle_000@2x.png",
+      "source_sha256": "def0f19b913bf8992c1727e956f07650244e03f574f33f296d171bedbd206354",
+      "head": {
+        "reference_point_eye_midpoint": [
+          253.0,
+          218.0
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            196,
+            218
+          ],
+          [
+            310,
+            218
+          ]
+        ],
+        "eye_line_angle_degrees": 0.0,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          190,
+          394
+        ],
+        "elbow": [
+          72,
+          480
+        ],
+        "wrist": [
+          120,
+          548
+        ],
+        "palm_center": [
+          145,
+          555
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          322,
+          394
+        ],
+        "elbow": [
+          462,
+          480
+        ],
+        "wrist": [
+          401,
+          548
+        ],
+        "palm_center": [
+          378,
+          555
+        ]
+      },
+      "watch_center": null,
+      "watch_visibility": "not visibly identifiable; absence of observation is not a tracking result",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "clear_pose_with_approximate_joint_centers",
+      "observation": "Руки на бёдрах; исходная поза."
+    },
+    {
+      "frame_zero_based": 36,
+      "time_seconds": 1.5,
+      "name": "last_clear_neutral",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_036.imageset/idle_036@2x.png",
+      "source_sha256": "f73ee659fd66f01d65bc82967d514d4f0d5af5fdb22fa57623bb72e44eedfb0e",
+      "head": {
+        "reference_point_eye_midpoint": [
+          253.0,
+          218.0
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            196,
+            218
+          ],
+          [
+            310,
+            218
+          ]
+        ],
+        "eye_line_angle_degrees": 0.0,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          190,
+          394
+        ],
+        "elbow": [
+          72,
+          480
+        ],
+        "wrist": [
+          120,
+          548
+        ],
+        "palm_center": [
+          145,
+          555
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          322,
+          394
+        ],
+        "elbow": [
+          462,
+          480
+        ],
+        "wrist": [
+          401,
+          548
+        ],
+        "palm_center": [
+          378,
+          555
+        ]
+      },
+      "watch_center": null,
+      "watch_visibility": "not visibly identifiable; absence of observation is not a tracking result",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "clear_pose_with_approximate_joint_centers",
+      "observation": "Последняя просмотренная полностью нейтральная поза перед быстрым подъёмом."
+    },
+    {
+      "frame_zero_based": 45,
+      "time_seconds": 1.875,
+      "name": "reach_temple",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_045.imageset/idle_045@2x.png",
+      "source_sha256": "f99c967a4b67c4482c341166c8801427567883fefcec2925aef8e4e92d32963d",
+      "head": {
+        "reference_point_eye_midpoint": [
+          246.5,
+          220.5
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            190,
+            225
+          ],
+          [
+            303,
+            216
+          ]
+        ],
+        "eye_line_angle_degrees": -4.6,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          176,
+          390
+        ],
+        "elbow": [
+          54,
+          354
+        ],
+        "wrist": [
+          80,
+          291
+        ],
+        "palm_center": [
+          77,
+          268
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          322,
+          394
+        ],
+        "elbow": [
+          462,
+          480
+        ],
+        "wrist": [
+          401,
+          548
+        ],
+        "palm_center": [
+          378,
+          555
+        ]
+      },
+      "watch_center": null,
+      "watch_visibility": "not visibly identifiable; absence of observation is not a tracking result",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "clear_pose_with_approximate_joint_centers",
+      "observation": "Кисть видна рядом с волосами; пальцы вытянуты вверх. Переходный рисунок пальцев неточен."
+    },
+    {
+      "frame_zero_based": 48,
+      "time_seconds": 2.0,
+      "name": "temple_contact",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_048.imageset/idle_048@2x.png",
+      "source_sha256": "353d12ebf539e9d096f962cccc9b99b706da1aa557f20bd30f6c4ffc0abb812f",
+      "head": {
+        "reference_point_eye_midpoint": [
+          247.0,
+          220.5
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            192,
+            225
+          ],
+          [
+            302,
+            216
+          ]
+        ],
+        "eye_line_angle_degrees": -4.7,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          173,
+          390
+        ],
+        "elbow": [
+          65,
+          330
+        ],
+        "wrist": [
+          101,
+          261
+        ],
+        "palm_center": [
+          112,
+          244
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          322,
+          394
+        ],
+        "elbow": [
+          462,
+          480
+        ],
+        "wrist": [
+          401,
+          548
+        ],
+        "palm_center": [
+          378,
+          555
+        ]
+      },
+      "watch_center": null,
+      "watch_visibility": "not visibly identifiable; absence of observation is not a tracking result",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "partially_occluded_wrist_palm",
+      "observation": "Кисть частично скрыта волосами; локоть слева и ниже кисти."
+    },
+    {
+      "frame_zero_based": 60,
+      "time_seconds": 2.5,
+      "name": "temple_hold",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_060.imageset/idle_060@2x.png",
+      "source_sha256": "454f88082b1373f62222beb8d2c5cbb01015490cdb1d389ffc8f1b8a59912f97",
+      "head": {
+        "reference_point_eye_midpoint": [
+          250.5,
+          221.0
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            194,
+            225
+          ],
+          [
+            307,
+            217
+          ]
+        ],
+        "eye_line_angle_degrees": -4.0,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          173,
+          390
+        ],
+        "elbow": [
+          65,
+          330
+        ],
+        "wrist": [
+          101,
+          261
+        ],
+        "palm_center": [
+          112,
+          244
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          322,
+          394
+        ],
+        "elbow": [
+          462,
+          480
+        ],
+        "wrist": [
+          401,
+          548
+        ],
+        "palm_center": [
+          378,
+          555
+        ]
+      },
+      "watch_center": null,
+      "watch_visibility": "not visibly identifiable; absence of observation is not a tracking result",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "partially_occluded_wrist_palm",
+      "observation": "Длительное удержание у виска; повторного размаха ладонью не видно."
+    },
+    {
+      "frame_zero_based": 72,
+      "time_seconds": 3.0,
+      "name": "temple_blink",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_072.imageset/idle_072@2x.png",
+      "source_sha256": "bd256757480b0b9ed6a7f8ddab9b0fa38fb388c0ebc45d3459f210e515958a74",
+      "head": {
+        "reference_point_eye_midpoint": [
+          250.5,
+          225.0
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            194,
+            227
+          ],
+          [
+            307,
+            223
+          ]
+        ],
+        "eye_line_angle_degrees": -2.0,
+        "eyes": "closed",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          173,
+          390
+        ],
+        "elbow": [
+          65,
+          335
+        ],
+        "wrist": [
+          101,
+          266
+        ],
+        "palm_center": [
+          112,
+          249
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          322,
+          394
+        ],
+        "elbow": [
+          462,
+          480
+        ],
+        "wrist": [
+          401,
+          548
+        ],
+        "palm_center": [
+          378,
+          555
+        ]
+      },
+      "watch_center": null,
+      "watch_visibility": "not visibly identifiable; absence of observation is not a tracking result",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "partially_occluded_wrist_palm",
+      "observation": "Моргание во время удержания у виска."
+    },
+    {
+      "frame_zero_based": 84,
+      "time_seconds": 3.5,
+      "name": "leave_temple",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_084.imageset/idle_084@2x.png",
+      "source_sha256": "ecf5689462b5ca6e19665f623858d4f48a7fe1b154bb369af8c111ba10c39efb",
+      "head": {
+        "reference_point_eye_midpoint": [
+          249.5,
+          222.0
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            193,
+            226
+          ],
+          [
+            306,
+            218
+          ]
+        ],
+        "eye_line_angle_degrees": -4.0,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          175,
+          390
+        ],
+        "elbow": [
+          68,
+          370
+        ],
+        "wrist": [
+          104,
+          287
+        ],
+        "palm_center": [
+          109,
+          273
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          322,
+          394
+        ],
+        "elbow": [
+          461,
+          480
+        ],
+        "wrist": [
+          398,
+          548
+        ],
+        "palm_center": [
+          377,
+          555
+        ]
+      },
+      "watch_center": null,
+      "watch_visibility": "not visibly identifiable; absence of observation is not a tracking result",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "partially_occluded_wrist_palm",
+      "observation": "Ладонь ещё возле волос, локоть уже ниже; начинается уход от виска."
+    },
+    {
+      "frame_zero_based": 90,
+      "time_seconds": 3.75,
+      "name": "lower_hand_raise_watch",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_090.imageset/idle_090@2x.png",
+      "source_sha256": "75a17bff7fc464e88b86caa658d625617596935ba8718556a99a11c598a996f1",
+      "head": {
+        "reference_point_eye_midpoint": [
+          257.5,
+          233.5
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            201,
+            235
+          ],
+          [
+            314,
+            232
+          ]
+        ],
+        "eye_line_angle_degrees": -1.5,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          181,
+          393
+        ],
+        "elbow": [
+          79,
+          477
+        ],
+        "wrist": [
+          137,
+          405
+        ],
+        "palm_center": [
+          152,
+          383
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          331,
+          398
+        ],
+        "elbow": [
+          425,
+          510
+        ],
+        "wrist": [
+          350,
+          538
+        ],
+        "palm_center": [
+          320,
+          540
+        ]
+      },
+      "watch_center": [
+        359,
+        532
+      ],
+      "watch_visibility": "visible",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "clear_pose_with_approximate_joint_centers",
+      "observation": "Screen-left ладонь проходит возле груди; screen-right кисть выходит с бедра и показывает часы."
+    },
+    {
+      "frame_zero_based": 96,
+      "time_seconds": 4.0,
+      "name": "hands_converge",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_096.imageset/idle_096@2x.png",
+      "source_sha256": "2eaa892835a604a5977b1160d08b2aed6a5b2ea69af383bb5bb13ea89c5dfe4d",
+      "head": {
+        "reference_point_eye_midpoint": [
+          262.0,
+          251.5
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            206,
+            251
+          ],
+          [
+            318,
+            252
+          ]
+        ],
+        "eye_line_angle_degrees": 0.5,
+        "eyes": "closed",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          181,
+          396
+        ],
+        "elbow": [
+          112,
+          517
+        ],
+        "wrist": [
+          195,
+          492
+        ],
+        "palm_center": [
+          220,
+          473
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          346,
+          399
+        ],
+        "elbow": [
+          390,
+          526
+        ],
+        "wrist": [
+          297,
+          516
+        ],
+        "palm_center": [
+          268,
+          511
+        ]
+      },
+      "watch_center": [
+        312,
+        518
+      ],
+      "watch_visibility": "visible",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "clear_pose_with_approximate_joint_centers",
+      "observation": "Обе руки сходятся перед корпусом, глаза закрыты; часы читаются."
+    },
+    {
+      "frame_zero_based": 99,
+      "time_seconds": 4.125,
+      "name": "crossing_hands_artifact",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_099.imageset/idle_099@2x.png",
+      "source_sha256": "de52d01241fe06506acb14b23cf07dbd71943050d2345ffc6739cee5ee0db09a",
+      "head": {
+        "reference_point_eye_midpoint": [
+          263.5,
+          249.0
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            208,
+            249
+          ],
+          [
+            319,
+            249
+          ]
+        ],
+        "eye_line_angle_degrees": 0.0,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          179,
+          396
+        ],
+        "elbow": [
+          126,
+          528
+        ],
+        "wrist": [
+          216,
+          518
+        ],
+        "palm_center": [
+          245,
+          511
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          345,
+          398
+        ],
+        "elbow": [
+          370,
+          523
+        ],
+        "wrist": [
+          279,
+          493
+        ],
+        "palm_center": [
+          249,
+          482
+        ]
+      },
+      "watch_center": [
+        294,
+        500
+      ],
+      "watch_visibility": "visible",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "trajectory_only_hand_overlap",
+      "observation": "Пальцы двух рук сливаются/пересекаются. Ориентир траектории, не образец формы кисти."
+    },
+    {
+      "frame_zero_based": 102,
+      "time_seconds": 4.25,
+      "name": "watch_settle",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_102.imageset/idle_102@2x.png",
+      "source_sha256": "5de296c8e3cafc5441d1bb9b5974c4c35570eb453a29dd3c217939fcdbc4db7a",
+      "head": {
+        "reference_point_eye_midpoint": [
+          265.0,
+          251.0
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            209,
+            251
+          ],
+          [
+            321,
+            251
+          ]
+        ],
+        "eye_line_angle_degrees": 0.0,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          178,
+          395
+        ],
+        "elbow": [
+          146,
+          527
+        ],
+        "wrist": [
+          241,
+          526
+        ],
+        "palm_center": [
+          272,
+          521
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          344,
+          397
+        ],
+        "elbow": [
+          362,
+          516
+        ],
+        "wrist": [
+          265,
+          486
+        ],
+        "palm_center": [
+          227,
+          471
+        ]
+      },
+      "watch_center": [
+        280,
+        485
+      ],
+      "watch_visibility": "visible",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "clear_pose_with_approximate_joint_centers",
+      "observation": "Перекрещённые предплечья: screen-left кисть под часами, screen-right кисть выше и левее."
+    },
+    {
+      "frame_zero_based": 120,
+      "time_seconds": 5.0,
+      "name": "watch_final_hold",
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_120.imageset/idle_120@2x.png",
+      "source_sha256": "1a9975750ee4f1436d484cf11297171a277e88c26abebddc97d35cf62b11ea68",
+      "head": {
+        "reference_point_eye_midpoint": [
+          266.0,
+          252.0
+        ],
+        "eye_centers_screen_left_then_right": [
+          [
+            210,
+            252
+          ],
+          [
+            322,
+            252
+          ]
+        ],
+        "eye_line_angle_degrees": 0.0,
+        "eyes": "open",
+        "neck_base_reference": [
+          260,
+          370
+        ]
+      },
+      "screen_left_arm": {
+        "shoulder": [
+          178,
+          395
+        ],
+        "elbow": [
+          146,
+          527
+        ],
+        "wrist": [
+          241,
+          526
+        ],
+        "palm_center": [
+          272,
+          521
+        ]
+      },
+      "screen_right_arm": {
+        "shoulder": [
+          344,
+          397
+        ],
+        "elbow": [
+          362,
+          516
+        ],
+        "wrist": [
+          265,
+          486
+        ],
+        "palm_center": [
+          227,
+          471
+        ]
+      },
+      "watch_center": [
+        280,
+        485
+      ],
+      "watch_visibility": "visible",
+      "feet_reference": "planted_reference_anchors",
+      "retarget_reliability": "clear_pose_with_approximate_joint_centers",
+      "observation": "Последняя поза удерживает часы; отличается от исходной позы, бесшовного возврата нет."
+    }
+  ],
+  "rejected_reference_details": [
+    {
+      "frame_zero_based": 42,
+      "time_seconds": 1.75,
+      "reason": "Кисть и часть предплечья растворяются/рвутся на прозрачном фоне; joint coordinates intentionally omitted. Сохранять непрерывную руку при retarget."
+    },
+    {
+      "frame_zero_based": 99,
+      "time_seconds": 4.125,
+      "reason": "Руки и пальцы сливаются при перекрещивании; использовать общую траекторию, отдельно нарисовать чистый overlap."
+    }
+  ],
+  "vector_source_comparison": {
+    "source": "content-pipeline/rive/hero-wardrobe/references/hero-from-editor.rml",
+    "sha256": "20e5ebb18b7e18d8ee3caeeaafe1b63dc592427c7c4e5fd3d2945b228ea9c482",
+    "artboard": [
+      506,
+      1060
+    ],
+    "structure_facts": {
+      "shapes": 26,
+      "nodes": 3,
+      "bones": 0,
+      "skins": 0,
+      "images": 0,
+      "image_assets": 0,
+      "head_pivot": [
+        260,
+        346
+      ],
+      "upper_body_rest_offset": [
+        -1,
+        -6.5
+      ]
+    },
+    "observed_differences": [
+      "Существующий вектор — упрощённый рисунок с плоскими заливками, более гладкими волосами и контуром; растровая фактура и все мелкие пряди не совпадают.",
+      "В исходном векторе кисти нарисованы сжатыми на бёдрах; отдельной раскрытой/вытянутой ладони и часов нет.",
+      "Видео меняет форму головы/чёлки и опускает глаза примерно на 32 px в финале. Это генеративная деформация, её нельзя целиком считать жёстким переносом/поворотом головы."
+    ],
+    "retarget_recommendations": [
+      "Сохранить исходный векторный силуэт, палитру, лицо и неподвижные стопы; переносить смысл поз и тайминг, а не все искажения кадров.",
+      "Для каждой руки использовать плечо, локоть и кисть; skin рукава должен сгибаться при изменении костей. Кисть — отдельный векторный рисунок/pose и закрепление на wrist.",
+      "У виска разрешить кисти перекрываться волосами; во время перехода к часам явно задать порядок двух предплечий/кистей.",
+      "Часы добавить отдельной векторной деталью, привязанной к screen-right wrist; не имитировать появление часов сменой всей картинки.",
+      "Face and neck — одна Shape в исходнике: держать основание шеи связанным с воротом при наклоне. Малый наклон/глаза дают cue; не переносить растровую деформацию головы как +32 px y.",
+      "Исходный Hero loop уже анимирует верх корпуса, голову и scaleY глаз; при reference-переносе исключить конкурирующий loop или сознательно смешивать, чтобы pose не дрейфовала.",
+      "Финал оставить осмысленным удержанием часов; обратный переход в rest, если нужен продукту, авторить отдельно от этих 121 исходных кадров."
+    ]
+  },
+  "evidence": [
+    "reference-raw-1.png",
+    "reference-raw-2.png",
+    "reference-raw-3.png",
+    "reference-detail-1.png",
+    "reference-detail-2.png",
+    "reference-detail-3.png",
+    "reference-detail-4.png",
+    "reference-annotated-contact-sheet.png"
+  ]
+}

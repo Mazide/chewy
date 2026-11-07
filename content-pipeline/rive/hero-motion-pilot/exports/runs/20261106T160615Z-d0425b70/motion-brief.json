@@ -1,0 +1,44 @@
+{
+  "status": "draft motion and alternate palm for owner review",
+  "source": "content-pipeline/rive/hero-wardrobe/references/hero-from-editor.rml",
+  "sourceSha256": "20e5ebb18b7e18d8ee3caeeaafe1b63dc592427c7c4e5fd3d2945b228ea9c482",
+  "master": "chewy/scene.rml",
+  "baseline": "baseline/scene.rml",
+  "artboard": "ChewyMotion",
+  "stateMachine": "ChewyMotion",
+  "viewModel": "ChewyMotion",
+  "canvas": [
+    760,
+    1120
+  ],
+  "placement": {
+    "name": "Hero placement",
+    "x": 127,
+    "y": 30
+  },
+  "action": {
+    "0": "Idle",
+    "1": "Wave"
+  },
+  "fps": 60,
+  "animations": {
+    "Idle": {
+      "frames": 240,
+      "seconds": 4,
+      "loop": true
+    },
+    "Wave": {
+      "frames": 288,
+      "seconds": 4.8,
+      "loop": false
+    }
+  },
+  "replay": "Set action=0, advance at least one frame, set action=1. Wave holds its original neutral stance at the end until action=0.",
+  "intent": "Friendly, readable greeting: anticipate, raise connected arm, two asymmetric diminishing wrist/forearm waves, lower and settle to original stance.",
+  "rig": "Original right sleeve subdivided exactly and skinned to torso anchor/upper arm/forearm. Hand is rigid on wrist. Original shoulder seam stays pinned.",
+  "artChanges": "Original face/hair/torso/legs/boots/fist preserved. One explicitly draft alternate open palm appears only during greeting; no baseline replacement.",
+  "feet": "All trouser/boot/wrap shapes unchanged and unkeyed. Lower region y>=720 remains still.",
+  "motionAuthoring": "Sparse selected poses with cubic interpolation. No sine generation or per-frame keyframe bake.",
+  "sourceOfTruth": "Saved RML; bootstrap is explicit only and never part of build.",
+  "reducedMotion": "Show Idle at t=0 without autoplay."
+}

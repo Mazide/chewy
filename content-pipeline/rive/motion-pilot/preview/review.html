@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chewy · проба движения Rive</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="../vendor/rive.js" defer></script>
+  <script src="viewer.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="/">chewy <span>мастерская движения</span></a><span class="badge">Проба · растения</span></header>
+    <section class="intro">
+      <p class="eyebrow">Один рисунок, два движения</p>
+      <h1>Как оживает ромашка</h1>
+      <p>Сравни привычное покачивание с изгибом стебля, запаздыванием цветка и откликом листьев.</p>
+    </section>
+    <div class="toolbar">
+      <div class="stages" role="group" aria-label="Стадия растения">
+        <button data-stage="0" disabled>Начало дня</button><button data-stage="1" disabled>В процессе</button><button data-stage="2" disabled aria-pressed="true">Полное</button>
+      </div>
+      <div class="tools"><button id="size" aria-pressed="false">В размере лагеря</button><button id="playback" disabled>Пауза</button></div>
+    </div>
+    <section class="comparison" data-comparison aria-label="Сравнение движения">
+      <article class="card">
+        <div class="card-heading"><h2>Было</h2><span>Текущая версия</span></div>
+        <div class="canvas-wrap"><canvas data-version="baseline" aria-label="Растения: исходное движение"></canvas></div>
+        <p>Стебель и цветок качаются вместе.</p>
+      </article>
+      <article class="card candidate">
+        <div class="card-heading"><h2>Пробуем</h2><span>Риг и поставленные позы</span></div>
+        <div class="canvas-wrap"><canvas data-version="pilot" aria-label="Растения: новое движение"></canvas></div>
+        <p>Корень стоит на месте. Стебель гнётся, цветок и листья догоняют движение.</p>
+      </article>
+    </section>
+    <p id="status" role="status">Загружаем обе версии…</p>
+    <div id="error" role="alert" hidden><p></p><button id="retry">Загрузить снова</button></div>
+    <section class="watch-for">
+      <h2>На что посмотреть</h2>
+      <div><p><strong>Опора</strong>Земля и корни остаются неподвижными.</p><p><strong>Характер</strong>Изгиб проходит по стеблю, верхушка слегка запаздывает.</p><p><strong>Повтор</strong>В конце цикла нет заметного скачка.</p></div>
+    </section>
+    <details><summary>Как повторить эту пробу</summary><p>Бриф → редактируемый мастер → сборка без перезаписи → проверка кадров и переходов → сравнение.</p><p>Сборка: <code id="revision">загружается</code>. Художественная оценка остаётся за владельцем.</p><a id="manifest">Отчёт сборки</a></details>
+    <footer>Черновик движения. Основной лагерь использует прежние ассеты.</footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "chewy/scene.rml": "e8f711d2661bb9b990a196ee4241026cffc903fd7d5a48cefca72d39a3dbefef",
+  "chewy/rive.yaml": "d5ac0d89488d93a63ec2df2a553b2a16422968655c70894e3c087198ccf98a3c",
+  "author_vector.py": "e6bda059ff4a2305c9872f03fa656b42c44f45a7b9087d6cf39e64d53e609c5c",
+  "pipeline.py": "1abe298492f0a6964eda85eef455c6135f896a497f33ce0bd86dbd3d5f21cfdf",
+  "check_motion.mjs": "7d92136a2fe8889fccd7ee5a07a704fdf96405866474a5f16670d8e3f0c4c9d9",
+  "preview/viewer.js": "f10aa95364183c758047e8d2414270aa393c2a746e44208c92b0abe7ae66270e",
+  "preview/review.html": "ba39fdff3919014e019412523d815b6586e39b512dd1c8d1bb2a05b78db36702",
+  "preview/style.css": "61a7307646115628520495ef711c9f800030af6756bdbf7f4db9a8966b748c10",
+  "exports/chewy-vector.riv": "6c7fb183f088e90cdeec3173c8b0fb448aa45c120015d9962b98c779f5694d7f",
+  "exports/manifest.json": "b831e681e8063f4f6b3b597e33d6818293e510b4bf41ea482527002621c7356a",
+  "exports/native-qa.json": "b6d959935cdd0639d0f222ab1e0d1a6ff4a74ad7a3b2add49c4fe24b41232f87",
+  "exports/browser-qa/qa.json": "25a9475c2c4f3f04f9259b0ee43694b6e098460699457e3774e95b769e454252",
+  "evidence/independent-rig-audit.json": "929559377409e5ae0bab6ccfebab6e4b6f7a079229d55396bbbec6b8bb885c93"
+}

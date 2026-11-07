@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "required_cli_version": "1.8.0",
+  "assets": [
+    {
+      "slug": "chewy",
+      "project": "chewy",
+      "baseline": "baseline",
+      "artboard": "ChewyMotion",
+      "state_machine": "ChewyMotion",
+      "view_model": "ChewyMotion",
+      "property": "action",
+      "values": [0, 1],
+      "animated_values": [0, 1],
+      "sample_seconds": [0.7, 1.5, 2.6, 4.8],
+      "baseline_checks": {"animated_values": [], "require_distinct_values": false},
+      "edit_probe": {"type": "Node", "name": "Hero placement", "property": "x", "delta": 8}
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "kind": "independent_source_and_rive_audit",
+  "source_manifest_sha256": "6a2a673d5db320434dc79096481e670a4743dc84e2b0441a8895c6f1fe542444",
+  "prepared_sequence": {
+    "passed": true,
+    "original_count": 121,
+    "prepared_count": 121,
+    "source_hashes_verified": 121,
+    "prepared_hashes_verified": 121,
+    "whole_canvas_resizes_pixel_exact": 121,
+    "source_size": [
+      506,
+      1060
+    ],
+    "prepared_size": [
+      253,
+      530
+    ],
+    "source_and_prepared_mode": "RGBA",
+    "alpha_extrema_all": [
+      0,
+      255
+    ],
+    "fps": 24,
+    "duration_seconds": 5.041666666666667,
+    "frame_order": "000 through 120; unchanged",
+    "frame_dropping": false,
+    "recentring": false,
+    "cropping": false,
+    "stabilization": false,
+    "new_background_removal": false,
+    "source_png_bytes": 41541309,
+    "prepared_png_bytes": 13043228,
+    "source_hash_sequence_sha256": "84596a4bcc2fb703c1a64b61ba34ce6009ff19f693299ca0bb7568d86b49c240",
+    "prepared_hash_sequence_sha256": "f258502ff00eafab5c09591f82a2e991c7df7a2ec2bad98eaaa837a5e52e28fd",
+    "video_hashes_verified": 3
+  },
+  "memory_estimate": {
+    "decoded_rgba_all_frames_bytes": 64899560,
+    "decoded_rgba_all_frames_mib": 61.893043518066406,
+    "formula": "121 × 253 × 530 × 4 bytes",
+    "runtime_peak_memory_measured": false,
+    "is_runtime_memory_upper_bound": false,
+    "note": "Точная сумма RGBA-пикселей при одновременном хранении всех кадров; не включает декодеры, GPU-копии, mipmaps и прочие расходы runtime."
+  },
+  "rive": {
+    "status": "passed",
+    "source_rml_sha256": "801db7343dbe8d25cdcea3764d3249a8931063221311a82d1e33847f6764a48d",
+    "export_sha256": "cd96b926118edc0309f1a3fdc8847e2c914ae0583c1d094ffee906a0ef47d217",
+    "export_bytes": 13052082,
+    "image_assets": 121,
+    "images_in_solo": 121,
+    "embedded_exact_png_byte_sequences": 121,
+    "distinct_embedded_offsets": 121,
+    "asset_order_matches_source": true,
+    "image_offsets_and_origins_all_zero": true,
+    "one_visible_frame_at_a_time": "Solo activeComponentId",
+    "animation": "RecordedGesture",
+    "fps": 24,
+    "duration_frames": 121,
+    "duration_seconds": 5.041666666666667,
+    "loop": "oneShot",
+    "hold_keys": 121,
+    "key_frames": "0 through 120",
+    "key_values_match_order": true,
+    "transition_duration_all_zero": true,
+    "crossfade": false,
+    "last_key_frame": 120,
+    "source_and_export_manifest_match": true,
+    "raw_cli_end_hold": {
+      "cli_version": "rive 1.8.0",
+      "method": "Independent headless CLI compile/render from a temporary copy of frozen project; action=1. Recompiled bytes equal frozen export. No preview host timers or browser API.",
+      "captures": [
+        {
+          "advance": "302",
+          "target_frame": 120,
+          "screenshot_sha256": "d3fe068645f6c95ea5cf4ebe884bc59e985c32c1543f482dcb85e152b855863d",
+          "rgba_sha256": "c80e0f1c0d98ff333fe593d5420abb1229cd4f9eeeee79c7c082cb7c49423a18",
+          "max_channel_difference": 2,
+          "mean_absolute_channel_difference": 0.023527108658363785,
+          "pixels_above_5": 0,
+          "background_rgba": [
+            29,
+            29,
+            29,
+            255
+          ]
+        },
+        {
+          "advance": "6s",
+          "target_frame": 120,
+          "screenshot_sha256": "d3fe068645f6c95ea5cf4ebe884bc59e985c32c1543f482dcb85e152b855863d",
+          "rgba_sha256": "c80e0f1c0d98ff333fe593d5420abb1229cd4f9eeeee79c7c082cb7c49423a18",
+          "max_channel_difference": 2,
+          "mean_absolute_channel_difference": 0.023527108658363785,
+          "pixels_above_5": 0,
+          "background_rgba": [
+            29,
+            29,
+            29,
+            255
+          ]
+        },
+        {
+          "advance": "10s",
+          "target_frame": 120,
+          "screenshot_sha256": "d3fe068645f6c95ea5cf4ebe884bc59e985c32c1543f482dcb85e152b855863d",
+          "rgba_sha256": "c80e0f1c0d98ff333fe593d5420abb1229cd4f9eeeee79c7c082cb7c49423a18",
+          "max_channel_difference": 2,
+          "mean_absolute_channel_difference": 0.023527108658363785,
+          "pixels_above_5": 0,
+          "background_rgba": [
+            29,
+            29,
+            29,
+            255
+          ]
+        }
+      ],
+      "pixels_differing_between_last_frame_and_6s_and_10s": 0,
+      "passed": true,
+      "temporary_captures_retained": false
+    },
+    "source_unchanged_during_audit": true
+  },
+  "artistic_approval": false,
+  "native_ios_tested": false
+}

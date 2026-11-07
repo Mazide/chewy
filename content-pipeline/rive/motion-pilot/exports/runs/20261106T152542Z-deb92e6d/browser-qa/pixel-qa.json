@@ -1,0 +1,210 @@
+{
+  "versions": {
+    "baseline": {
+      "state_coverage": [
+        {
+          "pixels": 7940,
+          "left": 158,
+          "top": 304,
+          "right": 309,
+          "bottom": 414,
+          "edge_margin": 44
+        },
+        {
+          "pixels": 24304,
+          "left": 98,
+          "top": 214,
+          "right": 364,
+          "bottom": 419,
+          "edge_margin": 39
+        },
+        {
+          "pixels": 58387,
+          "left": 48,
+          "top": 129,
+          "right": 409,
+          "bottom": 422,
+          "edge_margin": 36
+        }
+      ],
+      "root_visible_pixels": 5615,
+      "root_deltas": [
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        }
+      ],
+      "minimum_edge_margin": 36,
+      "loop_endpoint": {
+        "mean_channel_delta": 0.0,
+        "changed_pixels": 0
+      },
+      "loop_neighbour_deltas": [
+        {
+          "mean_channel_delta": 0.8341248017490608,
+          "changed_pixels": 3473
+        },
+        {
+          "mean_channel_delta": 0.8106954942340259,
+          "changed_pixels": 3413
+        },
+        {
+          "mean_channel_delta": 0.8085275923853216,
+          "changed_pixels": 3346
+        },
+        {
+          "mean_channel_delta": 0.803460966251664,
+          "changed_pixels": 3373
+        }
+      ],
+      "upper_motion": [
+        {
+          "mean_channel_delta": 10.539954193093727,
+          "changed_pixels": 16942
+        },
+        {
+          "mean_channel_delta": 10.544011627906977,
+          "changed_pixels": 17033
+        },
+        {
+          "mean_channel_delta": 2.766966173361522,
+          "changed_pixels": 7099
+        },
+        {
+          "mean_channel_delta": 10.785,
+          "changed_pixels": 17349
+        },
+        {
+          "mean_channel_delta": 10.666811134601833,
+          "changed_pixels": 17218
+        }
+      ]
+    },
+    "pilot": {
+      "state_coverage": [
+        {
+          "pixels": 7942,
+          "left": 158,
+          "top": 304,
+          "right": 309,
+          "bottom": 414,
+          "edge_margin": 44
+        },
+        {
+          "pixels": 24314,
+          "left": 98,
+          "top": 214,
+          "right": 364,
+          "bottom": 419,
+          "edge_margin": 39
+        },
+        {
+          "pixels": 58391,
+          "left": 48,
+          "top": 129,
+          "right": 409,
+          "bottom": 422,
+          "edge_margin": 36
+        }
+      ],
+      "root_visible_pixels": 5615,
+      "root_deltas": [
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        }
+      ],
+      "minimum_edge_margin": 36,
+      "loop_endpoint": {
+        "mean_channel_delta": 0.0,
+        "changed_pixels": 0
+      },
+      "loop_neighbour_deltas": [
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        },
+        {
+          "mean_channel_delta": 0.0,
+          "changed_pixels": 0
+        }
+      ],
+      "upper_motion": [
+        {
+          "mean_channel_delta": 4.625280126849894,
+          "changed_pixels": 8686
+        },
+        {
+          "mean_channel_delta": 11.244924242424242,
+          "changed_pixels": 19406
+        },
+        {
+          "mean_channel_delta": 9.019605355884426,
+          "changed_pixels": 14802
+        },
+        {
+          "mean_channel_delta": 3.9923801973220576,
+          "changed_pixels": 7906
+        },
+        {
+          "mean_channel_delta": 2.6134936575052854,
+          "changed_pixels": 6416
+        }
+      ]
+    }
+  },
+  "root_roi": "artboard y >= 405 of 465; visible stationary grass base",
+  "quality_claim": "These measurements reject structural faults; they do not score aesthetic quality.",
+  "state_machine_final_coverage": {
+    "pixels": 58189,
+    "left": 49,
+    "top": 129,
+    "right": 409,
+    "bottom": 422,
+    "edge_margin": 36
+  },
+  "baseline_pilot_difference": {
+    "mean_channel_delta": 8.272820928543682,
+    "changed_pixels": 16655
+  }
+}

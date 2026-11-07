@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "summary": true,
+  "problems": [],
+  "artboards": [
+    {
+      "name": "PlantStates",
+      "objects": 1786,
+      "types": {
+        "AnimationState": 3,
+        "AnyState": 1,
+        "Artboard": 1,
+        "BindablePropertyNumber": 3,
+        "CubicDetachedVertex": 172,
+        "DataBindContext": 3,
+        "Ellipse": 5,
+        "EntryState": 1,
+        "ExitState": 1,
+        "Fill": 61,
+        "KeyFrameDouble": 1011,
+        "KeyedObject": 33,
+        "KeyedProperty": 111,
+        "LayoutComponentStyle": 1,
+        "LinearAnimation": 3,
+        "Node": 61,
+        "PointsPath": 56,
+        "Shape": 61,
+        "SolidColor": 122,
+        "StateMachine": 1,
+        "StateMachineLayer": 1,
+        "StateTransition": 4,
+        "Stroke": 61,
+        "TransitionPropertyViewModelComparator": 3,
+        "TransitionValueNumberComparator": 3,
+        "TransitionViewModelCondition": 3
+      }
+    }
+  ],
+  "events": [],
+  "roots": {
+    "objects": 5,
+    "types": {
+      "Backboard": 1,
+      "ViewModel": 1,
+      "ViewModelInstance": 1,
+      "ViewModelInstanceNumber": 1,
+      "ViewModelPropertyNumber": 1
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "status": "frozen_for_independent_visual_and_runtime_audit",
+  "scene_sha256": "e8f711d2661bb9b990a196ee4241026cffc903fd7d5a48cefca72d39a3dbefef",
+  "reference_sha256": "6b5b6b35cd548987b15295c48df1ace5c1cdac080dd466890198cafe1f44b867",
+  "original_shapes_exact_subtree": [
+    "Easy smile",
+    "Right eye",
+    "Left eye",
+    "Front golden hair",
+    "Face and neck",
+    "Back hair",
+    "Right fingers",
+    "Right knuckles",
+    "Right hand",
+    "Left fingers",
+    "Left knuckles",
+    "Left hand",
+    "Shirt hem right",
+    "Shirt hem left",
+    "Linen shirt",
+    "Right wrap lower",
+    "Right wrap upper",
+    "Right cuff",
+    "Left wrap lower",
+    "Left wrap upper",
+    "Left cuff",
+    "Right boot",
+    "Left boot",
+    "Blue trousers"
+  ],
+  "original_shapes_changed": [
+    "Right sleeve",
+    "Left sleeve"
+  ],
+  "native_structure": {
+    "RootBone": 3,
+    "Bone": 2,
+    "Skin": 2,
+    "Tendon": 6,
+    "CubicWeight": 36,
+    "Shape": 32,
+    "Image": 0,
+    "ImageAsset": 0
+  },
+  "gesture_sleeve": "Screen-left original sleeve retains exact subdivided bind silhouette in Rest; gesture uses draft upper/forearm bone-local contours with rounded overlap. Screen-right sleeve uses native skin.",
+  "scope": "Manual reference retarget prototype. Editable vector geometry and native bone keys; no automatic motion extraction or per-frame vector tracing.",
+  "limitations": [
+    "Draft temple fingers, two-part sleeve and wrist watch need art approval.",
+    "Side-changing elbow fold has visible cloth overlap; no physical cloth simulation.",
+    "Fixed limb lengths adapt approximate reference elbows.",
+    "Source gaze/head morph reduced to small roll and gaze keys; original face and feet preserved."
+  ],
+  "clips": {
+    "Rest": {
+      "frames": 1,
+      "fps": 24,
+      "loop": "oneShot"
+    },
+    "ReferenceGesture": {
+      "frames": 121,
+      "fps": 24,
+      "loop": "oneShot",
+      "end": "watch pose held"
+    }
+  },
+  "probes": {
+    "bone": "Screen left forearm",
+    "animation": "ReferenceGesture",
+    "frame": 48,
+    "delta_rotation_radians": 0.12,
+    "gaze": [
+      "lookX",
+      "lookY"
+    ]
+  }
+}

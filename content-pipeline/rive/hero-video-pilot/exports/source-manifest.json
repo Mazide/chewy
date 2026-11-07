@@ -1,0 +1,1124 @@
+{
+  "schema_version": 1,
+  "fps": 24,
+  "frame_count": 121,
+  "duration_seconds": 5.041666666666667,
+  "original_width": 506,
+  "original_height": 1060,
+  "width": 253,
+  "height": 530,
+  "transform": "Uniform half-size Lanczos resample; no crop, masking, stabilization, frame removal or retiming.",
+  "playback": "oneShot; original final pose differs from first; replay deliberately starts from frame 0",
+  "artistic_approval": false,
+  "videos": [
+    {
+      "path": "assets/idle.mov",
+      "sha256": "8370419264d6f55269f8cd8a008b4209331a97490d58c3fc7e6f3c877ac34098",
+      "bytes": 4361176
+    },
+    {
+      "path": "assets/idle_from_mov.mp4",
+      "sha256": "b5f708176c446a2e8d8a34cde28958568bbf3eeba296f2c69c38d0a1815f08f7",
+      "bytes": 314879
+    },
+    {
+      "path": "assets/kling_20260223_Image_to_Video_2D_cartoon_70_0.mp4",
+      "sha256": "8e220ec22befc96c5b160d66c8c69d071b1749a60798cc1f10730672362f456d",
+      "bytes": 2596000
+    }
+  ],
+  "frames": [
+    {
+      "frame": 0,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_000.imageset/idle_000@2x.png",
+      "source_sha256": "def0f19b913bf8992c1727e956f07650244e03f574f33f296d171bedbd206354",
+      "source_bytes": 297853,
+      "prepared": "chewy/assets/frame-000.png",
+      "prepared_sha256": "903ed650f9fc1847045fa63d64ffb629cd90dae3e85604ddba4bb779875efd1b",
+      "prepared_bytes": 102624
+    },
+    {
+      "frame": 1,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_001.imageset/idle_001@2x.png",
+      "source_sha256": "aa03407b8d2f801914b92a386f34ddc1d2b26a9081db539dad870d7eed0ba19b",
+      "source_bytes": 301184,
+      "prepared": "chewy/assets/frame-001.png",
+      "prepared_sha256": "4540d765f215a54b18752fc39e77e3c8a88eec8cd010106481ee8bb80374a4a7",
+      "prepared_bytes": 103488
+    },
+    {
+      "frame": 2,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_002.imageset/idle_002@2x.png",
+      "source_sha256": "78d13f6239e3ffc54d10404f127e2979823c2d96944cdaecf02889fe3ee1adec",
+      "source_bytes": 301738,
+      "prepared": "chewy/assets/frame-002.png",
+      "prepared_sha256": "e2a280614e6a0e3185c68a9d7237f3e5588ceaf3a2f34f4b51cf57098d7caef9",
+      "prepared_bytes": 103643
+    },
+    {
+      "frame": 3,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_003.imageset/idle_003@2x.png",
+      "source_sha256": "8bbfc9011f8404436ade0edcd03872ee044c9dfdd59b4517fb10691b0d39fb76",
+      "source_bytes": 301824,
+      "prepared": "chewy/assets/frame-003.png",
+      "prepared_sha256": "e34febd7544ddff4ed7df5c24bf606f2b1d08cbb1e3916bb6895227a1956f8f1",
+      "prepared_bytes": 104082
+    },
+    {
+      "frame": 4,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_004.imageset/idle_004@2x.png",
+      "source_sha256": "434c617dbc39bddd9d4e6120bdad72cd74cff04ecf8c4320452936d4fe6b44c4",
+      "source_bytes": 301252,
+      "prepared": "chewy/assets/frame-004.png",
+      "prepared_sha256": "3fb74b714a07d79b8ee008e83f98d3c511853b6142ce9eef5d22bb46777daf56",
+      "prepared_bytes": 103570
+    },
+    {
+      "frame": 5,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_005.imageset/idle_005@2x.png",
+      "source_sha256": "462bfc952f5952723f7c67b7d392772e81a3ec3f61b2415665d88bc61db81721",
+      "source_bytes": 305597,
+      "prepared": "chewy/assets/frame-005.png",
+      "prepared_sha256": "b120b1db7e44ea295ee566207089252917f67eb277aa63af8910e4bf5506f18f",
+      "prepared_bytes": 104401
+    },
+    {
+      "frame": 6,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_006.imageset/idle_006@2x.png",
+      "source_sha256": "e44fe7c93edebaed2f032b2a7bb5eed2d7038bc7db7f60ef3a2add8daca559cc",
+      "source_bytes": 305472,
+      "prepared": "chewy/assets/frame-006.png",
+      "prepared_sha256": "b11d9f0cd9c9193f3eaa61e0e99a8eab8a7f07b5ce4175ca2d04d66b8cd9f45a",
+      "prepared_bytes": 104339
+    },
+    {
+      "frame": 7,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_007.imageset/idle_007@2x.png",
+      "source_sha256": "f95e20f439d7bd19785dadf2d81369e9bc43f9ff973be69db772d3eb54af00d6",
+      "source_bytes": 306317,
+      "prepared": "chewy/assets/frame-007.png",
+      "prepared_sha256": "6b3c7ed13aebd92abbc44d8653366a1d8a5f561c5068f238b604ac0d77766cce",
+      "prepared_bytes": 104238
+    },
+    {
+      "frame": 8,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_008.imageset/idle_008@2x.png",
+      "source_sha256": "4ee9ffe2dcc2349a7f7cad45c2700a1099fb370d6efb56ca59a8841655520f84",
+      "source_bytes": 306298,
+      "prepared": "chewy/assets/frame-008.png",
+      "prepared_sha256": "89697985dc5b9ae7636a6de75ff7cf8ea1da5dc43488ddff35c1e4f9435482f1",
+      "prepared_bytes": 104529
+    },
+    {
+      "frame": 9,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_009.imageset/idle_009@2x.png",
+      "source_sha256": "5c22b5e60f5e00df97546935ff1067c136b685492bcb403a03509bd8416ba9c9",
+      "source_bytes": 309815,
+      "prepared": "chewy/assets/frame-009.png",
+      "prepared_sha256": "9dbae255360eb8b60161792a7e250e257d20a3b6808a5abae1ad77cf1caf668f",
+      "prepared_bytes": 104920
+    },
+    {
+      "frame": 10,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_010.imageset/idle_010@2x.png",
+      "source_sha256": "900de86e1f32e160623df1589a24fd4925a1b7e66309749a4733aeccb1f904f6",
+      "source_bytes": 310267,
+      "prepared": "chewy/assets/frame-010.png",
+      "prepared_sha256": "1929e95410484496b03f5237820beece5c00d5e18fd952eaf7c2ed5ef979d46d",
+      "prepared_bytes": 105255
+    },
+    {
+      "frame": 11,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_011.imageset/idle_011@2x.png",
+      "source_sha256": "197412df0d9db69cddb3c22958a1f4ee7942c0ccebe2ffb0fa6784f9dfcf094f",
+      "source_bytes": 314666,
+      "prepared": "chewy/assets/frame-011.png",
+      "prepared_sha256": "d9ea20f192990e8c7c56f18640c79cf60405bf88f605b4c0bbde114b098a46d2",
+      "prepared_bytes": 105645
+    },
+    {
+      "frame": 12,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_012.imageset/idle_012@2x.png",
+      "source_sha256": "dca5f5b67016ddca7254f7ba1cd605ce73626031ee4fb5d97078b82fab5f0276",
+      "source_bytes": 315073,
+      "prepared": "chewy/assets/frame-012.png",
+      "prepared_sha256": "c44d12b6c9bf2b76a008aad10c87a5eca1bde30d72e59f60f24da05606377d9e",
+      "prepared_bytes": 105628
+    },
+    {
+      "frame": 13,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_013.imageset/idle_013@2x.png",
+      "source_sha256": "9cdb1977268a7462bfdae1f251ff45d7f673623d131d2fc133b191f15268ddf9",
+      "source_bytes": 319665,
+      "prepared": "chewy/assets/frame-013.png",
+      "prepared_sha256": "c9bb535d284e0e09da09bd6d3d963d0d5f22c6de3d15f78e42f061763e0454fd",
+      "prepared_bytes": 106759
+    },
+    {
+      "frame": 14,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_014.imageset/idle_014@2x.png",
+      "source_sha256": "08ada20c52147620d7b01cb5701450f5384b72a32de3a2d8303cca345902a6fe",
+      "source_bytes": 319754,
+      "prepared": "chewy/assets/frame-014.png",
+      "prepared_sha256": "a3a4039d700b7400d72a8c76dbd4e2400560965827eb889e0f002c0e181fa0f7",
+      "prepared_bytes": 106970
+    },
+    {
+      "frame": 15,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_015.imageset/idle_015@2x.png",
+      "source_sha256": "b4a3ecde2e5d94a7caa248ff9e9584ff5dcf070b5b2d56a71e649be53f76ac3b",
+      "source_bytes": 323090,
+      "prepared": "chewy/assets/frame-015.png",
+      "prepared_sha256": "44da9ecff26d5988b60b2a0c79561e5b6dbb9e9f24d17d909499a1539c1e6e39",
+      "prepared_bytes": 107645
+    },
+    {
+      "frame": 16,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_016.imageset/idle_016@2x.png",
+      "source_sha256": "22b5b5ae135f5a7c1839d602cd4fca04ae219626d49148afee955ea9b74c4850",
+      "source_bytes": 323083,
+      "prepared": "chewy/assets/frame-016.png",
+      "prepared_sha256": "2bde465ae29ece0b40b23e23f6842bae071e046490f23cfd7b9169ef1cb347eb",
+      "prepared_bytes": 107765
+    },
+    {
+      "frame": 17,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_017.imageset/idle_017@2x.png",
+      "source_sha256": "1fcf2515d67b7ecad510fd8afd56f82826b04a4793f787694a5a3cf344e4cf9f",
+      "source_bytes": 322986,
+      "prepared": "chewy/assets/frame-017.png",
+      "prepared_sha256": "1d05b961fe929bc93b7d630770cc6c1da9b320a64b866bf9c731e5a19f29e771",
+      "prepared_bytes": 107351
+    },
+    {
+      "frame": 18,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_018.imageset/idle_018@2x.png",
+      "source_sha256": "8f6e0c38e7a325e25cf37093b3352e787752f2570f9feb8373ff968fd78c7a35",
+      "source_bytes": 323653,
+      "prepared": "chewy/assets/frame-018.png",
+      "prepared_sha256": "ab60a352193962cd3c8b3406e0f92341df22b8048ad69f93b9dadd2d2dd382c7",
+      "prepared_bytes": 107778
+    },
+    {
+      "frame": 19,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_019.imageset/idle_019@2x.png",
+      "source_sha256": "b0a7ccc2c5cb307bd8b5aa5730703ae2cfc0517bbfb040d5cf435ffc56caa6b5",
+      "source_bytes": 325027,
+      "prepared": "chewy/assets/frame-019.png",
+      "prepared_sha256": "41925489d572a9e87974054059679c6db5672cb47b2e67bc609d1674dfb688e2",
+      "prepared_bytes": 107624
+    },
+    {
+      "frame": 20,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_020.imageset/idle_020@2x.png",
+      "source_sha256": "7720e715d27c60adc6fdafa0e9966e8eba331bfc738559a244aaa4343a2fd151",
+      "source_bytes": 325343,
+      "prepared": "chewy/assets/frame-020.png",
+      "prepared_sha256": "13829b168d86c59a663985f35485dcf61970382d934a74224d863847555073ff",
+      "prepared_bytes": 107473
+    },
+    {
+      "frame": 21,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_021.imageset/idle_021@2x.png",
+      "source_sha256": "bf8403e5e0cfd03c85d327913331fbfd44e074ddf807faf53d7b46b91633ad2d",
+      "source_bytes": 326029,
+      "prepared": "chewy/assets/frame-021.png",
+      "prepared_sha256": "26309afd82f169570e552468bd6112d2364aa142f44c1bd664edd24f3535eeac",
+      "prepared_bytes": 108181
+    },
+    {
+      "frame": 22,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_022.imageset/idle_022@2x.png",
+      "source_sha256": "c6548c99e848e4aeb0b81bef00c46fc6d10bac699b7c383edbd1f24815f20e9f",
+      "source_bytes": 325960,
+      "prepared": "chewy/assets/frame-022.png",
+      "prepared_sha256": "4d31a853953f6edad29334960199bba35de58eb12aa62d882f28b383ebc38ac0",
+      "prepared_bytes": 107573
+    },
+    {
+      "frame": 23,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_023.imageset/idle_023@2x.png",
+      "source_sha256": "90171dc2289f67970a90e975ad13df5af4166d00c7450f09698511afe305611d",
+      "source_bytes": 333076,
+      "prepared": "chewy/assets/frame-023.png",
+      "prepared_sha256": "73bf027081d7d32efc392e33c805904107de717e457c76c5dfc47968a5e58137",
+      "prepared_bytes": 108328
+    },
+    {
+      "frame": 24,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_024.imageset/idle_024@2x.png",
+      "source_sha256": "88bd9eee1ce45a31c4e572ee4118dd9f22d37a80da387a0270959a9b8668799a",
+      "source_bytes": 333293,
+      "prepared": "chewy/assets/frame-024.png",
+      "prepared_sha256": "5ab332c5673b1740f25b49aafcf1e6e3472b48d44f5bddf5f3704d6f0e797cc1",
+      "prepared_bytes": 108269
+    },
+    {
+      "frame": 25,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_025.imageset/idle_025@2x.png",
+      "source_sha256": "91093d965f86a97a6968c98d5be89b96ee5f6ea96c7a5f206c0498dbdc0d00ea",
+      "source_bytes": 333796,
+      "prepared": "chewy/assets/frame-025.png",
+      "prepared_sha256": "232aeb3cb2959593a57b02dc12fb70c3d97f54281c69911d9d1c59cb81085f3a",
+      "prepared_bytes": 108275
+    },
+    {
+      "frame": 26,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_026.imageset/idle_026@2x.png",
+      "source_sha256": "1af6f14763a115b871fd65c87d5ca97e80afe0c764ef95c8cfde71fc4654bc0d",
+      "source_bytes": 334552,
+      "prepared": "chewy/assets/frame-026.png",
+      "prepared_sha256": "63d77a50e38dc1c9303b9ac40adc731390402159c88ea9bde0ab9e5dc206c4b0",
+      "prepared_bytes": 108789
+    },
+    {
+      "frame": 27,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_027.imageset/idle_027@2x.png",
+      "source_sha256": "0b09ac852840fc106ea7fd76aba941302d2e4062fb364770f7d57950cc2082f0",
+      "source_bytes": 336611,
+      "prepared": "chewy/assets/frame-027.png",
+      "prepared_sha256": "071c71a70964f2b46a3741cf81d62a85c8ae22e327b1e835f477bf2cc3b9ffff",
+      "prepared_bytes": 108952
+    },
+    {
+      "frame": 28,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_028.imageset/idle_028@2x.png",
+      "source_sha256": "000bed69fec4ec96c6699e908a87f310706a6417639ee161670ee906ae428c3e",
+      "source_bytes": 338355,
+      "prepared": "chewy/assets/frame-028.png",
+      "prepared_sha256": "fec4bc541143ae80bca2be6d9320f972a3373c7175b145bd10178c4ea0b97f77",
+      "prepared_bytes": 109013
+    },
+    {
+      "frame": 29,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_029.imageset/idle_029@2x.png",
+      "source_sha256": "f4d588588bf8c3f31387e38748730d326da7ddf776a362be59593b1df4d81c97",
+      "source_bytes": 338879,
+      "prepared": "chewy/assets/frame-029.png",
+      "prepared_sha256": "11361521306a8eb95e713dc2af09839f1efe854ef2c03aedfc0b50021ed9b18c",
+      "prepared_bytes": 109204
+    },
+    {
+      "frame": 30,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_030.imageset/idle_030@2x.png",
+      "source_sha256": "a3ad9a72cfbc3b8030e30b990fa7f05748c1f1d1920d7def29311f86c48874fb",
+      "source_bytes": 339251,
+      "prepared": "chewy/assets/frame-030.png",
+      "prepared_sha256": "67672afb1b57c84067d517a20b5c101d903e1e8b73283b59031d0e7cc4c016e8",
+      "prepared_bytes": 109267
+    },
+    {
+      "frame": 31,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_031.imageset/idle_031@2x.png",
+      "source_sha256": "88bc84baaf520fb4e7f87701bb537ce734a37f85184dad953045ba74f2faff85",
+      "source_bytes": 340071,
+      "prepared": "chewy/assets/frame-031.png",
+      "prepared_sha256": "b53bddfbba1b4b28c2f47163db51f9bc86e82bb13727e3430732f3e2401ecca2",
+      "prepared_bytes": 109496
+    },
+    {
+      "frame": 32,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_032.imageset/idle_032@2x.png",
+      "source_sha256": "d46081380563f014ac4202d8bb812fb69f225f4d5d30ce58aa6b5a667b3838ee",
+      "source_bytes": 341659,
+      "prepared": "chewy/assets/frame-032.png",
+      "prepared_sha256": "159e78bde7b1cd971b98682bba987bd3a370ba4741af468b7522f065ac47b75a",
+      "prepared_bytes": 109688
+    },
+    {
+      "frame": 33,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_033.imageset/idle_033@2x.png",
+      "source_sha256": "9f75b85e006a7efff7760604b4a6a62a47f016e30d39a54f304512e8dc9cde54",
+      "source_bytes": 341874,
+      "prepared": "chewy/assets/frame-033.png",
+      "prepared_sha256": "f833f01f1693d20ad6a25fa14c2eb44abe4910fff57a615fb3bca6bedc752dc8",
+      "prepared_bytes": 109623
+    },
+    {
+      "frame": 34,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_034.imageset/idle_034@2x.png",
+      "source_sha256": "b2a390b440384f71c9c0f5f2bad88513947356b96817fed188cdabaf073d6085",
+      "source_bytes": 343893,
+      "prepared": "chewy/assets/frame-034.png",
+      "prepared_sha256": "2cbe7011c564ab713654dfc94ff5e9e60bdb866c7490f388a5163f33dec835af",
+      "prepared_bytes": 109969
+    },
+    {
+      "frame": 35,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_035.imageset/idle_035@2x.png",
+      "source_sha256": "7126e97ab7337d7e484f4417318e740e87adecff9b78011d66a3a622cf530c34",
+      "source_bytes": 344560,
+      "prepared": "chewy/assets/frame-035.png",
+      "prepared_sha256": "3c886cec5874027dc257b4a71b6ba0b6b491ab34fea7310e3b6348cf7f7b0588",
+      "prepared_bytes": 109838
+    },
+    {
+      "frame": 36,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_036.imageset/idle_036@2x.png",
+      "source_sha256": "f73ee659fd66f01d65bc82967d514d4f0d5af5fdb22fa57623bb72e44eedfb0e",
+      "source_bytes": 343916,
+      "prepared": "chewy/assets/frame-036.png",
+      "prepared_sha256": "3c2fe0ea6ace756db5b999afa6fd3153c06c2a0e10c5ae56c1ed7d823d837497",
+      "prepared_bytes": 110055
+    },
+    {
+      "frame": 37,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_037.imageset/idle_037@2x.png",
+      "source_sha256": "881515c7cd448c3a681c8ce602bd7e5ece597f6141a9419b138fa1a5d882fc6c",
+      "source_bytes": 345638,
+      "prepared": "chewy/assets/frame-037.png",
+      "prepared_sha256": "494330abd2d64055bf0d19be59faa2d27de5172c52baf161406694df491fd7d6",
+      "prepared_bytes": 110483
+    },
+    {
+      "frame": 38,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_038.imageset/idle_038@2x.png",
+      "source_sha256": "364c01d56de2fa4122f1d449ad23622342e3d70559551b17d40d99bf706cb7ac",
+      "source_bytes": 347233,
+      "prepared": "chewy/assets/frame-038.png",
+      "prepared_sha256": "564d8e84760373b9860ff767a4c1d8ed167eb5251ffe4c88630be59aca465085",
+      "prepared_bytes": 110678
+    },
+    {
+      "frame": 39,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_039.imageset/idle_039@2x.png",
+      "source_sha256": "301829c07a0465e0622ca877e1a586c8cc54cc34a6a1b03c60290c9e41cd6909",
+      "source_bytes": 345949,
+      "prepared": "chewy/assets/frame-039.png",
+      "prepared_sha256": "0202ee71770285899b40f8a586fbf7602f26402f958a770e96bcfcc8343f28de",
+      "prepared_bytes": 109533
+    },
+    {
+      "frame": 40,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_040.imageset/idle_040@2x.png",
+      "source_sha256": "2fd607dfd8b11c1fe07686af49eb29202aacb68257b8637e9e34bf86e68da5d9",
+      "source_bytes": 345791,
+      "prepared": "chewy/assets/frame-040.png",
+      "prepared_sha256": "19f2e089d925c233685dc11074bc65617501b625329c1e48f1dda65fc3ed4bce",
+      "prepared_bytes": 109681
+    },
+    {
+      "frame": 41,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_041.imageset/idle_041@2x.png",
+      "source_sha256": "912bb9361088e80b74c4e67a76bc9e397d16446ddaa1571c5060ae89be8a86b7",
+      "source_bytes": 342378,
+      "prepared": "chewy/assets/frame-041.png",
+      "prepared_sha256": "4d960faedb298839306ffe3c132c0babc4046088b84f55e2616386ecc503575f",
+      "prepared_bytes": 107741
+    },
+    {
+      "frame": 42,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_042.imageset/idle_042@2x.png",
+      "source_sha256": "4aed5fc0e3157c60d97082c34c0418adb5d60d922c12d9ec7bc09383470c4b8e",
+      "source_bytes": 343370,
+      "prepared": "chewy/assets/frame-042.png",
+      "prepared_sha256": "10fc1b23afae1f05879ad4d4b17223829fb03a32eb613ec3edcc9967de5d8cc5",
+      "prepared_bytes": 106862
+    },
+    {
+      "frame": 43,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_043.imageset/idle_043@2x.png",
+      "source_sha256": "2a9dae98f55219242f2e9deca2d421bdb4fca94d5b3ec9878c0b3aca2cb2632d",
+      "source_bytes": 347702,
+      "prepared": "chewy/assets/frame-043.png",
+      "prepared_sha256": "f545a7d73fdebd72076bd31e9066c40d1b07d64a123b084174d5a5584e18af6f",
+      "prepared_bytes": 108858
+    },
+    {
+      "frame": 44,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_044.imageset/idle_044@2x.png",
+      "source_sha256": "70bcaad386ea18fd0d3082942491682bcd15318828f3e31bfab08d8e32b6c525",
+      "source_bytes": 343601,
+      "prepared": "chewy/assets/frame-044.png",
+      "prepared_sha256": "b5416873f409e9fc7c209b26a41f2f2787b49d51c7f07f8d3ffbf08e140642ce",
+      "prepared_bytes": 107904
+    },
+    {
+      "frame": 45,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_045.imageset/idle_045@2x.png",
+      "source_sha256": "f99c967a4b67c4482c341166c8801427567883fefcec2925aef8e4e92d32963d",
+      "source_bytes": 343534,
+      "prepared": "chewy/assets/frame-045.png",
+      "prepared_sha256": "6811d9151017fd6f14eac28d810e67a7ca243544a41b0244af3faa90db30524b",
+      "prepared_bytes": 108012
+    },
+    {
+      "frame": 46,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_046.imageset/idle_046@2x.png",
+      "source_sha256": "ff87c9af7df582ae252ace5d6c6a9f0b94eb44dda07bf577ab650a2ea75ac36d",
+      "source_bytes": 347608,
+      "prepared": "chewy/assets/frame-046.png",
+      "prepared_sha256": "9a04ef0bc759fa70f7547f0f2ec7a5ec4f20e010ac2321283116378a3d6db951",
+      "prepared_bytes": 108071
+    },
+    {
+      "frame": 47,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_047.imageset/idle_047@2x.png",
+      "source_sha256": "21baf6b98c8daa625b116f7fe52e3649e26076e7fd0843f1d41d91be7932ea53",
+      "source_bytes": 347122,
+      "prepared": "chewy/assets/frame-047.png",
+      "prepared_sha256": "d4320d1389e2282f207afef09517e6b32b39bf7ff3636c75bc47de29508cc655",
+      "prepared_bytes": 107995
+    },
+    {
+      "frame": 48,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_048.imageset/idle_048@2x.png",
+      "source_sha256": "353d12ebf539e9d096f962cccc9b99b706da1aa557f20bd30f6c4ffc0abb812f",
+      "source_bytes": 348272,
+      "prepared": "chewy/assets/frame-048.png",
+      "prepared_sha256": "32d29906a3c236ecbddc8329a69b3a2db5dc1d4e8f06bc02728a3ca549358b28",
+      "prepared_bytes": 108220
+    },
+    {
+      "frame": 49,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_049.imageset/idle_049@2x.png",
+      "source_sha256": "e59a5e6a25351c39df49779cc7409376da92aa520fc5aea14d1ef3f608d480bd",
+      "source_bytes": 348258,
+      "prepared": "chewy/assets/frame-049.png",
+      "prepared_sha256": "40d8e54907be6b36e14de56270ba3d67b30fa142fd69db80807feceec9c09e88",
+      "prepared_bytes": 108092
+    },
+    {
+      "frame": 50,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_050.imageset/idle_050@2x.png",
+      "source_sha256": "3e558411c1c14faa13fb76e51292fc9b980a203517ee52dfc37935200c9f44cc",
+      "source_bytes": 348830,
+      "prepared": "chewy/assets/frame-050.png",
+      "prepared_sha256": "a3cd45800654de1857b7804948e1554b41a1aa606c3f642e513c0f9f83e197b0",
+      "prepared_bytes": 108462
+    },
+    {
+      "frame": 51,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_051.imageset/idle_051@2x.png",
+      "source_sha256": "a31c271d148b8f3d157fe476892dc89805ed9e0f153c28c11069b0f3cf9fff4e",
+      "source_bytes": 348463,
+      "prepared": "chewy/assets/frame-051.png",
+      "prepared_sha256": "a47e524e29b5621895489f138740e72f3224dd62e2699a4923f9b9a352871f89",
+      "prepared_bytes": 108287
+    },
+    {
+      "frame": 52,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_052.imageset/idle_052@2x.png",
+      "source_sha256": "39317c6c0d7fbc29fdbf257581548aa126a0b251e0c838901100f847f2abae0b",
+      "source_bytes": 348233,
+      "prepared": "chewy/assets/frame-052.png",
+      "prepared_sha256": "27756f56b2268831323bb2fac18f064194d0685d6b50b9f4eb38abb76efdbdf2",
+      "prepared_bytes": 107688
+    },
+    {
+      "frame": 53,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_053.imageset/idle_053@2x.png",
+      "source_sha256": "e36aa1af220124eefacf1f9d183f0a88b7c3d4672adeb97dcd9e7cc5caa1aaf4",
+      "source_bytes": 353295,
+      "prepared": "chewy/assets/frame-053.png",
+      "prepared_sha256": "27e5011b3f7bf08a79f7df84d8a1b6af3be40ee2d06b2b3c638d489336428d08",
+      "prepared_bytes": 108289
+    },
+    {
+      "frame": 54,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_054.imageset/idle_054@2x.png",
+      "source_sha256": "ea0320dfab1c906c1ddae64b7a758e33d85de6e2d74901f29a145f4358b84de9",
+      "source_bytes": 355674,
+      "prepared": "chewy/assets/frame-054.png",
+      "prepared_sha256": "7fafb5c2f83cce998bdd42ff22d93194e5c3ab3cf25e816ddc33ecb6ac50ec00",
+      "prepared_bytes": 108948
+    },
+    {
+      "frame": 55,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_055.imageset/idle_055@2x.png",
+      "source_sha256": "0be1a4f66b8dc3851f7caeba44273c2168124bec4de830de9440dc3bc3c29081",
+      "source_bytes": 354827,
+      "prepared": "chewy/assets/frame-055.png",
+      "prepared_sha256": "4f72562a8fe14b65efe44d4dcf9159456f515bf1c1033195ec2cf7ee88fec994",
+      "prepared_bytes": 109078
+    },
+    {
+      "frame": 56,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_056.imageset/idle_056@2x.png",
+      "source_sha256": "b42afcaa5ee7cc214267e2751a31756d78ff16c323bc3b5ad57f18df3a9c3cff",
+      "source_bytes": 357004,
+      "prepared": "chewy/assets/frame-056.png",
+      "prepared_sha256": "60bcbb83922a58a57b33f757d4876da742ebe528427263b1fed8f1237552e4c3",
+      "prepared_bytes": 109009
+    },
+    {
+      "frame": 57,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_057.imageset/idle_057@2x.png",
+      "source_sha256": "cadf5163bdae99c8d3c6fb0692af76c9bc742d29167443a7416bf4426747779b",
+      "source_bytes": 357751,
+      "prepared": "chewy/assets/frame-057.png",
+      "prepared_sha256": "a396855a2335f1c9a7d2d79d7c4d7e24f08b9de50f1ce5dd2d5bf912f62b2ce0",
+      "prepared_bytes": 109588
+    },
+    {
+      "frame": 58,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_058.imageset/idle_058@2x.png",
+      "source_sha256": "d9fb20049d3ae137a7fa382526c5fe295972064076a5fd63677bf8b138dc417b",
+      "source_bytes": 359005,
+      "prepared": "chewy/assets/frame-058.png",
+      "prepared_sha256": "4f39e8721a1d955596c04631fc34fab679914758be4edf490450901641d6e157",
+      "prepared_bytes": 109721
+    },
+    {
+      "frame": 59,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_059.imageset/idle_059@2x.png",
+      "source_sha256": "91048e789b0c081b7d1b8f2b5940e43bd28dbfdd00561ee7877cbc16a0e23595",
+      "source_bytes": 359441,
+      "prepared": "chewy/assets/frame-059.png",
+      "prepared_sha256": "dd08bb934fa23085f2ca2220860c9e65640737e1475bf15d65202a49b8d5d928",
+      "prepared_bytes": 109658
+    },
+    {
+      "frame": 60,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_060.imageset/idle_060@2x.png",
+      "source_sha256": "454f88082b1373f62222beb8d2c5cbb01015490cdb1d389ffc8f1b8a59912f97",
+      "source_bytes": 360172,
+      "prepared": "chewy/assets/frame-060.png",
+      "prepared_sha256": "21e3ce49e43f09e9c9a24d03e8086a55ee30903618aedc148fc1df3ad3d4a499",
+      "prepared_bytes": 109591
+    },
+    {
+      "frame": 61,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_061.imageset/idle_061@2x.png",
+      "source_sha256": "bc12c5d20bee787f01ee95b9e8a916306ba663a74d0240acfe6b627650cf53b6",
+      "source_bytes": 360698,
+      "prepared": "chewy/assets/frame-061.png",
+      "prepared_sha256": "2946e0d0ee0e66a6de9ba60aeec3125c8ab8397502666ee01dd0897d61722349",
+      "prepared_bytes": 110259
+    },
+    {
+      "frame": 62,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_062.imageset/idle_062@2x.png",
+      "source_sha256": "bef0d05d49b512ab02114677a32a590045d22f1f534a75ddc39fdbaf0b4433d3",
+      "source_bytes": 362504,
+      "prepared": "chewy/assets/frame-062.png",
+      "prepared_sha256": "b3cc5c8afb71e59d6b0a6b04a2f70d567071fb23e6efd9b01f8d0fe5bf17724a",
+      "prepared_bytes": 110201
+    },
+    {
+      "frame": 63,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_063.imageset/idle_063@2x.png",
+      "source_sha256": "a2b8cd4dd183345d0b691fc653f9fb5ebd99781d868a288e50721af9401f08f9",
+      "source_bytes": 362537,
+      "prepared": "chewy/assets/frame-063.png",
+      "prepared_sha256": "2a888e7efd1765ac9544cf93040be76a1493a46d5c139e3ce9f1a15b61349751",
+      "prepared_bytes": 110410
+    },
+    {
+      "frame": 64,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_064.imageset/idle_064@2x.png",
+      "source_sha256": "3a978914978be8622b2c24eb0b767214f0e81a571c637fcd696fa8b8267d6a2d",
+      "source_bytes": 364434,
+      "prepared": "chewy/assets/frame-064.png",
+      "prepared_sha256": "485ccaa7a6adcb5c5d340cca75e6796f99598a87e1adfeeac898b601bd679ba0",
+      "prepared_bytes": 110506
+    },
+    {
+      "frame": 65,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_065.imageset/idle_065@2x.png",
+      "source_sha256": "da71a25813b6fcb08f901519604fa4bbb65104d5a3cd0559e2b2d03751793a59",
+      "source_bytes": 363870,
+      "prepared": "chewy/assets/frame-065.png",
+      "prepared_sha256": "d6fd739cf361b7b5418d90e5375b0209fb145084b665fa39d01d6e0e244295ff",
+      "prepared_bytes": 110415
+    },
+    {
+      "frame": 66,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_066.imageset/idle_066@2x.png",
+      "source_sha256": "43957db596dad0b32dbd54973cc20505f3dffc15f7da3d76e15985973df28ab9",
+      "source_bytes": 362191,
+      "prepared": "chewy/assets/frame-066.png",
+      "prepared_sha256": "65f76dc18c459e01a92ac24302db1a423a1c99016121a6b1b2fccd58991d25d7",
+      "prepared_bytes": 110386
+    },
+    {
+      "frame": 67,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_067.imageset/idle_067@2x.png",
+      "source_sha256": "e354069934f7e7013d5b53389fc19b2846d32d4f9b5cce4c7e60be50022bea71",
+      "source_bytes": 362103,
+      "prepared": "chewy/assets/frame-067.png",
+      "prepared_sha256": "bb413504e3894c9aee4b8ba2c8d8a5f8694a69485d6e3d1dd858d7ce3369450d",
+      "prepared_bytes": 110406
+    },
+    {
+      "frame": 68,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_068.imageset/idle_068@2x.png",
+      "source_sha256": "6e17b22fcea42a1d3c3741b7d4ec2e91550b80e9e67340b5599a39fa569dcec6",
+      "source_bytes": 361813,
+      "prepared": "chewy/assets/frame-068.png",
+      "prepared_sha256": "65146249df3a9b0ca6729ba71c1a6876576e53be90810fb30fcc8ac88d85aa2a",
+      "prepared_bytes": 109780
+    },
+    {
+      "frame": 69,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_069.imageset/idle_069@2x.png",
+      "source_sha256": "321a9e6419160569838311193aede3bcb1cc377039285f1a00c5915fa02d905e",
+      "source_bytes": 361371,
+      "prepared": "chewy/assets/frame-069.png",
+      "prepared_sha256": "efcbd1e9f82a1c97712fe02a6e5adcb993e77e51c9736a7a03df87d90fd5b17b",
+      "prepared_bytes": 109439
+    },
+    {
+      "frame": 70,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_070.imageset/idle_070@2x.png",
+      "source_sha256": "baa9909a09a8783f3a9ad4ba16df39d09b9f835fe58e9cd96a20c8d789d6b971",
+      "source_bytes": 361260,
+      "prepared": "chewy/assets/frame-070.png",
+      "prepared_sha256": "3444b149dcda70f67b6f3287c453f1ab4c4f87816e00eb499577e1a662d81ec6",
+      "prepared_bytes": 109107
+    },
+    {
+      "frame": 71,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_071.imageset/idle_071@2x.png",
+      "source_sha256": "84354473cc3e94b1689908d4308e8d56a59165c6cd3929925b7f87f6a226ef3e",
+      "source_bytes": 360855,
+      "prepared": "chewy/assets/frame-071.png",
+      "prepared_sha256": "f637f58940c39dcf1f746b792a72df2099a95c1a6a9af8fc2310e5c688db86ae",
+      "prepared_bytes": 109236
+    },
+    {
+      "frame": 72,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_072.imageset/idle_072@2x.png",
+      "source_sha256": "bd256757480b0b9ed6a7f8ddab9b0fa38fb388c0ebc45d3459f210e515958a74",
+      "source_bytes": 361419,
+      "prepared": "chewy/assets/frame-072.png",
+      "prepared_sha256": "2aa4b8f0e6d164f2871b6bb7b5d469f3648d77769eb159c9d7947e9fe894a19c",
+      "prepared_bytes": 109868
+    },
+    {
+      "frame": 73,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_073.imageset/idle_073@2x.png",
+      "source_sha256": "4433611af034254b96b587f3aa086257486932b00084dfea8285c36df0ed7869",
+      "source_bytes": 361110,
+      "prepared": "chewy/assets/frame-073.png",
+      "prepared_sha256": "2158dcc599b5664239830433a29eb1c775f6a734880c47b5b453922a7de5e033",
+      "prepared_bytes": 109944
+    },
+    {
+      "frame": 74,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_074.imageset/idle_074@2x.png",
+      "source_sha256": "d37f26b6fd9b930a68e3a2153656178cac75d71daf166b9ec216e9e72c1d56f1",
+      "source_bytes": 362061,
+      "prepared": "chewy/assets/frame-074.png",
+      "prepared_sha256": "8368dbb22a092fcc08ac4651ac7778b4efc24487c474687d73c866de3809660d",
+      "prepared_bytes": 110112
+    },
+    {
+      "frame": 75,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_075.imageset/idle_075@2x.png",
+      "source_sha256": "8451bd1396a2a85c2d6dd7cedca05e855c4816d519c6858112026d407fd03184",
+      "source_bytes": 361926,
+      "prepared": "chewy/assets/frame-075.png",
+      "prepared_sha256": "2913dd77641093c7f6bd0bdf9aa7a73407ffe08ae5d41c7d250cda9d293ceafc",
+      "prepared_bytes": 110431
+    },
+    {
+      "frame": 76,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_076.imageset/idle_076@2x.png",
+      "source_sha256": "fee39bc37dd0ac307c7de34807b39ebbdbbd4ba7b468e4be0ffa8254d68f54d4",
+      "source_bytes": 362899,
+      "prepared": "chewy/assets/frame-076.png",
+      "prepared_sha256": "83469100d95458200d1414a70b57802c7e5ee626a48397697cbaf1b62ffb37f6",
+      "prepared_bytes": 110106
+    },
+    {
+      "frame": 77,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_077.imageset/idle_077@2x.png",
+      "source_sha256": "3b5ba978ea95a312305e60aaf0cb102b11ec0fa389bb7db6f9c1c3e1bdda1660",
+      "source_bytes": 362181,
+      "prepared": "chewy/assets/frame-077.png",
+      "prepared_sha256": "3c777d97a953a5ac2ad8668b421bf2c2608a5b5648b6396ca1d7ea5339dbc06f",
+      "prepared_bytes": 109983
+    },
+    {
+      "frame": 78,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_078.imageset/idle_078@2x.png",
+      "source_sha256": "8633527ed5c17e7a1faa3c5764fbe7b9ccae70d6760e7eb98ba4213add31bfd8",
+      "source_bytes": 364068,
+      "prepared": "chewy/assets/frame-078.png",
+      "prepared_sha256": "41197fd1de697fdf8abfd564d8acd079922a7c130a164b93a3c4154e29aec0c7",
+      "prepared_bytes": 110859
+    },
+    {
+      "frame": 79,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_079.imageset/idle_079@2x.png",
+      "source_sha256": "701b917fa7571bef10822313f13f15d21a126b09928937640db74cbb5de6821d",
+      "source_bytes": 363727,
+      "prepared": "chewy/assets/frame-079.png",
+      "prepared_sha256": "d346865bb040d847dff7709350eae9910cbe2f23edf319db53a42ae2aa5d8ec6",
+      "prepared_bytes": 111087
+    },
+    {
+      "frame": 80,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_080.imageset/idle_080@2x.png",
+      "source_sha256": "4a78918252d3b8e90e8880ec4079f8250b49491327d725f22bec460acb32dff0",
+      "source_bytes": 363126,
+      "prepared": "chewy/assets/frame-080.png",
+      "prepared_sha256": "f9659f8a1d8b5aa1f17051976e1565e17451bb2d8d39df3d72a0fc082cdf2a95",
+      "prepared_bytes": 110671
+    },
+    {
+      "frame": 81,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_081.imageset/idle_081@2x.png",
+      "source_sha256": "f03c489fca4099039ecd000217252cda36c194778f4da6efa32c0565321f092a",
+      "source_bytes": 365010,
+      "prepared": "chewy/assets/frame-081.png",
+      "prepared_sha256": "a9c2195a60ab13b53840b502f8ddaa991ccca1b7397f3441746bb5ae35f1610a",
+      "prepared_bytes": 110561
+    },
+    {
+      "frame": 82,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_082.imageset/idle_082@2x.png",
+      "source_sha256": "fe63d3274c4275f6143c0b6ab6fb79493ca33f0a6efb742e316396900cba8e6b",
+      "source_bytes": 364687,
+      "prepared": "chewy/assets/frame-082.png",
+      "prepared_sha256": "4e3248b093b5fbabcc4793ea81ad33ee876057a4f97c12d28015dd1165311e06",
+      "prepared_bytes": 110220
+    },
+    {
+      "frame": 83,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_083.imageset/idle_083@2x.png",
+      "source_sha256": "dc448b94d024dc9d881ce4757c6987234b60e7a8e5d96396ff4eef834392161e",
+      "source_bytes": 364169,
+      "prepared": "chewy/assets/frame-083.png",
+      "prepared_sha256": "b02a0e0741f1ddcfbc0723225302ff5b0474b5136efaafb6c932ee8ccc4af142",
+      "prepared_bytes": 110427
+    },
+    {
+      "frame": 84,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_084.imageset/idle_084@2x.png",
+      "source_sha256": "ecf5689462b5ca6e19665f623858d4f48a7fe1b154bb369af8c111ba10c39efb",
+      "source_bytes": 366435,
+      "prepared": "chewy/assets/frame-084.png",
+      "prepared_sha256": "6087c488ae3fa5cea2c09a553da6aed1fbe2da9d2810673f9877f11cee40098c",
+      "prepared_bytes": 110418
+    },
+    {
+      "frame": 85,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_085.imageset/idle_085@2x.png",
+      "source_sha256": "9700758279167777d8cd2a6e4cf6bff0e907c3deaeaac183d6d78989ea45bc7e",
+      "source_bytes": 365000,
+      "prepared": "chewy/assets/frame-085.png",
+      "prepared_sha256": "251f49d9b284c9582f39d63539cd27c5d23be21f6de9484b36f3014829630437",
+      "prepared_bytes": 110017
+    },
+    {
+      "frame": 86,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_086.imageset/idle_086@2x.png",
+      "source_sha256": "ab5aaacd28cc156fbe5c4261a9fe7e15909a3e8ce5bb73ac5fac0c02e0bfb099",
+      "source_bytes": 363685,
+      "prepared": "chewy/assets/frame-086.png",
+      "prepared_sha256": "a20f7c39e35473d063362fe9c2850a4154f2e1218a9ae215f5fbceba582f68cf",
+      "prepared_bytes": 109863
+    },
+    {
+      "frame": 87,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_087.imageset/idle_087@2x.png",
+      "source_sha256": "e41012b7a6af60e46376e6e061dd2e4dd8ba57ebafbfedb3772fe2b6a99721d2",
+      "source_bytes": 363240,
+      "prepared": "chewy/assets/frame-087.png",
+      "prepared_sha256": "18ca869b24c57de27cf35254075be4858dd43e8363c2d8f634e9164b04ab0e26",
+      "prepared_bytes": 110018
+    },
+    {
+      "frame": 88,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_088.imageset/idle_088@2x.png",
+      "source_sha256": "43cf915bac40bd016b4bf7a7bb4bb4e6d4ada5f3167f41e11a596131741dad7e",
+      "source_bytes": 363353,
+      "prepared": "chewy/assets/frame-088.png",
+      "prepared_sha256": "32fe04d6927bfa5026795a3e4de9c0623f54a960bc7413926e8d8abd51b03149",
+      "prepared_bytes": 110683
+    },
+    {
+      "frame": 89,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_089.imageset/idle_089@2x.png",
+      "source_sha256": "d190a2d971811d01d1ac9d966d5409b0e1ac15bfe65c21f31d9d5d2a4cef4784",
+      "source_bytes": 362418,
+      "prepared": "chewy/assets/frame-089.png",
+      "prepared_sha256": "1ce59a7e17d3aab66293f29103dd68531ef48a77faee0347a7f4bcfd460e802d",
+      "prepared_bytes": 110551
+    },
+    {
+      "frame": 90,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_090.imageset/idle_090@2x.png",
+      "source_sha256": "75a17bff7fc464e88b86caa658d625617596935ba8718556a99a11c598a996f1",
+      "source_bytes": 359169,
+      "prepared": "chewy/assets/frame-090.png",
+      "prepared_sha256": "1a43ec0d69d9020aad790006622f9b31cec660becea275fea608f41fe902ad16",
+      "prepared_bytes": 108311
+    },
+    {
+      "frame": 91,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_091.imageset/idle_091@2x.png",
+      "source_sha256": "2d994ffe08e62a477195537cd1a0f75d0e49fbb802c0e7037be51ee55ed6ca0a",
+      "source_bytes": 358189,
+      "prepared": "chewy/assets/frame-091.png",
+      "prepared_sha256": "9d1290eab690e7bee410634c59214ec67966a30c38ab8a8127acf76d8ec789bf",
+      "prepared_bytes": 108356
+    },
+    {
+      "frame": 92,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_092.imageset/idle_092@2x.png",
+      "source_sha256": "b524d603dd03567a5bcb43d848ef68202fb8cd9fdbc29e7369f1c451fc7427c3",
+      "source_bytes": 357077,
+      "prepared": "chewy/assets/frame-092.png",
+      "prepared_sha256": "59bb005ed0280fdc922d09a6335859bac71493cc0e082192097c70c70fbf3d64",
+      "prepared_bytes": 107639
+    },
+    {
+      "frame": 93,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_093.imageset/idle_093@2x.png",
+      "source_sha256": "8ac0c8739ee44ea45b44537b95d7fc46f02b76a491760ef973c75ad360738fcc",
+      "source_bytes": 356877,
+      "prepared": "chewy/assets/frame-093.png",
+      "prepared_sha256": "636185680af8b7accffb0dd988375ab8581e35b74fe5828bd6fe0e265428201d",
+      "prepared_bytes": 108202
+    },
+    {
+      "frame": 94,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_094.imageset/idle_094@2x.png",
+      "source_sha256": "13453581629022a1b63896ea42728fe896a430806465341a7bc73ba641a259a1",
+      "source_bytes": 355855,
+      "prepared": "chewy/assets/frame-094.png",
+      "prepared_sha256": "be7e6294c27ac04e0e44b8bc652f09107aba68b45984c4155ae377c14281dd63",
+      "prepared_bytes": 108337
+    },
+    {
+      "frame": 95,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_095.imageset/idle_095@2x.png",
+      "source_sha256": "1b10302f3fa6fa03c74153f449cc24108d1d5319d3ee8e72165ba1f79bc3a102",
+      "source_bytes": 353314,
+      "prepared": "chewy/assets/frame-095.png",
+      "prepared_sha256": "8c4ef8ca2a45066a7430df73f9c83afa914df025277c491808d04ba03cf82b26",
+      "prepared_bytes": 107551
+    },
+    {
+      "frame": 96,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_096.imageset/idle_096@2x.png",
+      "source_sha256": "2eaa892835a604a5977b1160d08b2aed6a5b2ea69af383bb5bb13ea89c5dfe4d",
+      "source_bytes": 352260,
+      "prepared": "chewy/assets/frame-096.png",
+      "prepared_sha256": "1a783a659205f518db9013db8af3cdf1f2138daabdb0879371745ea5091040fe",
+      "prepared_bytes": 107044
+    },
+    {
+      "frame": 97,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_097.imageset/idle_097@2x.png",
+      "source_sha256": "c917d62477c5fa662474e93f3b2b95b8cad80148396f47dfdef1e2f7961fbcad",
+      "source_bytes": 350212,
+      "prepared": "chewy/assets/frame-097.png",
+      "prepared_sha256": "6d01da0d59643f41aac8d4551432b4beff090025e0cb338b698f9358afb3bf24",
+      "prepared_bytes": 107235
+    },
+    {
+      "frame": 98,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_098.imageset/idle_098@2x.png",
+      "source_sha256": "9e7ca93ceee983aa6850758f50345e1217f378b24ccb6d30814dfc77264ada5d",
+      "source_bytes": 346096,
+      "prepared": "chewy/assets/frame-098.png",
+      "prepared_sha256": "c127e528a170232c16ef4c41d36b74c784aca7cb47349489354b0a73d46efb35",
+      "prepared_bytes": 105252
+    },
+    {
+      "frame": 99,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_099.imageset/idle_099@2x.png",
+      "source_sha256": "de52d01241fe06506acb14b23cf07dbd71943050d2345ffc6739cee5ee0db09a",
+      "source_bytes": 344810,
+      "prepared": "chewy/assets/frame-099.png",
+      "prepared_sha256": "e2c28df9e128c94b01d4b723f34ae5c5ca2346830ef4e2b7241bb2770f4a22d1",
+      "prepared_bytes": 105369
+    },
+    {
+      "frame": 100,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_100.imageset/idle_100@2x.png",
+      "source_sha256": "387c08c2e59f46cf62ad34b1c3189cd8bdd84aeb6ee3a69f5de3889bb553620c",
+      "source_bytes": 343342,
+      "prepared": "chewy/assets/frame-100.png",
+      "prepared_sha256": "27a63c7dbbb305c458e6bd855cf282b5dc3122af9757d08125fb87b32f627549",
+      "prepared_bytes": 104088
+    },
+    {
+      "frame": 101,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_101.imageset/idle_101@2x.png",
+      "source_sha256": "90ee36056a824ea0f8bb03890bc7210aea8834b97727d775b67d4f14425ab73f",
+      "source_bytes": 342897,
+      "prepared": "chewy/assets/frame-101.png",
+      "prepared_sha256": "27931bd4d9a233348399c96fdae5d378c124f28ccd8b18028fc8e6f2834ed69e",
+      "prepared_bytes": 104060
+    },
+    {
+      "frame": 102,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_102.imageset/idle_102@2x.png",
+      "source_sha256": "5de296c8e3cafc5441d1bb9b5974c4c35570eb453a29dd3c217939fcdbc4db7a",
+      "source_bytes": 344240,
+      "prepared": "chewy/assets/frame-102.png",
+      "prepared_sha256": "314ff0680cc97bfb0c23e4368e3969d9dd512b8021d44d548dbae50c107e5abb",
+      "prepared_bytes": 104595
+    },
+    {
+      "frame": 103,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_103.imageset/idle_103@2x.png",
+      "source_sha256": "0e8739e89461ccb7cc71c5736cfc1e7cb7611221b56616258b53686841b851c7",
+      "source_bytes": 342703,
+      "prepared": "chewy/assets/frame-103.png",
+      "prepared_sha256": "9e68ead2b02eb6934cef201d471eae290444419e96b3838294630975e03ed31d",
+      "prepared_bytes": 104482
+    },
+    {
+      "frame": 104,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_104.imageset/idle_104@2x.png",
+      "source_sha256": "f39a59f3114c4f68e1382785a9d4d4de51def305bbf78769afddf0e0522569d9",
+      "source_bytes": 344277,
+      "prepared": "chewy/assets/frame-104.png",
+      "prepared_sha256": "7a77311823e8de82cd1e99dc80c26bc41662681d42ae76ffe83e2c1c7069ccd0",
+      "prepared_bytes": 104188
+    },
+    {
+      "frame": 105,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_105.imageset/idle_105@2x.png",
+      "source_sha256": "39c0fa73aa6cfb16aadc4365dce983226a49def07d10ad13e34e92ea9762d53f",
+      "source_bytes": 342733,
+      "prepared": "chewy/assets/frame-105.png",
+      "prepared_sha256": "a8e8b0f3f754b6cce0c196cb1a4e07ad8f5ac5f38a7d1357cc30aa06cabbd709",
+      "prepared_bytes": 104531
+    },
+    {
+      "frame": 106,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_106.imageset/idle_106@2x.png",
+      "source_sha256": "f620db1e9b41993d0cf6236402c29d423192ed41261388ef9f1300fb8c4ff27e",
+      "source_bytes": 344221,
+      "prepared": "chewy/assets/frame-106.png",
+      "prepared_sha256": "03978b98c5b927373ef8dc85556f099b1558eca21e10e4723dbd3b385be8b193",
+      "prepared_bytes": 104783
+    },
+    {
+      "frame": 107,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_107.imageset/idle_107@2x.png",
+      "source_sha256": "3ac526e20adb7b3f7b29cced0d6244272277c1c14643ad0cc5b095b334e71fa2",
+      "source_bytes": 341885,
+      "prepared": "chewy/assets/frame-107.png",
+      "prepared_sha256": "13ee1c588dc93304c4910653d2c38fa6a6646f7926d57b676787142fc3529e41",
+      "prepared_bytes": 105175
+    },
+    {
+      "frame": 108,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_108.imageset/idle_108@2x.png",
+      "source_sha256": "a263f086ca4115051cc7f86295b6ba430249d8cc97f0ca71900b9142c7b16bc7",
+      "source_bytes": 341104,
+      "prepared": "chewy/assets/frame-108.png",
+      "prepared_sha256": "828957c6a1e8a1472b1f827f91a4ead7c7811dd658a5c80b850add4767ce79f6",
+      "prepared_bytes": 104603
+    },
+    {
+      "frame": 109,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_109.imageset/idle_109@2x.png",
+      "source_sha256": "b2be1875629d6d248b9cb6dc9e78784d514d4c07c622a768c54c8acf5a0178fd",
+      "source_bytes": 339357,
+      "prepared": "chewy/assets/frame-109.png",
+      "prepared_sha256": "3313b82121cd3582502378f03e35d9f8375ed9b0c616596e1bf4aae811cb11aa",
+      "prepared_bytes": 104781
+    },
+    {
+      "frame": 110,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_110.imageset/idle_110@2x.png",
+      "source_sha256": "440878b9c9205bf18cddce89318821deb402884572d1623f94abb5cb6c24d2e4",
+      "source_bytes": 337095,
+      "prepared": "chewy/assets/frame-110.png",
+      "prepared_sha256": "7365a0f5a1c4b3c40501e059181c076d036a878da16aa0e7047b7695aa9f9478",
+      "prepared_bytes": 105025
+    },
+    {
+      "frame": 111,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_111.imageset/idle_111@2x.png",
+      "source_sha256": "f5ababafa93f3651dbcb0030d8546493d6e6eba8f56a4b1e39d9d59818023f58",
+      "source_bytes": 337227,
+      "prepared": "chewy/assets/frame-111.png",
+      "prepared_sha256": "27ecd3a8a1f312b979da19714551e0f45fd63e540c887a5d9efe6de641ea3e7f",
+      "prepared_bytes": 105431
+    },
+    {
+      "frame": 112,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_112.imageset/idle_112@2x.png",
+      "source_sha256": "66b7ff31e3b010eef62056a2459e14443ed65be5e7693247d0310420eddcd7cc",
+      "source_bytes": 336185,
+      "prepared": "chewy/assets/frame-112.png",
+      "prepared_sha256": "8065441f4acd8acb8421d6f8781a70b1269cc6292def0dc60c0dde10527c9248",
+      "prepared_bytes": 104448
+    },
+    {
+      "frame": 113,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_113.imageset/idle_113@2x.png",
+      "source_sha256": "69bb78ae75265cda2992c44defa2c602c6778490c228ff9a65ac8e1ab460fe75",
+      "source_bytes": 336763,
+      "prepared": "chewy/assets/frame-113.png",
+      "prepared_sha256": "9900ef3bd4c3612a5dbf6ce972d14b09e9d27913d5c536ae74cb4e274d352702",
+      "prepared_bytes": 105661
+    },
+    {
+      "frame": 114,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_114.imageset/idle_114@2x.png",
+      "source_sha256": "8a8e97cb0aa59345074d1ca87484d249abad1476571b780f0308e548c8119620",
+      "source_bytes": 336406,
+      "prepared": "chewy/assets/frame-114.png",
+      "prepared_sha256": "f658285d9167ad3751bdcbe79aa67f2fdaf226930e5676e94fc1017e43e10c83",
+      "prepared_bytes": 105374
+    },
+    {
+      "frame": 115,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_115.imageset/idle_115@2x.png",
+      "source_sha256": "9995baaf80e4096d870c614d71b971abb90197b0595678dc37f59bd104df769a",
+      "source_bytes": 335559,
+      "prepared": "chewy/assets/frame-115.png",
+      "prepared_sha256": "869518cfcdd68e0f2eea0d33af2cba570d270394c0f9a95669dd9da2fc683649",
+      "prepared_bytes": 105122
+    },
+    {
+      "frame": 116,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_116.imageset/idle_116@2x.png",
+      "source_sha256": "2fdc29e14140784d7c72b7f541a12a2b149c7c83cb24e47dcde01ad380de5934",
+      "source_bytes": 336280,
+      "prepared": "chewy/assets/frame-116.png",
+      "prepared_sha256": "8025ceaecbebc54fb8da2c9360efbaa8dade866a02a4be244ebf5cf42987b8b3",
+      "prepared_bytes": 105569
+    },
+    {
+      "frame": 117,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_117.imageset/idle_117@2x.png",
+      "source_sha256": "33fa6b390aa8200fec41a9649e8e102c4fc69386b7dc219a0162b7f97f7deb95",
+      "source_bytes": 336436,
+      "prepared": "chewy/assets/frame-117.png",
+      "prepared_sha256": "8027cb808caf6f01187789990dc15d900a5d94fdc47105a8f40dced8655b9b9d",
+      "prepared_bytes": 105388
+    },
+    {
+      "frame": 118,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_118.imageset/idle_118@2x.png",
+      "source_sha256": "1608c4853545a71fb92351d7e631c43d53177f37d570e61face39c278f0c49bd",
+      "source_bytes": 336092,
+      "prepared": "chewy/assets/frame-118.png",
+      "prepared_sha256": "8dc83c938b3e09a94399fd5734e945f065cc8011de299f58f498e0a4d95c4115",
+      "prepared_bytes": 104985
+    },
+    {
+      "frame": 119,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_119.imageset/idle_119@2x.png",
+      "source_sha256": "4aa03cb1bb37dadf6bdfd5bfbc3b9ec6a05392b90cdf0b852f5d874e9f8f8717",
+      "source_bytes": 336676,
+      "prepared": "chewy/assets/frame-119.png",
+      "prepared_sha256": "f173309f91476f5b94a3f9076a5872dafc64dd837c78e507bc732cd2682a5e89",
+      "prepared_bytes": 105670
+    },
+    {
+      "frame": 120,
+      "source": "chewy/chewy/Assets.xcassets/hero.spriteatlas/idle_120.imageset/idle_120@2x.png",
+      "source_sha256": "1a9975750ee4f1436d484cf11297171a277e88c26abebddc97d35cf62b11ea68",
+      "source_bytes": 336939,
+      "prepared": "chewy/assets/frame-120.png",
+      "prepared_sha256": "1b9e99498bf860cbbedb2cd2dc300a82062bbc52bd775168a1d57084a52fd1bf",
+      "prepared_bytes": 105313
+    }
+  ],
+  "prepared_total_png_bytes": 13043228,
+  "memory_estimate_note": "Pixel buffer estimate only; not a measured GPU/runtime memory footprint.",
+  "decoded_rgba_pixel_bytes": 64899560
+}

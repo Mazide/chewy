@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "run_id": "20261106T153323Z-f471fb93",
+  "created_at": "2026-11-06T15:33:23.796151+00:00",
+  "status": "technical_and_browser_qa_passed",
+  "cli": {
+    "version": "rive 1.8.0",
+    "path": "/tmp/chewy-rive-cli/bin/rive",
+    "sha256": "3c75ec70b9ddd5e71f641997f1405dcb410257b5c5b0b7b851889c30784ec87f"
+  },
+  "auth": {
+    "status": "not_logged_in",
+    "exit_code": 3
+  },
+  "config_sha256": "3232dfb8f60b29af682e6f45203176b17d86cd119656c972aebf3b0db68e3085",
+  "assets": {
+    "plants": {
+      "contract": {
+        "artboard": "PlantStates",
+        "state_machine": "PlantStates",
+        "view_model": "PlantStates",
+        "property": "stage",
+        "values": [
+          0,
+          1,
+          2
+        ]
+      },
+      "source_path": "/home/looseconfetti/projects/chewy/content-pipeline/rive/motion-pilot/plants",
+      "source_hashes": {
+        "rive.yaml": "b77698c9e0e6c94b228af97fdaf78af15ac5a3e6d6fc85e314e16125619d902b",
+        "scene.rml": "a9f9da3577e50088ce5ef0cd72ed0066fbb8be207182519838859c70541fd853"
+      },
+      "source_snapshot": "sources/plants/master",
+      "baseline_source_path": "/home/looseconfetti/projects/chewy/content-pipeline/rive/camp-daily-states/plants",
+      "baseline_source_hashes": {
+        "rive.yaml": "b77698c9e0e6c94b228af97fdaf78af15ac5a3e6d6fc85e314e16125619d902b",
+        "scene.rml": "366b2de221d4233d125ac502d844d896d43fb0264c355e76f0b4202fd39ca47e"
+      },
+      "baseline_source_snapshot": "sources/plants/baseline",
+      "plants_checks": {
+        "verify": "plants-verify.json",
+        "inspect": "plants-inspect.json",
+        "artboards": [
+          {
+            "name": "PlantStates",
+            "objects": 1783,
+            "types": {
+              "AnimationState": 4,
+              "AnyState": 2,
+              "Artboard": 1,
+              "BindablePropertyNumber": 6,
+              "Bone": 15,
+              "CubicDetachedVertex": 192,
+              "CubicEaseInterpolator": 363,
+              "CubicWeight": 35,
+              "DataBindContext": 6,
+              "Ellipse": 5,
+              "EntryState": 2,
+              "ExitState": 2,
+              "Fill": 61,
+              "KeyFrameDouble": 456,
+              "KeyedObject": 73,
+              "KeyedProperty": 136,
+              "LayoutComponentStyle": 1,
+              "LinearAnimation": 4,
+              "Node": 61,
+              "PointsPath": 56,
+              "RootBone": 5,
+              "Shape": 61,
+              "Skin": 5,
+              "SolidColor": 122,
+              "StateMachine": 1,
+              "StateMachineLayer": 2,
+              "StateTransition": 7,
+              "Stroke": 61,
+              "Tendon": 20,
+              "TransitionPropertyViewModelComparator": 6,
+              "TransitionValueNumberComparator": 6,
+              "TransitionViewModelCondition": 6
+            }
+          }
+        ]
+      },
+      "plants_runtime": {
+        "kind": "official_cli_headless_runtime",
+        "frames": {
+          "0": [
+            "frames/plants-stage-0-t0.png",
+            "frames/plants-stage-0-t1.png",
+            "frames/plants-stage-0-t2.png",
+            "frames/plants-stage-0-t3.png"
+          ],
+          "1": [
+            "frames/plants-stage-1-t0.png",
+            "frames/plants-stage-1-t1.png",
+            "frames/plants-stage-1-t2.png",
+            "frames/plants-stage-1-t3.png"
+          ],
+          "2": [
+            "frames/plants-stage-2-t0.png",
+            "frames/plants-stage-2-t1.png",
+            "frames/plants-stage-2-t2.png",
+            "frames/plants-stage-2-t3.png"
+          ]
+        },
+        "sample_seconds": [
+          0.6,
+          1.6,
+          3.1,
+          5.9
+        ],
+        "changed_pixels_against_first_sample": {
+          "0": [
+            692,
+            606,
+            115
+          ],
+          "1": [
+            6086,
+            4822,
+            715
+          ],
+          "2": [
+            22975,
+            17088,
+            1720
+          ]
+        },
+        "stage_changed_pixels": [
+          19909,
+          54410
+        ],
+        "standalone_export_load_tested": false,
+        "artistic_quality_approved": false
+      },
+      "plants_riv": {
+        "file": "plants.riv",
+        "sha256": "dc29a0c942fd8d7f2356542df440eb7b96b3db1a27364aee70b8bfc6682cdf76",
+        "bytes": 21958,
+        "signed": false
+      },
+      "baseline-plants_checks": {
+        "verify": "baseline-plants-verify.json",
+        "inspect": "baseline-plants-inspect.json",
+        "artboards": [
+          {
+            "name": "PlantStates",
+            "objects": 1786,
+            "types": {
+              "AnimationState": 3,
+              "AnyState": 1,
+              "Artboard": 1,
+              "BindablePropertyNumber": 3,
+              "CubicDetachedVertex": 172,
+              "DataBindContext": 3,
+              "Ellipse": 5,
+              "EntryState": 1,
+              "ExitState": 1,
+              "Fill": 61,
+              "KeyFrameDouble": 1011,
+              "KeyedObject": 33,
+              "KeyedProperty": 111,
+              "LayoutComponentStyle": 1,
+              "LinearAnimation": 3,
+              "Node": 61,
+              "PointsPath": 56,
+              "Shape": 61,
+              "SolidColor": 122,
+              "StateMachine": 1,
+              "StateMachineLayer": 1,
+              "StateTransition": 4,
+              "Stroke": 61,
+              "TransitionPropertyViewModelComparator": 3,
+              "TransitionValueNumberComparator": 3,
+              "TransitionViewModelCondition": 3
+            }
+          }
+        ]
+      },
+      "baseline-plants_runtime": {
+        "kind": "official_cli_headless_runtime",
+        "frames": {
+          "0": [
+            "frames/baseline-plants-stage-0-t0.png",
+            "frames/baseline-plants-stage-0-t1.png",
+            "frames/baseline-plants-stage-0-t2.png",
+            "frames/baseline-plants-stage-0-t3.png"
+          ],
+          "1": [
+            "frames/baseline-plants-stage-1-t0.png",
+            "frames/baseline-plants-stage-1-t1.png",
+            "frames/baseline-plants-stage-1-t2.png",
+            "frames/baseline-plants-stage-1-t3.png"
+          ],
+          "2": [
+            "frames/baseline-plants-stage-2-t0.png",
+            "frames/baseline-plants-stage-2-t1.png",
+            "frames/baseline-plants-stage-2-t2.png",
+            "frames/baseline-plants-stage-2-t3.png"
+          ]
+        },
+        "sample_seconds": [
+          0.6,
+          1.6,
+          3.1,
+          5.9
+        ],
+        "changed_pixels_against_first_sample": {
+          "0": [
+            388,
+            430,
+            443
+          ],
+          "1": [
+            3761,
+            4137,
+            4348
+          ],
+          "2": [
+            15235,
+            16299,
+            17544
+          ]
+        },
+        "stage_changed_pixels": [
+          19941,
+          54401
+        ],
+        "standalone_export_load_tested": false,
+        "artistic_quality_approved": false
+      },
+      "baseline-plants_riv": {
+        "file": "baseline-plants.riv",
+        "sha256": "1c52776ed011304b043067db8018fb5e8d373c1af1bfb7d27c62b2f57c4ac812",
+        "bytes": 22041,
+        "signed": false
+      },
+      "local_edit_preservation": {
+        "status": "passed",
+        "scope": "local_RML_edit_then_two_builds_and_runtime_capture",
+        "gui_editor_tested": false,
+        "node": "Grass",
+        "property": "x",
+        "before": "240",
+        "after": "248.0",
+        "changed_pixels": 8232,
+        "edited_source_sha256": "3f26d1aa65a155f61b2d584a3f7e29ec4ee7e188dc0d412ea44660aabe39896d",
+        "source_preserved": true
+      },
+      "editable_roundtrip": {
+        "status": "blocked_by_auth",
+        "gui_editor_tested": false,
+        "remedy": "Run rive login interactively, then rerun this pipeline; no account files are pushed."
+      }
+    }
+  },
+  "browser_qa": {
+    "status": "passed",
+    "argv": [
+      "/home/looseconfetti/.local/bin/node",
+      "/home/looseconfetti/projects/chewy/content-pipeline/rive/motion-pilot/check_motion.mjs",
+      "http://127.0.0.1:43601/motion-pilot/preview/review.html?run=20261106T153323Z-f471fb93",
+      "--out",
+      "/home/looseconfetti/projects/chewy/content-pipeline/rive/motion-pilot/exports/runs/20261106T153323Z-f471fb93/browser-qa"
+    ],
+    "custom_command": false,
+    "exit_code": 0,
+    "report": "browser-qa/qa.json",
+    "standalone_export_load_tested": true
+  },
+  "gui_editor_tested": false,
+  "native_tested": false,
+  "artistic_quality_approved": false,
+  "reproduce_config": "reproduce.json",
+  "motion_brief": {
+    "file": "motion-brief.json",
+    "sha256": "4ec3fc7626c6f4e27daae3f6e54d367a55f1be645f4218fe2a8818d3d0f4eb9e"
+  },
+  "tooling_sha256": {
+    "pipeline.py": "3d868168d6b16a3fe3133e95f456c6eb15f201082f88aef91694f92c5fa693bf",
+    "serve.py": "7076da3cfab4d54fbedf76976a8c4e678681470bccfd1e38b485443f6c0d0751",
+    "check_motion.mjs": "fb01564699c6e6e31c7997e4dae521fecc7838ddc905879b6da486723d7f4a73",
+    "preview/viewer.js": "812ff0855436f7c56a1cb533d2f3c46de9b7b20f9d9095468f45b0da9010b878",
+    "preview/index.html": "93dea9e91de5b2a7552f77195dc0febb844c2fced27b3b7afdc9e872294493e3",
+    "preview/review.html": "25358308b70fc3a0c3ea53c4dc27adda0b9a64268ea443d22b23d57df9212377",
+    "preview/style.css": "5aac56d5b74afc1c3db561e9ac1fc1ae3f60eb90f4538580a421056cd3d0d659"
+  },
+  "source_preserved": true
+}

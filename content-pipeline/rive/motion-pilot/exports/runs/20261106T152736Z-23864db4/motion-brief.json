@@ -1,0 +1,130 @@
+{
+  "status": "draft for owner review",
+  "master": "plants/scene.rml",
+  "sourceArtwork": "content-pipeline/rive/camp-daily-states/plants/scene.rml",
+  "artboard": "PlantStates",
+  "stateMachine": "PlantStates",
+  "viewModel": "PlantStates",
+  "stage": {
+    "0": "Morning",
+    "1": "Growing",
+    "2": "Full"
+  },
+  "poseFrames": 1,
+  "motion": "Breeze",
+  "fps": 60,
+  "durationFrames": 360,
+  "intent": "A soft directional breeze loads the stems, flowers lag, a weaker counter-sway settles into a quiet pause.",
+  "sourceOfTruth": "Editable RML. author_plants.py is explicit bootstrap only, never a build dependency.",
+  "rig": "Native vector Skin/Tendon/CubicWeight, four bones per plant; source silhouette subdivided exactly with de Casteljau.",
+  "motionKeys": "Nine authored pose keys per rotation track, per-segment cubic interpolation; no sine sampling.",
+  "layers": {
+    "Daily state": "scale/opacity only",
+    "Authored breeze": "bone/flower/leaf rotation only"
+  },
+  "anchor": "Plant container x/y and root bone x/y are never keyed; Grass does not move within a stage.",
+  "stageTransition": "550ms cubic appearance blend. No claim of a custom growth action.",
+  "reducedMotion": "Apply stage pose at 0 and Breeze at 0; do not autoplay the state machine.",
+  "rigs": [
+    {
+      "plant": "Plant 0",
+      "root": {
+        "name": "Plant 0",
+        "x": "240",
+        "y": "382",
+        "rotation": "0",
+        "scaleX": "1",
+        "scaleY": "1",
+        "id": "8:70906"
+      },
+      "bones": [
+        "Plant 0 Root",
+        "Plant 0 Stem 1",
+        "Plant 0 Stem 2",
+        "Plant 0 Stem 3"
+      ],
+      "stemVertices": 7,
+      "phaseFrames": 0
+    },
+    {
+      "plant": "Plant 1",
+      "root": {
+        "name": "Plant 1",
+        "x": "177",
+        "y": "386",
+        "rotation": "-0.42",
+        "scaleX": "0.72",
+        "scaleY": "0.72",
+        "id": "8:70908"
+      },
+      "bones": [
+        "Plant 1 Root",
+        "Plant 1 Stem 1",
+        "Plant 1 Stem 2",
+        "Plant 1 Stem 3"
+      ],
+      "stemVertices": 7,
+      "phaseFrames": 5
+    },
+    {
+      "plant": "Plant 2",
+      "root": {
+        "name": "Plant 2",
+        "x": "293",
+        "y": "385",
+        "rotation": "0.46",
+        "scaleX": "0.65",
+        "scaleY": "0.65",
+        "id": "8:70910"
+      },
+      "bones": [
+        "Plant 2 Root",
+        "Plant 2 Stem 1",
+        "Plant 2 Stem 2",
+        "Plant 2 Stem 3"
+      ],
+      "stemVertices": 7,
+      "phaseFrames": 10
+    },
+    {
+      "plant": "Plant 3",
+      "root": {
+        "name": "Plant 3",
+        "x": "137",
+        "y": "390",
+        "rotation": "-0.7",
+        "scaleX": "0.48",
+        "scaleY": "0.48",
+        "id": "8:70912"
+      },
+      "bones": [
+        "Plant 3 Root",
+        "Plant 3 Stem 1",
+        "Plant 3 Stem 2",
+        "Plant 3 Stem 3"
+      ],
+      "stemVertices": 7,
+      "phaseFrames": 2
+    },
+    {
+      "plant": "Plant 4",
+      "root": {
+        "name": "Plant 4",
+        "x": "330",
+        "y": "390",
+        "rotation": "0.67",
+        "scaleX": "0.48",
+        "scaleY": "0.48",
+        "id": "8:70914"
+      },
+      "bones": [
+        "Plant 4 Root",
+        "Plant 4 Stem 1",
+        "Plant 4 Stem 2",
+        "Plant 4 Stem 3"
+      ],
+      "stemVertices": 7,
+      "phaseFrames": 8
+    }
+  ]
+}

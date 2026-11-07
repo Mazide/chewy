@@ -1,0 +1,96 @@
+{
+  "references": {
+    "tent": {
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/tent.png",
+      "sha256": "c9080a196124457525f0dc508bcc0f23a1c5c93ec935e1b9d9035bc4f131f352"
+    },
+    "campfire": {
+      "path": "prototype/public/assets/sandbox/camp-v3-flat/fire.png",
+      "sha256": "4acd7b7cb70847149ff171f1f74e4161e762274d6514908d4fa7781e473e49f2"
+    },
+    "plants": {
+      "path": "prototype/public/assets/screen-studies/flowers.png",
+      "sha256": "73d4ac881b53acd3c65dea952bd59ce22cee40549425ea31977351482e2d7302"
+    },
+    "lamp": {
+      "path": "prototype/public/assets/screen-studies/lantern.png",
+      "sha256": "b7c0875d6cb9eba9e06c0a93bd0c637b6c4918a239a8b428f6b6a0f96f8ab0f5"
+    }
+  },
+  "date": "2026-11-06",
+  "renderer": "Rive CLI 1.8.0",
+  "status": "draft-for-owner-review",
+  "assets": {
+    "tent": {
+      "artboard": "TentStates",
+      "state_machine": "TentStates",
+      "view_model": "TentStates",
+      "property": "stage",
+      "values": [
+        0,
+        1,
+        2
+      ],
+      "initial": 0,
+      "source_sha256": "4804965c9512eeb94dcc8867795d9b9f84829efb5ff2e27de32a67d6fce030ed",
+      "bytes": 435367,
+      "verify_errors": 0,
+      "verify_warnings": 0,
+      "inspect_problems": []
+    },
+    "campfire": {
+      "artboard": "CampfireStates",
+      "state_machine": "CampfireStates",
+      "view_model": "CampfireStates",
+      "property": "stage",
+      "values": [
+        0,
+        1,
+        2
+      ],
+      "initial": 0,
+      "source_sha256": "5a15c05095477a6c48c5f6f0f3fff8bc78931617bdfb3bec9c8e41722053ca7a",
+      "bytes": 363588,
+      "verify_errors": 0,
+      "verify_warnings": 0,
+      "inspect_problems": []
+    },
+    "plants": {
+      "artboard": "PlantStates",
+      "state_machine": "PlantStates",
+      "view_model": "PlantStates",
+      "property": "stage",
+      "values": [
+        0,
+        1,
+        2
+      ],
+      "initial": 0,
+      "source_sha256": "366b2de221d4233d125ac502d844d896d43fb0264c355e76f0b4202fd39ca47e",
+      "bytes": 22041,
+      "verify_errors": 0,
+      "verify_warnings": 0,
+      "inspect_problems": []
+    },
+    "lamp": {
+      "artboard": "LampStates",
+      "state_machine": "LampStates",
+      "view_model": "LampStates",
+      "property": "stage",
+      "values": [
+        0,
+        1,
+        2
+      ],
+      "initial": 0,
+      "source_sha256": "9136d76e6fbd6e655e479f4b4d3117aab03ad45921f4d1528fde6c977aeaa87a",
+      "bytes": 14253,
+      "verify_errors": 0,
+      "verify_warnings": 0,
+      "inspect_problems": []
+    }
+  },
+  "gameplay_thresholds": false,
+  "native_tested": false,
+  "final_art": false
+}

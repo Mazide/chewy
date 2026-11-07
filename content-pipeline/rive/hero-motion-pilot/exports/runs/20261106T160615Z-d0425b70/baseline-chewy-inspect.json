@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "summary": true,
+  "problems": [],
+  "artboards": [
+    {
+      "name": "ChewyMotion",
+      "objects": 338,
+      "types": {
+        "AnimationState": 2,
+        "AnyState": 1,
+        "Artboard": 1,
+        "BindablePropertyNumber": 4,
+        "CubicDetachedVertex": 171,
+        "CubicEaseInterpolator": 2,
+        "DataBindContext": 4,
+        "Ellipse": 2,
+        "EntryState": 1,
+        "ExitState": 1,
+        "Fill": 13,
+        "LayoutComponentStyle": 1,
+        "LinearAnimation": 2,
+        "Node": 4,
+        "PointsPath": 24,
+        "Shape": 26,
+        "SolidColor": 37,
+        "StateMachine": 1,
+        "StateMachineLayer": 1,
+        "StateTransition": 4,
+        "Stroke": 24,
+        "TransitionPropertyViewModelComparator": 4,
+        "TransitionValueNumberComparator": 4,
+        "TransitionViewModelCondition": 4
+      }
+    }
+  ],
+  "events": [],
+  "roots": {
+    "objects": 5,
+    "types": {
+      "Backboard": 1,
+      "ViewModel": 1,
+      "ViewModelInstance": 1,
+      "ViewModelInstanceNumber": 1,
+      "ViewModelPropertyNumber": 1
+    }
+  }
+}

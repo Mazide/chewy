@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chewy · три состояния вместе</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f5f1e7;color:#3e382c;font-family:system-ui,sans-serif}main{max-width:1500px;margin:auto;padding:32px}header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}h1{font-size:32px;letter-spacing:-1px;margin:5px 0}p{color:#797364;margin:8px 0}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:700;color:#6d7958}a{color:#46583b}table{border-collapse:separate;border-spacing:10px;width:100%;table-layout:fixed}th{font-size:17px;padding-bottom:6px}th:first-child{width:185px;text-align:left}td{background:#dfe8d6;border-radius:18px;overflow:hidden;height:225px}td:first-child{background:transparent;vertical-align:middle;padding-right:14px}h2{font-size:21px;margin:0 0 5px}small{font-size:13px;color:#797364}canvas{display:block;width:100%;height:225px}footer{padding:20px 10px;color:#797364;font-size:13px}@media(max-width:760px){main{padding:12px}header{display:block}h1{font-size:24px}table{border-spacing:4px}th:first-child{width:80px}th{font-size:12px}h2{font-size:14px}small{font-size:10px}td,canvas{height:130px}td{border-radius:9px}}
+  </style>
+</head>
+<body><main>
+  <header><div><div class="eyebrow">CHEWY · ПРИМЕРКА НАШИХ АССЕТОВ</div><h1>Лагерь собирается за день</h1><p>Четыре компонента · три состояния каждого</p></div><a href="states.html">Открыть движение и переходы →</a></header>
+  <table aria-label="Сравнение состояний компонентов"><thead><tr><th>Компонент</th><th>Начало дня</th><th>В процессе</th><th>Полное</th></tr></thead><tbody id="rows"></tbody></table>
+  <footer>Черновая визуальная проба · исходный арт сохранён · пищевые пороги не заданы</footer>
+</main><script src="/hero-actions/vendor/rive.js"></script><script>
+  const specs=[['tent','TentStates','Палатка','Белок'],['campfire','CampfireStates','Костёр','Углеводы'],['plants','PlantStates','Растения','Овощи и фрукты'],['lamp','LampStates','Лампа','Жиры · масло и свет']];
+  const players=[];let loaded=0;window.sheetErrors=[];
+  rive.RuntimeLoader.setWasmUrl('/hero-actions/vendor/rive.wasm');rive.RuntimeLoader.setWasmFallbackUrl('/hero-actions/vendor/rive_fallback.wasm');
+  (async()=>{
+    await rive.RuntimeLoader.awaitInstance();
+    for(const [slug,board,name,note]of specs){
+      const row=document.createElement('tr');row.innerHTML=`<td><h2>${name}</h2><small>${note}</small></td>`;document.querySelector('#rows').append(row);
+      const response=await fetch(`/camp-states/exports/${slug}.riv`);if(!response.ok)throw Error(slug);const buffer=await response.arrayBuffer();
+      for(let stage=0;stage<3;stage++){
+        const cell=document.createElement('td');const canvas=document.createElement('canvas');canvas.setAttribute('aria-label',`${name}: ${stage+1}`);cell.append(canvas);row.append(cell);let settle=false;
+        const player=new rive.Rive({buffer:buffer.slice(0),canvas,artboard:board,animations:['Morning','Growing','Full'][stage],autoBind:true,autoplay:false,enableRiveAssetCDN:false,drawingOptions:rive.DrawOptimizationOptions.AlwaysDraw,layout:new rive.Layout({fit:rive.Fit.Contain,alignment:rive.Alignment.Center}),
+          onLoad:()=>queueMicrotask(()=>{player.viewModelInstance.number('stage').value=stage;player.resizeDrawingSurfaceToCanvas();player.pause();player.stopRendering();settle=true;player.scrub(['Morning','Growing','Full'][stage],0);player.startRendering();}),
+          onAdvance:()=>{if(!settle)return;settle=false;player.pause();player.stopRendering();loaded++;if(loaded===12)window.sheetReady=true;},
+          onLoadError:()=>window.sheetErrors.push(slug)
+        });players.push(player);
+      }
+    }
+  })().catch(error=>window.sheetErrors.push(error.message));
+  window.addEventListener('pagehide',()=>players.forEach(player=>player.cleanup()),{once:true});
+</script></body></html>

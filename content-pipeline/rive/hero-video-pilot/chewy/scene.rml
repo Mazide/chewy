@@ -1,0 +1,441 @@
+<Rive version="1" kind="fragment">
+  <Artboard id="93:1" name="ChewyVideo" width="253" height="530" defaultStateMachineId="93:2" viewModelId="93:3" viewModelInstanceId="93:4" styleId="93:6">
+    <LayoutComponentStyle id="93:6" name="Chewy video style" />
+    <Solo id="93:7" name="Recorded frames" activeComponentId="93:100" x="0" y="0">
+      <Image id="93:100" name="Frame 000" assetId="93:300" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:101" name="Frame 001" assetId="93:301" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:102" name="Frame 002" assetId="93:302" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:103" name="Frame 003" assetId="93:303" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:104" name="Frame 004" assetId="93:304" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:105" name="Frame 005" assetId="93:305" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:106" name="Frame 006" assetId="93:306" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:107" name="Frame 007" assetId="93:307" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:108" name="Frame 008" assetId="93:308" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:109" name="Frame 009" assetId="93:309" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:110" name="Frame 010" assetId="93:310" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:111" name="Frame 011" assetId="93:311" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:112" name="Frame 012" assetId="93:312" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:113" name="Frame 013" assetId="93:313" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:114" name="Frame 014" assetId="93:314" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:115" name="Frame 015" assetId="93:315" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:116" name="Frame 016" assetId="93:316" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:117" name="Frame 017" assetId="93:317" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:118" name="Frame 018" assetId="93:318" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:119" name="Frame 019" assetId="93:319" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:120" name="Frame 020" assetId="93:320" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:121" name="Frame 021" assetId="93:321" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:122" name="Frame 022" assetId="93:322" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:123" name="Frame 023" assetId="93:323" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:124" name="Frame 024" assetId="93:324" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:125" name="Frame 025" assetId="93:325" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:126" name="Frame 026" assetId="93:326" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:127" name="Frame 027" assetId="93:327" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:128" name="Frame 028" assetId="93:328" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:129" name="Frame 029" assetId="93:329" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:130" name="Frame 030" assetId="93:330" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:131" name="Frame 031" assetId="93:331" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:132" name="Frame 032" assetId="93:332" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:133" name="Frame 033" assetId="93:333" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:134" name="Frame 034" assetId="93:334" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:135" name="Frame 035" assetId="93:335" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:136" name="Frame 036" assetId="93:336" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:137" name="Frame 037" assetId="93:337" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:138" name="Frame 038" assetId="93:338" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:139" name="Frame 039" assetId="93:339" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:140" name="Frame 040" assetId="93:340" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:141" name="Frame 041" assetId="93:341" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:142" name="Frame 042" assetId="93:342" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:143" name="Frame 043" assetId="93:343" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:144" name="Frame 044" assetId="93:344" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:145" name="Frame 045" assetId="93:345" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:146" name="Frame 046" assetId="93:346" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:147" name="Frame 047" assetId="93:347" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:148" name="Frame 048" assetId="93:348" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:149" name="Frame 049" assetId="93:349" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:150" name="Frame 050" assetId="93:350" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:151" name="Frame 051" assetId="93:351" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:152" name="Frame 052" assetId="93:352" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:153" name="Frame 053" assetId="93:353" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:154" name="Frame 054" assetId="93:354" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:155" name="Frame 055" assetId="93:355" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:156" name="Frame 056" assetId="93:356" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:157" name="Frame 057" assetId="93:357" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:158" name="Frame 058" assetId="93:358" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:159" name="Frame 059" assetId="93:359" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:160" name="Frame 060" assetId="93:360" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:161" name="Frame 061" assetId="93:361" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:162" name="Frame 062" assetId="93:362" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:163" name="Frame 063" assetId="93:363" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:164" name="Frame 064" assetId="93:364" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:165" name="Frame 065" assetId="93:365" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:166" name="Frame 066" assetId="93:366" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:167" name="Frame 067" assetId="93:367" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:168" name="Frame 068" assetId="93:368" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:169" name="Frame 069" assetId="93:369" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:170" name="Frame 070" assetId="93:370" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:171" name="Frame 071" assetId="93:371" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:172" name="Frame 072" assetId="93:372" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:173" name="Frame 073" assetId="93:373" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:174" name="Frame 074" assetId="93:374" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:175" name="Frame 075" assetId="93:375" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:176" name="Frame 076" assetId="93:376" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:177" name="Frame 077" assetId="93:377" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:178" name="Frame 078" assetId="93:378" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:179" name="Frame 079" assetId="93:379" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:180" name="Frame 080" assetId="93:380" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:181" name="Frame 081" assetId="93:381" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:182" name="Frame 082" assetId="93:382" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:183" name="Frame 083" assetId="93:383" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:184" name="Frame 084" assetId="93:384" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:185" name="Frame 085" assetId="93:385" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:186" name="Frame 086" assetId="93:386" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:187" name="Frame 087" assetId="93:387" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:188" name="Frame 088" assetId="93:388" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:189" name="Frame 089" assetId="93:389" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:190" name="Frame 090" assetId="93:390" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:191" name="Frame 091" assetId="93:391" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:192" name="Frame 092" assetId="93:392" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:193" name="Frame 093" assetId="93:393" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:194" name="Frame 094" assetId="93:394" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:195" name="Frame 095" assetId="93:395" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:196" name="Frame 096" assetId="93:396" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:197" name="Frame 097" assetId="93:397" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:198" name="Frame 098" assetId="93:398" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:199" name="Frame 099" assetId="93:399" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:200" name="Frame 100" assetId="93:400" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:201" name="Frame 101" assetId="93:401" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:202" name="Frame 102" assetId="93:402" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:203" name="Frame 103" assetId="93:403" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:204" name="Frame 104" assetId="93:404" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:205" name="Frame 105" assetId="93:405" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:206" name="Frame 106" assetId="93:406" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:207" name="Frame 107" assetId="93:407" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:208" name="Frame 108" assetId="93:408" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:209" name="Frame 109" assetId="93:409" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:210" name="Frame 110" assetId="93:410" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:211" name="Frame 111" assetId="93:411" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:212" name="Frame 112" assetId="93:412" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:213" name="Frame 113" assetId="93:413" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:214" name="Frame 114" assetId="93:414" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:215" name="Frame 115" assetId="93:415" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:216" name="Frame 116" assetId="93:416" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:217" name="Frame 117" assetId="93:417" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:218" name="Frame 118" assetId="93:418" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:219" name="Frame 119" assetId="93:419" x="0" y="0" originX="0" originY="0" />
+      <Image id="93:220" name="Frame 120" assetId="93:420" x="0" y="0" originX="0" originY="0" />
+    </Solo>
+    <StateMachine name="ChewyVideo" id="93:2">
+      <StateMachineLayer name="Recorded playback" id="93:1250">
+        <EntryState x="0" y="100" id="93:1251">
+          <StateTransition stateToId="93:1254" duration="0" id="93:1256">
+            <TransitionViewModelCondition opValue="equal" id="93:1257">
+              <TransitionPropertyViewModelComparator id="93:1258">
+                <BindablePropertyNumber id="93:1259">
+                  <DataBindContext sourcePathIds="93:3-93:5" propertyKey="636" id="93:1260" />
+                </BindablePropertyNumber>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueNumberComparator value="0" id="93:1261" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+          <StateTransition stateToId="93:1255" duration="0" id="93:1262">
+            <TransitionViewModelCondition opValue="equal" id="93:1263">
+              <TransitionPropertyViewModelComparator id="93:1264">
+                <BindablePropertyNumber id="93:1265">
+                  <DataBindContext sourcePathIds="93:3-93:5" propertyKey="636" id="93:1266" />
+                </BindablePropertyNumber>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueNumberComparator value="1" id="93:1267" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </EntryState>
+        <AnyState x="0" y="-100" id="93:1252" />
+        <ExitState x="380" y="-100" id="93:1253" />
+        <AnimationState animationId="93:10" reset="true" x="180" y="100" id="93:1254">
+          <StateTransition stateToId="93:1255" duration="0" id="93:1268">
+            <TransitionViewModelCondition opValue="equal" id="93:1269">
+              <TransitionPropertyViewModelComparator id="93:1270">
+                <BindablePropertyNumber id="93:1271">
+                  <DataBindContext sourcePathIds="93:3-93:5" propertyKey="636" id="93:1272" />
+                </BindablePropertyNumber>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueNumberComparator value="1" id="93:1273" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+        <AnimationState animationId="93:11" reset="true" x="380" y="100" id="93:1255">
+          <StateTransition stateToId="93:1254" duration="0" id="93:1274">
+            <TransitionViewModelCondition opValue="equal" id="93:1275">
+              <TransitionPropertyViewModelComparator id="93:1276">
+                <BindablePropertyNumber id="93:1277">
+                  <DataBindContext sourcePathIds="93:3-93:5" propertyKey="636" id="93:1278" />
+                </BindablePropertyNumber>
+              </TransitionPropertyViewModelComparator>
+              <TransitionValueNumberComparator value="0" id="93:1279" />
+            </TransitionViewModelCondition>
+          </StateTransition>
+        </AnimationState>
+      </StateMachineLayer>
+    </StateMachine>
+    <LinearAnimation name="Rest" id="93:10" fps="24" duration="1" loopValue="oneShot">
+      <KeyedObject objectId="93:7" id="93:1281">
+        <KeyedProperty propertyKey="296" id="93:1282">
+          <KeyFrameId frame="0" value="93:100" interpolationType="hold" id="93:1283" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+    <LinearAnimation name="RecordedGesture" id="93:11" fps="24" duration="121" loopValue="oneShot">
+      <KeyedObject objectId="93:7" id="93:1285">
+        <KeyedProperty propertyKey="296" id="93:1286">
+          <KeyFrameId frame="0" value="93:100" interpolationType="hold" id="93:1287" />
+          <KeyFrameId frame="1" value="93:101" interpolationType="hold" id="93:1288" />
+          <KeyFrameId frame="2" value="93:102" interpolationType="hold" id="93:1289" />
+          <KeyFrameId frame="3" value="93:103" interpolationType="hold" id="93:1290" />
+          <KeyFrameId frame="4" value="93:104" interpolationType="hold" id="93:1291" />
+          <KeyFrameId frame="5" value="93:105" interpolationType="hold" id="93:1292" />
+          <KeyFrameId frame="6" value="93:106" interpolationType="hold" id="93:1293" />
+          <KeyFrameId frame="7" value="93:107" interpolationType="hold" id="93:1294" />
+          <KeyFrameId frame="8" value="93:108" interpolationType="hold" id="93:1295" />
+          <KeyFrameId frame="9" value="93:109" interpolationType="hold" id="93:1296" />
+          <KeyFrameId frame="10" value="93:110" interpolationType="hold" id="93:1297" />
+          <KeyFrameId frame="11" value="93:111" interpolationType="hold" id="93:1298" />
+          <KeyFrameId frame="12" value="93:112" interpolationType="hold" id="93:1299" />
+          <KeyFrameId frame="13" value="93:113" interpolationType="hold" id="93:1300" />
+          <KeyFrameId frame="14" value="93:114" interpolationType="hold" id="93:1301" />
+          <KeyFrameId frame="15" value="93:115" interpolationType="hold" id="93:1302" />
+          <KeyFrameId frame="16" value="93:116" interpolationType="hold" id="93:1303" />
+          <KeyFrameId frame="17" value="93:117" interpolationType="hold" id="93:1304" />
+          <KeyFrameId frame="18" value="93:118" interpolationType="hold" id="93:1305" />
+          <KeyFrameId frame="19" value="93:119" interpolationType="hold" id="93:1306" />
+          <KeyFrameId frame="20" value="93:120" interpolationType="hold" id="93:1307" />
+          <KeyFrameId frame="21" value="93:121" interpolationType="hold" id="93:1308" />
+          <KeyFrameId frame="22" value="93:122" interpolationType="hold" id="93:1309" />
+          <KeyFrameId frame="23" value="93:123" interpolationType="hold" id="93:1310" />
+          <KeyFrameId frame="24" value="93:124" interpolationType="hold" id="93:1311" />
+          <KeyFrameId frame="25" value="93:125" interpolationType="hold" id="93:1312" />
+          <KeyFrameId frame="26" value="93:126" interpolationType="hold" id="93:1313" />
+          <KeyFrameId frame="27" value="93:127" interpolationType="hold" id="93:1314" />
+          <KeyFrameId frame="28" value="93:128" interpolationType="hold" id="93:1315" />
+          <KeyFrameId frame="29" value="93:129" interpolationType="hold" id="93:1316" />
+          <KeyFrameId frame="30" value="93:130" interpolationType="hold" id="93:1317" />
+          <KeyFrameId frame="31" value="93:131" interpolationType="hold" id="93:1318" />
+          <KeyFrameId frame="32" value="93:132" interpolationType="hold" id="93:1319" />
+          <KeyFrameId frame="33" value="93:133" interpolationType="hold" id="93:1320" />
+          <KeyFrameId frame="34" value="93:134" interpolationType="hold" id="93:1321" />
+          <KeyFrameId frame="35" value="93:135" interpolationType="hold" id="93:1322" />
+          <KeyFrameId frame="36" value="93:136" interpolationType="hold" id="93:1323" />
+          <KeyFrameId frame="37" value="93:137" interpolationType="hold" id="93:1324" />
+          <KeyFrameId frame="38" value="93:138" interpolationType="hold" id="93:1325" />
+          <KeyFrameId frame="39" value="93:139" interpolationType="hold" id="93:1326" />
+          <KeyFrameId frame="40" value="93:140" interpolationType="hold" id="93:1327" />
+          <KeyFrameId frame="41" value="93:141" interpolationType="hold" id="93:1328" />
+          <KeyFrameId frame="42" value="93:142" interpolationType="hold" id="93:1329" />
+          <KeyFrameId frame="43" value="93:143" interpolationType="hold" id="93:1330" />
+          <KeyFrameId frame="44" value="93:144" interpolationType="hold" id="93:1331" />
+          <KeyFrameId frame="45" value="93:145" interpolationType="hold" id="93:1332" />
+          <KeyFrameId frame="46" value="93:146" interpolationType="hold" id="93:1333" />
+          <KeyFrameId frame="47" value="93:147" interpolationType="hold" id="93:1334" />
+          <KeyFrameId frame="48" value="93:148" interpolationType="hold" id="93:1335" />
+          <KeyFrameId frame="49" value="93:149" interpolationType="hold" id="93:1336" />
+          <KeyFrameId frame="50" value="93:150" interpolationType="hold" id="93:1337" />
+          <KeyFrameId frame="51" value="93:151" interpolationType="hold" id="93:1338" />
+          <KeyFrameId frame="52" value="93:152" interpolationType="hold" id="93:1339" />
+          <KeyFrameId frame="53" value="93:153" interpolationType="hold" id="93:1340" />
+          <KeyFrameId frame="54" value="93:154" interpolationType="hold" id="93:1341" />
+          <KeyFrameId frame="55" value="93:155" interpolationType="hold" id="93:1342" />
+          <KeyFrameId frame="56" value="93:156" interpolationType="hold" id="93:1343" />
+          <KeyFrameId frame="57" value="93:157" interpolationType="hold" id="93:1344" />
+          <KeyFrameId frame="58" value="93:158" interpolationType="hold" id="93:1345" />
+          <KeyFrameId frame="59" value="93:159" interpolationType="hold" id="93:1346" />
+          <KeyFrameId frame="60" value="93:160" interpolationType="hold" id="93:1347" />
+          <KeyFrameId frame="61" value="93:161" interpolationType="hold" id="93:1348" />
+          <KeyFrameId frame="62" value="93:162" interpolationType="hold" id="93:1349" />
+          <KeyFrameId frame="63" value="93:163" interpolationType="hold" id="93:1350" />
+          <KeyFrameId frame="64" value="93:164" interpolationType="hold" id="93:1351" />
+          <KeyFrameId frame="65" value="93:165" interpolationType="hold" id="93:1352" />
+          <KeyFrameId frame="66" value="93:166" interpolationType="hold" id="93:1353" />
+          <KeyFrameId frame="67" value="93:167" interpolationType="hold" id="93:1354" />
+          <KeyFrameId frame="68" value="93:168" interpolationType="hold" id="93:1355" />
+          <KeyFrameId frame="69" value="93:169" interpolationType="hold" id="93:1356" />
+          <KeyFrameId frame="70" value="93:170" interpolationType="hold" id="93:1357" />
+          <KeyFrameId frame="71" value="93:171" interpolationType="hold" id="93:1358" />
+          <KeyFrameId frame="72" value="93:172" interpolationType="hold" id="93:1359" />
+          <KeyFrameId frame="73" value="93:173" interpolationType="hold" id="93:1360" />
+          <KeyFrameId frame="74" value="93:174" interpolationType="hold" id="93:1361" />
+          <KeyFrameId frame="75" value="93:175" interpolationType="hold" id="93:1362" />
+          <KeyFrameId frame="76" value="93:176" interpolationType="hold" id="93:1363" />
+          <KeyFrameId frame="77" value="93:177" interpolationType="hold" id="93:1364" />
+          <KeyFrameId frame="78" value="93:178" interpolationType="hold" id="93:1365" />
+          <KeyFrameId frame="79" value="93:179" interpolationType="hold" id="93:1366" />
+          <KeyFrameId frame="80" value="93:180" interpolationType="hold" id="93:1367" />
+          <KeyFrameId frame="81" value="93:181" interpolationType="hold" id="93:1368" />
+          <KeyFrameId frame="82" value="93:182" interpolationType="hold" id="93:1369" />
+          <KeyFrameId frame="83" value="93:183" interpolationType="hold" id="93:1370" />
+          <KeyFrameId frame="84" value="93:184" interpolationType="hold" id="93:1371" />
+          <KeyFrameId frame="85" value="93:185" interpolationType="hold" id="93:1372" />
+          <KeyFrameId frame="86" value="93:186" interpolationType="hold" id="93:1373" />
+          <KeyFrameId frame="87" value="93:187" interpolationType="hold" id="93:1374" />
+          <KeyFrameId frame="88" value="93:188" interpolationType="hold" id="93:1375" />
+          <KeyFrameId frame="89" value="93:189" interpolationType="hold" id="93:1376" />
+          <KeyFrameId frame="90" value="93:190" interpolationType="hold" id="93:1377" />
+          <KeyFrameId frame="91" value="93:191" interpolationType="hold" id="93:1378" />
+          <KeyFrameId frame="92" value="93:192" interpolationType="hold" id="93:1379" />
+          <KeyFrameId frame="93" value="93:193" interpolationType="hold" id="93:1380" />
+          <KeyFrameId frame="94" value="93:194" interpolationType="hold" id="93:1381" />
+          <KeyFrameId frame="95" value="93:195" interpolationType="hold" id="93:1382" />
+          <KeyFrameId frame="96" value="93:196" interpolationType="hold" id="93:1383" />
+          <KeyFrameId frame="97" value="93:197" interpolationType="hold" id="93:1384" />
+          <KeyFrameId frame="98" value="93:198" interpolationType="hold" id="93:1385" />
+          <KeyFrameId frame="99" value="93:199" interpolationType="hold" id="93:1386" />
+          <KeyFrameId frame="100" value="93:200" interpolationType="hold" id="93:1387" />
+          <KeyFrameId frame="101" value="93:201" interpolationType="hold" id="93:1388" />
+          <KeyFrameId frame="102" value="93:202" interpolationType="hold" id="93:1389" />
+          <KeyFrameId frame="103" value="93:203" interpolationType="hold" id="93:1390" />
+          <KeyFrameId frame="104" value="93:204" interpolationType="hold" id="93:1391" />
+          <KeyFrameId frame="105" value="93:205" interpolationType="hold" id="93:1392" />
+          <KeyFrameId frame="106" value="93:206" interpolationType="hold" id="93:1393" />
+          <KeyFrameId frame="107" value="93:207" interpolationType="hold" id="93:1394" />
+          <KeyFrameId frame="108" value="93:208" interpolationType="hold" id="93:1395" />
+          <KeyFrameId frame="109" value="93:209" interpolationType="hold" id="93:1396" />
+          <KeyFrameId frame="110" value="93:210" interpolationType="hold" id="93:1397" />
+          <KeyFrameId frame="111" value="93:211" interpolationType="hold" id="93:1398" />
+          <KeyFrameId frame="112" value="93:212" interpolationType="hold" id="93:1399" />
+          <KeyFrameId frame="113" value="93:213" interpolationType="hold" id="93:1400" />
+          <KeyFrameId frame="114" value="93:214" interpolationType="hold" id="93:1401" />
+          <KeyFrameId frame="115" value="93:215" interpolationType="hold" id="93:1402" />
+          <KeyFrameId frame="116" value="93:216" interpolationType="hold" id="93:1403" />
+          <KeyFrameId frame="117" value="93:217" interpolationType="hold" id="93:1404" />
+          <KeyFrameId frame="118" value="93:218" interpolationType="hold" id="93:1405" />
+          <KeyFrameId frame="119" value="93:219" interpolationType="hold" id="93:1406" />
+          <KeyFrameId frame="120" value="93:220" interpolationType="hold" id="93:1407" />
+        </KeyedProperty>
+      </KeyedObject>
+    </LinearAnimation>
+  </Artboard>
+  <ImageAsset id="93:300" name="frame-000" file="assets/frame-000.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:301" name="frame-001" file="assets/frame-001.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:302" name="frame-002" file="assets/frame-002.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:303" name="frame-003" file="assets/frame-003.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:304" name="frame-004" file="assets/frame-004.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:305" name="frame-005" file="assets/frame-005.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:306" name="frame-006" file="assets/frame-006.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:307" name="frame-007" file="assets/frame-007.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:308" name="frame-008" file="assets/frame-008.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:309" name="frame-009" file="assets/frame-009.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:310" name="frame-010" file="assets/frame-010.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:311" name="frame-011" file="assets/frame-011.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:312" name="frame-012" file="assets/frame-012.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:313" name="frame-013" file="assets/frame-013.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:314" name="frame-014" file="assets/frame-014.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:315" name="frame-015" file="assets/frame-015.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:316" name="frame-016" file="assets/frame-016.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:317" name="frame-017" file="assets/frame-017.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:318" name="frame-018" file="assets/frame-018.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:319" name="frame-019" file="assets/frame-019.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:320" name="frame-020" file="assets/frame-020.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:321" name="frame-021" file="assets/frame-021.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:322" name="frame-022" file="assets/frame-022.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:323" name="frame-023" file="assets/frame-023.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:324" name="frame-024" file="assets/frame-024.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:325" name="frame-025" file="assets/frame-025.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:326" name="frame-026" file="assets/frame-026.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:327" name="frame-027" file="assets/frame-027.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:328" name="frame-028" file="assets/frame-028.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:329" name="frame-029" file="assets/frame-029.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:330" name="frame-030" file="assets/frame-030.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:331" name="frame-031" file="assets/frame-031.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:332" name="frame-032" file="assets/frame-032.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:333" name="frame-033" file="assets/frame-033.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:334" name="frame-034" file="assets/frame-034.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:335" name="frame-035" file="assets/frame-035.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:336" name="frame-036" file="assets/frame-036.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:337" name="frame-037" file="assets/frame-037.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:338" name="frame-038" file="assets/frame-038.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:339" name="frame-039" file="assets/frame-039.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:340" name="frame-040" file="assets/frame-040.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:341" name="frame-041" file="assets/frame-041.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:342" name="frame-042" file="assets/frame-042.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:343" name="frame-043" file="assets/frame-043.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:344" name="frame-044" file="assets/frame-044.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:345" name="frame-045" file="assets/frame-045.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:346" name="frame-046" file="assets/frame-046.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:347" name="frame-047" file="assets/frame-047.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:348" name="frame-048" file="assets/frame-048.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:349" name="frame-049" file="assets/frame-049.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:350" name="frame-050" file="assets/frame-050.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:351" name="frame-051" file="assets/frame-051.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:352" name="frame-052" file="assets/frame-052.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:353" name="frame-053" file="assets/frame-053.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:354" name="frame-054" file="assets/frame-054.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:355" name="frame-055" file="assets/frame-055.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:356" name="frame-056" file="assets/frame-056.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:357" name="frame-057" file="assets/frame-057.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:358" name="frame-058" file="assets/frame-058.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:359" name="frame-059" file="assets/frame-059.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:360" name="frame-060" file="assets/frame-060.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:361" name="frame-061" file="assets/frame-061.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:362" name="frame-062" file="assets/frame-062.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:363" name="frame-063" file="assets/frame-063.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:364" name="frame-064" file="assets/frame-064.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:365" name="frame-065" file="assets/frame-065.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:366" name="frame-066" file="assets/frame-066.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:367" name="frame-067" file="assets/frame-067.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:368" name="frame-068" file="assets/frame-068.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:369" name="frame-069" file="assets/frame-069.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:370" name="frame-070" file="assets/frame-070.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:371" name="frame-071" file="assets/frame-071.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:372" name="frame-072" file="assets/frame-072.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:373" name="frame-073" file="assets/frame-073.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:374" name="frame-074" file="assets/frame-074.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:375" name="frame-075" file="assets/frame-075.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:376" name="frame-076" file="assets/frame-076.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:377" name="frame-077" file="assets/frame-077.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:378" name="frame-078" file="assets/frame-078.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:379" name="frame-079" file="assets/frame-079.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:380" name="frame-080" file="assets/frame-080.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:381" name="frame-081" file="assets/frame-081.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:382" name="frame-082" file="assets/frame-082.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:383" name="frame-083" file="assets/frame-083.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:384" name="frame-084" file="assets/frame-084.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:385" name="frame-085" file="assets/frame-085.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:386" name="frame-086" file="assets/frame-086.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:387" name="frame-087" file="assets/frame-087.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:388" name="frame-088" file="assets/frame-088.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:389" name="frame-089" file="assets/frame-089.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:390" name="frame-090" file="assets/frame-090.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:391" name="frame-091" file="assets/frame-091.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:392" name="frame-092" file="assets/frame-092.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:393" name="frame-093" file="assets/frame-093.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:394" name="frame-094" file="assets/frame-094.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:395" name="frame-095" file="assets/frame-095.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:396" name="frame-096" file="assets/frame-096.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:397" name="frame-097" file="assets/frame-097.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:398" name="frame-098" file="assets/frame-098.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:399" name="frame-099" file="assets/frame-099.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:400" name="frame-100" file="assets/frame-100.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:401" name="frame-101" file="assets/frame-101.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:402" name="frame-102" file="assets/frame-102.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:403" name="frame-103" file="assets/frame-103.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:404" name="frame-104" file="assets/frame-104.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:405" name="frame-105" file="assets/frame-105.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:406" name="frame-106" file="assets/frame-106.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:407" name="frame-107" file="assets/frame-107.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:408" name="frame-108" file="assets/frame-108.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:409" name="frame-109" file="assets/frame-109.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:410" name="frame-110" file="assets/frame-110.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:411" name="frame-111" file="assets/frame-111.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:412" name="frame-112" file="assets/frame-112.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:413" name="frame-113" file="assets/frame-113.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:414" name="frame-114" file="assets/frame-114.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:415" name="frame-115" file="assets/frame-115.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:416" name="frame-116" file="assets/frame-116.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:417" name="frame-117" file="assets/frame-117.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:418" name="frame-118" file="assets/frame-118.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:419" name="frame-119" file="assets/frame-119.png" exportTypeValue="embedded" width="253" height="530" />
+  <ImageAsset id="93:420" name="frame-120" file="assets/frame-120.png" exportTypeValue="embedded" width="253" height="530" />
+  <ViewModel id="93:3" name="ChewyVideo" defaultInstanceId="93:4">
+    <ViewModelPropertyNumber id="93:5" name="action" />
+    <ViewModelInstance id="93:4" name="Default" exports="true">
+      <ViewModelInstanceNumber viewModelPropertyId="93:5" propertyValue="0" id="93:1248" />
+    </ViewModelInstance>
+  </ViewModel>
+</Rive>

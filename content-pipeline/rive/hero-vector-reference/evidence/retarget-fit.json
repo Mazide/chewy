@@ -1,0 +1,766 @@
+{
+  "method": "Manual approximate landmarks, offline fixed-length 2-bone IK, editable sparse native bone keys. No automatic extraction.",
+  "source_artwork": "chewy/content-pipeline/rive/hero-wardrobe/references/hero-from-editor.rml",
+  "source_artwork_sha256": "20e5ebb18b7e18d8ee3caeeaafe1b63dc592427c7c4e5fd3d2945b228ea9c482",
+  "reference_sha256": "6b5b6b35cd548987b15295c48df1ace5c1cdac080dd466890198cafe1f44b867",
+  "coordinate_note": "Source artwork local coordinates; upper-body original offset (-1,-6.5) retained. Native reference is approximate.",
+  "excluded_frames": [
+    42,
+    99
+  ],
+  "retarget_rules": [
+    "Reference neutral retained exactly instead of fitting noisy annotations.",
+    "Fixed shoulders and limb lengths; wrist target fit; elbow branch nearest reference elbow.",
+    "Temple wrist shifted18px left to clear the wider vector hair; source hand direction retained.",
+    "Final face stays frontal: 35% of observed small eye-line roll; gaze offset capped7px, no32px rigid head drop.",
+    "No raster foot drift transferred; both original trouser/boot shapes static."
+  ],
+  "fit_tracks": {
+    "screen_left_arm": [
+      {
+        "frame": 0,
+        "reference_wrist": [
+          120,
+          548
+        ],
+        "adapted_wrist_target": [
+          120,
+          548
+        ],
+        "reference_elbow": [
+          72,
+          480
+        ],
+        "fitted_elbow": [
+          61,
+          465
+        ],
+        "fitted_wrist": [
+          119,
+          548
+        ],
+        "wrist_error_px": 1.0,
+        "upper_rotation": 2.638451912173836,
+        "forearm_rotation": -1.6775724884560066,
+        "wrist_rotation": -0.9608794237178293
+      },
+      {
+        "frame": 36,
+        "reference_wrist": [
+          120,
+          548
+        ],
+        "adapted_wrist_target": [
+          120,
+          548
+        ],
+        "reference_elbow": [
+          72,
+          480
+        ],
+        "fitted_elbow": [
+          61,
+          465
+        ],
+        "fitted_wrist": [
+          119,
+          548
+        ],
+        "wrist_error_px": 1.0,
+        "upper_rotation": 2.638451912173836,
+        "forearm_rotation": -1.6775724884560066,
+        "wrist_rotation": -0.9608794237178293
+      },
+      {
+        "frame": 45,
+        "reference_wrist": [
+          80,
+          291
+        ],
+        "adapted_wrist_target": [
+          62,
+          291
+        ],
+        "reference_elbow": [
+          54,
+          354
+        ],
+        "fitted_elbow": [
+          42.79545467795606,
+          390.4192407885594
+        ],
+        "fitted_wrist": [
+          62.0,
+          291.0
+        ],
+        "wrist_error_px": 0.0,
+        "upper_rotation": 3.1659129162490807,
+        "forearm_rotation": -4.545892145818821,
+        "wrist_rotation": -0.5935283374677782
+      },
+      {
+        "frame": 48,
+        "reference_wrist": [
+          101,
+          261
+        ],
+        "adapted_wrist_target": [
+          83,
+          261
+        ],
+        "reference_elbow": [
+          65,
+          330
+        ],
+        "fitted_elbow": [
+          47.75925848845705,
+          355.9267619679331
+        ],
+        "fitted_wrist": [
+          83.0,
+          261.0000000000001
+        ],
+        "wrist_error_px": 1.1368683772161603e-13,
+        "upper_rotation": 3.403129294432291,
+        "forearm_rotation": -4.618454250023873,
+        "wrist_rotation": -0.054175244115322485
+      },
+      {
+        "frame": 60,
+        "reference_wrist": [
+          101,
+          261
+        ],
+        "adapted_wrist_target": [
+          83,
+          261
+        ],
+        "reference_elbow": [
+          65,
+          330
+        ],
+        "fitted_elbow": [
+          47.75925848845705,
+          355.9267619679331
+        ],
+        "fitted_wrist": [
+          83.0,
+          261.0000000000001
+        ],
+        "wrist_error_px": 1.1368683772161603e-13,
+        "upper_rotation": 3.403129294432291,
+        "forearm_rotation": -4.618454250023873,
+        "wrist_rotation": -0.054175244115322485
+      },
+      {
+        "frame": 72,
+        "reference_wrist": [
+          101,
+          266
+        ],
+        "adapted_wrist_target": [
+          83,
+          266
+        ],
+        "reference_elbow": [
+          65,
+          335
+        ],
+        "fitted_elbow": [
+          46.6146950483552,
+          360.4939658580156
+        ],
+        "fitted_wrist": [
+          82.99999999999997,
+          266.0
+        ],
+        "wrist_error_px": 2.842170943040401e-14,
+        "upper_rotation": 3.371151715697983,
+        "forearm_rotation": -4.574391937757048,
+        "wrist_rotation": -0.06625997764783964
+      },
+      {
+        "frame": 84,
+        "reference_wrist": [
+          104,
+          287
+        ],
+        "adapted_wrist_target": [
+          86,
+          287
+        ],
+        "reference_elbow": [
+          68,
+          370
+        ],
+        "fitted_elbow": [
+          43.52630219189035,
+          378.918360486387
+        ],
+        "fitted_wrist": [
+          85.99999999999994,
+          287.0
+        ],
+        "wrist_error_px": 5.684341886080802e-14,
+        "upper_rotation": 3.2441959122617865,
+        "forearm_rotation": -4.382137562470993,
+        "wrist_rotation": -0.36283943925169737
+      },
+      {
+        "frame": 90,
+        "reference_wrist": [
+          137,
+          405
+        ],
+        "adapted_wrist_target": [
+          137,
+          405
+        ],
+        "reference_elbow": [
+          79,
+          477
+        ],
+        "fitted_elbow": [
+          73.12787721214922,
+          483.5706811130826
+        ],
+        "fitted_wrist": [
+          137.0,
+          405.00000000000006
+        ],
+        "wrist_error_px": 5.684341886080802e-14,
+        "upper_rotation": 2.487678513785453,
+        "forearm_rotation": -3.3759019416576113,
+        "wrist_rotation": -0.3571627085309119
+      },
+      {
+        "frame": 96,
+        "reference_wrist": [
+          195,
+          492
+        ],
+        "adapted_wrist_target": [
+          195,
+          492
+        ],
+        "reference_elbow": [
+          112,
+          517
+        ],
+        "fitted_elbow": [
+          94.75747073705257,
+          506.2980882277014
+        ],
+        "fitted_wrist": [
+          195.0,
+          492.0
+        ],
+        "wrist_error_px": 0.0,
+        "upper_rotation": 2.2741993637509292,
+        "forearm_rotation": -2.4158786633513865,
+        "wrist_rotation": -0.7811998528982009
+      },
+      {
+        "frame": 102,
+        "reference_wrist": [
+          241,
+          526
+        ],
+        "adapted_wrist_target": [
+          241,
+          526
+        ],
+        "reference_elbow": [
+          146,
+          527
+        ],
+        "fitted_elbow": [
+          139.95053864043584,
+          532.4812312828619
+        ],
+        "fitted_wrist": [
+          241.0,
+          526.0
+        ],
+        "wrist_error_px": 0.0,
+        "upper_rotation": 1.917605704193572,
+        "forearm_rotation": -1.9816571646699006,
+        "wrist_rotation": -0.368870365768601
+      },
+      {
+        "frame": 120,
+        "reference_wrist": [
+          241,
+          526
+        ],
+        "adapted_wrist_target": [
+          241,
+          526
+        ],
+        "reference_elbow": [
+          146,
+          527
+        ],
+        "fitted_elbow": [
+          139.95053864043584,
+          532.4812312828619
+        ],
+        "fitted_wrist": [
+          241.0,
+          526.0
+        ],
+        "wrist_error_px": 0.0,
+        "upper_rotation": 1.917605704193572,
+        "forearm_rotation": -1.9816571646699006,
+        "wrist_rotation": -0.368870365768601
+      }
+    ],
+    "screen_right_arm": [
+      {
+        "frame": 0,
+        "reference_wrist": [
+          401,
+          548
+        ],
+        "adapted_wrist_target": [
+          401,
+          548
+        ],
+        "reference_elbow": [
+          462,
+          480
+        ],
+        "fitted_elbow": [
+          461,
+          465
+        ],
+        "fitted_wrist": [
+          402,
+          548
+        ],
+        "wrist_error_px": 1.0,
+        "upper_rotation": 0.47224338582675685,
+        "forearm_rotation": 1.7165193258950646,
+        "wrist_rotation": -2.1887627117218216
+      },
+      {
+        "frame": 36,
+        "reference_wrist": [
+          401,
+          548
+        ],
+        "adapted_wrist_target": [
+          401,
+          548
+        ],
+        "reference_elbow": [
+          462,
+          480
+        ],
+        "fitted_elbow": [
+          461,
+          465
+        ],
+        "fitted_wrist": [
+          402,
+          548
+        ],
+        "wrist_error_px": 1.0,
+        "upper_rotation": 0.47224338582675685,
+        "forearm_rotation": 1.7165193258950646,
+        "wrist_rotation": -2.1887627117218216
+      },
+      {
+        "frame": 45,
+        "reference_wrist": [
+          401,
+          548
+        ],
+        "adapted_wrist_target": [
+          401,
+          548
+        ],
+        "reference_elbow": [
+          462,
+          480
+        ],
+        "fitted_elbow": [
+          460.7308822729709,
+          465.52441753529416
+        ],
+        "fitted_wrist": [
+          401.00000000000006,
+          548.0
+        ],
+        "wrist_error_px": 5.684341886080802e-14,
+        "upper_rotation": 0.47601982514638896,
+        "forearm_rotation": 1.721576546615184,
+        "wrist_rotation": -2.197596371761573
+      },
+      {
+        "frame": 48,
+        "reference_wrist": [
+          401,
+          548
+        ],
+        "adapted_wrist_target": [
+          401,
+          548
+        ],
+        "reference_elbow": [
+          462,
+          480
+        ],
+        "fitted_elbow": [
+          460.7308822729709,
+          465.52441753529416
+        ],
+        "fitted_wrist": [
+          401.00000000000006,
+          548.0
+        ],
+        "wrist_error_px": 5.684341886080802e-14,
+        "upper_rotation": 0.47601982514638896,
+        "forearm_rotation": 1.721576546615184,
+        "wrist_rotation": -2.197596371761573
+      },
+      {
+        "frame": 60,
+        "reference_wrist": [
+          401,
+          548
+        ],
+        "adapted_wrist_target": [
+          401,
+          548
+        ],
+        "reference_elbow": [
+          462,
+          480
+        ],
+        "fitted_elbow": [
+          460.7308822729709,
+          465.52441753529416
+        ],
+        "fitted_wrist": [
+          401.00000000000006,
+          548.0
+        ],
+        "wrist_error_px": 5.684341886080802e-14,
+        "upper_rotation": 0.47601982514638896,
+        "forearm_rotation": 1.721576546615184,
+        "wrist_rotation": -2.197596371761573
+      },
+      {
+        "frame": 72,
+        "reference_wrist": [
+          401,
+          548
+        ],
+        "adapted_wrist_target": [
+          401,
+          548
+        ],
+        "reference_elbow": [
+          462,
+          480
+        ],
+        "fitted_elbow": [
+          460.7308822729709,
+          465.52441753529416
+        ],
+        "fitted_wrist": [
+          401.00000000000006,
+          548.0
+        ],
+        "wrist_error_px": 5.684341886080802e-14,
+        "upper_rotation": 0.47601982514638896,
+        "forearm_rotation": 1.721576546615184,
+        "wrist_rotation": -2.197596371761573
+      },
+      {
+        "frame": 84,
+        "reference_wrist": [
+          398,
+          548
+        ],
+        "adapted_wrist_target": [
+          398,
+          548
+        ],
+        "reference_elbow": [
+          461,
+          480
+        ],
+        "fitted_elbow": [
+          459.89013793590414,
+          467.13213971994344
+        ],
+        "fitted_wrist": [
+          397.99999999999994,
+          548.0
+        ],
+        "wrist_error_px": 5.684341886080802e-14,
+        "upper_rotation": 0.48764370015909453,
+        "forearm_rotation": 1.7363893606645355,
+        "wrist_rotation": -2.2503427780765524
+      },
+      {
+        "frame": 90,
+        "reference_wrist": [
+          350,
+          538
+        ],
+        "adapted_wrist_target": [
+          350,
+          538
+        ],
+        "reference_elbow": [
+          425,
+          510
+        ],
+        "fitted_elbow": [
+          441.8385443485912,
+          494.0036163766628
+        ],
+        "fitted_wrist": [
+          350.0,
+          538.0
+        ],
+        "wrist_error_px": 0.0,
+        "upper_rotation": 0.6954182949265588,
+        "forearm_rotation": 1.9994167779863474,
+        "wrist_rotation": -2.46596239954501
+      },
+      {
+        "frame": 96,
+        "reference_wrist": [
+          297,
+          516
+        ],
+        "adapted_wrist_target": [
+          297,
+          516
+        ],
+        "reference_elbow": [
+          390,
+          526
+        ],
+        "fitted_elbow": [
+          397.8042839222937,
+          530.439402443093
+        ],
+        "fitted_wrist": [
+          297.0,
+          516.0
+        ],
+        "wrist_error_px": 0.0,
+        "upper_rotation": 1.0636719706884747,
+        "forearm_rotation": 2.2201948305610895,
+        "wrist_rotation": -2.8176907526305617
+      },
+      {
+        "frame": 102,
+        "reference_wrist": [
+          265,
+          486
+        ],
+        "adapted_wrist_target": [
+          265,
+          486
+        ],
+        "reference_elbow": [
+          362,
+          516
+        ],
+        "fitted_elbow": [
+          345.5559723808825,
+          548.2955481055468
+        ],
+        "fitted_wrist": [
+          265.0,
+          486.0
+        ],
+        "wrist_error_px": 0.0,
+        "upper_rotation": 1.4192982439388553,
+        "forearm_rotation": 2.380554061430967,
+        "wrist_rotation": -3.1284505143547965
+      },
+      {
+        "frame": 120,
+        "reference_wrist": [
+          265,
+          486
+        ],
+        "adapted_wrist_target": [
+          265,
+          486
+        ],
+        "reference_elbow": [
+          362,
+          516
+        ],
+        "fitted_elbow": [
+          345.5559723808825,
+          548.2955481055468
+        ],
+        "fitted_wrist": [
+          265.0,
+          486.0
+        ],
+        "wrist_error_px": 0.0,
+        "upper_rotation": 1.4192982439388553,
+        "forearm_rotation": 2.380554061430967,
+        "wrist_rotation": -3.1284505143547965
+      }
+    ]
+  },
+  "head_tracks": {
+    "rotation": [
+      [
+        0,
+        0.0
+      ],
+      [
+        36,
+        0.0
+      ],
+      [
+        45,
+        -0.028099800957108702
+      ],
+      [
+        48,
+        -0.02871066619530672
+      ],
+      [
+        60,
+        -0.024434609527920613
+      ],
+      [
+        72,
+        -0.012217304763960306
+      ],
+      [
+        84,
+        -0.024434609527920613
+      ],
+      [
+        90,
+        -0.00916297857297023
+      ],
+      [
+        96,
+        0.0030543261909900766
+      ],
+      [
+        102,
+        0.0
+      ],
+      [
+        120,
+        0.0
+      ]
+    ],
+    "gaze_x": [
+      [
+        0,
+        0.0
+      ],
+      [
+        36,
+        0.0
+      ],
+      [
+        45,
+        -1.625
+      ],
+      [
+        48,
+        -1.5
+      ],
+      [
+        60,
+        -0.625
+      ],
+      [
+        72,
+        -0.625
+      ],
+      [
+        84,
+        -0.875
+      ],
+      [
+        90,
+        1.125
+      ],
+      [
+        96,
+        2.25
+      ],
+      [
+        102,
+        3.0
+      ],
+      [
+        120,
+        3.25
+      ]
+    ],
+    "gaze_y": [
+      [
+        0,
+        0
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        45,
+        0.55
+      ],
+      [
+        48,
+        0.55
+      ],
+      [
+        60,
+        0.66
+      ],
+      [
+        72,
+        1.54
+      ],
+      [
+        84,
+        0.88
+      ],
+      [
+        90,
+        3.41
+      ],
+      [
+        96,
+        7
+      ],
+      [
+        102,
+        7
+      ],
+      [
+        120,
+        7
+      ]
+    ]
+  },
+  "draft_art": [
+    "Watch face and strap",
+    "Relaxed temple fingers",
+    "Two-part left sleeve during gesture"
+  ],
+  "sleeve_solution": "Original left sleeve is preserved in Rest. Motion reveals two bone-local draft vector sleeve pieces with round overlapping elbow caps; prevents inversion when the reference changes elbow branch. No per-frame path keys.",
+  "duration_frames": 121,
+  "fps": 24
+}

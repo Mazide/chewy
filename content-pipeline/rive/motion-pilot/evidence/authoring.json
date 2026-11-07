@@ -1,0 +1,85 @@
+{
+  "scope": "Authoring rig/structure/neutral silhouette validation; aesthetic acceptance remains owner review.",
+  "sourceSha256": {
+    "content-pipeline/rive/motion-pilot/plants/scene.rml": "a9f9da3577e50088ce5ef0cd72ed0066fbb8be207182519838859c70541fd853",
+    "content-pipeline/rive/motion-pilot/plants/rive.yaml": "b77698c9e0e6c94b228af97fdaf78af15ac5a3e6d6fc85e314e16125619d902b"
+  },
+  "sourceUnchangedByVerifyAndOnce": true,
+  "cliVersion": "1.8.0",
+  "verify": {
+    "success": true,
+    "command": "verify",
+    "data": {
+      "riv": null,
+      "bytes": 0,
+      "buildMs": 257.2,
+      "problems": []
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "success": true,
+    "command": "build",
+    "data": {
+      "riv": "content-pipeline/rive/motion-pilot/plants/build/plants.riv",
+      "bytes": 21958,
+      "buildMs": 229.8,
+      "problems": []
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "inspectProblems": [],
+  "counts": {
+    "RootBone": 5,
+    "Bone": 15,
+    "Skin": 5,
+    "Tendon": 20,
+    "CubicWeight": 35,
+    "CubicEaseInterpolator": 363,
+    "KeyFrameDouble": 456
+  },
+  "contracts": {
+    "artboard": "PlantStates",
+    "stateMachine": "PlantStates",
+    "viewModel": "PlantStates",
+    "stage": {
+      "0": "Morning",
+      "1": "Growing",
+      "2": "Full"
+    },
+    "poseDurationFrames": 1,
+    "motion": "Breeze",
+    "motionDurationFrames": 360,
+    "fps": 60
+  },
+  "invariants": {
+    "rootPositionsNeverKeyed": true,
+    "dailyAndMotionPropertiesDisjoint": true,
+    "allVertexAndHandleWeightSums255": true,
+    "all40MotionTracksHave9UniqueOrderedCubicKeys": true,
+    "loopEndpointPoseAndZeroVelocityContinuous": true,
+    "grassPositionUnkeyed": true
+  },
+  "restFidelity": {
+    "method": "CLI screenshot with no --advance: design pose, identical visible full arrangement. Original curves exactly subdivided with de Casteljau; native bind matrices preserve the rest pose. Rasterization differences remain at curve edges.",
+    "pixels": 223200,
+    "differentPixels": 47,
+    "meanAbsoluteChannelDifference": 0.0014068100358422939,
+    "maximumChannelDifference": 53,
+    "images": [
+      "rig-rest-baseline.png",
+      "rig-rest-pilot.png"
+    ]
+  },
+  "motionReviewImages": {
+    "stage2Frame88": "rig-stage2-frame88.png",
+    "stage2Frame206": "rig-stage2-frame206.png"
+  },
+  "limitations": [
+    "The 550ms daily-state transition is an appearance blend, not an authored growth action.",
+    "CLI draft export is unsigned; public runtime loading needs a signed export or Editor roundtrip.",
+    "Rig structure and stills do not establish approved aesthetic motion quality."
+  ]
+}

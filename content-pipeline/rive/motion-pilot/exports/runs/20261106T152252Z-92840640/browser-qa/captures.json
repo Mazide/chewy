@@ -1,0 +1,301 @@
+[
+  {
+    "stage": 0,
+    "time": 0,
+    "name": "stage-0",
+    "baseline": {
+      "filename": "frames/stage-0-baseline.png",
+      "sha256": "56f4f15bdb96771fac13dd656d41821d36d20ee2907a2b0005373bc4103fb410"
+    },
+    "pilot": {
+      "filename": "frames/stage-0-pilot.png",
+      "sha256": "7036af2cc8662ceb539491d1604d0682f3c2a58fd718b0e4ad4fe0407ff7e6ac"
+    }
+  },
+  {
+    "stage": 0,
+    "time": 1.4,
+    "name": "stage-0-motion",
+    "baseline": {
+      "filename": "frames/stage-0-motion-baseline.png",
+      "sha256": "1f2b089ed0fd3e4bf4cd99c8e8e45e6b97fee7162ec3c2d723aec2787dc7d8b1"
+    },
+    "pilot": {
+      "filename": "frames/stage-0-motion-pilot.png",
+      "sha256": "9f7437f98380fdf4ae70779d0acf46de526d934590bb77e1fdb4233d63fca451"
+    }
+  },
+  {
+    "stage": 1,
+    "time": 3.1,
+    "name": "stage-0-detour",
+    "baseline": {
+      "filename": "frames/stage-0-detour-baseline.png",
+      "sha256": "1d7e367d1c17c526e0474566c07486dce4b55d7874ca3fadf8fd65d1ca04f830"
+    },
+    "pilot": {
+      "filename": "frames/stage-0-detour-pilot.png",
+      "sha256": "3fc812e704b6321deddc16e7a19052740184a47bb2a80af4f9200025dc9bc21e"
+    }
+  },
+  {
+    "stage": 0,
+    "time": 0,
+    "name": "stage-0-repeat",
+    "baseline": {
+      "filename": "frames/stage-0-repeat-baseline.png",
+      "sha256": "56f4f15bdb96771fac13dd656d41821d36d20ee2907a2b0005373bc4103fb410"
+    },
+    "pilot": {
+      "filename": "frames/stage-0-repeat-pilot.png",
+      "sha256": "7036af2cc8662ceb539491d1604d0682f3c2a58fd718b0e4ad4fe0407ff7e6ac"
+    }
+  },
+  {
+    "stage": 1,
+    "time": 0,
+    "name": "stage-1",
+    "baseline": {
+      "filename": "frames/stage-1-baseline.png",
+      "sha256": "3eb7809986d5e119839a4d5a5655864f5d3d67ff56cbd53d624e916e06a81e9f"
+    },
+    "pilot": {
+      "filename": "frames/stage-1-pilot.png",
+      "sha256": "928a2676ea10f47eac1b9de19fcf7ae1c46a4c56a2300e04e9eabeb5f7b8e137"
+    }
+  },
+  {
+    "stage": 1,
+    "time": 1.4,
+    "name": "stage-1-motion",
+    "baseline": {
+      "filename": "frames/stage-1-motion-baseline.png",
+      "sha256": "100d78894af75d900a6ac49518631d93cfaa12b02833779140d3093d18d1a2ba"
+    },
+    "pilot": {
+      "filename": "frames/stage-1-motion-pilot.png",
+      "sha256": "ec8b87c9dfb9ce0ee5fe1d3269ee13260bec9b3fd1c68643785a29d97b4b3503"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 3.1,
+    "name": "stage-1-detour",
+    "baseline": {
+      "filename": "frames/stage-1-detour-baseline.png",
+      "sha256": "c156bcaa16118fa447a7cbf780dcd1b926ad24c2e7d0d1a1777b92727bf0f14c"
+    },
+    "pilot": {
+      "filename": "frames/stage-1-detour-pilot.png",
+      "sha256": "ddb719a9ce1244e1699652542f3ac7a52bfb5374e66089fda70b57420158f6df"
+    }
+  },
+  {
+    "stage": 1,
+    "time": 0,
+    "name": "stage-1-repeat",
+    "baseline": {
+      "filename": "frames/stage-1-repeat-baseline.png",
+      "sha256": "3eb7809986d5e119839a4d5a5655864f5d3d67ff56cbd53d624e916e06a81e9f"
+    },
+    "pilot": {
+      "filename": "frames/stage-1-repeat-pilot.png",
+      "sha256": "928a2676ea10f47eac1b9de19fcf7ae1c46a4c56a2300e04e9eabeb5f7b8e137"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 0,
+    "name": "stage-2",
+    "baseline": {
+      "filename": "frames/stage-2-baseline.png",
+      "sha256": "116ca19ca017c275584559aed0c1012f23c284b6c462c30c8a82a08a6c40bb2f"
+    },
+    "pilot": {
+      "filename": "frames/stage-2-pilot.png",
+      "sha256": "2bcf1342572b86f25a7d711bd24cc00cfceaaec8ef071799eb67e9d4b9b41990"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 1.4,
+    "name": "stage-2-motion",
+    "baseline": {
+      "filename": "frames/stage-2-motion-baseline.png",
+      "sha256": "1c6c13f3b90bb81b0206f3c0adccf53dea0b4a9aa1c7f38369e9f050910a1bf8"
+    },
+    "pilot": {
+      "filename": "frames/stage-2-motion-pilot.png",
+      "sha256": "17f7782dbd4bc7ca03a4f03a0192c8ebb11226814993c7dd0cb2e4d0ce3b58c0"
+    }
+  },
+  {
+    "stage": 0,
+    "time": 3.1,
+    "name": "stage-2-detour",
+    "baseline": {
+      "filename": "frames/stage-2-detour-baseline.png",
+      "sha256": "a6fb5b50799a12b344a3b396a77ecd79f92e046ef8c9a7f78d42fc0fb5b78956"
+    },
+    "pilot": {
+      "filename": "frames/stage-2-detour-pilot.png",
+      "sha256": "b8d2d0ca80c8e6c8437bc07b53048528ead5428464c0c868714e22f0e3cc343d"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 0,
+    "name": "stage-2-repeat",
+    "baseline": {
+      "filename": "frames/stage-2-repeat-baseline.png",
+      "sha256": "116ca19ca017c275584559aed0c1012f23c284b6c462c30c8a82a08a6c40bb2f"
+    },
+    "pilot": {
+      "filename": "frames/stage-2-repeat-pilot.png",
+      "sha256": "2bcf1342572b86f25a7d711bd24cc00cfceaaec8ef071799eb67e9d4b9b41990"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 0,
+    "name": "phase-0",
+    "baseline": {
+      "filename": "frames/phase-0-baseline.png",
+      "sha256": "116ca19ca017c275584559aed0c1012f23c284b6c462c30c8a82a08a6c40bb2f"
+    },
+    "pilot": {
+      "filename": "frames/phase-0-pilot.png",
+      "sha256": "2bcf1342572b86f25a7d711bd24cc00cfceaaec8ef071799eb67e9d4b9b41990"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 0.8,
+    "name": "phase-1",
+    "baseline": {
+      "filename": "frames/phase-1-baseline.png",
+      "sha256": "aa00fffcbe231d535074ed47fd62b58908dc5071597ab88cecfdb111c501ecbd"
+    },
+    "pilot": {
+      "filename": "frames/phase-1-pilot.png",
+      "sha256": "22b106de1eee600c15cfb04e498dab8f325617efbcdbee48c0d953b88a07eb1b"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 1.8,
+    "name": "phase-2",
+    "baseline": {
+      "filename": "frames/phase-2-baseline.png",
+      "sha256": "46e056fb0e661ef7732ba5a277c427541f4d31abd31c76c8f08fa8fd63e5d24e"
+    },
+    "pilot": {
+      "filename": "frames/phase-2-pilot.png",
+      "sha256": "cfcf4353e784a069f265e6f5cf311b4d7729f53185022c3bb753a5a21215e971"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 2.9,
+    "name": "phase-3",
+    "baseline": {
+      "filename": "frames/phase-3-baseline.png",
+      "sha256": "4ccbe968a9dc2ff96fc6d88f923534915d6ebb8ab0d3b1ba483718f66e9051dc"
+    },
+    "pilot": {
+      "filename": "frames/phase-3-pilot.png",
+      "sha256": "fc6f33b503eea4a1fb96d8904f03deae3bcecb1c3589ec6d54962a10af6a10a2"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 4,
+    "name": "phase-4",
+    "baseline": {
+      "filename": "frames/phase-4-baseline.png",
+      "sha256": "dc13cda4c368c091979894955be0150aa46177e96cc7b42fcdb623ed6102fa8b"
+    },
+    "pilot": {
+      "filename": "frames/phase-4-pilot.png",
+      "sha256": "5b5cb367c8792743590765e6bd049998fb3edc3032930452a8d85342cbd8f9ad"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 5.1,
+    "name": "phase-5",
+    "baseline": {
+      "filename": "frames/phase-5-baseline.png",
+      "sha256": "6bf5f23a263154912b7fd26b95283d70cf4110fb615b4d99fe07ffd57aeded3a"
+    },
+    "pilot": {
+      "filename": "frames/phase-5-pilot.png",
+      "sha256": "587eb4685302c1e3f77400a70348288c7278f5283873d63969646695fdef1bfa"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 5.933333333333334,
+    "name": "seam-before-2",
+    "baseline": {
+      "filename": "frames/seam-before-2-baseline.png",
+      "sha256": "ee7771c0caf988f6cb33baaa8aa268a297a467b7911ac1f1adbc094a067ada12"
+    },
+    "pilot": {
+      "filename": "frames/seam-before-2-pilot.png",
+      "sha256": "2bcf1342572b86f25a7d711bd24cc00cfceaaec8ef071799eb67e9d4b9b41990"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 5.966666666666667,
+    "name": "seam-before",
+    "baseline": {
+      "filename": "frames/seam-before-baseline.png",
+      "sha256": "f1068df61e36de5fe239c1e5044343d843995e67340faf3de10d8c0fa6157123"
+    },
+    "pilot": {
+      "filename": "frames/seam-before-pilot.png",
+      "sha256": "2bcf1342572b86f25a7d711bd24cc00cfceaaec8ef071799eb67e9d4b9b41990"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 6,
+    "name": "seam-end",
+    "baseline": {
+      "filename": "frames/seam-end-baseline.png",
+      "sha256": "116ca19ca017c275584559aed0c1012f23c284b6c462c30c8a82a08a6c40bb2f"
+    },
+    "pilot": {
+      "filename": "frames/seam-end-pilot.png",
+      "sha256": "2bcf1342572b86f25a7d711bd24cc00cfceaaec8ef071799eb67e9d4b9b41990"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 0.03333333333333333,
+    "name": "seam-after",
+    "baseline": {
+      "filename": "frames/seam-after-baseline.png",
+      "sha256": "66a9d976e0eaf3698e946d2aab4b762c892ba2d72c405f21b5c9ddc3bac5242e"
+    },
+    "pilot": {
+      "filename": "frames/seam-after-pilot.png",
+      "sha256": "2bcf1342572b86f25a7d711bd24cc00cfceaaec8ef071799eb67e9d4b9b41990"
+    }
+  },
+  {
+    "stage": 2,
+    "time": 0.06666666666666667,
+    "name": "seam-after-2",
+    "baseline": {
+      "filename": "frames/seam-after-2-baseline.png",
+      "sha256": "303f1ffda82228a8a05126d02d1b58f20742eb8828f9bbf33b3518164d9a49cd"
+    },
+    "pilot": {
+      "filename": "frames/seam-after-2-pilot.png",
+      "sha256": "2bcf1342572b86f25a7d711bd24cc00cfceaaec8ef071799eb67e9d4b9b41990"
+    }
+  }
+]

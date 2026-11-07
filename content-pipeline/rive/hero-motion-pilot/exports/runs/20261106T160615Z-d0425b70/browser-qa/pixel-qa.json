@@ -1,0 +1,211 @@
+{
+  "artistic_approval": false,
+  "fixed_region_artboard_y": [
+    720,
+    1120
+  ],
+  "visible_fixed_pixels": 9515,
+  "fixed_region_deltas": [
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    }
+  ],
+  "upper_motion": [
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 9988,
+      "mean_channel_delta": 4.3740926957124175,
+      "max_channel_delta": 219
+    },
+    {
+      "changed_pixels": 12554,
+      "mean_channel_delta": 7.049179146167847,
+      "max_channel_delta": 219
+    },
+    {
+      "changed_pixels": 12198,
+      "mean_channel_delta": 6.733708569357593,
+      "max_channel_delta": 219
+    },
+    {
+      "changed_pixels": 10785,
+      "mean_channel_delta": 5.3414727913835875,
+      "max_channel_delta": 219
+    },
+    {
+      "changed_pixels": 6006,
+      "mean_channel_delta": 2.906841750113632,
+      "max_channel_delta": 219
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    },
+    {
+      "changed_pixels": 0,
+      "mean_channel_delta": 0.0,
+      "max_channel_delta": 0
+    }
+  ],
+  "extent": [
+    {
+      "pixels": 52373,
+      "bbox": [
+        131,
+        28,
+        351,
+        505
+      ],
+      "edge_margin": 28
+    },
+    {
+      "pixels": 52656,
+      "bbox": [
+        132,
+        28,
+        374,
+        505
+      ],
+      "edge_margin": 28
+    },
+    {
+      "pixels": 51446,
+      "bbox": [
+        132,
+        27,
+        391,
+        505
+      ],
+      "edge_margin": 27
+    },
+    {
+      "pixels": 51589,
+      "bbox": [
+        132,
+        27,
+        398,
+        505
+      ],
+      "edge_margin": 27
+    },
+    {
+      "pixels": 51906,
+      "bbox": [
+        132,
+        28,
+        407,
+        505
+      ],
+      "edge_margin": 28
+    },
+    {
+      "pixels": 52574,
+      "bbox": [
+        131,
+        29,
+        358,
+        505
+      ],
+      "edge_margin": 29
+    },
+    {
+      "pixels": 52373,
+      "bbox": [
+        131,
+        28,
+        351,
+        505
+      ],
+      "edge_margin": 28
+    },
+    {
+      "pixels": 52373,
+      "bbox": [
+        131,
+        28,
+        351,
+        505
+      ],
+      "edge_margin": 28
+    }
+  ],
+  "neutral_fidelity": {
+    "changed_pixels": 25,
+    "mean_channel_delta": 0.005270854362398737,
+    "max_channel_delta": 110
+  },
+  "endpoint": {
+    "changed_pixels": 0,
+    "mean_channel_delta": 0.0,
+    "max_channel_delta": 0
+  },
+  "native_replays": {
+    "native-mid": {
+      "changed_pixels": 12427,
+      "mean_channel_delta": 4.4734140849444834,
+      "max_channel_delta": 219
+    },
+    "native-replay": {
+      "changed_pixels": 12450,
+      "mean_channel_delta": 4.490335688588659,
+      "max_channel_delta": 219
+    },
+    "native-rapid-replay": {
+      "changed_pixels": 12364,
+      "mean_channel_delta": 4.433816031265367,
+      "max_channel_delta": 219
+    }
+  },
+  "native_end": {
+    "changed_pixels": 0,
+    "mean_channel_delta": 0.0,
+    "max_channel_delta": 0
+  },
+  "native_rest": {
+    "changed_pixels": 0,
+    "mean_channel_delta": 0.0,
+    "max_channel_delta": 0
+  }
+}

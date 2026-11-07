@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Chewy · приветствие</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="../vendor/rive.js" defer></script>
+  <script src="viewer.js" defer></script>
+</head>
+<body>
+<main>
+  <header><a class="brand" href="/">chewy <span>мастерская движения</span></a><span class="badge">Проба · приветствие</span></header>
+  <section class="intro">
+    <p class="eyebrow">Тот же Чуви, один новый жест</p>
+    <h1>Рад тебя видеть</h1>
+    <p>Чуви замечает тебя, поднимает руку и машет. Слева — исходная поза, справа — проба движения с черновой открытой ладонью.</p>
+  </section>
+  <div class="toolbar">
+    <div class="actions"><button id="replay" disabled>Помахать снова</button><button id="playback" disabled>Пауза</button><button id="rest" disabled>Исходная поза</button></div>
+    <button id="size" aria-pressed="false">В размере лагеря</button>
+  </div>
+  <section class="comparison" aria-label="Исходный рисунок и анимированный Чуви">
+    <article class="card"><div class="card-heading"><h2>Исходник</h2><span>Проверяем узнаваемость</span></div><div class="canvas-wrap"><canvas data-version="baseline" aria-label="Чуви в исходной неподвижной позе"></canvas></div><p>Рисунок и пропорции, с которыми сравниваем жест.</p></article>
+    <article class="card candidate"><div class="card-heading"><h2>Приветствие</h2><span>Рука, взгляд, отклик тела</span></div><div class="canvas-wrap"><canvas data-version="pilot" aria-label="Чуви машет рукой"></canvas></div><p>Стопы остаются на месте. Рука возвращается в исходную позу.</p></article>
+  </section>
+  <p id="status" role="status">Загружаем обе версии…</p>
+  <div id="error" role="alert" hidden><p></p><button id="retry">Загрузить снова</button></div>
+  <section class="scrubber" aria-label="Разбор жеста по времени">
+    <div class="scrubber-heading"><label for="timeline">Разобрать жест</label><output id="time" for="timeline">0,00 с</output></div>
+    <input id="timeline" type="range" min="0" max="4.8" step="0.01" value="0" disabled aria-label="Момент приветствия">
+    <div class="poses" role="group" aria-label="Опорные моменты"><button data-time="0" disabled>Покой</button><button data-time="0.65" disabled>Подготовка</button><button data-time="1.8" disabled>Привет</button><button data-time="3.6" disabled>Возврат</button><button data-time="4.8" disabled>Снова дома</button></div>
+  </section>
+  <section class="watch-for"><h2>На что посмотреть</h2><div><p><strong>Узнаваемость</strong>Лицо и одежда сохраняются. Открытая ладонь — новая черновая поза.</p><p><strong>Жест</strong>Подготовка, взмах и возвращение читаются без спешки.</p><p><strong>Опора</strong>Стопы не скользят, рука не распадается на отдельные кусочки.</p></div></section>
+  <details><summary>Как повторить эту пробу</summary><p>Бриф → подготовленный рисунок → риг → позы → ритм → проверка в настоящем Rive runtime.</p><p>Сборка: <code id="revision">загружается</code>. Художественная приёмка остаётся за владельцем.</p><a id="manifest">Отчёт сборки</a></details>
+  <footer>Черновик приветствия. Основной лагерь использует прежнего героя.</footer>
+</main>
+</body>
+</html>

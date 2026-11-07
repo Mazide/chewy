@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-06",
+  "renderer": "Rive CLI 1.8.0",
+  "status": "draft-for-owner-review",
+  "assets": {
+    "tent": {
+      "artboard": "TentStates",
+      "state_machine": "TentStates",
+      "view_model": "TentStates",
+      "property": "stage",
+      "values": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "initial": 0,
+      "source_sha256": "edb333ae3c2333dbc9ded3170e524c95e70612fb2b716b910aa9f37786716015",
+      "bytes": 330995,
+      "verify_errors": 0,
+      "verify_warnings": 0,
+      "inspect_problems": []
+    },
+    "provisions": {
+      "artboard": "ProvisionsStates",
+      "state_machine": "ProvisionsStates",
+      "view_model": "ProvisionsStates",
+      "property": "stage",
+      "values": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "initial": 0,
+      "source_sha256": "1446a862bfd5aa9c07cb9b715f39e6ccd043d930c5f1be65dff9c024054b0a64",
+      "bytes": 60302,
+      "verify_errors": 0,
+      "verify_warnings": 0,
+      "inspect_problems": []
+    },
+    "plants": {
+      "artboard": "PlantStates",
+      "state_machine": "PlantStates",
+      "view_model": "PlantStates",
+      "property": "stage",
+      "values": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "initial": 0,
+      "source_sha256": "5157a4e471eab450c4ee07ba4960a78836455284c72ec938e9c5aad9581203ad",
+      "bytes": 13318,
+      "verify_errors": 0,
+      "verify_warnings": 0,
+      "inspect_problems": []
+    },
+    "campfire": {
+      "source": "../campfire/exports/campfire.riv",
+      "sha256": "ca3ab3392d6d4a8b84f378d010f3e35463ca73f8e4c2a8126b320817fa6fc611",
+      "artboard": "Campfire",
+      "property": "stage",
+      "values": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "asset_default": 2,
+      "viewer_initial": 0,
+      "status": "existing unapproved study"
+    }
+  },
+  "gameplay_thresholds": false,
+  "native_tested": false,
+  "final_art": false
+}

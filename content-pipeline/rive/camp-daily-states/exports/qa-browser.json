@@ -1,0 +1,30 @@
+{
+  "states": {
+    "tent": {
+      "distinct": 3,
+      "stableOnPause": true,
+      "cleanReturn": true
+    },
+    "campfire": {
+      "distinct": 3,
+      "stableOnPause": true,
+      "cleanReturn": true
+    },
+    "plants": {
+      "distinct": 3,
+      "stableOnPause": true,
+      "cleanReturn": true
+    },
+    "lamp": {
+      "distinct": 3,
+      "stableOnPause": true,
+      "cleanReturn": true
+    }
+  },
+  "widths": [
+    320,
+    390,
+    430
+  ],
+  "errors": []
+}

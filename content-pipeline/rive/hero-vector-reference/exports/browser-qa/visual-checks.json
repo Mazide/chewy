@@ -1,0 +1,86 @@
+{
+  "transparent_vector_poses": true,
+  "pose_bounds": [
+    {
+      "time": 0,
+      "bounds": [
+        31,
+        29,
+        488,
+        1017
+      ],
+      "minimum_margin": 17
+    },
+    {
+      "time": 1.6666666666666667,
+      "bounds": [
+        22,
+        28,
+        488,
+        1017
+      ],
+      "minimum_margin": 17
+    },
+    {
+      "time": 2.4,
+      "bounds": [
+        23,
+        28,
+        488,
+        1017
+      ],
+      "minimum_margin": 17
+    },
+    {
+      "time": 3.2,
+      "bounds": [
+        20,
+        28,
+        487,
+        1017
+      ],
+      "minimum_margin": 18
+    },
+    {
+      "time": 3.7916666666666665,
+      "bounds": [
+        49,
+        28,
+        461,
+        1017
+      ],
+      "minimum_margin": 28
+    },
+    {
+      "time": 4,
+      "bounds": [
+        59,
+        29,
+        459,
+        1017
+      ],
+      "minimum_margin": 29
+    },
+    {
+      "time": 4.6,
+      "bounds": [
+        59,
+        29,
+        458,
+        1017
+      ],
+      "minimum_margin": 29
+    },
+    {
+      "time": 5.041666666666667,
+      "bounds": [
+        59,
+        29,
+        458,
+        1017
+      ],
+      "minimum_margin": 29
+    }
+  ],
+  "reference_to_vector_pixel_comparison": false
+}

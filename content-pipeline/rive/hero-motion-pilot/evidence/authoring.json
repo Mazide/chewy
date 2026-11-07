@@ -1,0 +1,133 @@
+{
+  "scope": "Native authoring structural and rendered frame verification; final aesthetic acceptance is owner review.",
+  "sourceSha256": {
+    "content-pipeline/rive/hero-motion-pilot/chewy/scene.rml": "028630911f7e1f9d08b009f5f2191e659f70dfdd97719a0e8b1e7e276086d448",
+    "content-pipeline/rive/hero-motion-pilot/chewy/rive.yaml": "4e81aea5e6f03fa2722133cd9470dc2167ec7006ca155442a92b88ac9496c3e5",
+    "content-pipeline/rive/hero-wardrobe/references/hero-from-editor.rml": "20e5ebb18b7e18d8ee3caeeaafe1b63dc592427c7c4e5fd3d2945b228ea9c482",
+    "content-pipeline/rive/hero-motion-pilot/baseline/scene.rml": "9d6b6191a7efcbfeca4b35220fe4614ceccde8f78be39a3f609b488e7acdb5b6"
+  },
+  "sourceUnchangedByVerifyBuildAndCapture": true,
+  "cliVersion": "1.8.0",
+  "verify": {
+    "success": true,
+    "command": "verify",
+    "data": {
+      "riv": null,
+      "bytes": 0,
+      "buildMs": 107.4,
+      "problems": []
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "success": true,
+    "command": "build",
+    "data": {
+      "riv": "content-pipeline/rive/hero-motion-pilot/chewy/build/chewy.riv",
+      "bytes": 11873,
+      "buildMs": 107.2,
+      "problems": []
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "inspectProblems": [],
+  "counts": {
+    "RootBone": 2,
+    "Bone": 1,
+    "Skin": 1,
+    "Tendon": 3,
+    "CubicWeight": 18,
+    "KeyFrameDouble": 124
+  },
+  "artFidelity": {
+    "sourceOriginalShapes": 26,
+    "originalShapesPreservedExactly": [
+      "Easy smile",
+      "Right eye",
+      "Left eye",
+      "Front golden hair",
+      "Face and neck",
+      "Back hair",
+      "Right fingers",
+      "Right knuckles",
+      "Right hand",
+      "Left fingers",
+      "Left knuckles",
+      "Left hand",
+      "Shirt hem right",
+      "Shirt hem left",
+      "Linen shirt",
+      "Left sleeve",
+      "Right wrap lower",
+      "Right wrap upper",
+      "Right cuff",
+      "Left wrap lower",
+      "Left wrap upper",
+      "Left cuff",
+      "Right boot",
+      "Left boot",
+      "Blue trousers"
+    ],
+    "modifiedOriginalShapes": [
+      "Right sleeve"
+    ],
+    "headSubtreeIdentical": true,
+    "originalUpperOffsetPreserved": {
+      "x": -1,
+      "y": -6.5
+    },
+    "extraArt": "Explicit draft open-palm pose and crease; hidden in neutral. Original fist retained.",
+    "neutralDifferentPixels": 156,
+    "neutralTotalPixels": 851200,
+    "neutralMeanAbsoluteChannelDifference": 0.0029126527255639097,
+    "neutralMaxChannelDifference": 64,
+    "neutralDifferenceExplanation": "Continuous source sleeve exactly subdivided; native skin bind and reparented fist preserve rest shape, with minor curve rasterization differences."
+  },
+  "animation": {
+    "Idle": {
+      "frames": 240,
+      "seconds": 4,
+      "loop": "loop"
+    },
+    "Wave": {
+      "frames": 288,
+      "seconds": 4.8,
+      "loop": "oneShot"
+    },
+    "dynamicPropertiesCount": 10,
+    "IdleWaveOwnSameProperties": true,
+    "allClipEndpointsEqual": true,
+    "noAnyStateLoop": true,
+    "replay": "action=0 then at least one advance frame, action=1; Wave state reset=true. action=1 holds final neutral stance.",
+    "keyframeCurves": "Sparse pose-to-pose cubic, zero endpoint velocity; explicit hold keys for hand-pose substitution."
+  },
+  "rig": {
+    "shoulderSeamPinned": true,
+    "allWeightSums255": true,
+    "rootXYUnkeyed": true,
+    "lowerBodyGeometryUntouched": true
+  },
+  "render": {
+    "feetRegion": "y>=720 on760x1120 artboard",
+    "feetDifferentPixels": {
+      "authoring-wave-82.png": 0,
+      "authoring-wave-144.png": 0,
+      "authoring-end.png": 0
+    },
+    "wave288VsNeutralDifferentPixels": 0,
+    "images": [
+      "authoring-baseline.png",
+      "authoring-neutral.png",
+      "authoring-wave-82.png",
+      "authoring-wave-144.png",
+      "authoring-end.png"
+    ]
+  },
+  "limitations": [
+    "Draft palm is a simple alternate hand pose, not final approved art.",
+    "Pose switch is intentionally discrete during lift/lower; no finger rig.",
+    "Runtime platform verification belongs to release/browser QA; this report covers CLI renderer."
+  ]
+}

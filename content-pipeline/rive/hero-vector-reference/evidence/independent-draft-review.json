@@ -1,0 +1,232 @@
+{
+  "status": "draft_visual_issues_reported_to_author",
+  "source_rml_sha256": "738ccd7fdedb50599ceb681d20389a861e1d9131f22a18987b693b066aa3f862",
+  "scope": "Независимый ранний просмотр временной копии; не художественная приёмка и не frozen final.",
+  "visual_issues": [
+    {
+      "frames": [
+        42
+      ],
+      "description": "Самопересечение внутреннего контура локтя; тонкая шпилька к левому краю."
+    },
+    {
+      "frames": [
+        45,
+        48,
+        60,
+        72,
+        84,
+        87,
+        90
+      ],
+      "description": "SL рукав сгибается в острый треугольник/клин; округлая ширина локтя не сохраняется."
+    },
+    {
+      "frames": [
+        90,
+        96
+      ],
+      "description": "Новая ладонь выглядит как два вытянутых пальца; нуждается в художественном ревью относительно исходной спокойной кисти."
+    }
+  ],
+  "observed_positive": [
+    "Последовательность temple → watch узнаваема по конечным положениям.",
+    "Часы и две сходящиеся руки читаются в финале."
+  ],
+  "pixel_checks": [
+    {
+      "frame": 0,
+      "time_seconds": 0.0,
+      "non_background_bounds": [
+        32,
+        29,
+        488,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "1e9ce9396ddbcf8e5425d791202fce64fe3d32cc9d5f718088aca7becf81e9b0"
+    },
+    {
+      "frame": 36,
+      "time_seconds": 1.5,
+      "non_background_bounds": [
+        32,
+        29,
+        488,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "1e9ce9396ddbcf8e5425d791202fce64fe3d32cc9d5f718088aca7becf81e9b0"
+    },
+    {
+      "frame": 40,
+      "time_seconds": 1.6666666666666667,
+      "non_background_bounds": [
+        16,
+        29,
+        488,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "748ee0a9e4e5f4422b89d381f6f0aebb9638d72f6d67f103771e23770218b335"
+    },
+    {
+      "frame": 42,
+      "time_seconds": 1.75,
+      "non_background_bounds": [
+        4,
+        29,
+        488,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "9b60b1fe958bb8ab2c657d04f0d6f4f337b6cc6d50820cb799963eabf2fd2883"
+    },
+    {
+      "frame": 45,
+      "time_seconds": 1.875,
+      "non_background_bounds": [
+        22,
+        29,
+        488,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "0385759cd6435779bf9b825c4d0db6688a25e2000f144e68b95900383c91b257"
+    },
+    {
+      "frame": 48,
+      "time_seconds": 2.0,
+      "non_background_bounds": [
+        27,
+        29,
+        488,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "6837e4081a47558fda1bb006b483cc6f7a07c96779a7e2f1151245a76d86cb0c"
+    },
+    {
+      "frame": 60,
+      "time_seconds": 2.5,
+      "non_background_bounds": [
+        27,
+        29,
+        488,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "0de2c2c78a116fed86c9e0d75412b00efe4d14a8df7d6d92d79f6070ae9d644c"
+    },
+    {
+      "frame": 72,
+      "time_seconds": 3.0,
+      "non_background_bounds": [
+        26,
+        29,
+        488,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "ad2afbf22eb1835fcae641ad9dbabceee45783ac392a6b814f0a75d486a67838"
+    },
+    {
+      "frame": 84,
+      "time_seconds": 3.5,
+      "non_background_bounds": [
+        22,
+        29,
+        487,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "d92ede9eebcb4d3b4c815f18cd2393b434403652cfe5dcf835664891251457d7"
+    },
+    {
+      "frame": 87,
+      "time_seconds": 3.625,
+      "non_background_bounds": [
+        25,
+        29,
+        474,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "f30898b0f2671a52e18d1c16044b3a230e3ed7eb343200a22f98ac82c71c438b"
+    },
+    {
+      "frame": 90,
+      "time_seconds": 3.75,
+      "non_background_bounds": [
+        55,
+        29,
+        464,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "f57bd6b97d34fafe7219de8c999f5950808323dd7dc3013b236c8fef33abf135"
+    },
+    {
+      "frame": 93,
+      "time_seconds": 3.875,
+      "non_background_bounds": [
+        59,
+        29,
+        458,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "0c9602a2c030205b787941806a1364f91081c06133e4f883cc58fe0f1a8a6540"
+    },
+    {
+      "frame": 96,
+      "time_seconds": 4.0,
+      "non_background_bounds": [
+        60,
+        29,
+        459,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "147db5c27488b08cfbe8d42bb457532ca0757a2b808457bdcd2a53ce2573af54"
+    },
+    {
+      "frame": 99,
+      "time_seconds": 4.125,
+      "non_background_bounds": [
+        60,
+        29,
+        458,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "7974e9f8f72adbda7d3b1c94ed095c721ec9db20fe3edaae382744e247db2d99"
+    },
+    {
+      "frame": 102,
+      "time_seconds": 4.25,
+      "non_background_bounds": [
+        59,
+        29,
+        458,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "59f71fad6c566c8a9a1a3bdb090268df8e294cfc3fb03f6849ac35972a4305e4"
+    },
+    {
+      "frame": 120,
+      "time_seconds": 5.0,
+      "non_background_bounds": [
+        59,
+        29,
+        458,
+        1018
+      ],
+      "changed_feet_pixels_y850_plus": 0,
+      "sha256": "fcc3a2d8c3a6f98f9cedaecc1b9e030afe458246fb86d586d2cc6bc9149148ca"
+    }
+  ],
+  "all_feet_samples_static": true,
+  "artistic_approval": false
+}

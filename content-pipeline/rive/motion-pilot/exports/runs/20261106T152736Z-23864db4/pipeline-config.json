@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "required_cli_version": "1.8.0",
+  "assets": [
+    {
+      "slug": "plants",
+      "project": "plants",
+      "baseline": "../camp-daily-states/plants",
+      "artboard": "PlantStates",
+      "state_machine": "PlantStates",
+      "view_model": "PlantStates",
+      "property": "stage",
+      "values": [0, 1, 2],
+      "animated_values": [1, 2],
+      "sample_seconds": [0.6, 1.6, 3.1, 5.9],
+      "edit_probe": {"type": "Node", "name": "Grass", "property": "x", "delta": 8}
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "run_id": "20261106T160615Z-d0425b70",
+  "created_at": "2026-11-06T16:06:15.923669+00:00",
+  "status": "technical_build_passed",
+  "cli": {
+    "version": "rive 1.8.0",
+    "path": "/tmp/chewy-rive-cli/bin/rive",
+    "sha256": "3c75ec70b9ddd5e71f641997f1405dcb410257b5c5b0b7b851889c30784ec87f"
+  },
+  "auth": {
+    "status": "not_logged_in",
+    "exit_code": 3
+  },
+  "config_sha256": "213455654ff765babf72bb1cedc6a96b733a89e2f51922d3de769f59f3964726",
+  "assets": {
+    "chewy": {
+      "contract": {
+        "artboard": "ChewyMotion",
+        "state_machine": "ChewyMotion",
+        "view_model": "ChewyMotion",
+        "property": "action",
+        "values": [
+          0,
+          1
+        ]
+      },
+      "source_path": "/home/looseconfetti/projects/chewy/content-pipeline/rive/hero-motion-pilot/chewy",
+      "source_hashes": {
+        "rive.yaml": "4e81aea5e6f03fa2722133cd9470dc2167ec7006ca155442a92b88ac9496c3e5",
+        "scene.rml": "f613c65a19e6d6f674948ca66b357f8a652ab884891199798e111aec6c46e314"
+      },
+      "source_snapshot": "sources/chewy/master",
+      "baseline_source_path": "/home/looseconfetti/projects/chewy/content-pipeline/rive/hero-motion-pilot/baseline",
+      "baseline_source_hashes": {
+        "rive.yaml": "4e81aea5e6f03fa2722133cd9470dc2167ec7006ca155442a92b88ac9496c3e5",
+        "scene.rml": "9d6b6191a7efcbfeca4b35220fe4614ceccde8f78be39a3f609b488e7acdb5b6"
+      },
+      "baseline_source_snapshot": "sources/chewy/baseline",
+      "chewy_checks": {
+        "verify": "chewy-verify.json",
+        "inspect": "chewy-inspect.json",
+        "artboards": [
+          {
+            "name": "ChewyMotion",
+            "objects": 683,
+            "types": {
+              "AnimationState": 2,
+              "AnyState": 1,
+              "Artboard": 1,
+              "BindablePropertyNumber": 4,
+              "Bone": 1,
+              "CubicDetachedVertex": 202,
+              "CubicEaseInterpolator": 114,
+              "CubicWeight": 18,
+              "DataBindContext": 4,
+              "Ellipse": 2,
+              "EntryState": 1,
+              "ExitState": 1,
+              "Fill": 14,
+              "KeyFrameDouble": 124,
+              "KeyedObject": 18,
+              "KeyedProperty": 20,
+              "LayoutComponentStyle": 1,
+              "LinearAnimation": 2,
+              "Node": 9,
+              "PointsPath": 26,
+              "RootBone": 2,
+              "Shape": 28,
+              "Skin": 1,
+              "SolidColor": 40,
+              "StateMachine": 1,
+              "StateMachineLayer": 1,
+              "StateTransition": 4,
+              "Stroke": 26,
+              "Tendon": 3,
+              "TransitionPropertyViewModelComparator": 4,
+              "TransitionValueNumberComparator": 4,
+              "TransitionViewModelCondition": 4
+            }
+          }
+        ]
+      },
+      "chewy_runtime": {
+        "kind": "official_cli_headless_runtime",
+        "frames": {
+          "0": [
+            "frames/chewy-stage-0-t0.png",
+            "frames/chewy-stage-0-t1.png",
+            "frames/chewy-stage-0-t2.png",
+            "frames/chewy-stage-0-t3.png"
+          ],
+          "1": [
+            "frames/chewy-stage-1-t0.png",
+            "frames/chewy-stage-1-t1.png",
+            "frames/chewy-stage-1-t2.png",
+            "frames/chewy-stage-1-t3.png"
+          ]
+        },
+        "sample_seconds": [
+          0.7,
+          1.5,
+          2.6,
+          4.8
+        ],
+        "changed_pixels_against_first_sample": {
+          "0": [
+            7537,
+            4507,
+            1768
+          ],
+          "1": [
+            42604,
+            34934,
+            38790
+          ]
+        },
+        "stage_changed_pixels": [
+          38758
+        ],
+        "standalone_export_load_tested": false,
+        "artistic_quality_approved": false
+      },
+      "chewy_riv": {
+        "file": "chewy.riv",
+        "sha256": "bc8d0fd680b55736296c46202d9e539d29be35e61e398f5ef013b185481fe298",
+        "bytes": 11873,
+        "signed": false
+      },
+      "baseline-chewy_checks": {
+        "verify": "baseline-chewy-verify.json",
+        "inspect": "baseline-chewy-inspect.json",
+        "artboards": [
+          {
+            "name": "ChewyMotion",
+            "objects": 338,
+            "types": {
+              "AnimationState": 2,
+              "AnyState": 1,
+              "Artboard": 1,
+              "BindablePropertyNumber": 4,
+              "CubicDetachedVertex": 171,
+              "CubicEaseInterpolator": 2,
+              "DataBindContext": 4,
+              "Ellipse": 2,
+              "EntryState": 1,
+              "ExitState": 1,
+              "Fill": 13,
+              "LayoutComponentStyle": 1,
+              "LinearAnimation": 2,
+              "Node": 4,
+              "PointsPath": 24,
+              "Shape": 26,
+              "SolidColor": 37,
+              "StateMachine": 1,
+              "StateMachineLayer": 1,
+              "StateTransition": 4,
+              "Stroke": 24,
+              "TransitionPropertyViewModelComparator": 4,
+              "TransitionValueNumberComparator": 4,
+              "TransitionViewModelCondition": 4
+            }
+          }
+        ]
+      },
+      "baseline-chewy_runtime": {
+        "kind": "official_cli_headless_runtime",
+        "frames": {
+          "0": [
+            "frames/baseline-chewy-stage-0-t0.png",
+            "frames/baseline-chewy-stage-0-t1.png",
+            "frames/baseline-chewy-stage-0-t2.png",
+            "frames/baseline-chewy-stage-0-t3.png"
+          ],
+          "1": [
+            "frames/baseline-chewy-stage-1-t0.png",
+            "frames/baseline-chewy-stage-1-t1.png",
+            "frames/baseline-chewy-stage-1-t2.png",
+            "frames/baseline-chewy-stage-1-t3.png"
+          ]
+        },
+        "sample_seconds": [
+          0.7,
+          1.5,
+          2.6,
+          4.8
+        ],
+        "changed_pixels_against_first_sample": {
+          "0": [
+            0,
+            0,
+            0
+          ],
+          "1": [
+            0,
+            0,
+            0
+          ]
+        },
+        "stage_changed_pixels": [
+          0
+        ],
+        "standalone_export_load_tested": false,
+        "artistic_quality_approved": false
+      },
+      "baseline-chewy_riv": {
+        "file": "baseline-chewy.riv",
+        "sha256": "45746648b973da85dc20a150243a5173f844d6f9f9cf30403960235717f19f47",
+        "bytes": 6771,
+        "signed": false
+      },
+      "local_edit_preservation": {
+        "status": "passed",
+        "scope": "local_RML_edit_then_two_builds_and_runtime_capture",
+        "gui_editor_tested": false,
+        "node": "Hero placement",
+        "property": "x",
+        "before": "127",
+        "after": "135.0",
+        "changed_pixels": 65316,
+        "edited_source_sha256": "9470660c3e57c428453b60677dce6ff044646506c76bf4aed7ee0414b5c52464",
+        "source_preserved": true
+      },
+      "editable_roundtrip": {
+        "status": "blocked_by_auth",
+        "gui_editor_tested": false,
+        "remedy": "Run rive login interactively, then rerun this pipeline; no account files are pushed."
+      }
+    }
+  },
+  "browser_qa": {
+    "status": "not_run"
+  },
+  "gui_editor_tested": false,
+  "native_tested": false,
+  "artistic_quality_approved": false,
+  "reproduce_config": "reproduce.json",
+  "motion_brief": {
+    "file": "motion-brief.json",
+    "sha256": "7c89b6bb7278dd6e009045ab9830cc2cfea0abecac1f33bf17d1449cc23f496d"
+  },
+  "tooling_sha256": {
+    "pipeline.py": "24e558597b1649fbaa71d340a5302450749abb1d8b742d3cbb024fe64679bbcc",
+    "serve.py": "e6f20229cf801f2116bb16866825835c0ebe7946042918a54e7f32fabf5483ae",
+    "check_motion.mjs": "3829b4dbed370581ec6973f89dfa5fd5e34380f1d3b407621cda9657ed8aac2f",
+    "preview/viewer.js": "a9d6849b4293ad83fe5f69ff570ce4e7cf710e6812234431ac3de6f9d2afb8f0",
+    "preview/index.html": "33ce24e911c66409025b3a1a2544939bad1986a85204d582c8fd0fdd29227127",
+    "preview/review.html": "8917da014cd7136f8ad60017584f7081721cdad3aa2cac9bfd3f577e05a0bee1",
+    "preview/style.css": "02c21ababb1dce7830da3a6ea38ff2482c0f14538e02dc96a53bed06c83a7fe2"
+  },
+  "source_preserved": true
+}

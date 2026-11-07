@@ -1,0 +1,415 @@
+{
+  "passed": true,
+  "scope": "Vector structure, native CLI build, planted feet, bounds and final hold; not artistic acceptance.",
+  "cli_version": "rive 1.8.0",
+  "verify": {
+    "success": true,
+    "command": "verify",
+    "data": {
+      "riv": null,
+      "bytes": 0,
+      "buildMs": 137.3,
+      "problems": []
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "build": {
+    "success": true,
+    "command": "build",
+    "data": {
+      "riv": "/tmp/chewy-vector-build-7ma6nvt3/chewy/build/chewy-vector.riv",
+      "bytes": 14627,
+      "buildMs": 136.1,
+      "problems": []
+    },
+    "errors": [],
+    "warnings": []
+  },
+  "inspect_problems": [],
+  "structure": {
+    "counts": {
+      "Rive": 1,
+      "Artboard": 1,
+      "LayoutComponentStyle": 1,
+      "Node": 12,
+      "Shape": 32,
+      "PointsPath": 28,
+      "CubicDetachedVertex": 216,
+      "Stroke": 30,
+      "SolidColor": 48,
+      "DataBindContext": 6,
+      "Ellipse": 3,
+      "Fill": 18,
+      "RootBone": 3,
+      "Bone": 2,
+      "StraightVertex": 3,
+      "Rectangle": 1,
+      "DrawRules": 5,
+      "DrawTarget": 9,
+      "CubicWeight": 36,
+      "Skin": 2,
+      "Tendon": 6,
+      "LinearAnimation": 2,
+      "KeyedObject": 40,
+      "KeyedProperty": 40,
+      "KeyFrameId": 9,
+      "KeyFrameDouble": 156,
+      "CubicEaseInterpolator": 142,
+      "StateMachine": 1,
+      "StateMachineLayer": 1,
+      "EntryState": 1,
+      "StateTransition": 4,
+      "TransitionViewModelCondition": 4,
+      "TransitionPropertyViewModelComparator": 4,
+      "BindablePropertyNumber": 4,
+      "TransitionValueNumberComparator": 4,
+      "AnyState": 1,
+      "ExitState": 1,
+      "AnimationState": 2,
+      "ViewModel": 1,
+      "ViewModelInstance": 1,
+      "ViewModelInstanceNumber": 3,
+      "ViewModelPropertyNumber": 3
+    },
+    "image_assets": 0,
+    "external_asset_dependencies": 0,
+    "native_arm_bones": [
+      {
+        "name": "Screen right upper arm",
+        "id": "94:1262"
+      },
+      {
+        "name": "Screen right forearm",
+        "id": "94:1263"
+      },
+      {
+        "name": "Screen left upper arm",
+        "id": "94:1012"
+      },
+      {
+        "name": "Screen left forearm",
+        "id": "94:1013"
+      },
+      {
+        "name": "Pinned shoulder seams",
+        "id": "94:1011"
+      }
+    ],
+    "native_bone_keys": true,
+    "one_shot": true,
+    "manual_reference_annotation": true
+  },
+  "source_hashes": {
+    "chewy/scene.rml": "e8f711d2661bb9b990a196ee4241026cffc903fd7d5a48cefca72d39a3dbefef",
+    "chewy/rive.yaml": "d5ac0d89488d93a63ec2df2a553b2a16422968655c70894e3c087198ccf98a3c",
+    "../hero-wardrobe/references/hero-from-editor.rml": "20e5ebb18b7e18d8ee3caeeaafe1b63dc592427c7c4e5fd3d2945b228ea9c482",
+    "evidence/reference-poses.json": "6b5b6b35cd548987b15295c48df1ace5c1cdac080dd466890198cafe1f44b867",
+    "evidence/retarget-fit.json": "984f6a7824972ad8be782d6df5a2cc1c1225f7008577333faedd96a20d342a98"
+  },
+  "source_unchanged": true,
+  "riv_bytes": 14627,
+  "render_samples": [
+    {
+      "reference_frame": 0,
+      "cli_advance_60hz_ticks": 2,
+      "foreground_bounds": [
+        32,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 36,
+      "cli_advance_60hz_ticks": 92,
+      "foreground_bounds": [
+        32,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 38,
+      "cli_advance_60hz_ticks": 97,
+      "foreground_bounds": [
+        28,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 39,
+      "cli_advance_60hz_ticks": 99,
+      "foreground_bounds": [
+        25,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 40,
+      "cli_advance_60hz_ticks": 102,
+      "foreground_bounds": [
+        21,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 41,
+      "cli_advance_60hz_ticks": 104,
+      "foreground_bounds": [
+        19,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 42,
+      "cli_advance_60hz_ticks": 107,
+      "foreground_bounds": [
+        18,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 43,
+      "cli_advance_60hz_ticks": 109,
+      "foreground_bounds": [
+        18,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 44,
+      "cli_advance_60hz_ticks": 112,
+      "foreground_bounds": [
+        19,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 45,
+      "cli_advance_60hz_ticks": 114,
+      "foreground_bounds": [
+        19,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 48,
+      "cli_advance_60hz_ticks": 122,
+      "foreground_bounds": [
+        24,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 60,
+      "cli_advance_60hz_ticks": 152,
+      "foreground_bounds": [
+        24,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 72,
+      "cli_advance_60hz_ticks": 182,
+      "foreground_bounds": [
+        22,
+        29,
+        487,
+        1017
+      ],
+      "minimum_margin": 18,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 84,
+      "cli_advance_60hz_ticks": 212,
+      "foreground_bounds": [
+        19,
+        29,
+        485,
+        1017
+      ],
+      "minimum_margin": 19,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 87,
+      "cli_advance_60hz_ticks": 219,
+      "foreground_bounds": [
+        26,
+        29,
+        473,
+        1017
+      ],
+      "minimum_margin": 26,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 90,
+      "cli_advance_60hz_ticks": 227,
+      "foreground_bounds": [
+        48,
+        29,
+        463,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 91,
+      "cli_advance_60hz_ticks": 229,
+      "foreground_bounds": [
+        50,
+        29,
+        459,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 92,
+      "cli_advance_60hz_ticks": 232,
+      "foreground_bounds": [
+        55,
+        29,
+        457,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 93,
+      "cli_advance_60hz_ticks": 234,
+      "foreground_bounds": [
+        59,
+        29,
+        457,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 94,
+      "cli_advance_60hz_ticks": 237,
+      "foreground_bounds": [
+        59,
+        29,
+        458,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 95,
+      "cli_advance_60hz_ticks": 239,
+      "foreground_bounds": [
+        59,
+        29,
+        458,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 96,
+      "cli_advance_60hz_ticks": 242,
+      "foreground_bounds": [
+        60,
+        29,
+        458,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 102,
+      "cli_advance_60hz_ticks": 257,
+      "foreground_bounds": [
+        59,
+        29,
+        457,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    },
+    {
+      "reference_frame": 120,
+      "cli_advance_60hz_ticks": 302,
+      "foreground_bounds": [
+        59,
+        29,
+        457,
+        1017
+      ],
+      "minimum_margin": 29,
+      "feet_changed_pixels": 0
+    }
+  ],
+  "native_final_hold_seconds": [
+    6,
+    10
+  ],
+  "raster_reference_pixel_equality_tested": false,
+  "artistic_approval": false,
+  "apple_runtime_tested": false,
+  "editor_round_trip_tested": false,
+  "limitations": [
+    "Reference joint annotations are manual and approximate.",
+    "Draft hand/watch and limb transitions require owner review.",
+    "No universal video-to-rig extractor or wardrobe compatibility certification."
+  ]
+}

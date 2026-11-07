@@ -1,0 +1,539 @@
+{
+  "kind": "independent_native_vector_rig_audit",
+  "mechanical_checks_passed": true,
+  "artistic_approval": false,
+  "visual_review_required": false,
+  "source_rml_sha256": "e8f711d2661bb9b990a196ee4241026cffc903fd7d5a48cefca72d39a3dbefef",
+  "cli_version": "rive 1.8.0",
+  "structure": {
+    "Shape": 32,
+    "Image": 0,
+    "ImageAsset": 0,
+    "RootBone": 3,
+    "Bone": 2,
+    "Skin": 2,
+    "Tendon": 6,
+    "CubicWeight": 36
+  },
+  "sampled_native_poses": [
+    {
+      "reference_frame": 0,
+      "time_seconds": 0.0,
+      "render_sha256": "1e9ce9396ddbcf8e5425d791202fce64fe3d32cc9d5f718088aca7becf81e9b0",
+      "visible_bounds": [
+        32,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 36,
+      "time_seconds": 1.5,
+      "render_sha256": "1e9ce9396ddbcf8e5425d791202fce64fe3d32cc9d5f718088aca7becf81e9b0",
+      "visible_bounds": [
+        32,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 38,
+      "time_seconds": 1.5833333333333333,
+      "render_sha256": "699d1207fe010f57c2b42aac36bb9d7a20aed19eb61d5e6ed15cd006bda3d607",
+      "visible_bounds": [
+        30,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 39,
+      "time_seconds": 1.625,
+      "render_sha256": "21e62c0ba319a0b681a6206f903c5ccd3460ebdc1794db2c1fe68e90101a7d49",
+      "visible_bounds": [
+        25,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 40,
+      "time_seconds": 1.6666666666666667,
+      "render_sha256": "3997bbc90daaa40835e48f95b88af1df9ca619ae58760ff04a2cde7cefaa66a8",
+      "visible_bounds": [
+        23,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 41,
+      "time_seconds": 1.7083333333333333,
+      "render_sha256": "ac3de3064e17e4d3f514d75dcc08d0b34d6727ce9a315138a3593cdd42a1c181",
+      "visible_bounds": [
+        20,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 42,
+      "time_seconds": 1.75,
+      "render_sha256": "ca2941d9143c822002bf884d1116715217dd1647e1af351b3ef80d8db2b94caa",
+      "visible_bounds": [
+        18,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 43,
+      "time_seconds": 1.7916666666666667,
+      "render_sha256": "8a8b044f822c9b24c408d4c2e83ded432b5af2996ec4ce661fae993fff189e7b",
+      "visible_bounds": [
+        18,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 44,
+      "time_seconds": 1.8333333333333333,
+      "render_sha256": "136613c2d46da36d93db4583885ed5ca4b8a3b11276b1af7e256f7bebfc00b39",
+      "visible_bounds": [
+        19,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 45,
+      "time_seconds": 1.875,
+      "render_sha256": "c4d5b6e9767c94c9d5a6d42df88aa717aaed571933f41e8292f0afa04ed3131c",
+      "visible_bounds": [
+        19,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 48,
+      "time_seconds": 2.0,
+      "render_sha256": "5e3c92daf96e86f2214feb99fc69a01769fd83e0aeca5e58f70627e858def283",
+      "visible_bounds": [
+        24,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 60,
+      "time_seconds": 2.5,
+      "render_sha256": "a5a97cd44d4fc857c49ddc92febcb1dfd1ab972cba00809a2019a0521b78d6f6",
+      "visible_bounds": [
+        24,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 72,
+      "time_seconds": 3.0,
+      "render_sha256": "9d714594108ad9ae8d4e49488963c7070a0289d5f8fb4285f10c485ede485dc3",
+      "visible_bounds": [
+        23,
+        29,
+        488,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 84,
+      "time_seconds": 3.5,
+      "render_sha256": "6cb92f764ba6160db69395a4cee381ed768e623fb7b8dc732e8450381b06d821",
+      "visible_bounds": [
+        19,
+        29,
+        487,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 86,
+      "time_seconds": 3.5833333333333335,
+      "render_sha256": "5a0f4fc337a116833cef7bf3c37bb5a3c5bc08db62a2fe23cbbfb59278bb8647",
+      "visible_bounds": [
+        19,
+        29,
+        480,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 87,
+      "time_seconds": 3.625,
+      "render_sha256": "15bea30bb9cdbc02469b9cb64d8cdfff95a514cf1b7cb5657c91045416fb7ede",
+      "visible_bounds": [
+        26,
+        29,
+        474,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 88,
+      "time_seconds": 3.6666666666666665,
+      "render_sha256": "d7747294ecb6fa3ac23a747a593eb0e448dd80483a174d2c346ac79b1edb4432",
+      "visible_bounds": [
+        34,
+        29,
+        470,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 89,
+      "time_seconds": 3.7083333333333335,
+      "render_sha256": "f3686232f67b114e846c1d061217a4e13f8177db03c87491d5c1c02667be5cbe",
+      "visible_bounds": [
+        42,
+        29,
+        467,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 90,
+      "time_seconds": 3.75,
+      "render_sha256": "44e8d31901fae60cd772d4cc11bde528798910d3eca7d5daece60d5d9f2fa9b8",
+      "visible_bounds": [
+        48,
+        29,
+        464,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 91,
+      "time_seconds": 3.7916666666666665,
+      "render_sha256": "7dcf47dc42ac67f3ea5d2f1d470a52c930a5aefc8d4f46c961e30ccd448b6779",
+      "visible_bounds": [
+        50,
+        29,
+        460,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 92,
+      "time_seconds": 3.8333333333333335,
+      "render_sha256": "a9c01fb2cff7ffedb1c85b31728a7622eda28c9e5e6fdc55ac47a7d824091d4d",
+      "visible_bounds": [
+        53,
+        29,
+        457,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 93,
+      "time_seconds": 3.875,
+      "render_sha256": "b68a4508dc11c7ba46142de60b9531b04c2bc09c6591e2c8b1c62e472b3cb694",
+      "visible_bounds": [
+        57,
+        29,
+        458,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 94,
+      "time_seconds": 3.9166666666666665,
+      "render_sha256": "6a4643d6a87f1d93121e292d442228e54c41ce4208a086b5fcb8e7df630eb0df",
+      "visible_bounds": [
+        59,
+        29,
+        458,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 95,
+      "time_seconds": 3.9583333333333335,
+      "render_sha256": "c364949c4467f242de61351a80e8e9759c60ac76ca9f59271db5fb1733053dd1",
+      "visible_bounds": [
+        60,
+        29,
+        459,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 96,
+      "time_seconds": 4.0,
+      "render_sha256": "0478e90990a4705811635cb1dc9d18f6f700641bbbae337ecb1df2f060b17538",
+      "visible_bounds": [
+        60,
+        29,
+        459,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 99,
+      "time_seconds": 4.125,
+      "render_sha256": "ba5321801467aaf11c135b9d0e147a40fded48a7e0df402d1a6fff6be362cfbe",
+      "visible_bounds": [
+        60,
+        29,
+        458,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 102,
+      "time_seconds": 4.25,
+      "render_sha256": "7246ce0fb391f6c0a084b30adaef57a1bca6daa3034fe9ca67a758a59a5f9471",
+      "visible_bounds": [
+        59,
+        29,
+        458,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    },
+    {
+      "reference_frame": 120,
+      "time_seconds": 5.0,
+      "render_sha256": "1aed74827a182dda55dbd55b0abd5d746dd1acb059966e4adc2e215548d41e4b",
+      "visible_bounds": [
+        59,
+        29,
+        458,
+        1018
+      ],
+      "feet_changed_pixels_y850_plus": 0,
+      "border_pixels": 0
+    }
+  ],
+  "temporary_bone_perturbation": {
+    "bone": "Screen left forearm",
+    "bone_id": "94:1013",
+    "animation": "ReferenceGesture",
+    "key_frame": 48,
+    "before_rotation_radians": -4.61845425,
+    "after_rotation_radians": -4.49845425,
+    "delta_radians": 0.12,
+    "delta_degrees": 6.875493541569878,
+    "changed_pixels": 3586,
+    "changed_bounds": [
+      22,
+      209,
+      121,
+      375
+    ],
+    "sleeve_region_changed_pixels": 1187,
+    "lower_body_changed_pixels_y650_plus": 0,
+    "opposite_arm_region_changed_pixels": 0,
+    "before_sha256": "5e3c92daf96e86f2214feb99fc69a01769fd83e0aeca5e58f70627e858def283",
+    "after_sha256": "03d92a9e60de1e12122fbdf84c876badba13a43bbd5e6f2307cc4d7dcebd86fa",
+    "implementation_scope": "Screen-left action sleeve uses bone-local vector parts; this proves bone linkage, not weighted skin deformation."
+  },
+  "temporary_weighted_skin_perturbation": {
+    "bone": "Screen right forearm",
+    "bone_id": "94:1263",
+    "key_frame": 90,
+    "before_rotation_radians": 1.999416778,
+    "after_rotation_radians": 2.119416778,
+    "delta_radians": 0.12,
+    "tendon_binding_present": true,
+    "changed_pixels": 4714,
+    "changed_bounds": [
+      291,
+      439,
+      465,
+      557
+    ],
+    "visible_weighted_sleeve_region_changed_pixels": 1804,
+    "lower_body_changed_pixels_y650_plus": 0,
+    "opposite_arm_region_changed_pixels": 0,
+    "before_sha256": "44e8d31901fae60cd772d4cc11bde528798910d3eca7d5daece60d5d9f2fa9b8",
+    "after_sha256": "e6f8ed20dc2fd1cf729bbe54bc6d101828772e8c269242e56e06b8951f32c390"
+  },
+  "sleeve_implementation": {
+    "screen_left_action": "Two bone-local vector parts with rounded overlap; no claim of continuous weighted skin on this action sleeve.",
+    "screen_right_action": "Continuous original vector sleeve with native Skin/Tendon/CubicWeight deformation."
+  },
+  "native_one_shot_hold": [
+    {
+      "advance": "6s",
+      "pixels_different_from_final_pose": 0
+    },
+    {
+      "advance": "10s",
+      "pixels_different_from_final_pose": 0
+    }
+  ],
+  "source_unchanged": true,
+  "limits": [
+    "Landmarks are approximate manual reference annotations, not tracked joints.",
+    "No pixel matching between different raster/vector artwork is claimed.",
+    "No Rive Editor import, Apple runtime, device memory, or artistic acceptance."
+  ],
+  "artwork_preservation": {
+    "source_sha256": "20e5ebb18b7e18d8ee3caeeaafe1b63dc592427c7c4e5fd3d2945b228ea9c482",
+    "exact_original_shape_subtrees": [
+      "Easy smile",
+      "Right eye",
+      "Left eye",
+      "Front golden hair",
+      "Face and neck",
+      "Back hair",
+      "Right fingers",
+      "Right knuckles",
+      "Right hand",
+      "Left fingers",
+      "Left knuckles",
+      "Left hand",
+      "Shirt hem right",
+      "Shirt hem left",
+      "Linen shirt",
+      "Right wrap lower",
+      "Right wrap upper",
+      "Right cuff",
+      "Left wrap lower",
+      "Left wrap upper",
+      "Left cuff",
+      "Right boot",
+      "Left boot",
+      "Blue trousers"
+    ],
+    "exact_count": 24,
+    "changed_original_shapes": [
+      "Right sleeve",
+      "Left sleeve"
+    ],
+    "note": "Exact XML shape subtree comparison; reparenting/transforms and draw order are evaluated separately."
+  },
+  "export_identity": {
+    "sha256": "6c7fb183f088e90cdeec3173c8b0fb448aa45c120015d9962b98c779f5694d7f",
+    "bytes": 14627,
+    "independent_temporary_build_matches_export": true
+  },
+  "visual_review": {
+    "method": "Manual inspection of native contact sheets covering all 28 sampled upper-body poses, plus before/after bone probes. Static samples do not establish unobserved motion quality.",
+    "reviewed_frames": [
+      0,
+      36,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      48,
+      60,
+      72,
+      84,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      99,
+      102,
+      120
+    ],
+    "prior_mechanical_failures": "The previously observed long pointed sleeve and disconnected diagonal strips are not present in the final sampled 39–44/87–95 transitions.",
+    "reference_pose_readability": "Neutral, hand-to-temple hold, crossing hands toward wristwatch, and final hold are distinguishable in sampled poses.",
+    "remaining_art_draft_limits": [
+      "Screen-left action sleeve consists of visibly joined rigid vector parts; elbow shape differs from the soft continuous source sleeve.",
+      "Palm is a simplified draft shape; source finger details and source facial deformation are not reproduced.",
+      "The reference raster and original vector artwork differ in silhouette detail and texture; pixel equality was not a target."
+    ],
+    "artistic_approval": false
+  },
+  "evidence_files": [
+    "independent-final-contact.png",
+    "independent-final-transition-contact.png",
+    "independent-final-supplement.png",
+    "independent-perturbation-contact.png",
+    "independent-bone-before.png",
+    "independent-bone-after.png",
+    "independent-skin-before.png",
+    "independent-skin-after.png"
+  ]
+}
