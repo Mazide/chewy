@@ -4,6 +4,7 @@ import { CampCompositionCanvas } from './CampCompositionCanvas.jsx';
 import { CampSandbox } from './CampSandbox.jsx';
 import { AddFoodCanvas } from './AddFoodCanvas.jsx';
 import { ExplorationStudy } from './ExplorationStudy.jsx';
+import { CampMealDemo } from './CampMealDemo.jsx';
 
 export default {
   title: 'Мастерская',
@@ -60,4 +61,40 @@ export const HeroActions = {
   name: 'Чуви · управляемые движения',
   parameters: { layout: 'fullscreen' },
   render: () => <iframe title="Чуви: проба движения, одежды и реквизита" src="/hero-actions/index.html" style={{ display: 'block', width: '100%', height: '100vh', minHeight: 720, border: 0 }} />,
+};
+
+export const CampStates = {
+  name: 'Лагерь · три состояния Rive',
+  parameters: { layout: 'fullscreen' },
+  render: () => <iframe title="Лагерь: три состояния предметов в Rive" src="/camp-states/states.html" style={{ display: 'block', width: '100%', height: '100vh', minHeight: 720, border: 0 }} />,
+};
+
+export const CampMeals = {
+  name: 'Лагерь · день с едой',
+  parameters: { layout: 'fullscreen' },
+  render: () => <CampMealDemo />,
+};
+
+export const RiveMotionPilot = {
+  name: 'Rive · до и после движения',
+  parameters: { layout: 'fullscreen' },
+  render: () => <iframe title="Rive: сравнение движения растений" src="/motion-pilot/preview/review.html" style={{ display: 'block', width: '100%', height: '100vh', minHeight: 720, border: 0 }} />,
+};
+
+export const HeroMotionPilot = {
+  name: 'Чуви · приветствие Rive',
+  parameters: { layout: 'fullscreen' },
+  render: () => <iframe title="Чуви: приветствие рукой" src="/hero-motion-pilot/preview/review.html" style={{ display: 'block', width: '100%', height: '100vh', minHeight: 720, border: 0 }} />,
+};
+
+export const HeroVideoPilot = {
+  name: 'Чуви · видео в Rive',
+  parameters: { layout: 'fullscreen' },
+  render: () => <iframe title="Чуви: исходные кадры и Rive" src="/hero-video-pilot/preview/review.html" style={{ display: 'block', width: '100%', height: '100vh', minHeight: 720, border: 0 }} />,
+};
+
+export const HeroVectorReference = {
+  name: 'Чуви · вектор по видео',
+  parameters: { layout: 'fullscreen' },
+  render: () => <iframe title="Чуви: видео как опора для векторного рига" src="/hero-vector-reference/preview/review.html" style={{ display: 'block', width: '100%', height: '100vh', minHeight: 720, border: 0 }} />,
 };

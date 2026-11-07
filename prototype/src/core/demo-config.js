@@ -1,4 +1,6 @@
 // Prototype fixtures only. These values do not define the final product economy.
+export const DEMO_CAMP_STAGE_BOUNDARIES = Object.freeze([25, 65]);
+
 export const DEMO_REWARDS = Object.freeze({
   baseCoins: 10,
   baseMultiplier: 1,

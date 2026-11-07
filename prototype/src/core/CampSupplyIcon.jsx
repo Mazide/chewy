@@ -1,37 +1,21 @@
-// Field-journal objects, using the same ink and flat fills as CaptureIcon.
+// Field-journal objects shared by the result and its arrival in camp.
 export function CampSupplyIcon({ metric, ...props }) {
   return <svg viewBox="0 0 48 48" fill="none" stroke="#665039" strokeWidth="1.65" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
     {metric === 'protein' ? <>
-      <path d="m10 28 2-22 8 1-1 24M22 30 4-17 8 2-3 18" fill="#cda77c" />
-      <path d="m15 10-1 12m15-3-2 8" stroke="#a37a53" />
-      <path d="m6 27 35-1-3 16-30-1Z" fill="#bd8b61" />
-      <path d="m8 32 31-1M9 37l29-1M11 27l1 14m21-14-1 14" />
-      <path d="m33 23 7-5 4 6-7 5Z" fill="#e9d4b0" />
+      <path d="m4 38 18-29 22 29Z" fill="#e6a55e" /><path d="m22 9 2 29H4Z" fill="#f5bc76" />
+      <path d="m22 19 10 19H14Z" fill="#76543b" /><path d="m6 39-3 3m39-3 3 3" />
     </> : metric === 'carbs' ? <>
-      <path d="M19 12V9q5-8 10 0v4" stroke="#526547" strokeWidth="4" />
-      <path d="M13 15q-3 8-3 25 13 7 28-1l-3-24Z" fill="#82946b" />
-      <path d="m13 15 7-8 9 1 5 8" fill="#ead4a1" />
-      <path d="m21 9 3 7 4-7" stroke="#af8d5b" />
-      <path d="M11 16q13-5 26 0l-2 10q-11 4-24-1Z" fill="#b98b62" />
-      <path d="m17 18-1 15m14-15 1 15" stroke="#71523b" strokeWidth="3" />
-      <path d="m13 33 20-1-1 9-18 1Z" fill="#6d805b" />
-      <path d="M14 35q9 5 18-1" />
-      <path d="M15 25h4v5h-4Zm14 0h4v5h-4Z" fill="#dfbd72" />
+      <path d="m8 33 27-7 6 7-26 10Z" fill="#b88a52" /><ellipse cx="12" cy="38" rx="5" ry="5" fill="#edce99" />
+      <path d="m9 27 26 8-3 8-25-8Z" fill="#bd925a" /><ellipse cx="34" cy="39" rx="5" ry="5" fill="#edce99" />
+      <path d="M25 4c-2 9-12 12-11 20 0 10 18 12 22 3 3-6-2-13-5-15 0 5-5 7-5 7 2-6-2-9-1-15Z" fill="#e99b49" />
+      <path d="M24 19c0 6-8 9-5 14 3 5 12 3 12-2 0-4-4-5-7-12Z" fill="#f6d77c" />
     </> : metric === 'fats' ? <>
-      <path d="m8 24 26-8 6 8-26 10Z" fill="#a8794d" />
-      <ellipse cx="12" cy="29" rx="6" ry="6.5" fill="#e4c08a" />
-      <path d="m13 34 25-9 6 9-27 10Z" fill="#b88a52" />
-      <ellipse cx="15" cy="38" rx="6" ry="6" fill="#edce99" />
-      <path d="m6 19 23-8 6 8-24 8Z" fill="#bd925a" />
-      <ellipse cx="8" cy="22" rx="5" ry="6" fill="#edce99" />
-      <path d="m7 20 2 3m2 5 2 2m1 6 2 3M21 33l14-5M19 18l9-3" stroke="#947044" />
-      <path d="M25 4c-2 9-10 10-9 17 0 7 13 10 17 3 3-5-2-10-4-12 0 5-4 6-4 6 2-6-2-8 0-14Z" fill="#e99b49" />
+      <path d="M13 13V9a11 11 0 0 1 22 0v4" stroke="#7b8457" /><path d="m12 15 3-6h18l3 6-2 24H14Z" fill="#8d9865" />
+      <path d="M17 18h14l2 17H15Z" fill="#f9efc5" /><path d="M24 22c-1 4-5 6-3 9 2 3 7 1 6-2Z" fill="#eeb85b" />
+      <path d="M13 39h22l2 5H11Z" fill="#a9ae75" /><path d="M17 40h14v3H17Z" fill="#efc16b" /><path d="M11 15h26" />
     </> : <>
-      <path d="m7 19 21 1 3 23-25-1Z" fill="#d8bd83" />
-      <path d="m7 19 3-6 16 1 2 6M10 17l15 1" />
-      <path d="M18 36v-9m0 4q-8 0-7-7 7 0 7 7m0-2q0-7 7-7 1 7-7 7" fill="#90aa6f" stroke="#607d4b" />
-      <path d="m31 30 12-1-3 13H33Z" fill="#b98462" />
-      <path d="M37 29V15m0 6q-9-1-8-9 8 0 8 9m0-3q1-8 9-8 0 9-9 8" fill="#9ab679" stroke="#607d4b" />
+      <path d="m7 32 34-1-5 13H12Z" fill="#b98462" /><path d="M24 32V12m0 12q-12-1-12-10 12 0 12 10m0 3q1-11 13-11 0 12-13 11" fill="#9ab679" stroke="#607d4b" />
+      <path d="M24 12c-9-2-7-9-2-8 2-6 8-3 6 2 7 0 7 7 1 8Z" fill="#fff5d8" /><circle cx="25" cy="10" r="3" fill="#e8bc5c" />
     </>}
   </svg>;
 }

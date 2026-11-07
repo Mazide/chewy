@@ -1,4 +1,5 @@
 // Authored examples for visual review, not nutrition inference or a validated score.
+import { randomDemoContribution } from './camp-meal-demo.js';
 const UNKNOWN = {
   tone: 'unknown', label: 'Нужны детали', short: 'Уточнить состав',
   reason: 'По этой записи пока нельзя уверенно оценить состав блюда.',
@@ -63,6 +64,22 @@ export function demoMealName(imageKey) {
 // the illustrative fixtures must not reinterpret a previously completed answer.
 export function snapshotMealAssessment(meal) {
   return JSON.parse(JSON.stringify(assessDemoMeal(meal)));
+}
+
+// A seeded mock, so repeated delivery of the same attempt cannot reroll food.
+// Saved assessments stay authoritative on reload and in the journal/history.
+export function snapshotRandomAssessment(seed) {
+  let value = 2166136261;
+  for (const character of seed) value = Math.imul(value ^ character.charCodeAt(0), 16777619) >>> 0;
+  const random = () => { value = (Math.imul(value, 1664525) + 1013904223) >>> 0; return value / 4294967296; };
+  const contribution = randomDemoContribution(random);
+  const sources = { protein: 'белковая часть', carbs: 'злаки', fats: 'масло', plants: 'овощи и фрукты' };
+  return { tone: 'good', label: 'Тестовый состав', short: 'Разные группы вместе',
+    reason: 'В этом примере есть белковая часть, злаки, овощи и масло.',
+    next: 'Вклад этой записи уже добавлен в лагерь.',
+    groups: { veg: 'present', protein: 'present', wholegrain: 'present' }, qualities: [],
+    supplies: Object.fromEntries(Object.entries(contribution).map(([metric, amount]) => [metric, [amount * 5, sources[metric]]])),
+  };
 }
 
 // The uncertain mock answer retains only evidence from a compatible authored

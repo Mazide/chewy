@@ -34,7 +34,9 @@ const full = { protein: true, carbs: true, fats: true, plants: true };
 const appearance = async id => assert.equal(
   await page.locator('[data-camp-component="plants"] [data-garden-appearance]').getAttribute('data-garden-appearance'), id
 );
+const authoredAnalysis = async () => { await inspector(); await page.getByLabel('Ответ анализа', { exact:true }).selectOption('success'); };
 const gallery = async label => {
+  await authoredAnalysis();
   await button('Добавить еду').click(); await button('Галерея').click();
   await button(`Выбрать фото: ${label}`).click(); await button('Добавить фото · 1').click();
 };
@@ -50,7 +52,7 @@ try {
   assert.deepEqual(clean.entries, []); assert.deepEqual(clean.jobs, []);
   assert.deepEqual(clean.rewardEvents, []); assert.deepEqual(clean.creditedDays, []);
   assert.deepEqual(clean.inventory, { coins: 0, owned: [], applied: {} });
-  await components(empty); await appearance('garden-base');
+  await components(empty); await appearance('garden-base'); await authoredAnalysis();
 
   // Reward and the day are saved before analysis; another frame is the same entry.
   await button('Добавить еду').click(); await button('Сфотографировать еду').click();

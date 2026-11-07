@@ -20,6 +20,8 @@ import { CAMP_GROWTH_STAGES, campGrowthLayers } from './camp-growth.js';
 import { CampProvisions } from './CampProvisions.jsx';
 import { CampLog } from './CampLog.jsx';
 import { PROVISION_STAGES } from './camp-provisions.js';
+import { RiveCampObject } from './RiveCampObject.jsx';
+import { CAMP_DAILY_OBJECTS, dailyCampObjectFrame } from './camp-daily-states.js';
 
 function ScreenPreview({ screen, onClose }) {
   const dialog = useRef(null);
@@ -40,7 +42,7 @@ function GroundGrass({ frame, object }) {
   </svg>;
 }
 
-export function CampSandbox({ initialDevice = 'standard', initialPreset = 'growth', presentation = 'art', foodLayout = 'stacked', foodPresentation = 'block', initialEditing = true, onDeviceChange, onAddFood, onNavigate, activity, activityLabel, journalData, dailyContributions, wallet, walletControl, sceneOverlay, supplyMoment, objectReplacements = {}, initialJournalOpen = false, worldBackground, worldLabel, dayPhase = 'day', campStage, showZoneLabels = false, animatedLantern = false, motionVariants = {}, withMirror = false, provisionsPreview, persistPlacements = true }) {
+export function CampSandbox({ initialDevice = 'standard', initialPreset = 'growth', presentation = 'art', foodLayout = 'stacked', foodPresentation = 'block', initialEditing = true, onDeviceChange, onAddFood, onNavigate, activity, activityLabel, journalData, dailyContributions, dailyStages, wallet, walletControl, sceneOverlay, supplyMoment, objectReplacements = {}, initialJournalOpen = false, worldBackground, worldLabel, dayPhase = 'day', campStage, showZoneLabels = false, animatedLantern = false, motionVariants = {}, withMirror = false, provisionsPreview, persistPlacements = true }) {
   const blocks = presentation === 'blocks';
   const growth = initialPreset === 'growth';
   const [localStage, setLocalStage] = useState('initial');
@@ -86,7 +88,13 @@ export function CampSandbox({ initialDevice = 'standard', initialPreset = 'growt
   // offsets for two independent buttons must not separate or overlap the new row.
   if (withMirror && !editing) layout.controls = baseLayout.controls;
   const background = layers.find((layer) => layer.id === 'background');
-  const objects = layout.objects.filter((object) => object.id !== 'light' && !hidden.includes(object.id));
+  const objects = layout.objects.filter((object) => object.id !== 'light' && !hidden.includes(object.id)).map(object => {
+    const component = dailyStages && growth && !blocks ? CAMP_DAILY_OBJECTS.find(item => item.zone === object.id) : null;
+    // Existing purchased garden artwork remains usable until its own Rive skins exist.
+    const appearance = object.id === 'garden' ? objectReplacements.garden?.props.appearance ?? 'garden-base' : null;
+    const riveComponent = appearance && appearance !== 'garden-base' ? null : component;
+    return riveComponent ? { ...object, riveComponent, frame: dailyCampObjectFrame(object, riveComponent) } : object;
+  });
   const toggle = (id) => setHidden((current) => current.includes(id) ? current.filter((key) => key !== id) : [...current, id]);
   const visibleFrame = (id) => layout.objects.find((object) => object.id === id)?.frame ?? layout.controls.find((control) => control.id === id)?.frame ?? [0, 0, device.width, device.height];
   const selectedFrame = getMovableFrame(layout, selected);
@@ -187,10 +195,13 @@ export function CampSandbox({ initialDevice = 'standard', initialPreset = 'growt
         {!blocks && <CampLife phase={dayPhase} clouds={!motionVariants.background && (!worldBackground || worldBackground === background.src)} paused={editing} />}
         {objects.map((object) => {
           const layer = layers.find((entry) => entry.id === object.id);
+          const component = object.riveComponent;
           const metric = Object.entries(CAMP_SUPPLY_METAPHORS).find(([, value]) => value.zone === object.id)?.[0];
           const contribution = dailyContributions && metric ? dailyContributions[metric] ? 'present' : 'none' : undefined;
-          return <div key={object.id} className={`sandbox-layer sandbox-world-object${selected === object.id ? ' sandbox-layer-selected' : ''}`} style={viewportFrame(object.frame, device)} {...movableProps(object.id)} data-scene-object={object.id} data-daily-contribution={contribution} data-camp-component={metric} role={editing ? 'button' : contribution ? 'group' : undefined} tabIndex={editing ? 0 : undefined} aria-label={editing ? `Переместить: ${layer.label}. Можно двигать стрелками.` : contribution ? `${layer.label}: вклад за сегодня ${contribution === 'present' ? 'есть' : 'пока не подтверждён'}` : undefined}>
-            {!blocks && object.id === 'log' ? <CampLog /> : !blocks && object.id === 'provisions' ? <CampProvisions stage={provisionsStage} paused={editing} /> : !blocks && motionVariants[VARIANT_SLOTS[object.id]] ? <VariantMotion slug={motionVariants[VARIANT_SLOTS[object.id]]} paused={editing} /> : (!blocks && growth && ['workshop', 'fuel', 'light'].includes(object.id)) ? <CampGrowthMotion kind={object.id} stage={stage} lantern={animatedLantern} paused={editing} /> : objectReplacements[object.id] || (blocks ? <div className={`sandbox-block sandbox-block-${object.id}`}><span>{({ hero: 'Герой', tent: 'Палатка', fire: 'Костёр', kettle: 'Чайник', pet: 'Пёс', workshop: 'Обустройство', provisions: 'Припасы', log: 'Бревно', fuel: 'Очаг', light: 'Свет', garden: 'Сад' })[object.id]}</span>{object.id === 'hero' && <small>главный акцент</small>}</div> : object.id === 'tent' ? <div className="sandbox-sprite-crop"><CampSprite kind="tent" paused={editing} /></div> : <div className="sandbox-sprite-crop"><img src={layer.src} alt={layer.label} style={croppedImageStyle(object.id, layer.bounds ?? imageBounds[object.id])} draggable="false" /></div>)}
+          return <div key={object.id} className={`sandbox-layer sandbox-world-object${selected === object.id ? ' sandbox-layer-selected' : ''}`} style={viewportFrame(object.frame, device)} {...movableProps(object.id)} data-scene-object={object.id} data-daily-contribution={contribution} data-camp-component={metric} data-daily-stage={dailyStages?.[metric]} role={editing ? 'button' : contribution ? 'group' : undefined} tabIndex={editing ? 0 : undefined} aria-label={editing ? `Переместить: ${layer.label}. Можно двигать стрелками.` : contribution ? component ? `${component.name}: ${component.states[dailyStages[metric]]}` : `${layer.label}: вклад за сегодня ${contribution === 'present' ? 'есть' : 'пока не подтверждён'}` : undefined}>
+            {component ? <div className="camp-daily-garden" data-garden-appearance={object.id === 'garden' ? 'garden-base' : undefined}>
+              <RiveCampObject id={component.id} board={component.board} label={`${component.name}: ${component.states[dailyStages[metric]]}`} stage={dailyStages[metric]} paused={editing} />
+            </div> : !blocks && object.id === 'log' ? <CampLog /> : !blocks && object.id === 'provisions' ? <CampProvisions stage={provisionsStage} paused={editing} /> : !blocks && motionVariants[VARIANT_SLOTS[object.id]] ? <VariantMotion slug={motionVariants[VARIANT_SLOTS[object.id]]} paused={editing} /> : (!blocks && growth && ['workshop', 'fuel', 'light'].includes(object.id)) ? <CampGrowthMotion kind={object.id} stage={stage} lantern={animatedLantern} paused={editing} /> : objectReplacements[object.id] || (blocks ? <div className={`sandbox-block sandbox-block-${object.id}`}><span>{({ hero: 'Герой', tent: 'Палатка', fire: 'Костёр', kettle: 'Чайник', pet: 'Пёс', workshop: 'Обустройство', provisions: 'Припасы', log: 'Бревно', fuel: 'Очаг', light: 'Свет', garden: 'Сад' })[object.id]}</span>{object.id === 'hero' && <small>главный акцент</small>}</div> : object.id === 'tent' ? <div className="sandbox-sprite-crop"><CampSprite kind="tent" paused={editing} /></div> : <div className="sandbox-sprite-crop"><img src={layer.src} alt={layer.label} style={croppedImageStyle(object.id, layer.bounds ?? imageBounds[object.id])} draggable="false" /></div>)}
             {growth && !blocks && !bounds && showZoneLabels && metric && layer.bounds && <span className="sandbox-zone-label">{layer.label}</span>}
             {!blocks && grounded && object.grass.map((frame, index) => <GroundGrass key={index} frame={frame} object={object} />)}
             {bounds && <>{!blocks && <span className="sandbox-bound-label">{layer.label}</span>}<span className="sandbox-ground-anchor" /></>}

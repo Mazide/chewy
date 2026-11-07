@@ -1,0 +1,5 @@
+.meal-camp-rive,.meal-camp-rive canvas{position:absolute;inset:0;width:100%;height:100%}
+.meal-camp-rive canvas{display:block}
+.meal-camp-object-error{position:absolute;left:35%;top:35%;min-width:44px;min-height:44px;border:1px solid #a18b64;background:#fff5dc;color:#536545;border-radius:50%;font-size:22px;pointer-events:auto;cursor:pointer}
+.meal-camp-object-error:focus-visible{outline:3px solid #657f4f;outline-offset:3px}
+.camp-daily-garden{position:absolute;inset:0}

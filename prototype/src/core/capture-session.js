@@ -1,4 +1,4 @@
-import { demoMealName, mealAssessment, snapshotMealAssessment, snapshotUncertainAssessment, validMealAssessment } from './food-assessment.js';
+import { demoMealName, mealAssessment, snapshotMealAssessment, snapshotUncertainAssessment, snapshotRandomAssessment, validMealAssessment } from './food-assessment.js';
 
 export const CAPTURE_STORAGE_KEY = 'chewy.capture-study.v1';
 export const localDayKey = (time = Date.now()) => {
@@ -12,6 +12,7 @@ export const CAPTURE_THEMES = {
 };
 export const CAPTURE_OUTCOMES = {
   success: 'Готовый результат',
+  random: 'Случайный тестовый состав',
   notFood: 'Не-еда',
   uncertain: 'Состав неясен',
   offline: 'Нет сети',
@@ -46,7 +47,8 @@ export function prepareCaptureReply(job) {
   // Extra views of one dish never multiply its contribution.
   const result = { name: job.dishName.trim() || demoMealName(photos[0].imageKey), notes: job.notes.trim(), portion: job.portion, photos };
   return { ...reply, result: { ...result,
-    assessment: (outcome === 'uncertain' ? snapshotUncertainAssessment : snapshotMealAssessment)({ ...result, imageKey: photos[0].imageKey }) } };
+    assessment: outcome === 'random' ? snapshotRandomAssessment(`${job.id}:${job.attempt ?? 1}`)
+      : (outcome === 'uncertain' ? snapshotUncertainAssessment : snapshotMealAssessment)({ ...result, imageKey: photos[0].imageKey }) } };
 }
 
 export function applyCaptureReply(jobs, reply) {
@@ -55,7 +57,7 @@ export function applyCaptureReply(jobs, reply) {
   if (index === -1) return jobs;
   if (!validOutcome(reply.outcome)) return jobs;
   let result;
-  if (['success', 'uncertain'].includes(reply.outcome)) {
+  if (['success', 'uncertain', 'random'].includes(reply.outcome)) {
     // New responses require complete snapshots. Optional photos/assessment are
     // supported only when loading legacy saves, never as a partial new answer.
     // Copy at delivery so mutating a queued envelope cannot change saved state.
